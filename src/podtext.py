@@ -13,6 +13,7 @@ from faster_whisper import WhisperModel
 from pyannote.audio import Pipeline
 import torch
 from dotenv import load_dotenv
+import ollama
 
 # Load environment variables from .env file
 load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
@@ -119,6 +120,46 @@ def transcribe_and_diarize(whisper_model, diarization_pipeline, audio_path):
         
     return final_segments
 
+def identify_speakers(segments):
+    """Uses local LLM to map SPEAKER_XX to real names."""
+    print("Identifying speakers with Llama 3.2...")
+    
+    # 1. Prepare Context (First ~2000 chars should contain intros)
+    transcript_sample = ""
+    for seg in segments[:20]: # Check first 20 segments
+        transcript_sample += f"{seg['speaker']}: {seg['text']}\n"
+        
+    if len(transcript_sample) > 3000:
+        transcript_sample = transcript_sample[:3000]
+        
+    prompt = f"""
+    Read the following podcast transcript snippet and identify the real names of the speakers.
+    Return ONLY a JSON object mapping the SPEAKER codes to their real names.
+    If you cannot identify a speaker, do not include them.
+    Example: {{"SPEAKER_00": "Michael Barbaro", "SPEAKER_01": "Sabrina Tavernise"}}
+    
+    Transcript:
+    {transcript_sample}
+    """
+    
+    try:
+        response = ollama.chat(model='llama3.2', messages=[
+            {'role': 'user', 'content': prompt},
+        ], format='json')
+        
+        mapping = json.loads(response['message']['content'])
+        print(f"Identified Speakers: {mapping}")
+        
+        # Apply mapping
+        for seg in segments:
+            if seg['speaker'] in mapping:
+                seg['speaker'] = mapping[seg['speaker']]
+                
+    except Exception as e:
+        print(f"Speaker identification failed: {e}")
+        
+    return segments
+
 def render_html(template_name, context, output_path):
     env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
     template = env.get_template(template_name)
@@ -188,6 +229,9 @@ def main():
                 
                 # 2. Transcribe & Diarize
                 segments = transcribe_and_diarize(model, pipeline, temp_mp3)
+                
+                # 2.5 Identify Speakers (Local LLM)
+                segments = identify_speakers(segments)
                 
                 # 3. Build Context
                 episode_data = {

@@ -8,3 +8,4 @@ requests
 pyyaml
 pyannote.audio
 python-dotenv
+ollama
