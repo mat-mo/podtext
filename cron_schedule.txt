@@ -1,0 +1,2 @@
+# Run Podtext every hour at minute 0
+0 * * * * cd /Users/matanya/git-repos/podtext && /Users/matanya/git-repos/podtext/venv/bin/python src/podtext.py >> run.log 2>&1

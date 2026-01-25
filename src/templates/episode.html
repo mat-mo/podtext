@@ -23,8 +23,11 @@
 
         <div class="transcript-container" id="transcript">
             {% for segment in segments %}
-            <div class="segment">
-                <span class="timestamp">[{{ segment.start_fmt }}]</span>
+            <div class="segment speaker-{{ segment.speaker }}">
+                <div class="segment-meta">
+                    <span class="speaker-label">{{ segment.speaker }}</span>
+                    <span class="timestamp">[{{ segment.start_fmt }}]</span>
+                </div>
                 <p>
                     {% for word in segment.words %}
                     <span class="word" 

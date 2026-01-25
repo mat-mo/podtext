@@ -10,6 +10,12 @@ from email.utils import formatdate
 from slugify import slugify
 from jinja2 import Environment, FileSystemLoader
 from faster_whisper import WhisperModel
+from pyannote.audio import Pipeline
+import torch
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
 
 # Configuration Paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -53,29 +59,65 @@ def format_timestamp(seconds):
     secs = seconds % 60
     return f"{minutes:02}:{secs:02}"
 
-def transcribe_audio(model, audio_path):
+def transcribe_and_diarize(whisper_model, diarization_pipeline, audio_path):
     print(f"Transcribing {audio_path}...")
-    # Run on CPU with INT8 quantization (fast and efficient on M-series chips)
-    segments, info = model.transcribe(audio_path, word_timestamps=True)
+    # 1. Run Whisper
+    segments, info = whisper_model.transcribe(audio_path, word_timestamps=True)
     
-    results = []
+    whisper_words = []
     for segment in segments:
-        words = []
         for word in segment.words:
-            words.append({
+            whisper_words.append({
                 "word": word.word,
                 "start": word.start,
                 "end": word.end
             })
+            
+    # 2. Run Diarization
+    print("Running diarization (this may take a while)...")
+    diarization = diarization_pipeline(audio_path)
+    
+    # 3. Align Words to Speakers
+    final_segments = []
+    current_segment = None
+    
+    for word in whisper_words:
+        # Find speaker for this word
+        # Simple strategy: Check which diarization turn covers the midpoint of the word
+        word_mid = (word['start'] + word['end']) / 2
+        speaker = "Unknown"
         
-        results.append({
-            "start": segment.start,
-            "end": segment.end,
-            "start_fmt": format_timestamp(segment.start),
-            "text": segment.text,
-            "words": words
-        })
-    return results
+        # Iterate over turns to find the matching one
+        # Optimization: Diarization turns are sorted, we could track index, but loop is fine for podcast length
+        for turn, _, spk in diarization.itertracks(yield_label=True):
+            if turn.start <= word_mid <= turn.end:
+                speaker = spk
+                break
+        
+        # Grouping Logic
+        if current_segment and current_segment['speaker'] == speaker:
+            # Append to current
+            current_segment['words'].append(word)
+            current_segment['end'] = word['end']
+            current_segment['text'] += "" + word['word'] # Space handling might need improvement depending on Whisper output
+        else:
+            # New Segment
+            if current_segment:
+                final_segments.append(current_segment)
+            
+            current_segment = {
+                "speaker": speaker,
+                "start": word['start'],
+                "end": word['end'],
+                "start_fmt": format_timestamp(word['start']),
+                "words": [word],
+                "text": word['word']
+            }
+            
+    if current_segment:
+        final_segments.append(current_segment)
+        
+    return final_segments
 
 def render_html(template_name, context, output_path):
     env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
@@ -88,17 +130,36 @@ def main():
     config = load_config()
     db = load_db()
     
-    # Initialize Whisper Model (Small is a good balance of speed/accuracy for English)
-    # Use "medium" or "large-v3" for better accuracy if M4 can handle the speed hit.
-    # We'll start with "small".
+    # Initialize Whisper Model
     print("Loading Whisper model...")
     model = WhisperModel("small", device="cpu", compute_type="int8")
+
+    # Initialize Diarization Pipeline
+    print("Loading Diarization pipeline...")
+    hf_token = os.getenv("HF_TOKEN")
+    if not hf_token:
+        print("Warning: HF_TOKEN not found. Diarization may fail.")
+        
+    pipeline = Pipeline.from_pretrained(
+        "pyannote/speaker-diarization-3.1",
+        use_auth_token=hf_token
+    )
+    # Check if Metal (MPS) is available for PyTorch (M-series GPU acceleration)
+    # Pyannote uses Pytorch.
+    if torch.backends.mps.is_available():
+        print("Using MPS (Apple Silicon GPU) for Diarization")
+        pipeline.to(torch.device("mps"))
+    else:
+        print("Using CPU for Diarization")
 
     processed_ids = set(db['processed'])
     
     for feed_conf in config['feeds']:
         print(f"Checking feed: {feed_conf['name']}")
         d = feedparser.parse(feed_conf['url'])
+        
+        # specific to simplecast/standard RSS
+        feed_image = d.feed.get('image', {}).get('href') or d.feed.get('itunes_image')
         
         for entry in d.entries[:5]: # Check latest 5 episodes
             guid = entry.id
@@ -125,8 +186,8 @@ def main():
                 # 1. Download
                 download_file(audio_url, temp_mp3)
                 
-                # 2. Transcribe
-                segments = transcribe_audio(model, temp_mp3)
+                # 2. Transcribe & Diarize
+                segments = transcribe_and_diarize(model, pipeline, temp_mp3)
                 
                 # 3. Build Context
                 episode_data = {
@@ -134,7 +195,8 @@ def main():
                     "published": entry.published,
                     "audio_url": audio_url, # Hotlink original
                     "slug": slug,
-                    "feed_name": feed_conf['name']
+                    "feed_name": feed_conf['name'],
+                    "feed_image": feed_image
                 }
                 
                 # 4. Generate HTML
@@ -146,9 +208,10 @@ def main():
                 db['processed'].append(guid)
                 db['episodes'].insert(0, { # Prepend to keep newest first
                     "title": entry.title,
-                    "published_date": entry.published, # Simple string for now
+                    "published_date": entry.published,
                     "slug": slug,
-                    "feed_name": feed_conf['name']
+                    "feed_name": feed_conf['name'],
+                    "feed_image": feed_image
                 })
                 save_db(db)
                 

@@ -15,10 +15,15 @@
         <main>
             <ul class="episode-list">
                 {% for episode in episodes %}
-                <li>
-                    <span class="date">{{ episode.published_date }}</span>
-                    <a href="episodes/{{ episode.slug }}.html">{{ episode.title }}</a>
-                    <span class="feed-name">({{ episode.feed_name }})</span>
+                <li class="episode-item">
+                    {% if episode.feed_image %}
+                    <img src="{{ episode.feed_image }}" alt="{{ episode.feed_name }} Cover" class="feed-icon">
+                    {% endif %}
+                    <div class="episode-info">
+                        <span class="date">{{ episode.published_date }}</span>
+                        <a href="episodes/{{ episode.slug }}.html" class="episode-title">{{ episode.title }}</a>
+                        <span class="feed-name">{{ episode.feed_name }}</span>
+                    </div>
                 </li>
                 {% endfor %}
             </ul>
