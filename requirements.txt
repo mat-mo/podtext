@@ -1,0 +1,8 @@
+feedparser
+faster-whisper
+torch
+torchaudio
+jinja2
+python-slugify
+requests
+pyyaml

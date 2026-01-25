@@ -1,0 +1,7 @@
+feeds:
+  - url: "https://feeds.simplecast.com/54nAGcIl" # Example: The Daily
+    name: "The Daily"
+  
+site_settings:
+  title: "My Podcast Transcripts"
+  base_url: "https://yourusername.github.io/podtext"
