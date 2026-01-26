@@ -6,8 +6,102 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 23:15:33 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 23:17:12 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>לאן באמת נעלמות הגרביים? [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/the-answer/ln-bmt-n-lmvt-hgrbyym-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/ln-bmt-n-lmvt-hgrbyym-htshvbh.html</guid>
+        <pubDate>Tue, 24 Oct 2023 10:31:30 +0000</pubDate>
+        <description>Transcript for לאן באמת נעלמות הגרביים? [התשובה] from The Answer</description>
+        <content:encoded><![CDATA[
+            <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לאן באמת נעלמות הגרביים? [התשובה] - Podtext</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-link">Back to Episodes</a>
+            <h1>לאן באמת נעלמות הגרביים? [התשובה]</h1>
+            <p class="meta">Published on Tue, 24 Oct 2023 10:31:30 +0000</p>
+        </header>
+
+        <div class="player-container">
+            <audio id="audio-player" controls>
+                <source src="https://api.spreaker.com/download/episode/57364720/mst.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="transcript-container" id="transcript">
+            
+            <article class="paragraph speaker-">
+                <div class="paragraph-meta">
+                    <span class="speaker-name"></span>
+                    <span class="timestamp"></span>
+                </div>
+                <div class="content">
+                    <p></p>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const words = document.querySelectorAll('.word');
+        let currentWord = null;
+
+        function seekTo(time) {
+            audio.currentTime = time;
+            audio.play();
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const time = audio.currentTime;
+
+            // Simple optimization: only check around the current word or linear scan if lost
+            // For robustness, we'll just do a linear scan for now. 
+            // In a huge transcript, we might want a binary search or index.
+            
+            let found = false;
+            words.forEach(word => {
+                const start = parseFloat(word.dataset.start);
+                const end = parseFloat(word.dataset.end);
+
+                if (time >= start && time < end) {
+                    if (currentWord !== word) {
+                        if (currentWord) currentWord.classList.remove('active');
+                        word.classList.add('active');
+                        currentWord = word;
+                        
+                        // Auto-scroll logic
+                        const container = document.getElementById('transcript');
+                        const wordTop = word.offsetTop - container.offsetTop;
+                        // scroll if word is getting out of view
+                        container.scrollTop = wordTop - 100; 
+                    }
+                    found = true;
+                }
+            });
+
+            if (!found && currentWord) {
+                currentWord.classList.remove('active');
+                currentWord = null;
+            }
+        });
+    </script>
+</body>
+</html>
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>למה מונופול הוא משחק גרוע? [התשובה]</title>
@@ -5590,100 +5684,6 @@
                 </div>
                 <div class="content">
                     <p>זו הייתה התשובה. ערכה את כל העסק שלי נוי, ייעוץ ותמיכה מוראלית מוץ, בצוות רשת עושים היסטוריה גם דני תימור המנהל העסקי, אביב שם טוב סמנכ"ל תפעול, עמית חזזי מכירות ואיליי זק. אני דורון פישלר וזהו. ביי. (קולות בדיקה) אהההה... אוקיי בסדר. זה כדי לבדוק שהמיקרופון עובד. עשירית שנייה. (צפצוף) אל תשאיר את הטלפון שלי פה.</p>
-                </div>
-            </article>
-            
-        </div>
-    </div>
-
-    <script>
-        const audio = document.getElementById('audio-player');
-        const words = document.querySelectorAll('.word');
-        let currentWord = null;
-
-        function seekTo(time) {
-            audio.currentTime = time;
-            audio.play();
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            const time = audio.currentTime;
-
-            // Simple optimization: only check around the current word or linear scan if lost
-            // For robustness, we'll just do a linear scan for now. 
-            // In a huge transcript, we might want a binary search or index.
-            
-            let found = false;
-            words.forEach(word => {
-                const start = parseFloat(word.dataset.start);
-                const end = parseFloat(word.dataset.end);
-
-                if (time >= start && time < end) {
-                    if (currentWord !== word) {
-                        if (currentWord) currentWord.classList.remove('active');
-                        word.classList.add('active');
-                        currentWord = word;
-                        
-                        // Auto-scroll logic
-                        const container = document.getElementById('transcript');
-                        const wordTop = word.offsetTop - container.offsetTop;
-                        // scroll if word is getting out of view
-                        container.scrollTop = wordTop - 100; 
-                    }
-                    found = true;
-                }
-            });
-
-            if (!found && currentWord) {
-                currentWord.classList.remove('active');
-                currentWord = null;
-            }
-        });
-    </script>
-</body>
-</html>
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>אני יכול להסביר. [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/the-answer/ny-ykvl-lhsbyr-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/ny-ykvl-lhsbyr-htshvbh.html</guid>
-        <pubDate>Mon, 11 Nov 2024 09:02:58 +0000</pubDate>
-        <description>Transcript for אני יכול להסביר. [התשובה] from The Answer</description>
-        <content:encoded><![CDATA[
-            <!DOCTYPE html>
-<html lang="en" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אני יכול להסביר. [התשובה] - Podtext</title>
-    <link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="../../index.html" class="back-link">Back to Episodes</a>
-            <h1>אני יכול להסביר. [התשובה]</h1>
-            <p class="meta">Published on Mon, 11 Nov 2024 09:02:58 +0000</p>
-        </header>
-
-        <div class="player-container">
-            <audio id="audio-player" controls>
-                <source src="https://api.spreaker.com/download/episode/62688948/icanexplain.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <div class="transcript-container" id="transcript">
-            
-            <article class="paragraph speaker-Doron">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron</span>
-                    <span class="timestamp">00:00</span>
-                </div>
-                <div class="content">
-                    <p>היי, זה דורון. זה לא פרק של "התשובה". אני צריך לספר לכם משהו. זה פעם ראשונה שאני עושה את זה, וזה לא כל כך נעים להודות, אבל מה לעשות, צריך להתמודד עם זה. מה שקרה זה שאני כתבתי ספר. אני יכול להסביר. אני עושה פודקאסטים ואני עושה הרצאות, אני מספר סיפורים כבר הרבה מאוד זמן, והרבה יותר מפעם אחת אנשים אמרו לי "למה אתה לא כותב ספר?". אז זהו, שזה לקח זמן, אבל אני כן. "אני יכול להסביר" - זה השם שלו, וזה ספר, זה ממש ממש ספר. לא במובן הרחב של המילה, לא אודיו או ספר וירטואלי, ספר! כזה עם ניירות שמחזיקים ביד, כזה שאפשר לדפדף בו, ועם השם שלי עליו. איזה מטורף זה, נכון? שיש חפץ ממש בעולם? אני מצטער, זה פשוט חוויה חדשה בשבילי. אז איזה מין ספר זה? אז התשובה הכי קלה היא שאם אתם מתעניינים בפודקאסט הזה, ואתם מקשיבים לי עכשיו אז סביר שאתם כן, אז אתם כנראה תתעניינו גם בספר הזה. כי זה מבוסס על "התשובה", אפשר לומר את זה ככה. גם ב"התשובה" וגם ב"מובן מאליו", הפודקאסט הקודם, לעיתים קרובות קורה שאני מסביר דברים, כלומר דברים שאם לא שואלים את השאלה, אז קל מאוד לפספס את זה שיש פה משהו להסביר בכלל. כמו למשל למה בשעה יש 60 דקות דווקא? או למה בשבוע יש דווקא שבעה ימים? או למה לאוכל גרוע יש טעם טוב? אלה דברים שבדרך כלל בני אדם לא מאוד שמים לב אליהם כי זה פשוט המצב, זה היה ככה מאז ומתמיד, אנחנו פשוט גדלים בעולם שבו הדברים האלה הם מה שהם. אבל אם בא חייזר לבקר בכדור הארץ שלא מכיר את כל העניינים האלה, בני אדם ייראו לו מוזרים לאללה. כי שום דבר שאנחנו עושים לא הגיוני. אנחנו פשוט מתנהגים מוזר. אז למען תקשורת טובה יותר עם אורחים מבחוץ, למען חייזרים מבקרים, אני כתבתי את "אני יכול להסביר: מדריך למבקר בכדור הארץ". הספר הזה הוא לא בדיוק "התשובה" אבל בספר. זאת אומרת, זה לא שתמצאו בו פרקים ששמעתם ב"התשובה" אבל כתובים בטקסט, כי זה לא עובד ככה. כי יש דברים שעובדים בכתב ולא עובדים באודיו ולהיפך. אבל כן יש בו דברים שאם שמעתם את כל הפרקים של הפודקאסט, הם יישמעו לכם מוכרים כי כן, אני מדבר גם על דברים שכבר דיברתי עליהם בפודקאסט, וגם דמויות שראיתם בפודקאסט חוזרות גם כאן. אז קודם כל זה לא שאם שמעתם את הפודקאסט אין לכם מה לחפש בספר הזה, וחוץ מזה, כמו שבפודקאסט אני עוד משתדל לעשות דברים שאפשר לעשות רק באודיו, שאפשר לעשות רק עם קולות, אבל זה לא יעבוד בכתב, אז בספר יש דברים שאי אפשר לעשות באודיו. למשל, אני יכול לספר לכם על האיורים המאוד מאוד מקסימים של לי להב, שהיא גם מאיירת וגם אנימטורית וגם אולי אתם זוכרים אותה בתור אחת המשתתפות בפרק "מי רצח את אדווין דרוד?". אז כן, זאת הנקודה שבה הייתי מראה לכם פשוט, כאילו כדי שתוכלו להתרשם. תראו את השור הזה, הוא כזה חמוד! אבל אני לא יכול כי זה אודיו. אתם תצטרכו אשכרה לראות את הספר. ויש לנו גם הערות שוליים, בגלל שהערות שוליים זה מגניב, וטבלאות וכאלה דברים. הוא ספר מגניב לדעתי. כן, אני קצת משוחד בנושא, אבל בכל זאת. את הספר הזה אתם יכולים להשיג בכל חנויות הספרים, או לפחות ברובן, אני לא בדקתי בכולן, אבל בהרבה חנויות סביר להניח שבחנות הספרים הקרובה אליכם יש את הספר הזה. ואפשר גם להזמין אותו אונליין, ולמי שמתעקש אז כן יש גם ספר דיגיטלי באפליקציית "עברית". עוד אפשרות להשיג את הספר, אבל זאת אפשרות שפתוחה רק למאזיני ההווה, כלומר ממש בימים הקרובים. האפשרות הזאת היא להגיע לאחד מאירועי ההשקה של הספר. בשבת, ה-16 בנובמבר 2024 בגריי תל אביב, או ביום ראשון ה-24 בנובמבר בנוקטורנו בירושלים. אנחנו נעשה מסיבת השקה, יהיו שם אני ויהיו שם לי להב המאיירת, ואנחנו נספר על הספר ונספר על דברים שהיו אמורים להיות בספר ולא היו בו בסופו של דבר ועל תהליך העבודה על הספר. ואפשר יהיה לקנות ספרים ולקבל אותם חתומים ויהיה שמח באופן כללי. אתם יכולים גם להביא ספרים שלכם, זה בסדר, אתם לא חייבים לקנות שם. אז תבואו אם אתם רוצים עוד פרטים על זה, אז הכל בטח תוכלו למצוא ב-doronfishler.com או בעמוד הפייסבוק "דורון פישלר נגד העולם". ומה עוד? זהו, אני חושב שזהו, רק רציתי להסביר לכם את זה. "אני יכול להסביר". זה ספר, באמת. ביי.</p>
                 </div>
             </article>
             
