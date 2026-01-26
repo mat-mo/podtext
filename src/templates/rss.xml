@@ -11,8 +11,8 @@
     {% for episode in episodes %}
     <item>
         <title>{{ episode.title }}</title>
-        <link>{{ site.base_url }}/episodes/{{ episode.slug }}.html</link>
-        <guid>{{ site.base_url }}/episodes/{{ episode.slug }}.html</guid>
+        <link>{{ site.base_url }}/episodes/{{ episode.feed_slug }}/{{ episode.slug }}.html</link>
+        <guid>{{ site.base_url }}/episodes/{{ episode.feed_slug }}/{{ episode.slug }}.html</guid>
         <pubDate>{{ episode.published_date }}</pubDate>
         <description>Transcript for {{ episode.title }} from {{ episode.feed_name }}</description>
     </item>
