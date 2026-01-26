@@ -6,8 +6,102 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 23:45:00 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 23:50:34 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>מה השעה (ואיפה?) [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/the-answer/mh-hsh-h-vyph-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/mh-hsh-h-vyph-htshvbh.html</guid>
+        <pubDate>Mon, 27 Feb 2023 04:00:02 +0000</pubDate>
+        <description>Transcript for מה השעה (ואיפה?) [התשובה] from The Answer</description>
+        <content:encoded><![CDATA[
+            <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מה השעה (ואיפה?) [התשובה] - Podtext</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-link">Back to Episodes</a>
+            <h1>מה השעה (ואיפה?) [התשובה]</h1>
+            <p class="meta">Published on Mon, 27 Feb 2023 04:00:02 +0000</p>
+        </header>
+
+        <div class="player-container">
+            <audio id="audio-player" controls>
+                <source src="https://api.spreaker.com/download/episode/52854985/timezone_mst.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="transcript-container" id="transcript">
+            
+            <article class="paragraph speaker-">
+                <div class="paragraph-meta">
+                    <span class="speaker-name"></span>
+                    <span class="timestamp"></span>
+                </div>
+                <div class="content">
+                    <p></p>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const words = document.querySelectorAll('.word');
+        let currentWord = null;
+
+        function seekTo(time) {
+            audio.currentTime = time;
+            audio.play();
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const time = audio.currentTime;
+
+            // Simple optimization: only check around the current word or linear scan if lost
+            // For robustness, we'll just do a linear scan for now. 
+            // In a huge transcript, we might want a binary search or index.
+            
+            let found = false;
+            words.forEach(word => {
+                const start = parseFloat(word.dataset.start);
+                const end = parseFloat(word.dataset.end);
+
+                if (time >= start && time < end) {
+                    if (currentWord !== word) {
+                        if (currentWord) currentWord.classList.remove('active');
+                        word.classList.add('active');
+                        currentWord = word;
+                        
+                        // Auto-scroll logic
+                        const container = document.getElementById('transcript');
+                        const wordTop = word.offsetTop - container.offsetTop;
+                        // scroll if word is getting out of view
+                        container.scrollTop = wordTop - 100; 
+                    }
+                    found = true;
+                }
+            });
+
+            if (!found && currentWord) {
+                currentWord.classList.remove('active');
+                currentWord = null;
+            }
+        });
+    </script>
+</body>
+</html>
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>מי רצח את אדווין דרוד? חלק א' [התשובה]</title>
@@ -8869,590 +8963,6 @@
                 </div>
                 <div class="content">
                     <p></p>
-                </div>
-            </article>
-            
-        </div>
-    </div>
-
-    <script>
-        const audio = document.getElementById('audio-player');
-        const words = document.querySelectorAll('.word');
-        let currentWord = null;
-
-        function seekTo(time) {
-            audio.currentTime = time;
-            audio.play();
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            const time = audio.currentTime;
-
-            // Simple optimization: only check around the current word or linear scan if lost
-            // For robustness, we'll just do a linear scan for now. 
-            // In a huge transcript, we might want a binary search or index.
-            
-            let found = false;
-            words.forEach(word => {
-                const start = parseFloat(word.dataset.start);
-                const end = parseFloat(word.dataset.end);
-
-                if (time >= start && time < end) {
-                    if (currentWord !== word) {
-                        if (currentWord) currentWord.classList.remove('active');
-                        word.classList.add('active');
-                        currentWord = word;
-                        
-                        // Auto-scroll logic
-                        const container = document.getElementById('transcript');
-                        const wordTop = word.offsetTop - container.offsetTop;
-                        // scroll if word is getting out of view
-                        container.scrollTop = wordTop - 100; 
-                    }
-                    found = true;
-                }
-            });
-
-            if (!found && currentWord) {
-                currentWord.classList.remove('active');
-                currentWord = null;
-            }
-        });
-    </script>
-</body>
-</html>
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>מאיפה באים חדי קרן? [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/the-answer/myph-bym-khdy-qrn-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/myph-bym-khdy-qrn-htshvbh.html</guid>
-        <pubDate>Mon, 25 Dec 2023 12:29:23 +0000</pubDate>
-        <description>Transcript for מאיפה באים חדי קרן? [התשובה] from The Answer</description>
-        <content:encoded><![CDATA[
-            <!DOCTYPE html>
-<html lang="en" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מאיפה באים חדי קרן? [התשובה] - Podtext</title>
-    <link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="../../index.html" class="back-link">Back to Episodes</a>
-            <h1>מאיפה באים חדי קרן? [התשובה]</h1>
-            <p class="meta">Published on Mon, 25 Dec 2023 12:29:23 +0000</p>
-        </header>
-
-        <div class="player-container">
-            <audio id="audio-player" controls>
-                <source src="https://api.spreaker.com/download/episode/58114991/unicorn_mst.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <div class="transcript-container" id="transcript">
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">00:00</span>
-                </div>
-                <div class="content">
-                    <p>בכיתה א' יעל גילתה כוכב לכת חדש. אמיתי, כוכב לכת שלא היה מוכר עד אז מסביב לשמש אחרת. נמרוד בנה מכשיר שמתרגם את שפת העגבניות. ברצינות, הוא הקליט את הקולות שהעגבניות עושות, הן עושות קולות, כדי לדעת את כמות המים המדויקת שהן צריכות. שניהם למדו במרכז מדעני העתיד, אבל לא עליהם אני רוצה לדבר עכשיו אלא עליכם. אתם ספציפית, אתם שמאזינים עכשיו ולומדים בכיתה ז' או ח' או ט'. איזה מין אנשים אתם? איזה מין בני ובנות נוער מאזינים לפודקאסטים על מדע והיסטוריה וטכנולוגיה וכאלה דברים? אני מוכן לנחש - בני נוער סקרנים, כאלה שמתעניינים בדברים, כאלה שרוצים ללמוד דברים, לא רק את מה שלומדים בבית הספר, ואולי מסתכלים על העולם קצת אחרת ואולי מחפשים אתגרים קצת יותר מעניינים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">00:56</span>
-                </div>
-                <div class="content">
-                    <p>אז אם אי פעם הרגשתם שאתם קצת מחוץ למסגרת, זה הזמן להיכנס למסגרת שכן מתאימה לכם. קוראים לזה מרכז מדעני העתיד. שם יומרני, אני יודע, אבל צריך למכור את זה גם להורים שלכם. מה שזה אומר זה שאתם מגיעים למוסדות אקדמיים בארץ כדי ללמוד ברמה אקדמית כבר בזמן התיכון, לבצע מחקרים פורצי דרך, להשתלב במעבדות עם החוקרים הכי טובים בישראל ולהיות עם אנשים סקרנים כמוכם. כי לשנות את העולם זה כיף, אבל זה הרבה יותר כיף כשעושים את זה ביחד. ההרשמה היא לתלמידות ותלמידים בכיתות ז' עד ט' והיא פתוחה עכשיו. אז אם זה אתם, אם הפרסומת הזאת דיברה עליכם, תחפשו ברשת מרכז מדעני העתיד, ואם זה לא אתם, אז סליחה שהפרעתי. התוכניות הן מיזם משותף של מרכז מדעני העתיד ומשרד החינוך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">01:42</span>
-                </div>
-                <div class="content">
-                    <p>היי. אני לא עושה את זה בדרך כלל, אבל אני רוצה להקדיש את הפרק הזה לשני מאזינים. סרן איתן פיש ורס"ר אייל ברקוביץ'. שניהם היו מאזינים של התשובה ונפלו בקרבות בעזה בשבועות האחרונים. ויותר מזה למשפחות שלהם, בעיקר ריקי אמא של אייל וחיה אמא של איתן. אין שום דרך לעשות מעבר חלק בין זה לבין הפרק. אז זה לא יהיה חלק. אנחנו הולכים עכשיו לעשות עוד פתיחה ואחרי זה האסקפיזם הרגיל. היי, אני דורון, וזו התשובה. זה עוד אחד מהמקרים האלה של שאלה ששאלו אותי המון. ממש המון. אני לא יודע לספור כמה פעמים הגיעה שאלה בסגנון הזה. אני לא יכול אפילו להגיד את כל השמות של האנשים ששאלו את השאלה. כלומר, זה לא שאלה אחת, זה כמה שאלות. ככה: אנווה שאל מאיפה באים חדי קרן? ושמוליק שאל איך לפני כמה שנים פרץ לחיינו החד קרן מכל עבר כאימג' ממוסחר לעייפה? איך התווספו לו צבעי הקשת? ומירק מלכת חדי הקרן שלחה המון שאלות על חדי קרן ובאמת המון אנשים אחרים שאלו על חדי קרן. אם שאלתם אז זה אתם, זה בשבילכם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">03:30</span>
-                </div>
-                <div class="content">
-                    <p>יש המון חדי קרן בעולם היום. כלומר אין. אין חדי קרן בעולם, זאת חיה דמיונית. אבל זאת חיה דמיונית שנמצאת בכל מקום. נגיד את זה ככה, מבין החיות שלא קיימות, אני די בטוח שחד קרן היום הוא החיה השנייה הכי מפורסמת בעולם. החיה הדמיונית הכי מפורסמת בעולם זה דרקון. אבל מיד אחר כך מגיעים חדי קרן. יש פשוט כל כך הרבה מהם היום. וכשאני אומר היום, אני לא מתכוון לעידן המודרני, אני מתכוון ל-2020 וקצת. קרה משהו לחדי קרן בזמן האחרון שפתאום מדברים עליהם ומציירים אותם ושרים עליהם שירים יותר מאי פעם. פתאום משתמשים במילה הזאת 'יוניקורן' להמון דברים. בעסקים יש לזה משמעות, זאת חברת סטארט-אפ שווה במיוחד. כמובן יש אינסוף צעצועים ותמונות והכל לילדים של חדי קרן. ואני לא ממש מבין את זה. למה אנשים אוהבים לדמיין דרקונים? את זה אני מבין. כי דרקון זה מגניב. הוא ענק, הוא עף, הוא יורק אש, אין דברים כאלה במציאות, אבל צריכים להיות. אבל מה הקטע עם חד קרן? חד קרן זה סוס עם קרן. איפה הביג דיל בזה? יש המון חיות שיש להן קרניים. לעיזים יש שתי קרניים, שזה פי שניים יותר קרניים מחד קרן. ואני לא רואה המון ילדות מקשטות את החדר שלהן ואת התיק שלהן ואת המיטה שלהן בתמונות של עיזים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">05:01</span>
-                </div>
-                <div class="content">
-                    <p>זה נכון שבדרך כלל לרוב החיות יש מספר זוגי של קרניים, אז חיה עם קרן אחת זה דבר נדיר יחסית. אבל אם זה העניין, אם משום מה אתם חושבים שהמספר האידיאלי של קרניים שצריך להיות לחיה הוא אחת... קרנפים קיימים במציאות! ואני גם לא רואה המון קלסרים עם תמונות של קרנף מנצנץ. כאילו אם כבר חיות דמיוניות שמבוססות על סוסים, אז מה עם פגסוס? זה סוס עם כנפיים, אפשר לעוף עליו, זה מעולה. אני רוצה פגסוס. חדי קרן אפילו לא עפים, זה כולה סוס עם קרן. מה הסיפור? עכשיו אתם מכירים אותי, אני לא סתם שואל שאלות, אני מברר. כשיש לי שאלה שאני לא מבין, אני פונה למומחים בנושא. אז פניתי למומחית לחדי קרן. היי, איך קוראים לך?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דריה">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דריה</span>
-                    <span class="timestamp">06:05</span>
-                </div>
-                <div class="content">
-                    <p>דריה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">06:06</span>
-                </div>
-                <div class="content">
-                    <p>את אוהבת חדי קרן?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דריה">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דריה</span>
-                    <span class="timestamp">06:07</span>
-                </div>
-                <div class="content">
-                    <p>כן.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">06:08</span>
-                </div>
-                <div class="content">
-                    <p>וסוסים רגילים את אוהבת?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דריה">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דריה</span>
-                    <span class="timestamp">06:09</span>
-                </div>
-                <div class="content">
-                    <p>קצת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">06:15</span>
-                </div>
-                <div class="content">
-                    <p>אז מה בעצם ההבדל בין חד קרן לסוס רגיל?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דריה">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דריה</span>
-                    <span class="timestamp">06:17</span>
-                </div>
-                <div class="content">
-                    <p>שחדי קרן עושים קסמים וגורמים לפרחים לפרוח וסוסים לא עושים את זה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">06:30</span>
-                </div>
-                <div class="content">
-                    <p>אהה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דריה">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דריה</span>
-                    <span class="timestamp">06:31</span>
-                </div>
-                <div class="content">
-                    <p>יש עוד הבדלים. לחדי קרן יש קרן ולסוסים אין קרן.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">06:40</span>
-                </div>
-                <div class="content">
-                    <p>אז למה חדי קרן יותר טובים מסוסים רגילים?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דריה">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דריה</span>
-                    <span class="timestamp">06:44</span>
-                </div>
-                <div class="content">
-                    <p>בגלל שחדי קרן הם גם מתנהגים יותר טוב ולא בועטים, וגם בגלל שהם מרפאים דברים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">07:02</span>
-                </div>
-                <div class="content">
-                    <p>אוקיי, זאת הייתה תשובת המומחית לעניין. אז אוקיי, לדעתי יש פה שתי שאלות עיקריות. אחת היא מאיפה הגיעו חדי קרן פעם, והשנייה היא מה קרה שחדי קרן נהיו פתאום כל כך פופולריים היום. אלה השאלות, אבל לפני שאני עובר לתשובה יש לי טיפה אזהרה - אם אתם שומעים את זה עם ילדים קטנים, אני לא אומר שהפרק הזה מפחיד או משהו, אני רק אומר שבהיסטוריה של החד קרן לא הכל ורוד. לא הכל קשתות וחדי קרן, אוקיי? אני פשוט לא רוצה להרוס לאף אחד את הילדות, אז בכל זאת טיפה זהירות כאן. טוב, אז תכף תבוא התשובה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">07:56</span>
-                </div>
-                <div class="content">
-                    <p>לא כל מה שיש לו קרן אחת הוא חד קרן. זאת המסקנה הראשונה שהגעתי אליה כשניסיתי לחקור את ההיסטוריה של חדי קרן. כי תמיד מנסים למצוא את הראשון או הראשונה או הראשונים שציירו או סיפור על חדי קרן, וזאת תמיד בעיה למצוא את הראשון שעשה משהו כי לכו תדעו למה הכוונה בכלל. יש כל מיני אזכורים של ציורי מערות ותבליטים הודים עתיקים עם משהו שנראה כמו חיה שיש לה קרן אחת. וזה לא אומר כלום. קודם כל כי לכו תדעו למה הכוונה בכלל. כל חיה עם שתי קרניים כשמסתכלים עליה בפרופיל נראית כאילו יש לה קרן אחת. אז לא ברור אם זה אמור להיות ציור של חיה עם קרן אחת או עם שתי קרניים. ואפילו אם זה כן ציור של משהו עם קרן אחת, לא ברור אם זה משום שהצייר העתיק ניסה להעביר תמונה של חיה מיתולוגית עתיקה או שפשוט הוא שכח לצייר את הקרן השנייה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">09:03</span>
-                </div>
-                <div class="content">
-                    <p>וגם בכל מקרה, אם מישהו בסין באמת צייר משהו עם קרן אחת, אין שום סיבה לחשוב שיש לזה קשר לחד קרן שאנחנו מכירים. זה פשוט משהו אחר שיש לו קרן. האזכור הכי מוקדם למשהו שכנראה כן קשור לחד קרן שאנחנו מכירים אותו היום הוא אצל קטסיאס. המיתולוגיה היוונית היא מקור להרבה מהחיות הדמיוניות שאנחנו מכירים עד היום - פגסוס והידרה וקנטאורים, כולם הגיעו במקור מהמיתולוגיה של יוון העתיקה. חד קרן לא. חדי קרן לא מופיעים במיתולוגיה היוונית. היוונים הכירו חדי קרן אבל לא בתור חיה מיתולוגית. הם חשבו שהם קיימים באמת. כלומר הם חשבו שהחמור ההודי של קטסיאס קיים באמת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">09:59</span>
-                </div>
-                <div class="content">
-                    <p>קטסיאס היה יווני, אבל הוא חי בפרס. הוא היה רופא של מלך פרס במאה החמישית לפני הספירה שזה יוצא ממש מזמן. הוא כתב ספר על הודו. לספר קוראים 'אינדיקה' וזה ספר מעניין קודם כל בזה שזאת הפעם הראשונה שבה היוונים מכירים בזה שהודו קיימת. זאת אומרת זאת הפעם הראשונה שידוע עליה שבה יוונים שמעו על הודו, עד אז זה פשוט היה עולם אחר לגמרי, זה מקום כל כך רחוק שמכל הבחינות זה היה פשוט מנותק לחלוטין. וקטסיאס שחי באמצע הדרך כתב על הודו למרות שהיו לו קצת בעיות בנושא הזה. בין שאר הדברים שהוא כתב, הוא כתב שם על החמור ההודי. בהודו, הוא כתב, יש חמורים שהם גדולים יותר מסוס וגם מהירים יותר מסוס. אף אחד לא יכול להשיג אותם בריצה. החמור ההודי הוא כולו לבן אבל הראש שלו אדום, ויש לו קרן אחת באמצע המצח. הקרן הזאת היא לבנה בחלק התחתון שלה, היא שחורה באמצע והקצה שלה אדום.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">11:19</span>
-                </div>
-                <div class="content">
-                    <p>ואם תצליחו להשיג קרן של חמור הודי, שזה לא פשוט כי מאוד מאוד קשה לצוד אותם, אז זה מאוד שימושי משום שאפשר להכין ממנה ספל שכל מי שישתה ממנו יהיה חסין מפני רעל. זה מה שקטסיאס כתב על החמור ההודי. מנגד, אנשים שהיו בהודו אומרים שלא. לא, לא קיים חמור לבן עם ראש אדום וקרן צבעונית שמרפאת רעל, אין דבר כזה, אין שום דבר שדומה לזה. על מה אתה מדבר? עכשיו בנקודה הזאת יש דבר שחשוב לציין בקשר לקטסיאס ולספר שלו, וזה שקטסיאס דיבר שטויות. הוא כתב ספר על הודו אבל הוא אף פעם לא היה בהודו. הוא לא הגיע אפילו קרוב אליה. הוא פגש אנשים שהיו שם או לפחות פגש אנשים שפגשו אנשים שהיו בהודו. ואת הספר שלו הוא כתב רק שנים אחרי זה אחרי שהוא חזר ליוון. כלומר הספר הזה מורכב מזיכרונות של דיווחים על שמועות ולכן לא פלא שהוא מאוד מאוד לא מדויק. הוא כולל הרבה דברים שדי ברור שהם שטויות. יש בו דברים שהם נכונים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">12:31</span>
-                </div>
-                <div class="content">
-                    <p>כלומר כתוב שבהודו יש הרים ענקיים יותר ממה שהיוונים ראו אי פעם, זה נכון. כתוב שם שיש אנשים שמאלפים ציפורים דורסות שיצודו בשבילם, זה נכון. כתוב שיש שם ציפורים צבעוניות, תוכים, שיודעים לדבר כמו בן אדם - זה נשמע מופרך אבל זה נכון. כתוב שיש שם מרטיקורה שזו חיה שדומה לאריה אבל עם פרצוף של בן אדם ועוקץ של עקרב - זה לא נכון. סביר להניח שקטסיאס שמע הרבה שמועות ואגדות ולא ממש ידע להבדיל בין משהו אגדה למשהו נכון. וגם הדברים הנכונים שהוא שמע, לפעמים פשוט הם עברו כזה טלפון שבור עד שהם הגיעו אליו שהם לא היו כל כך קרובים למה שהם היו במקור. אז כשהוא מדבר על חמור הודי עם קרן אחת, יש תיאוריה שאומרת שמה שהוא בעצם מתאר, כלומר מה שהיה בתחילת הטלפון השבור הזה - זה קרנף.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">13:35</span>
-                </div>
-                <div class="content">
-                    <p>כלומר מישהו היה בהודו וראה קרנף, וסיפר על זה למישהו שאף פעם לא ראה קרנף, שסיפר על זה למישהו אחר שאף פעם לא שמע על קרנף, שסיפר על זה למישהו שסיפר על זה למישהו אחר ובדרך הוא פשוט הפך לחמור עם קרן במצח. עכשיו למה לקרן בסיפור יש את הצבעים המוזרים האלה, לבן ושחור ואדום? אולי משום שמישהו בדרך ראה באמת ספל שעשוי מקרן של קרנף שהיה צבוע בצורה כזאת, אז הוא פשוט הניח שאלה הצבעים המקוריים של החיה. אולי. עכשיו כבר אז הרבה אנשים לא התייחסו לספר הזה בתור עובדה. הרבה אנשים פקפקו בדברים שכתובים בו ובצדק. אבל מבין כל הדיווחים בספר חמור עם קרן נשמע כמו אחד הפחות מופרכים. אם מישהו מספר לכם שהוא ראה ציפור גדולה צבעונית שיודעת לדבר וגם חמור עם קרן, מה משניהם נשמע לכם יותר מופרך? אז יוונים שקראו את הספר הזה, כולל אריסטו שאולי שמעתם עליו, הם לא חשבו שהחמור ההודי הוא חיה דמיונית, הם חשבו שהוא חיה אמיתית שחיה רחוק, בהודו.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">14:48</span>
-                </div>
-                <div class="content">
-                    <p>אוקיי, אבל זה שיש ספר מסוים שבו מוזכרת חיה שדומה לחד קרן ועוד הרבה מאוד שטויות אחרות, איך מכאן הגענו לזה שחד קרן זה דבר כל כך נפוץ שכולם מכירים? אז זהו שזה לא הספר היחיד שבו הוזכרו חדי קרן, וככל הנראה אחד הדברים שבטח עזרו להפיץ את השמועה הזאת זה שהוא מוזכר בספר אחר יותר פופולרי - התנ"ך. יש חדי קרן בתנ"ך. עכשיו אתם בהחלט יכולים להגיד 'אני קראתי את התנ"ך ולא, לא היו שם חדי קרן'. זה נכון, אבל זה פשוט משום שאתם קראתם אותו בעברית. עכשיו תקשיבו לזה: "God brought them out of Egypt; he hath as it were the strength of a unicorn." אוקיי, שמעתם את זה? "The strength of a unicorn". זה נשמע כאילו הוא מצטט את נועה קירל, אבל לא, זה אשכרה פסוק מהתנ"ך. זה מבמדבר כ"ג והמשפט בעברית הוא "אל מוציאם ממצרים כתועפות ראם לו".</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">16:03</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו תראו, תרגום זה קשה. אפילו לתרגם את התנ"ך מעברית לעברית של היום זה לא קל. למשל בפסוק הזה מוזכרת חיה שקוראים לה ראם. אבל למה הכוונה בעצם בראם? יש חיה שקוראים לה ראם, סוג של אנטילופה עם קרניים ישרות, שתיים. אבל רוב החוקרים חושבים כשבמקרא כתוב ראם הם לא מתכוונים לראם הזה. מה שהם מתכוונים אליו זה שור הבר. שזאת חיה שנכחדה בינתיים, פשוט לא קיימת היום. שזה כמו פרה רק יותר. זה מין של פרות שלא בויתו, זה פר שהגיע למטר שמונים גובה והיום הם כבר פשוט לא בסביבה. אז אם אנחנו שמבינים עברית לא לגמרי בטוחים מה זה ראם, אז בטח שמי שתרגם את התנ"ך לשפה אחרת לא בטוח לגמרי מה זה ראם. אז תרגום השבעים, זה התרגום של התנ"ך ליוונית שהוא מבחינת הנוצרים הוא הטקסט הקדוש, זה התנ"ך האמיתי המקורי מבחינתם. אבל זה תרגום, והוא לא מושלם. ומשום מה בתרגום הזה המילה ראם מתורגמת ל-'monokeros'. מה זה monokeros? מונו זה אחד, קרוס זה קרן. כלומר חיה עם קרן אחת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">17:36</span>
-                </div>
-                <div class="content">
-                    <p>למה הם החליטו שראם זה דווקא חיה עם קרן אחת? אני לא יודע. אבל אם תצפו בנטפליקס עשר דקות במשהו עם תרגום לעברית בטוח תיתקלו בטעויות תרגום גרועות יותר. אז תרגומים אחרים של התנ"ך לשפות אחרות הסתמכו על התרגום הזה, וככה monokeros תורגם ללטינית בתור 'unicornis' ולאנגלית בתור 'unicorn' - חד קרן. כלומר יש הרבה גרסאות של התנ"ך באנגלית שאנשים קוראים עד היום, כולל תרגום המלך ג'יימס שהוא מבחינת הרבה מאוד נוצרים התנ"ך הרשמי והאמיתי באנגלית, שבהם מוזכרים חדי קרן. ולאלוהים יש את 'The power of a unicorn'. וזה התנ"ך. אתם לא יכולים להתווכח איתו. כלומר בעיני מאמינים זו לא שאלה של האם חדי קרן קיימים או לא, יש חדי קרן, הם מוזכרים בתנ"ך, אז זאת עובדה. אז סיכמנו שחדי קרן קיימים, אבל מה איתם? איפה הם ומה הם עושים?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">18:43</span>
-                </div>
-                <div class="content">
-                    <p>אז ככה, יש ספר אחר שקוראים לו 'פיזיולוגוס' שפורסם בפעם הראשונה כנראה מתישהו בשנת מאה וקצת, והוא מין אנציקלופדיה של חיות לאנשים מאוד מאוד נוצרים. יש בו רשימה מאוד ארוכה של חיות עם סיפורים עליהן ועל התכונות שלהן, ולמה כל אחת מהן בעצם דומה לג'יזס ומה אנחנו יכולים ללמוד מזה, מה מוסר ההשכל. עכשיו זה לא ספר על חיות דמיוניות. יש שם פרקים על השועל והנשר והדוכיפת והצפע והפיל והחד קרן. מה שכנראה מראה שאנשים לא התייחסו אז לחד קרן בתור חיה דמיונית אלא בתור חיה. ונכון שסביר שמחבר הספר הזה, מי שזה לא יהיה, לא ראה אף פעם חד קרן, אבל כמעט באותה מידה סביר שהוא לא ראה אף פעם פיל כי הוא לא חי באפריקה. באותו זמן הרבה חיות היו שמועה אז קשה מאוד להבדיל בין חיות שקיימות אבל רחוק וכאלה שלא קיימות בכלל.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">19:53</span>
-                </div>
-                <div class="content">
-                    <p>בכל אופן התיאור של החד קרן בספר הזה אומר שחד קרן הוא קטן כמו גדי, הוא מאוד זריז, יש לו קרן אחת כמובן, ושום צייד לא יכול לתפוס אותו. אבל אפשר לתפוס אותו בעזרת השיטה הבאה: צריכה נערה תמה שתצא לבד אל היער, והחד קרן רואה נערה צעירה ותמה ומיד קופץ עליה ומתיישב בחיקה ומתחבק ומתכרבל, ואז הציידים יכולים לקפוץ מאחורי העצים ולהרוג אותו. וזאת אלגוריה לישו. כי גם הוא אוהב עלמות צעירות... לא, כי תמימות וטוהר או משהו, הכל אצלם אלגוריה לישו באיזושהי צורה. בכל אופן אז זאת הפעם הראשונה שהרעיון הזה מוזכר בכתב, אבל הוא כנראה היה כבר מוכר והוא נשאר כזה לאורך כל ימי הביניים, לאורך יותר מ-1,500 שנה חוזר הקטע הזה שהדרך היחידה לתפוס חד קרן הוא באמצעות נערת פיתוי. כלומר נערה בתולה צעירה יושבת ביער, החד קרן מתקרב אליה ואז נקפוץ עליו ונהרוג אותו. ויש המון ציורים מימי הביניים של אישה עם חד קרן שמניח עליה את הראש ומישהו דוקר אותו מאחור.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">21:11</span>
-                </div>
-                <div class="content">
-                    <p>יש ויש אפילו ספר אחד שמספר שהאופן שבו הציידים האתיופים צדים חדי קרן זה לקחת גבר צעיר, להלביש אותו בשמלה, לשים עליו קצת בושם ואז החד קרן חושב שהוא בחורה ומגיע אליו. וכאילו אתם יודעים שנשים אמיתיות קיימות בעולם, כן? למה אתם צריכים לטרוח עם הקרוס-דרסינג, אח שלי? עם מה שעושה לך טוב זה לטייל ביער בשמלה, זה בסדר. אתה לא צריך תירוץ כמו 'אני צד חדי קרן'. זה בסדר. בכל אופן למה להרוג את החד קרן? מי הורג חדי קרן? מה זו ההתעללות הזאת בבעלי חיים? אז ככה, בשביל הבריאות. כי חדי קרן זה טוב לבריאות. בעיקר הקרן של החד קרן כי אפשר לרפא איתה רעל, לטחון אותה לאבקה או לעשות ממנה ספלים. הרעיון הזה הופיע עוד אצל החמור ההודי של קטסיאס ובגלל זה אפשר להניח שהחד קרן החדש הזה הוא איזשהו גלגול של אותה חיה, זאת אומרת זה אותו מיתוס שפשוט השתנה קצת מאז. עכשיו אין לו ראש אדום. יש גם שימושים רפואיים אחרים לחד קרן, למשל הנזירה הילדגארד הקדושה מבינגן שהיא אישה מאוד מעניינת שהייתה גם רופאה וסופרת ומלחינה והמון דברים, והיא נחשבת לאחד מבני האדם המשכילים ביותר של התקופה - התקופה היא המאה ה-12. אז היא כתבה בספר רפואה שאפשר לרפא צרעת באמצעות שילוב של כבד של חד קרן וחלמון ביצה. ואני יודע בדיוק מה אתם חושבים... מה אם בדיוק אין לי חלמון ביצה? אולי נגמר לי, מאיפה אני אשיג עכשיו חלמון ביצה?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">23:02</span>
-                </div>
-                <div class="content">
-                    <p>אז שוב, חד קרן בשלב הזה הוא לא חיה דמיונית. הוא חיה מאוד נדירה שהרבה אנשים בטוחים שהיא קיימת ויש להם הוכחות. א', זה כתוב בתנ"ך, וב', את החומרים הרפואיים האלה אפשר להשיג. אתם רוצים אבקת חד קרן נגד רעל? יש מי שימכור לכם אותה. או אפילו קרניים שלמות של חד קרן. זה יקר, שיהיה ברור. זה מאוד יקר. רק מלכים ורוזנים ואנשים מאוד מאוד עשירים יכולים להרשות את זה לעצמם כי זה מאוד מאוד נדיר, אבל זה קיים. יש אוספים של מלכים שכוללים קרניים של חד קרן. כס המלכות של דנמרק, הוא קיים עד היום, זה כיסא שעשוי מחומר לבן שהוא - ככה אומרים - קרניים של חד קרן. כלומר מישהו בעולם עשה הרבה כסף מלמכור קרניים של חד קרן. אלה לא באמת היו קרניים של חד קרן כי אין. לגבי הרבה מהדברים האלה התברר שמה שזה היה באמת זה חט של חדשן, כלומר נרוואל, כלומר הלווייתן המוזר הזה שיש לו שן אחת שבולטת קדימה שזה בייסיקלי חד קרן ימי רק שהוא קיים באמת. השן הזאת של החדשן היא יפה והיא ארוכה וישרה ומסולסלת, ספירלית כזאת, כלומר בדיוק איך שנהוג לצייר היום קרן של חד קרן. עכשיו אני מניח שגם לתפוס חדשן זה לא כל כך קל, אבל זה יותר קל מלתפוס חד קרן. ואחר כך למכור את השן שלו בהמון המון כסף בתור קרן של חד קרן, זה כבר סטארט-אפ.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">24:52</span>
-                </div>
-                <div class="content">
-                    <p>אז הרבה הרבה שנים עברו, בסופו של דבר ההבנה המדעית הייתה קצת יותר טובה ומאפשרת להבדיל בין מה שקיים באמת ומה שלא, ואם זה חלחלה בהדרגה קרה בזה שחד קרן זה לא סתם חיה מאוד מאוד נדירה, זאת חיה שלא באמת קיימת. עכשיו זה לא סיבה להפסיק לספר עליו סיפורים ולצייר עליו ציורים. אז עדיין אפשר היה למצוא הרבה מאוד ציורים של נערות ביער מפנקות חד קרן רק בלי הקטע שהורגים אותו בסוף, ככה שזה שיפור. עדיין חד קרן היה סמל לנדירות, סמל לטוהר והוא דבר מאוד יפה. זה שהוא לא קיים זה לא סיבה להפסיק להתייחס אליו. אז נכון למאה ה-20, אף אחד לא חושב כבר שחדי קרן קיימים במציאות, זה מיתוס, אבל זה מיתוס מגניב. אבל אז משהו קרה. ממש עכשיו, במאה ה-21. משהו מוזר קרה לחדי קרן בזמן האחרון.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">25:53</span>
-                </div>
-                <div class="content">
-                    <p>קודם כל הם התרבו. אף פעם בהיסטוריה לא דיברו על חדי קרן והציגו חדי קרן וציירו חדי קרן יותר מעכשיו. עד לא מזמן היה אפשר לחיות חיים שלמים בלי להיתקל בחדי קרן, ועכשיו הם בכל מקום. ככה נדמה לי לפחות. אבל אולי זה רק נדמה לי. איך אפשר למדוד את הדבר הזה? אז בדקתי. בדקתי בספרייה הלאומית של סקוטלנד. קודם כל הם אמורים להבין בחדי קרן כי חד קרן הוא החיה הלאומית של סקוטלנד והוא מופיע בסמל של סקוטלנד. אבל חוץ מזה יש להם מסד נתונים על כל ספר שהופיע בבריטניה אי פעם בערך. אז אני חיפשתי ספרים שבשם שלהם מופיעה המילה חד קרן, 'Unicorn'. אז ככה: בעשור שמ-1990 עד 1999 יצאו 71 ספרים כאלה. בעשור הבא, שבין 2000 ל-2009 היו 91 ספרים כאלה, קצת יותר. ובעשור הבא אחריו היו 246. זה לא קצת יותר, זה כמעט פי שלושה. והעשור שאחרי זה, זה שמתחיל ב-2020, הוא לא נגמר עוד, לא הגענו לחצי שלו וכבר מספר הספרים של חדי הקרן כמעט עקף את העשור הקודם. יש הרבה הרבה הרבה יותר ספרים על חד קרן היום משהיו אפילו לפני 20 שנה. איך זה? למה?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">27:38</span>
-                </div>
-                <div class="content">
-                    <p>את זה קל מאוד להבין אם מסתכלים פשוט על איזה מין ספרים אלה. כי הספרים על חדי קרן שפורסמו בעשור וקצת האחרון הם ספרי ילדים. הרבה פעמים ספרי פעוטות. יש שם 'חד קרן מגיע לארוחת בוקר' ו'אקדמיית חדי הקרן' ו'אני רוצה חד קרן ליום הולדת' והמון המון המון כאלה. כי אתם יודעים, ילדים אוהבים חדי קרן. ילדות אוהבות חדי קרן. יש המון המון מוצרים של חדי קרן שמיועדים לילדים. אבל אני הייתי ילד וזה לא היה ככה אצלי. אני לא בטוח שלכל אורך הילדות שלי ראיתי מספר דו ספרתי של ספרים עם חדי קרן. וזה לא רק הכמות של החדי קרן שהשתנתה בפתאומיות, גם החיה עצמה השתנתה. תראו, אני אשאל שוב את המומחית. דריה, מה הצבע של חד קרן?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דריה">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דריה</span>
-                    <span class="timestamp">28:44</span>
-                </div>
-                <div class="content">
-                    <p>חד קרן הוא עם שיער צבעוני ויש לו קרן בכל הצבעים של הקשת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">28:57</span>
-                </div>
-                <div class="content">
-                    <p>ומה הצבע של החד קרן עצמו?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דריה">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דריה</span>
-                    <span class="timestamp">28:59</span>
-                </div>
-                <div class="content">
-                    <p>לפעמים לבן ולפעמים ורוד.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">29:03</span>
-                </div>
-                <div class="content">
-                    <p>נכון. כמובן שדריה צודקת. ככה נראה היום חד קרן. תסתכלו בכל הצעצועים וכל התיקים וכל הדברים לילדים. חדי קרן הם קטנים, הם חמודים, הצבע שלהם לעיתים קרובות ורוד ולפעמים אפילו סגול או טורקיז פסטלי, ובמקרים רבים יש להם רעמת שיער וזנב בכל צבעי הקשת. זה לא החד קרן שהיה עד היום. החד קרן הקלאסי הוא לבן, השיער שלו לבן. וגם בצעצועים ובפוסטרים שהיו עד לא מזמן, הם היו לבנים. והם גדולים, זה לא פוני, זה סוס גדול. יש סרט שקוראים לו 'Dodgeball', שזאת קומדיה די בינונית משנת 2004. יש שם קטע קטן ולא מאוד קשור לעלילה שבו רואים את הבית של הגיבורה שהיא מתברר חובבת חדי קרן. כל הבית שלה מלא לגמרי בתמונות ופסלים של חדי קרן. אפשר להניח שמעצבת התפאורה של הסרט קיבלה תקציב והוראה פשוט לקנות את כל חדי הקרן שהיא מוצאת לסצנה הזאת. וחדי הקרן אלה כולם לבנים. אף אחד מהם לא ורוד. לאף אחד מהם אין רעמה בצבעי הקשת. וזה לא סרט עתיק, זה סרט מ-2004. כלומר תוך פחות מ-20 שנה הצבע של החד קרן השתנה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">30:29</span>
-                </div>
-                <div class="content">
-                    <p>איך זה קרה? זה קצת מפתיע, אבל יותר קשה לענות על השאלה הזאת מאשר על מאיפה הגיעו חדי הקרן המיתולוגיים. כי חוקרי תרבות ומיתולוגיה יש. אני יכול בקלות למצוא ספרים ומחקרים על תולדות חדי הקרן ועל קטסיאס ותרבות ימי הביניים וכל זה. אבל על המיתולוגיה של עכשיו הרבה יותר קשה. מצאתי המון המון ספרים קטנים לילדים עם ציורים חמודים של חדי קרן, אבל לא מצאתי הסבר מדעי מלומד על מה קרה בעצם שתוך 20 שנה התדמית של מה זה חד קרן השתנתה יותר משהיא השתנתה ב-2,000 השנה שלפני כן. כאילו אם היה יוצא איזה סרט אחד שהיה להיט ענק עם חדי קרן צבעוניים אז היה ברור, אבל לא קרה דבר כזה. ככל שאני מצליח לראות זה לא דבר אחד שקרה, זה תהליך. בקנה מידה היסטורי זה קרה נורא מהר, אבל כשמסתכלים מקרוב זה לקח זמן. חדי קרן קטנים וורודים וחמודים, כלומר לא לבנים ומפוארים, הם התחילו לבצבץ בשנות ה-80 והם לאט לאט כבשו יותר ויותר שטח עד שהם הגיעו לאיזו מסה קריטית איפשהו באזור 2010 ופשוט כבשו את העולם. עד כדי כך שהיום כשמדברים על טרנד חד הקרן או אוכל חד קרן, לא צריך אפילו שיהיה בו חד קרן. אם זה תמים ומתוק וצבוע בכל צבעי הקשת ויש בזה נצנצים, אז זה בסגנון חד קרן. פעם חד קרן סימל טוהר ותום, היום הוא פשוט סמל של ילדותיות קיצונית וחמידות בלתי מתפשרת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">32:14</span>
-                </div>
-                <div class="content">
-                    <p>אז בכל זאת, מה? מאיפה העסק הזה הגיע? אני לא יכול להגיד את זה בוודאות, אבל אם צריך להצביע על דבר אחד ששינה את החד קרן זה כנראה 'הפוני הקטן שלי'. הפוני הקטן שלי, אתם יודעים מה זה, נכון? אבל לטובת מאזיני ה'מתחת לאבן', הפוני הקטן שלי זאת סדרה, או בעצם זה לא סדרה אחת כי זה מותג, כי היו כבר כמה סדרות טלוויזיה וסרטים. וזה מאוד פופולרי אצל ילדים ואצל מספר מפתיע של מבוגרים. והגיבורים שלו הם פונים, סוסים קטנים. ומכיוון שזאת סדרה שקהל היעד שלה הוא ילדים בני חמש ומעלה, אז הכל מאוד מאוד צבעוני ופסטלי וחמוד וקטן. עכשיו חלק מהפונים בהפוני הקטן שלי הם חדי קרן, אבל לא כולם. ולא לכולם יש שיער בצבעי הקשת. ויש הרבה מאוד ילדים וילדות שאוהבים חדי קרן אבל לא בהכרח צופים בכלל בהפוני הקטן שלי. אבל כן, הפונים האלה בהחלט נראים יותר כמו המודל של חד קרן כמו שהוא קיים היום.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">33:33</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו הפוני הקטן שלי זה מותג. כלומר זה סימן רשום ששייך לחברה, חברת הסברו במקרה הזה. והיום, אם תאהבו את זה או לא, רוב המיתולוגיות, רוב סיפורי הילדים שלנו הם ממוסחרים. כלומר ילדים אוהבים את אלזה או את מארוול או את המיניונים או את בובספוג או את מיקי מאוס, וכולם הם מותגים ששייכים לחברות מסוימות. אתם צריכים רישיון מדיסני ולשלם לדיסני כדי למכור דברים עם ציורים של מיקי מאוס. עכשיו הפוני הקטן שלי, כן זה מותג ששייך לתאגיד. אבל המילה חד קרן לא שייכת לאף אחד. אף אחד לא יכול לדרוש מכם כסף על זה שאתם מציירים חד קרן. אז יכול להיות שחלק מהטרנד של חדי הקרן החדשים והצבעוניים והפלאפיים האלה זה בעצם אופ-ברנד של הפוני הקטן שלי. כלומר כאלה שרצו למכור משהו שנראה כמו הפוני הקטן אבל בלי לקרוא לזה הפוני הקטן, אז אפשר פשוט לקרוא לזה חד קרן.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">34:33</span>
-                </div>
-                <div class="content">
-                    <p>בכלל, אם מצביעים על משהו פופולרי שנראית את החד קרן הקטן והצבעוני, זה כנראה זה. אז מאיפה זה התחיל? סדרת הטלוויזיה הראשונה של הפוני הקטן שלי יצאה בשנות ה-80, כן זה היה די מזמן, את עיקר הפופולריות הם קיבלו יותר מאוחר, אבל כן, כבר אז הייתה סדרה כזאת. וכמו הרבה מאוד דברים שיצאו אז, היא הייתה פרסומת. כי עוד לפני שהפוני הקטן שלי הייתה סדרת טלוויזיה, היא הייתה ליין של צעצועים. כי ככה הדברים האלה עובדים, במקרה שלא ידעתם - זה לא שיש סדרת טלוויזיה ואז אם היא מצליחה אז מייצרים צעצועים לפי הסדרה, אלא בדיוק להפך - חברות צעצועים מייצרות ליין של צעצועים ואז מפיקות סדרת טלוויזיה מצוירת כדי למכור את הצעצועים האלה, זאת אומרת הסדרה היא פרסומת לצעצועים. אז להסברו הייתה סדרת משחקים לבנים שזה הרובוטריקים, והיה להם את הצעצועים לבנות שזה הפוני הקטן שלי שזה דרך אגב הסיבה שלסדרה הזאת יש שם כזה מוזר. מה זה הפוני הקטן שלי? מי זה שלי? מי אני? מי הבעלים של כל הפונים האלה? אין אחד כזה בסדרה. פשוט לצעצוע קראו הפוני הקטן שלי, שזה שם הגיוני לצעצוע.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">35:45</span>
-                </div>
-                <div class="content">
-                    <p>אז בליין של הצעצוע המקורי משנות ה-80 יש הרבה פונים חמודים, חלקם עם קרן חלק לא, וישנה מיני סדרה בתוך הסדרה הזאת שקוראים לה ה-'Rainbow Ponies', הפונים של הקשת. יש שישה כאלה והייחוד שלהם זה שלהם יש רעמה וזנב בכל צבעי הקשת. שניים מהם הם פשוט פונים, לשניים מהם יש כנפיים, כלומר פגסוסים, ויש שניים - 'Windy' ו-'Moonstone' שהם חדי קרן. מונסטון היא בצבע תכלת, ווינדי היא בצבע ורוד. כלומר חד קרן ורודה קטנה חמודה עם רעמה וזנב בצבעים של הקשת וקרן מסולסלת. כלומר ווינדי נראית כמו המודל של חד קרן היום. היא הגיעה עם מסרק ומברשת והיא יצאה ב-1983. בצד האחורי של האריזה שלה יש סיפור עליה והוא מתחיל ככה: 'זה היה יום מיוחד מאוד לווינדי המהירה מכל פוני הקשת. היא הייתה הזוכה במרוץ הקשת השנתי שנערך בטירת החלומות. לכבודה מג'סטי הזמינה את כולם למסיבת גלידה בחצר המלכותית'. זה כל כך חד קרן הדבר הזה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">37:18</span>
-                </div>
-                <div class="content">
-                    <p>אז אין לי, אני לא יכול להיות בטוח בזה לגמרי כי אין לי מאגר של כל צעצוע שיצא אי פעם, אבל ככל שידוע לי זה המקרה הכי מוקדם שיש של חד קרן שמתאים לתיאור של דריה, כלומר חד קרן כמו היום. אז אני הייתי מוכן להכריז שהפוני הקטן שלי וספציפית ווינדי, זה מה ששינה את חדי הקרן. אבל אז ראיתי עוד משהו מפתיע - ראיתי את פנטזיה. פנטזיה זה הסרט הקלאסי של דיסני משנת 1940 וזה אם אתם שואלים אותי, זה הסרט הכי מדהים שדיסני עשו אי פעם. הוא ארוך, הוא מורכב מהרבה קטעים שונים שהם קליפים של יצירות קלאסיות, ובין השאר יש שם קטע שמבוסס על הסימפוניה הפסטורלית של בטהובן. זה קטע שמתרחש על האולימפוס עם המון דמויות מהמיתולוגיה היוונית - אז יש שם קנטאורים וזאוס שם שהוא זורק ברקים ויש שם פאונים ופגסוסים וחדי קרן. קטנים, עגלגלים, עם צבעי פסטל. חלק לבנים חלק ורדרדים חלק תכלת, ויש להם רעמות צמריריות והם מופיעים בקטע הזה למשך בערך שלוש דקות ואז נעלמים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">38:37</span>
-                </div>
-                <div class="content">
-                    <p>קודם כל למה הם שם בכלל? זה קטע שמבוסס על המיתולוגיה היוונית. אין חדי קרן במיתולוגיה היוונית. פגסוסים כן, פאונים כן, קנטאורים כן. חדי קרן לא. הם לא מגיעים משם. אז למה דיסני הכניסו אותם לשם? כי הם רצו חדי קרן, אני לא יודע. אבל חוץ מזה הם נראים כמו חדי קרן מודרניים. הם צבעוניים, הם קטנים, יש להם עיניים גדולות. וזה מפתיע כי כשיעשו את הסרט הזה חדי קרן לא נראו ככה. הם היו לבנים וגדולים. החדי קרן האלה הקדימו את זמנם באיזה 60 שנה. אין להם שיער בצבעי הקשת, כן? אבל חוץ מזה הם נראים כמו החדי קרן של פוני קטן. אי אפשר להכחיש את הדמיון הזה ומכיוון שלא קיים אנימטור בעולם שלא ראה סרטים קלאסיים של דיסני, אז אני חושב שיש מקום לשער שהעיצוב של הפונים והחדי קרן בפוני קטן 40 שנה מאוחר יותר הושפע שלא להגיד הועתק מפנטזיה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">39:39</span>
-                </div>
-                <div class="content">
-                    <p>אז אוקיי, למה הטרנד הזה של חדי הקרן הקטנים והצבעוניים לא התחיל כבר אז ב-1940? כנראה שזה משום שפנטזיה הוא פשוט סרט מאוד מאוד מוזר שעדיף לא לראות עם ילדים בני חמש. כי כן, יש לו את הקטע החמוד מאוד הזה עם כל היצורים הפסטליים הצבעוניים, ורגע אחר כך מגיע הקטע שבו השטן עושה בתוך הר געש מסיבה לכל השדים והרוחות וזה מפחיד רצח. פנטזיה זה פשוט לא סרט לילדים. אז קשה להאשים את דיסני שהם לא ידעו למסחר דברים. הם דיסני, הם יודעים למסחר, אבל מתברר שהם פספסו את הפוטנציאל המסחרי האדיר שהיה לכמה חדי קרן שמופיעים בסרט אחד למשך כמה דקות. אבל עשרות שנים מאוחר יותר החדי קרן האלה כן הופצו בכל העולם. אז מתברר שמי שאחראים לתפוצה של חדי קרן בעולם הם בעצם אותם אנשים שמילאו אותו גם בנסיכות ובנות ים ופיות - דיסני אשמים גם בזה. אז מה הייתה השאלה? מאיפה באים חדי קרן? אז זה הולך בערך ככה: פעם היה קרנף, שבגלל קצר בתקשורת הפך לחמור הודי עם ראש אדום, שהפך לסוס לבן גדול ונדיר עם קרן שמרפאת רעל, שהפך לפוני קטן ורוד עם שיער בצבעי הקשת שמתנהג יפה. זאת התשובה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">41:23</span>
-                </div>
-                <div class="content">
-                    <p>טוב, הפסקה קטנה ומיד אחר כך עוד קצת על המחקר המדעי בנוגע לחדי קרן. אחד הנושאים הכי מרתקים ומוזרים לקרוא עליהם זה הוויכוחים בקהילה המדעית, נקרא לזה, בקשר לחדי קרן. כי היו הרבה מומחים, הרבה אנשים כתבו על זה ואנשים שהתווכחו אחד עם השני בנושא הזה. המידע הזה מגיע מהספר 'The Lore of the Unicorn' של אודל שפרד מ-1930, וזה היה מרתק באופן מוזר לקרוא על הוויכוחים בין אנשים על דברים שלא צריך להידפק עליהם כי הם לא קיימים באמת. למשל, הדיון בנושא מה הצבע של קרן של חד קרן. אני מדבר על המאה ה-15 וה-16, ובאותו זמן כבר אמרתי היו המון ציורים של חדי קרן, בדרך כלל עם נערה ביער, ואמרתי היה מקובל אז שחד קרן הוא לבן. הוא כולו לבן גם הקרן שלו לבנה. אבל זה היה רק מיתוס. רק בורים שלא באמת מכירים את החומר המדעי חושבים שהקרן של חד קרן היא לבנה. איזה מצחיקים האנשים האלה, הם בטח אפילו לא ראו באמת חד קרן.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">42:50</span>
-                </div>
-                <div class="content">
-                    <p>המומחים המלומדים שקראו את כתבי הידענים היווניים העתיקים, הם ידעו שהקרן של חד קרן היא בעצם שחורה, או שחורה באמצע ואדומה בקצה. איך הם ידעו? כי זה היה כתוב בספר. קטסיאס ואליאנוס ופליניוס, הם היו יוונים והם היו חכמים. אז מה שהם כתבו זה בטוח נכון ולכן אנחנו יודעים שלמעשה במציאות הקרן של חד קרן היא שחורה. אנדרה באצ'י היה מלומד איטלקי מהמאה ה-16 והוא פרסם ספר על חדי קרן ותכונותיהם, שזה דבר מדהים בפני עצמו. אבל הוא נקלע לדילמה מאוד קשה בעניין הצבע של הקרן של חד קרן פשוט לפטרון שלו, כלומר האיש העשיר שמימן אותו, קראו דון פרנצ'סקו דה מדיצ'י, והוא היה כזה עשיר שהייתה לו בבית קרן של חד קרן. והיא הייתה לבנה. אבל מצד שני הרי ידוע שקרניים של חד קרן הן שחורות כי זה מה שחכמינו היוונים זיכרונם לברכה כתבו. אז נכון, אבל חס וחלילה הוא לא יכול לרמוז שהקרן של הבוס שלו היא זיוף. אין דבר כזה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">44:18</span>
-                </div>
-                <div class="content">
-                    <p>אז באצ'י מאוד מתפתל בניסיון להאמין לשני הדברים האלה ביחד. הוא ניסה להגיד שהמילה שהיוונים השתמשו בה לשחור למעשה ביוונית היא לא תמיד ציינה שחור שחור. זאת אומרת לפעמים זה שחור בהיר אולי, אבל הוא לא הצליח למצוא משמעות שבה המילה הזאת אומרת לבן כי היא לא. אז חייב להיות לזה איזשהו הסבר אחר. אולי הקרן מתבהרת עם הזמן? או אולי, זאת תיאוריה - על הראש של החד קרן היא שחורה, אבל אם מקלפים את הקליפה של הקרן אז בפנים היא בעצם לבנה. וזה מאוד מעניין אבל זה גם קצת מעורר רחמים לשמוע על בן אדם כנראה מאוד חכם וכנראה השקיע בזה הרבה מאוד זמן במחשבה באיכשהו לג'גל ולהבין וליישב ולהתפשר בין שתי תזות שונות ששתיהן לא נכונות. שוב אנחנו מדברים פה על הצבע של קרן של חיה שלא קיימת, זה נושא הוויכוח כאן. מצד שני אתם בטוח הייתם מאוד יעילים היום. זאת הייתה התשובה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">45:38</span>
-                </div>
-                <div class="content">
-                    <p>אם התעניינתם בחדי קרן אז בטוח תתעניינו גם בפרק 'מאיפה באים דרקונים', כי כמובן גם להם יש סיפורים מעניינים. תודה רבה למומחית לענייני חדי קרן דריה וגם לאבא שלה עידן זיירמן שממש עכשיו סיים לצפות בכל הפרקים של 'מסע בין כוכבים' ולדבר על כל אחד מהם בפודקאסט 'צופים בין כוכבים'. אתם יכולים למצוא עדכונים על ההוצאות שאני עושה כשאני מדבר על דברים אחרים שהם לא דרקונים או חדי קרן בעמוד הפייסבוק דורון פישלר נגד העולם. ארחה את הפרק שלי נוי. דני תימור מנהל עסקי, אביב שם טוב סמנכ"ל תפעול, עמית חזזי צוות מכירות, ובצוות רשת עושים היסטוריה גם הילה שמש ושלי גואטה. אני דורון פישלר מופלא קסום ומקפץ על קשתות בענן. ביי.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">46:29</span>
-                </div>
-                <div class="content">
-                    <p>לפודקאסטים נוספים של רשת עושים היסטוריה ולהצטרפות לרשימת התפוצה של התוכנית בדואר האלקטרוני בקרו ב-osimhistoria.com או הורידו את אפליקציית עושים היסטוריה מחנות האפליקציות של אנדרואיד.</p>
                 </div>
             </article>
             
