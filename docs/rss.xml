@@ -6,8 +6,16 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 21:10:27 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 21:12:40 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>מאיפה הגיעו החתולים? [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/myph-hgy-v-hkhtvlym-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/myph-hgy-v-hkhtvlym-htshvbh.html</guid>
+        <pubDate>Mon, 29 Dec 2025 16:35:51 +0000</pubDate>
+        <description>Transcript for מאיפה הגיעו החתולים? [התשובה] from The Answer</description>
+    </item>
     
     <item>
         <title>פרק השנה 2025 [התשובה]</title>
