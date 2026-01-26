@@ -6,8 +6,16 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 22:24:49 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 22:27:03 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>שניה זה הרבה או מעט? [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/shnyh-zh-hrbh-v-m-t-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/shnyh-zh-hrbh-v-m-t-htshvbh.html</guid>
+        <pubDate>Mon, 04 Nov 2024 07:58:41 +0000</pubDate>
+        <description>Transcript for שניה זה הרבה או מעט? [התשובה] from The Answer</description>
+    </item>
     
     <item>
         <title>אני יכול להסביר. [התשובה]</title>
@@ -159,14 +167,6 @@
         <guid>https://mat-mo.github.io/podtext/episodes/spynt-hkhll-khgyt-qvlv-shl-hqvsmvs-htshvbh.html</guid>
         <pubDate>Tue, 16 Dec 2025 13:46:22 +0000</pubDate>
         <description>Transcript for ספינת החלל חגית: קולו של הקוסמוס [התשובה] from The Answer</description>
-    </item>
-    
-    <item>
-        <title>מאיפה הגיעו החתולים? [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/myph-hgy-v-hkhtvlym-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/myph-hgy-v-hkhtvlym-htshvbh.html</guid>
-        <pubDate>Mon, 29 Dec 2025 16:35:51 +0000</pubDate>
-        <description>Transcript for מאיפה הגיעו החתולים? [התשובה] from The Answer</description>
     </item>
     
 </channel>
