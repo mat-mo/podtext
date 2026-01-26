@@ -4,6 +4,8 @@ feeds:
 
 site_settings:
 
-  title: "Podtext: Read my podcasts"
+  title: "Podtext"
 
   base_url: "https://mat-mo.github.io/podtext"
+
+

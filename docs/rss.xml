@@ -1,37 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-    <title>Podtext: The Answer</title>
+    <title>Podtext</title>
     <link>https://mat-mo.github.io/podtext</link>
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 21:00:47 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 21:09:53 -0000</lastBuildDate>
     
-    
-    <item>
-        <title>ספינת החלל חגית: קולו של הקוסמוס [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/spynt-hkhll-khgyt-qvlv-shl-hqvsmvs-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/spynt-hkhll-khgyt-qvlv-shl-hqvsmvs-htshvbh.html</guid>
-        <pubDate>Tue, 16 Dec 2025 13:46:22 +0000</pubDate>
-        <description>Transcript for ספינת החלל חגית: קולו של הקוסמוס [התשובה] from The Answer</description>
-    </item>
-    
-    <item>
-        <title>מאיפה הגיעו החתולים? [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/myph-hgy-v-hkhtvlym-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/myph-hgy-v-hkhtvlym-htshvbh.html</guid>
-        <pubDate>Mon, 29 Dec 2025 16:35:51 +0000</pubDate>
-        <description>Transcript for מאיפה הגיעו החתולים? [התשובה] from The Answer</description>
-    </item>
-    
-    <item>
-        <title>פרק השנה 2025 [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/prq-hshnh-2025-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/prq-hshnh-2025-htshvbh.html</guid>
-        <pubDate>Mon, 12 Jan 2026 15:09:30 +0000</pubDate>
-        <description>Transcript for פרק השנה 2025 [התשובה] from The Answer</description>
-    </item>
     
 </channel>
 </rss>
