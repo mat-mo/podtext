@@ -21,7 +21,7 @@
                     {% endif %}
                     <div class="episode-info">
                         <span class="date">{{ episode.published_date }}</span>
-                        <a href="episodes/{{ episode.slug }}.html" class="episode-title">{{ episode.title }}</a>
+                        <a href="episodes/{{ episode.feed_slug }}/{{ episode.slug }}.html" class="episode-title">{{ episode.title }}</a>
                         <span class="feed-name">{{ episode.feed_name }}</span>
                     </div>
                 </li>

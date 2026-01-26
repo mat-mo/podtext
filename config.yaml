@@ -3,5 +3,7 @@ feeds:
     name: "The Answer"
 
 site_settings:
-  title: "Podtext: The Answer"
+
+  title: "Podtext: Read my podcasts"
+
   base_url: "https://mat-mo.github.io/podtext"

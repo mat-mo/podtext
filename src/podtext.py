@@ -187,6 +187,10 @@ def main():
                 continue
 
             slug = slugify(entry.title)
+            feed_slug = slugify(feed_conf['name'])
+            feed_dir = os.path.join(EPISODES_DIR, feed_slug)
+            os.makedirs(feed_dir, exist_ok=True)
+            
             temp_mp3 = os.path.join(TEMP_DIR, f"{slug}.mp3")
             
             try:
@@ -210,13 +214,17 @@ def main():
                     continue
 
                 # 5. Build HTML
+                # Determine relative path to CSS (now 2 levels deep: episodes/feed/file.html -> ../../styles.css)
                 episode_data = {
                     "title": entry.title,
                     "published": entry.published,
                     "audio_url": audio_url,
                     "slug": slug,
                     "feed_name": feed_conf['name'],
-                    "feed_image": feed_image
+                    "feed_slug": feed_slug,
+                    "feed_image": feed_image,
+                    "css_path": "../../styles.css",
+                    "home_path": "../../index.html"
                 }
                 
                 for seg in segments:
@@ -224,7 +232,7 @@ def main():
 
                 render_html('episode.html', 
                            {"episode": episode_data, "segments": segments, "direction": direction}, 
-                           os.path.join(EPISODES_DIR, f"{slug}.html"))
+                           os.path.join(feed_dir, f"{slug}.html"))
                 
                 # 6. Update DB
                 db['processed'].append(guid)
@@ -233,6 +241,7 @@ def main():
                     "published_date": entry.published,
                     "slug": slug,
                     "feed_name": feed_conf['name'],
+                    "feed_slug": feed_slug, # Save feed slug to link correctly from index
                     "feed_image": feed_image
                 })
                 save_db(db)

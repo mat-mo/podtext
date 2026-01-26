@@ -1,19 +1,20 @@
 import feedparser
+import os
+import yaml
 
-url = "https://www.osimhistoria.com/theanswer/podcast.xml"
-print(f"Parsing {url}...")
-d = feedparser.parse(url)
+# Load config to get the URL
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONFIG_PATH = os.path.join(BASE_DIR, 'config.yaml')
 
-print(f"Feed Title: {d.feed.get('title', 'Unknown')}")
-print(f"Number of entries: {len(d.entries)}")
+with open(CONFIG_PATH, 'r') as f:
+    config = yaml.safe_load(f)
 
-if len(d.entries) > 0:
-    entry = d.entries[0]
-    print(f"\nLatest Entry: {entry.title}")
-    print(f"ID: {entry.id}")
-    print("Links:")
-    for link in entry.links:
-        print(f"  - Type: {link.type}, Href: {link.href}")
-else:
-    print("No entries found!")
-
+for feed_conf in config['feeds']:
+    url = feed_conf['url']
+    print(f"Checking URL: {url}")
+    d = feedparser.parse(url)
+    print(f"Feed Title: {d.feed.get('title', 'Unknown')}")
+    print(f"Entries found: {len(d.entries)}")
+    
+    for i, entry in enumerate(d.entries[:5]):
+        print(f"[{i}] {entry.title} (ID: {entry.id})")

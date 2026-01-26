@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ episode.title }} - Podtext</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="{{ episode.css_path }}">
 </head>
 <body>
     <div class="container">
         <header>
-            <a href="../index.html" class="back-link">← Back to Episodes</a>
+            <a href="{{ episode.home_path }}" class="back-link">Back to Episodes</a>
             <h1>{{ episode.title }}</h1>
             <p class="meta">Published on {{ episode.published }}</p>
         </header>
