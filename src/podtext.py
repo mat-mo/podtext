@@ -170,19 +170,25 @@ def identify_speakers(segments):
     """Uses local LLM to map SPEAKER_XX to real names."""
     print("Identifying speakers with Llama 3.2...")
     
-    # 1. Prepare Context (First ~2000 chars should contain intros)
+    # 1. Prepare Context (First ~50 segments to catch intros)
     transcript_sample = ""
-    for seg in segments[:20]: # Check first 20 segments
+    for seg in segments[:50]: 
         transcript_sample += f"{seg['speaker']}: {seg['text']}\n"
         
-    if len(transcript_sample) > 3000:
-        transcript_sample = transcript_sample[:3000]
+    if len(transcript_sample) > 4000:
+        transcript_sample = transcript_sample[:4000]
         
     prompt = f"""
     Read the following podcast transcript snippet and identify the real names of the speakers.
-    Return ONLY a JSON object mapping the SPEAKER codes to their real names.
-    If you cannot identify a speaker, do not include them.
-    Example: {{"SPEAKER_00": "Michael Barbaro", "SPEAKER_01": "Sabrina Tavernise"}}
+    
+    Instructions:
+    1. Look for self-introductions (e.g., "I'm [Name]") or when one speaker addresses another by name.
+    2. Return ONLY a JSON object mapping the SPEAKER codes to their real names.
+    3. Do NOT use names that are not explicitly found in the text.
+    4. If you cannot identify a speaker with certainty, do not include them in the JSON.
+    
+    Example Output Format (Do not copy these names): 
+    {{"SPEAKER_00": "Actual Name Found", "SPEAKER_01": "Other Name Found"}}
     
     Transcript:
     {transcript_sample}
