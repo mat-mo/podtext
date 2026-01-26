@@ -6,6 +6,7 @@ import requests
 import yaml
 import feedparser
 import subprocess
+import re
 from email.utils import formatdate
 from slugify import slugify
 from jinja2 import Environment, FileSystemLoader
@@ -132,6 +133,35 @@ def process_with_gemini(audio_file):
         print("Raw response:", response.text[:500])
         raise Exception(f"Gemini API Error or Parse Failure: {e}")
 
+def get_episode_content(episode_data):
+    """Reads the generated HTML file and extracts the transcript part for RSS."""
+    try:
+        # Construct path: docs/episodes/feed_slug/slug.html
+        path = os.path.join(EPISODES_DIR, episode_data['feed_slug'], f"{episode_data['slug']}.html")
+        if not os.path.exists(path):
+            return "Transcript not available."
+            
+        with open(path, 'r') as f:
+            html = f.read()
+            
+        # Extract content inside transcript container
+        # Pattern: <div class="transcript-container" id="transcript"> ... </div>
+        # Use regex to be robust against whitespace
+        match = re.search(r'<div class="transcript-container" id="transcript">(.*?)</div>\s*</body>', html, re.DOTALL)
+        if match:
+            # We found the container. 
+            # Note: The container closing tag might be hard to find if nested divs exist (like .paragraph).
+            # A simpler regex might be better if we assume structure.
+            # Let's try to extract everything between the start of container and the end of file (minus footer)
+            content = match.group(1)
+            return content
+        else:
+            # Fallback: return body
+            return html
+    except Exception as e:
+        print(f"Error reading content for RSS: {e}")
+        return "Error loading transcript."
+
 def render_html(template_name, context, output_path):
     env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
     template = env.get_template(template_name)
@@ -257,12 +287,21 @@ def main():
                 
                 # 7. Sync
                 render_html('index.html', {"site": config['site_settings'], "episodes": db['episodes']}, os.path.join(OUTPUT_DIR, 'index.html'))
+                # Generate RSS Feed
+                # Populate content for the latest 20 episodes
+                rss_episodes = db['episodes'][:20]
+                for ep in rss_episodes:
+                    # Only load if not already present (optimization if running in loop)
+                    if 'content' not in ep:
+                        ep['content'] = get_episode_content(ep)
+
                 rss_context = {
                     "site": config['site_settings'],
-                    "episodes": db['episodes'][:20],
+                    "episodes": rss_episodes, # Include last 20 episodes in feed
                     "build_date": formatdate()
                 }
                 render_html('rss.xml', rss_context, os.path.join(OUTPUT_DIR, 'rss.xml'))
+
                 
                 import shutil
                 shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'styles.css'), os.path.join(OUTPUT_DIR, 'styles.css'))
