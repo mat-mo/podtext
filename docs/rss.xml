@@ -6,8 +6,16 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 22:27:03 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 22:28:46 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>שמונים יום או פחות, חלק ב' [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/shmvnym-yvm-v-pkhvt-khlq-b-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/shmvnym-yvm-v-pkhvt-khlq-b-htshvbh.html</guid>
+        <pubDate>Mon, 14 Oct 2024 09:15:04 +0000</pubDate>
+        <description>Transcript for שמונים יום או פחות, חלק ב' [התשובה] from The Answer</description>
+    </item>
     
     <item>
         <title>שניה זה הרבה או מעט? [התשובה]</title>
@@ -159,14 +167,6 @@
         <guid>https://mat-mo.github.io/podtext/episodes/mty-ybv-hvvlrmn-rmyqs-htshvbh.html</guid>
         <pubDate>Mon, 01 Dec 2025 15:02:05 +0000</pubDate>
         <description>Transcript for מתי יבוא הוולרמן? (רמיקס) [התשובה] from The Answer</description>
-    </item>
-    
-    <item>
-        <title>ספינת החלל חגית: קולו של הקוסמוס [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/spynt-hkhll-khgyt-qvlv-shl-hqvsmvs-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/spynt-hkhll-khgyt-qvlv-shl-hqvsmvs-htshvbh.html</guid>
-        <pubDate>Tue, 16 Dec 2025 13:46:22 +0000</pubDate>
-        <description>Transcript for ספינת החלל חגית: קולו של הקוסמוס [התשובה] from The Answer</description>
     </item>
     
 </channel>
