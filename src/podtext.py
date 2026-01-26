@@ -111,27 +111,38 @@ def process_with_gemini(audio_file):
       ]
     }
     
-    IMPORTANT: Return ONLY the JSON object.
+    IMPORTANT: Return ONLY the valid JSON object. Ensure all strings are properly escaped.
     """
     
-    response = client.models.generate_content(
-        model="gemini-3-flash-preview",
-        contents=[audio_file, prompt],
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-        )
-    )
-    
-    try:
-        data = json.loads(response.text)
-        # Handle both old (list) and new (dict) formats for robustness
-        if isinstance(data, list):
-            return {"language": "en", "segments": data}
-        return data
-    except Exception as e:
-        print(f"Failed to parse JSON response: {e}")
-        print("Raw response:", response.text[:500])
-        raise Exception(f"Gemini API Error or Parse Failure: {e}")
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            response = client.models.generate_content(
+                model="gemini-3-flash-preview",
+                contents=[audio_file, prompt],
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                )
+            )
+            
+            data = json.loads(response.text)
+            # Handle both old (list) and new (dict) formats for robustness
+            if isinstance(data, list):
+                return {"language": "en", "segments": data}
+            return data
+            
+        except json.JSONDecodeError as e:
+            print(f"JSON Parse Error (Attempt {attempt+1}/{max_retries}): {e}")
+            if attempt == max_retries - 1:
+                print("Raw response:", response.text[:500])
+                raise Exception(f"Gemini API Error or Parse Failure: {e}")
+            time.sleep(2) # Wait a bit before retry
+            
+        except Exception as e:
+            print(f"API Error (Attempt {attempt+1}/{max_retries}): {e}")
+            if attempt == max_retries - 1:
+                raise e
+            time.sleep(5)
 
 def get_episode_content(episode_data):
     """Reads the generated HTML file and extracts the transcript part for RSS."""
