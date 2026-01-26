@@ -6,8 +6,16 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 22:28:46 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 22:31:21 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>שמונים יום או פחות, חלק א' [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/shmvnym-yvm-v-pkhvt-khlq-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/shmvnym-yvm-v-pkhvt-khlq-htshvbh.html</guid>
+        <pubDate>Mon, 30 Sep 2024 03:00:02 +0000</pubDate>
+        <description>Transcript for שמונים יום או פחות, חלק א' [התשובה] from The Answer</description>
+    </item>
     
     <item>
         <title>שמונים יום או פחות, חלק ב' [התשובה]</title>
@@ -159,14 +167,6 @@
         <guid>https://mat-mo.github.io/podtext/episodes/lmh-ysh-yvtr-mdy-tsyrvpy-mqrym-htshvbh.html</guid>
         <pubDate>Wed, 22 Oct 2025 09:58:31 +0000</pubDate>
         <description>Transcript for למה יש יותר מדי צירופי מקרים? [התשובה] from The Answer</description>
-    </item>
-    
-    <item>
-        <title>מתי יבוא הוולרמן? (רמיקס) [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/mty-ybv-hvvlrmn-rmyqs-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/mty-ybv-hvvlrmn-rmyqs-htshvbh.html</guid>
-        <pubDate>Mon, 01 Dec 2025 15:02:05 +0000</pubDate>
-        <description>Transcript for מתי יבוא הוולרמן? (רמיקס) [התשובה] from The Answer</description>
     </item>
     
 </channel>
