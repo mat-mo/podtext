@@ -6,8 +6,16 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 22:19:29 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 22:22:38 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>מה היה הסיפור עם באג 2000? [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/mh-hyh-hsypvr-m-bg-2000-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/mh-hyh-hsypvr-m-bg-2000-htshvbh.html</guid>
+        <pubDate>Wed, 01 Jan 2025 11:15:47 +0000</pubDate>
+        <description>Transcript for מה היה הסיפור עם באג 2000? [התשובה] from The Answer</description>
+    </item>
     
     <item>
         <title>מצב התשובה: פרק השנה 2024 [התשובה]</title>
