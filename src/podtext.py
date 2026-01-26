@@ -233,11 +233,16 @@ def main():
                 for seg in segments:
                     seg['start_fmt'] = seg.get('timestamp', '')
 
+                output_html_path = os.path.join(feed_dir, f"{slug}.html")
                 render_html('episode.html', 
                            {"episode": episode_data, "segments": segments, "direction": direction}, 
-                           os.path.join(feed_dir, f"{slug}.html"))
+                           output_html_path)
+                           
+                # Validate Output
+                if not os.path.exists(output_html_path) or os.path.getsize(output_html_path) < 500:
+                    raise Exception("Generated HTML is missing or too small (transcription likely failed).")
                 
-                # 6. Update DB
+                # 6. Update DB (Only after success verification)
                 db['processed'].append(guid)
                 db['episodes'].insert(0, {
                     "title": entry.title,
