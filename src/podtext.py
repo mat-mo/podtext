@@ -1,28 +1,22 @@
 import os
 import json
 import time
-import datetime
 import requests
 import yaml
 import feedparser
 import subprocess
-import warnings
 from email.utils import formatdate
 from slugify import slugify
 from jinja2 import Environment, FileSystemLoader
-from faster_whisper import WhisperModel
-from pyannote.audio import Pipeline
-from pyannote.audio.pipelines.utils.hook import ProgressHook
-import torch
 from dotenv import load_dotenv
-import ollama
 from tqdm import tqdm
-from concurrent.futures import ThreadPoolExecutor
+import google.generativeai as genai
+from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
 
-# Configuration Paths
+# Configuration
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_PATH = os.path.join(BASE_DIR, 'config.yaml')
 DB_PATH = os.path.join(BASE_DIR, 'db.json')
@@ -30,9 +24,16 @@ OUTPUT_DIR = os.path.join(BASE_DIR, 'docs')
 EPISODES_DIR = os.path.join(OUTPUT_DIR, 'episodes')
 TEMP_DIR = os.path.join(BASE_DIR, 'tmp')
 
-# Ensure directories exist
+# Ensure directories
 for d in [OUTPUT_DIR, EPISODES_DIR, TEMP_DIR]:
     os.makedirs(d, exist_ok=True)
+
+# Configure Gemini
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    print("WARNING: GEMINI_API_KEY not found in .env file. Please add it.")
+else:
+    genai.configure(api_key=api_key)
 
 def load_config():
     with open(CONFIG_PATH, 'r') as f:
@@ -62,275 +63,65 @@ def download_file(url, filepath):
                     pbar.update(len(chunk))
     return filepath
 
-def convert_to_wav(input_path):
-    """Converts MP3 to 16kHz Mono WAV for stable AI processing."""
-    output_path = input_path.rsplit('.', 1)[0] + ".wav"
-    print(f"Converting to WAV: {output_path}...")
+def upload_to_gemini(path, mime_type="audio/mp3"):
+    """Uploads file to Gemini File API and waits for processing."""
+    print(f"Uploading {path} to Gemini...")
+    file = genai.upload_file(path, mime_type=mime_type)
+    print(f"Uploaded file '{file.display_name}' as: {file.uri}")
     
-    # ffmpeg -i input.mp3 -ar 16000 -ac 1 -c:a pcm_s16le -y output.wav
-    subprocess.run([
-        "ffmpeg", 
-        "-i", input_path,
-        "-ar", "16000",       # 16kHz sample rate (standard for Whisper/Pyannote)
-        "-ac", "1",           # Mono
-        "-c:a", "pcm_s16le",  # 16-bit PCM
-        "-y",                 # Overwrite if exists
-        "-loglevel", "error", # Quiet output
-        output_path
-    ], check=True)
-    
-    return output_path
+    # Wait for processing
+    print("Waiting for file processing...")
+    while file.state.name == "PROCESSING":
+        time.sleep(2)
+        file = genai.get_file(file.name)
+        
+    if file.state.name != "ACTIVE":
+        raise Exception(f"File upload failed with state: {file.state.name}")
+        
+    print("File is ready.")
+    return file
 
-def format_timestamp(seconds):
-    """Converts seconds (float) to MM:SS string."""
-    seconds = int(seconds)
-    minutes = seconds // 60
-    secs = seconds % 60
-    return f"{minutes:02}:{secs:02}"
-
-def transcribe_and_diarize(whisper_model, diarization_pipeline, audio_path):
-    print(f"Processing {audio_path} (Parallel Execution)...")
+def process_with_gemini(audio_file):
+    """Sends the audio file to Gemini 1.5 Flash for transcription and formatting."""
+    print("Requesting transcription from Gemini 1.5 Flash...")
     
-    def run_whisper():
-        # 1. Run Whisper
-        segments, info = whisper_model.transcribe(audio_path, word_timestamps=True)
-        
-        print(f"Detected language '{info.language}' with probability {info.language_probability:.2f}")
-        
-        whisper_words = []
-        # Transcription happens as an iterator; we wrap it to see progress
-        # Position 0 ensures it stays at the top if running parallel
-        with tqdm(total=round(info.duration, 2), unit='sec', desc="Transcribing", position=0, leave=True) as pbar:
-            for segment in segments:
-                for word in segment.words:
-                    whisper_words.append({
-                        "word": word.word,
-                        "start": word.start,
-                        "end": word.end,
-                        "prob": word.probability
-                    })
-                pbar.update(segment.end - pbar.n)
-        return whisper_words, info.language, info.language_probability
-
-    def run_diarization():
-        # 2. Run Diarization
-        print("Starting Diarization...")
-        # ProgressHook provides a tqdm bar for the pipeline
-        with ProgressHook() as hook:
-            diarization = diarization_pipeline(audio_path, hook=hook)
-        return diarization
-
-    # Execute in parallel
-    with ThreadPoolExecutor(max_workers=2) as executor:
-        future_whisper = executor.submit(run_whisper)
-        future_diarization = executor.submit(run_diarization)
-        
-        whisper_words, detected_lang, lang_prob = future_whisper.result()
-        diarization = future_diarization.result()
+    model = genai.GenerativeModel("gemini-1.5-flash")
     
-    # 3. Align Words to Speakers
-    final_segments = []
-    current_segment = None
+    prompt = """
+    You are a professional podcast transcriber and editor.
     
-    for word in whisper_words:
-        # Find speaker for this word
-        # Simple strategy: Check which diarization turn covers the midpoint of the word
-        word_mid = (word['start'] + word['end']) / 2
-        speaker = "Unknown"
-        
-        # Iterate over turns to find the matching one
-        # Optimization: Diarization turns are sorted, we could track index, but loop is fine for podcast length
-        for turn, _, spk in diarization.itertracks(yield_label=True):
-            if turn.start <= word_mid <= turn.end:
-                speaker = spk
-                break
-        
-        # Grouping Logic
-        if current_segment and current_segment['speaker'] == speaker:
-            # Append to current
-            current_segment['words'].append(word)
-            current_segment['end'] = word['end']
-            current_segment['text'] += "" + word['word'] 
-        else:
-            # New Segment
-            if current_segment:
-                final_segments.append(current_segment)
-            
-            current_segment = {
-                "speaker": speaker,
-                "start": word['start'],
-                "end": word['end'],
-                "start_fmt": format_timestamp(word['start']),
-                "words": [word],
-                "text": word['word']
-            }
-            
-    if current_segment:
-        final_segments.append(current_segment)
-        
-    return final_segments, detected_lang, lang_prob
-
-def identify_speakers(segments):
-    """Uses local LLM to map SPEAKER_XX to real names."""
-    print("Identifying speakers with Llama 3.2...")
+    Task:
+    1. Listen to this audio file (it may be in Hebrew or English).
+    2. Transcribe the conversation accurately.
+    3. Identify the speakers by name (e.g., "Ran", "Shani") based on context.
+    4. Translate any non-English parts if they are mixed, or keep the primary language (Hebrew) as is. (PREFER: Keep original language of the podcast).
+    5. Format the output as a JSON list of segments.
+    6. Group consecutive sentences by the same speaker into a single paragraph.
     
-    # 1. Prepare Context (First ~50 segments to catch intros)
-    transcript_sample = ""
-    for seg in segments[:50]: 
-        transcript_sample += f"{seg['speaker']}: {seg['text']}\n"
-        
-    if len(transcript_sample) > 4000:
-        transcript_sample = transcript_sample[:4000]
-        
-    prompt = f"""
-    Read the following podcast transcript snippet and identify the real names of the speakers.
+    Output Format (JSON):
+    [
+      {
+        "speaker": "Speaker Name",
+        "timestamp": "MM:SS",
+        "text": "The full text of what they said..."
+      },
+      ...
+    ]
     
-    Instructions:
-    1. Look for self-introductions (e.g., "I'm [Name]") or when one speaker addresses another by name.
-    2. Return ONLY a JSON object mapping the SPEAKER codes to their real names.
-    3. Do NOT use names that are not explicitly found in the text.
-    4. If you cannot identify a speaker with certainty, do not include them in the JSON.
-    
-    Example Output Format (Do not copy these names): 
-    {{"SPEAKER_00": "Actual Name Found", "SPEAKER_01": "Other Name Found"}}
-    
-    Transcript:
-    {transcript_sample}
+    IMPORTANT: Return ONLY the JSON. No markdown formatting, no code blocks.
     """
     
+    response = model.generate_content(
+        [audio_file, prompt],
+        generation_config={"response_mime_type": "application/json"}
+    )
+    
     try:
-        full_response = ""
-        # Stream the response to show progress
-        with tqdm(desc="Identifying Speakers (LLM)", unit="token") as pbar:
-            stream = ollama.chat(model='llama3.2', messages=[
-                {'role': 'user', 'content': prompt},
-            ], format='json', stream=True)
-            
-            for chunk in stream:
-                content = chunk['message']['content']
-                full_response += content
-                pbar.update(1)
-        
-        mapping = json.loads(full_response)
-        print(f"Identified Speakers: {mapping}")
-        
-        # Apply mapping
-        for seg in segments:
-            if seg['speaker'] in mapping:
-                seg['speaker'] = mapping[seg['speaker']]
-                
+        return json.loads(response.text)
     except Exception as e:
-        print(f"Speaker identification failed: {e}")
-        
-    return segments
-
-def proofread_transcript(segments, language_code="en"):
-    """Uses local LLM to proofread text, considering confidence scores."""
-    if not segments:
+        print(f"Failed to parse JSON response: {e}")
+        print("Raw response:", response.text[:500])
         return []
-        
-    print(f"Running AI Proofreader (Judge) on {len(segments)} segments...")
-    
-    # Process in chunks of 15 segments
-    CHUNK_SIZE = 15
-    
-    for i in range(0, len(segments), CHUNK_SIZE):
-        chunk = segments[i:i + CHUNK_SIZE]
-        
-        # 1. Construct Prompt Input
-        input_text = ""
-        for idx, seg in enumerate(chunk):
-            annotated_text = ""
-            for w in seg['words']:
-                if w.get('prob', 1.0) < 0.6:
-                    annotated_text += f"{w['word']}[{w.get('prob',0):.2f}]"
-                else:
-                    annotated_text += w['word']
-            input_text += f"ID_{idx}: {annotated_text}\n"
-
-        # 2. Build Prompt
-        lang_instruction = "Hebrew" if language_code == 'he' else "the original language"
-        prompt = f"""
-        Act as a professional transcript editor. 
-        Correct transcription errors and grammar in {lang_instruction}.
-        Fix words marked with confidence scores like 'word[0.45]'.
-        
-        Rules:
-        - Return ONLY the corrected text.
-        - Format: "ID_X: <Corrected Text>"
-        - Do not add explanations.
-        
-        Input:
-        {input_text}
-        """
-        
-        try:
-            # Added options to prevent the model from getting stuck in long generations
-            response = ollama.chat(
-                model='llama3.2', 
-                messages=[{'role': 'user', 'content': prompt}],
-                options={
-                    "num_predict": 1000, # Limit output length
-                    "temperature": 0.3    # Lower temperature for more stability
-                }
-            )
-            
-            output = response['message']['content']
-            
-            # 3. Parse and Apply
-            for line in output.split('\n'):
-                if line.strip().startswith("ID_"):
-                    try:
-                        parts = line.split(':', 1)
-                        if len(parts) == 2:
-                            local_idx = int(parts[0].replace("ID_", "").strip())
-                            corrected_text = parts[1].strip()
-                            if 0 <= local_idx < len(chunk):
-                                chunk[local_idx]['text'] = corrected_text
-                    except: continue
-                        
-            print(f"  [✓] Proofread chunk {i//CHUNK_SIZE + 1} (segments {i}-{min(i+CHUNK_SIZE, len(segments))})")
-
-        except Exception as e:
-            print(f"  [!] Skipping chunk {i//CHUNK_SIZE + 1} due to error/timeout: {e}")
-            
-    return segments
-
-def merge_segments(segments):
-    """Merges consecutive segments by the same speaker for book-like reading."""
-    if not segments:
-        return []
-
-    print("Merging segments into paragraphs...")
-    
-    # 1. Smoothing: Fill single-segment "Unknown" gaps between same speakers
-    # This fixes fragmented sentences caused by short silences/noise
-    for i in range(1, len(segments) - 1):
-        prev_spk = segments[i-1]['speaker']
-        curr_spk = segments[i]['speaker']
-        next_spk = segments[i+1]['speaker']
-        
-        if curr_spk == "Unknown" and prev_spk == next_spk:
-            segments[i]['speaker'] = prev_spk
-
-    # 2. Merging
-    merged = []
-    current = segments[0]
-    
-    for next_seg in segments[1:]:
-        if next_seg['speaker'] == current['speaker']:
-            # Combine into current paragraph
-            current['words'].extend(next_seg['words'])
-            # Ensure clean spacing
-            current['text'] = (current['text'].strip() + " " + next_seg['text'].strip()).strip()
-            current['end'] = next_seg['end']
-        else:
-            merged.append(current)
-            current = next_seg
-    merged.append(current)
-    
-    print(f"Merged {len(segments)} segments into {len(merged)} paragraphs.")
-    return merged
 
 def render_html(template_name, context, output_path):
     env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
@@ -339,44 +130,34 @@ def render_html(template_name, context, output_path):
     with open(output_path, 'w') as f:
         f.write(content)
 
+def git_sync(processed_ids):
+    status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True).stdout
+    if not status:
+        return
+
+    print("Syncing with Git...")
+    try:
+        subprocess.run(["git", "add", "docs/", "db.json"], check=True)
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        subprocess.run(["git", "commit", "-m", f"Update transcripts: {timestamp}"], check=True)
+        subprocess.run(["git", "push"], capture_output=True, check=True)
+        print("Successfully pushed to GitHub.")
+    except subprocess.CalledProcessError as e:
+        print(f"Git Error: {e}")
+
 def main():
     config = load_config()
     db = load_db()
-    
-    # Initialize Whisper Model
-    # Use 'large-v3' for best multilingual support (Hebrew, etc.)
-    # 'distil-large-v3' is English-only and causes garbage output for other languages.
-    print("Loading Whisper model (Large-v3)...")
-    model = WhisperModel("large-v3", device="cpu", compute_type="int8")
-
-    # Initialize Diarization Pipeline
-    print("Loading Diarization pipeline...")
-    hf_token = os.getenv("HF_TOKEN")
-    if not hf_token:
-        print("Warning: HF_TOKEN not found. Diarization may fail.")
-        
-    pipeline = Pipeline.from_pretrained(
-        "pyannote/speaker-diarization-3.1",
-        use_auth_token=hf_token
-    )
-    # Check if Metal (MPS) is available for PyTorch (M-series GPU acceleration)
-    # Pyannote uses Pytorch.
-    if torch.backends.mps.is_available():
-        print("Using MPS (Apple Silicon GPU) for Diarization")
-        pipeline.to(torch.device("mps"))
-    else:
-        print("Using CPU for Diarization")
-
     processed_ids = set(db['processed'])
     
     for feed_conf in config['feeds']:
         print(f"Checking feed: {feed_conf['name']}")
         d = feedparser.parse(feed_conf['url'])
         
-        # specific to simplecast/standard RSS
+        # Default image
         feed_image = d.feed.get('image', {}).get('href') or d.feed.get('itunes_image')
         
-        for entry in d.entries[:5]: # Check latest 5 episodes
+        for entry in d.entries[:3]: # Check latest 3 episodes
             guid = entry.id
             if guid in processed_ids:
                 continue
@@ -391,52 +172,55 @@ def main():
                     break
             
             if not audio_url:
-                print("No audio URL found, skipping.")
                 continue
 
             slug = slugify(entry.title)
             temp_mp3 = os.path.join(TEMP_DIR, f"{slug}.mp3")
-            temp_wav = None
             
             try:
                 # 1. Download
                 download_file(audio_url, temp_mp3)
                 
-                # 1.5 Convert to WAV (Fixes decoding errors)
-                temp_wav = convert_to_wav(temp_mp3)
+                # 2. Upload to Gemini
+                gemini_file = upload_to_gemini(temp_mp3)
                 
-                # 2. Transcribe & Diarize (Use WAV)
-                segments, detected_lang, lang_prob = transcribe_and_diarize(model, pipeline, temp_wav)
+                # 3. Transcribe
+                segments = process_with_gemini(gemini_file)
                 
-                # 2.5 Identify Speakers (Local LLM)
-                segments = identify_speakers(segments)
+                # 4. Cleanup Gemini File (to save storage quota)
+                genai.delete_file(gemini_file.name)
                 
-                # 2.6 Proofread Transcript (AI Judge)
-                segments = proofread_transcript(segments, language_code=detected_lang)
-                
-                # 2.7 Merge Segments (Book-like flow)
-                segments = merge_segments(segments)
-                
-                # 3. Build Context
+                if not segments:
+                    print("Error: No transcript generated.")
+                    continue
+
+                # 5. Build HTML
                 episode_data = {
                     "title": entry.title,
                     "published": entry.published,
-                    "audio_url": audio_url, # Hotlink original
+                    "audio_url": audio_url,
                     "slug": slug,
                     "feed_name": feed_conf['name'],
-                    "feed_image": feed_image,
-                    "language": detected_lang,
-                    "language_prob": f"{lang_prob:.2%}"
+                    "feed_image": feed_image
                 }
                 
-                # 4. Generate HTML
+                # Format timestamps in segments (Gemini might give strings or seconds)
+                # We assume Gemini gives "MM:SS" as requested, but we map it to 'start_fmt' for template compatibility
+                for seg in segments:
+                    seg['start_fmt'] = seg.get('timestamp', '')
+                    # Create dummy word list for template compatibility if needed, 
+                    # but we updated the template to use 'content' div mostly.
+                    # Actually, the template uses 'words' loop. We need to adapt the template or the data.
+                    # Let's adapt the data to match the template expectations roughly.
+                    seg['words'] = [{"word": w, "start": 0, "end": 0} for w in seg['text'].split()]
+
                 render_html('episode.html', 
                            {"episode": episode_data, "segments": segments}, 
                            os.path.join(EPISODES_DIR, f"{slug}.html"))
                 
-                # 5. Update DB
+                # 6. Update DB
                 db['processed'].append(guid)
-                db['episodes'].insert(0, { # Prepend to keep newest first
+                db['episodes'].insert(0, {
                     "title": entry.title,
                     "published_date": entry.published,
                     "slug": slug,
@@ -444,67 +228,28 @@ def main():
                     "feed_image": feed_image
                 })
                 save_db(db)
-                
                 print(f"Successfully processed: {entry.title}")
-
-                # --- Immediate Sync ---
-                print("Rebuilding index and syncing...")
-                # Rebuild Index
-                render_html('index.html', {"site": config['site_settings'], "episodes": db['episodes']}, os.path.join(OUTPUT_DIR, 'index.html'))
                 
-                # Generate RSS Feed
+                # 7. Sync
+                render_html('index.html', {"site": config['site_settings'], "episodes": db['episodes']}, os.path.join(OUTPUT_DIR, 'index.html'))
                 rss_context = {
                     "site": config['site_settings'],
-                    "episodes": db['episodes'][:20], # Include last 20 episodes in feed
+                    "episodes": db['episodes'][:20],
                     "build_date": formatdate()
                 }
                 render_html('rss.xml', rss_context, os.path.join(OUTPUT_DIR, 'rss.xml'))
-
-                # Copy CSS (Ensure it's always fresh)
+                # Copy CSS
                 import shutil
                 shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'styles.css'), os.path.join(OUTPUT_DIR, 'styles.css'))
-
-                # Git Sync immediately
+                
                 git_sync(db['processed'])
-                # ----------------------
 
             except Exception as e:
                 print(f"Error processing {entry.title}: {e}")
             
             finally:
-                # Cleanup
                 if os.path.exists(temp_mp3):
                     os.remove(temp_mp3)
-                if temp_wav and os.path.exists(temp_wav):
-                    os.remove(temp_wav)
-
-    # (Code removed from here as it's now inside the loop)
-    pass 
-
-def git_sync(processed_ids):
-    """Commits and pushes changes if there are new items."""
-    # Check for changes
-    status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True).stdout
-    if not status:
-        print("No changes to commit.")
-        return
-
-    print("Syncing with Git...")
-    try:
-        subprocess.run(["git", "add", "docs/", "db.json"], check=True)
-        # Using a generic message, but could be specific if we passed the new episode titles
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-        subprocess.run(["git", "commit", "-m", f"Update transcripts: {timestamp}"], check=True)
-        
-        # Try to push, but don't crash if no remote is set
-        result = subprocess.run(["git", "push"], capture_output=True, text=True)
-        if result.returncode == 0:
-            print("Successfully pushed to GitHub.")
-        else:
-            print(f"Git push failed (maybe no remote?): {result.stderr.strip()}")
-            
-    except subprocess.CalledProcessError as e:
-        print(f"Git Error: {e}")
 
 if __name__ == "__main__":
     main()

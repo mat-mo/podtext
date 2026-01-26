@@ -1,12 +1,8 @@
+google-generativeai
 feedparser
-faster-whisper
-torch
-torchaudio
-jinja2
-python-slugify
 requests
 pyyaml
-pyannote.audio
+python-slugify
+jinja2
 python-dotenv
-ollama
 tqdm

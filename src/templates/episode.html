@@ -29,12 +29,7 @@
                     <span class="timestamp">{{ segment.start_fmt }}</span>
                 </div>
                 <div class="content">
-                    {% for word in segment.words %}
-                    <span class="word" 
-                          data-start="{{ word.start }}" 
-                          data-end="{{ word.end }}"
-                          onclick="seekTo({{ word.start }})">{{ word.word }}</span>
-                    {% endfor %}
+                    <p>{{ segment.text }}</p>
                 </div>
             </article>
             {% endfor %}
