@@ -1,6 +1,4 @@
 feeds:
-  - url: "https://feeds.simplecast.com/54nAGcIl"
-    name: "The Daily"
   - url: "https://www.osimhistoria.com/theanswer/podcast.xml"
     name: "The Answer"
   
