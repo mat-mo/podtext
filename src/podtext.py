@@ -175,11 +175,19 @@ def identify_speakers(segments):
     """
     
     try:
-        response = ollama.chat(model='llama3.2', messages=[
-            {'role': 'user', 'content': prompt},
-        ], format='json')
+        full_response = ""
+        # Stream the response to show progress
+        with tqdm(desc="Identifying Speakers (LLM)", unit="token") as pbar:
+            stream = ollama.chat(model='llama3.2', messages=[
+                {'role': 'user', 'content': prompt},
+            ], format='json', stream=True)
+            
+            for chunk in stream:
+                content = chunk['message']['content']
+                full_response += content
+                pbar.update(1)
         
-        mapping = json.loads(response['message']['content'])
+        mapping = json.loads(full_response)
         print(f"Identified Speakers: {mapping}")
         
         # Apply mapping
