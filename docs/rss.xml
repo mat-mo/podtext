@@ -6,8 +6,16 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 22:31:21 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 22:32:58 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>איך לייבש ידיים (ולהישאר בחיים) [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/yk-lyybsh-ydyym-vlhyshr-bkhyym-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/yk-lyybsh-ydyym-vlhyshr-bkhyym-htshvbh.html</guid>
+        <pubDate>Mon, 02 Sep 2024 03:00:02 +0000</pubDate>
+        <description>Transcript for איך לייבש ידיים (ולהישאר בחיים) [התשובה] from The Answer</description>
+    </item>
     
     <item>
         <title>שמונים יום או פחות, חלק א' [התשובה]</title>
@@ -159,14 +167,6 @@
         <guid>https://mat-mo.github.io/podtext/episodes/yk-lyybsh-t-hym-htykvn-htshvbh.html</guid>
         <pubDate>Mon, 29 Sep 2025 03:00:07 +0000</pubDate>
         <description>Transcript for איך לייבש את הים התיכון? [התשובה] from The Answer</description>
-    </item>
-    
-    <item>
-        <title>למה יש יותר מדי צירופי מקרים? [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/lmh-ysh-yvtr-mdy-tsyrvpy-mqrym-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/lmh-ysh-yvtr-mdy-tsyrvpy-mqrym-htshvbh.html</guid>
-        <pubDate>Wed, 22 Oct 2025 09:58:31 +0000</pubDate>
-        <description>Transcript for למה יש יותר מדי צירופי מקרים? [התשובה] from The Answer</description>
     </item>
     
 </channel>
