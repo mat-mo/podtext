@@ -17,6 +17,7 @@ import torch
 from dotenv import load_dotenv
 import ollama
 from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor
 
 # Load environment variables from .env file
 load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
@@ -88,27 +89,40 @@ def format_timestamp(seconds):
     return f"{minutes:02}:{secs:02}"
 
 def transcribe_and_diarize(whisper_model, diarization_pipeline, audio_path):
-    print(f"Transcribing {audio_path}...")
-    # 1. Run Whisper
-    segments, info = whisper_model.transcribe(audio_path, word_timestamps=True)
+    print(f"Processing {audio_path} (Parallel Execution)...")
     
-    whisper_words = []
-    # Transcription happens as an iterator; we wrap it to see progress
-    with tqdm(total=round(info.duration, 2), unit='sec', desc="Transcribing") as pbar:
-        for segment in segments:
-            for word in segment.words:
-                whisper_words.append({
-                    "word": word.word,
-                    "start": word.start,
-                    "end": word.end
-                })
-            pbar.update(segment.end - pbar.n)
-            
-    # 2. Run Diarization
-    print("Running diarization...")
-    # ProgressHook provides a tqdm bar for the pipeline
-    with ProgressHook() as hook:
-        diarization = diarization_pipeline(audio_path, hook=hook)
+    def run_whisper():
+        # 1. Run Whisper
+        segments, info = whisper_model.transcribe(audio_path, word_timestamps=True)
+        whisper_words = []
+        # Transcription happens as an iterator; we wrap it to see progress
+        # Position 0 ensures it stays at the top if running parallel
+        with tqdm(total=round(info.duration, 2), unit='sec', desc="Transcribing", position=0, leave=True) as pbar:
+            for segment in segments:
+                for word in segment.words:
+                    whisper_words.append({
+                        "word": word.word,
+                        "start": word.start,
+                        "end": word.end
+                    })
+                pbar.update(segment.end - pbar.n)
+        return whisper_words
+
+    def run_diarization():
+        # 2. Run Diarization
+        print("Starting Diarization...")
+        # ProgressHook provides a tqdm bar for the pipeline
+        with ProgressHook() as hook:
+            diarization = diarization_pipeline(audio_path, hook=hook)
+        return diarization
+
+    # Execute in parallel
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        future_whisper = executor.submit(run_whisper)
+        future_diarization = executor.submit(run_diarization)
+        
+        whisper_words = future_whisper.result()
+        diarization = future_diarization.result()
     
     # 3. Align Words to Speakers
     final_segments = []
@@ -212,8 +226,9 @@ def main():
     db = load_db()
     
     # Initialize Whisper Model
-    print("Loading Whisper model...")
-    model = WhisperModel("small", device="cpu", compute_type="int8")
+    # Switch to Distil-Whisper for 6x speedup on M-series chips
+    print("Loading Whisper model (Distil-Large-v3)...")
+    model = WhisperModel("distil-large-v3", device="cpu", compute_type="int8")
 
     # Initialize Diarization Pipeline
     print("Loading Diarization pipeline...")
