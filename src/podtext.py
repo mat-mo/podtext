@@ -305,6 +305,27 @@ def main():
                 
                 print(f"Successfully processed: {entry.title}")
 
+                # --- Immediate Sync ---
+                print("Rebuilding index and syncing...")
+                # Rebuild Index
+                render_html('index.html', {"site": config['site_settings'], "episodes": db['episodes']}, os.path.join(OUTPUT_DIR, 'index.html'))
+                
+                # Generate RSS Feed
+                rss_context = {
+                    "site": config['site_settings'],
+                    "episodes": db['episodes'][:20], # Include last 20 episodes in feed
+                    "build_date": formatdate()
+                }
+                render_html('rss.xml', rss_context, os.path.join(OUTPUT_DIR, 'rss.xml'))
+
+                # Copy CSS (Ensure it's always fresh)
+                import shutil
+                shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'styles.css'), os.path.join(OUTPUT_DIR, 'styles.css'))
+
+                # Git Sync immediately
+                git_sync(db['processed'])
+                # ----------------------
+
             except Exception as e:
                 print(f"Error processing {entry.title}: {e}")
             
@@ -315,25 +336,8 @@ def main():
                 if temp_wav and os.path.exists(temp_wav):
                     os.remove(temp_wav)
 
-    # Rebuild Index
-    print("Rebuilding index...")
-    render_html('index.html', {"site": config['site_settings'], "episodes": db['episodes']}, os.path.join(OUTPUT_DIR, 'index.html'))
-    
-    # Generate RSS Feed
-    print("Generating RSS feed...")
-    rss_context = {
-        "site": config['site_settings'],
-        "episodes": db['episodes'][:20], # Include last 20 episodes in feed
-        "build_date": formatdate()
-    }
-    render_html('rss.xml', rss_context, os.path.join(OUTPUT_DIR, 'rss.xml'))
-
-    # Copy CSS
-    import shutil
-    shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'styles.css'), os.path.join(OUTPUT_DIR, 'styles.css'))
-
-    # Git Sync
-    git_sync(db['processed'])
+    # (Code removed from here as it's now inside the loop)
+    pass 
 
 def git_sync(processed_ids):
     """Commits and pushes changes if there are new items."""
