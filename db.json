@@ -5,9 +5,18 @@
     "https://api.spreaker.com/episode/69076436",
     "https://api.spreaker.com/episode/68818645",
     "https://api.spreaker.com/episode/68237322",
-    "https://api.spreaker.com/episode/67879028"
+    "https://api.spreaker.com/episode/67879028",
+    "https://api.spreaker.com/episode/67757423"
   ],
   "episodes": [
+    {
+      "title": "\u05de\u05d0\u05d9\u05e4\u05d4 \u05d4\u05d2\u05d9\u05e2\u05d4 \u05e9\u05d9\u05e8\u05dc\u05d9? [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4]",
+      "published_date": "Mon, 15 Sep 2025 03:00:09 +0000",
+      "slug": "myph-hgy-h-shyrly-htshvbh",
+      "feed_name": "The Answer",
+      "feed_slug": "the-answer",
+      "feed_image": "https://d3wo5wojvuv7l.cloudfront.net/t_rss_itunes_square_1400/images.spreaker.com/original/d61f4225e4df332c90b73b9b59a04cbe.jpg"
+    },
     {
       "title": "\u05d0\u05d9\u05da \u05dc\u05d9\u05d9\u05d1\u05e9 \u05d0\u05ea \u05d4\u05d9\u05dd \u05d4\u05ea\u05d9\u05db\u05d5\u05df? [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4]",
       "published_date": "Mon, 29 Sep 2025 03:00:07 +0000",
