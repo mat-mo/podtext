@@ -9,3 +9,4 @@ pyyaml
 pyannote.audio
 python-dotenv
 ollama
+tqdm
