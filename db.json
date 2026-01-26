@@ -31,16 +31,26 @@
     "https://api.spreaker.com/episode/60554326",
     "https://api.spreaker.com/episode/60416129",
     "https://api.spreaker.com/episode/60098037",
-    "https://api.spreaker.com/episode/59880339"
+    "https://api.spreaker.com/episode/59880339",
+    "https://api.spreaker.com/episode/59329041"
   ],
   "episodes": [
+    {
+      "title": "\u05de\u05d4 \u05d1\u05d0\u05de\u05ea \u05d4\u05e8\u05d2 \u05d0\u05ea \u05d4\u05d3\u05d9\u05e0\u05d5\u05d6\u05d0\u05d5\u05e8\u05d9\u05dd? [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4]",
+      "published_date": "Mon, 08 Apr 2024 03:00:03 +0000",
+      "slug": "mh-bmt-hrg-t-hdynvzvrym-htshvbh",
+      "feed_name": "The Answer",
+      "feed_slug": "the-answer",
+      "feed_image": "https://d3wo5wojvuv7l.cloudfront.net/t_rss_itunes_square_1400/images.spreaker.com/original/d61f4225e4df332c90b73b9b59a04cbe.jpg"
+    },
     {
       "title": "\u05dc\u05de\u05d4 \u05d0\u05e0\u05d7\u05e0\u05d5 \u05dc\u05d0 \u05de\u05e7\u05e9\u05d9\u05d1\u05d9\u05dd \u05dc\u05d0\u05e7\u05d3\u05de\u05d9\u05d4 \u05dc\u05dc\u05e9\u05d5\u05df \u05d4\u05e2\u05d1\u05e8\u05d9\u05ea? [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4]",
       "published_date": "Tue, 07 May 2024 06:47:27 +0000",
       "slug": "lmh-nkhnv-l-mqshybym-lqdmyh-llshvn-h-bryt-htshvbh",
       "feed_name": "The Answer",
       "feed_slug": "the-answer",
-      "feed_image": "https://d3wo5wojvuv7l.cloudfront.net/t_rss_itunes_square_1400/images.spreaker.com/original/d61f4225e4df332c90b73b9b59a04cbe.jpg"
+      "feed_image": "https://d3wo5wojvuv7l.cloudfront.net/t_rss_itunes_square_1400/images.spreaker.com/original/d61f4225e4df332c90b73b9b59a04cbe.jpg",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>\u05dc\u05de\u05d4 \u05d0\u05e0\u05d7\u05e0\u05d5 \u05dc\u05d0 \u05de\u05e7\u05e9\u05d9\u05d1\u05d9\u05dd \u05dc\u05d0\u05e7\u05d3\u05de\u05d9\u05d4 \u05dc\u05dc\u05e9\u05d5\u05df \u05d4\u05e2\u05d1\u05e8\u05d9\u05ea? [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4] - Podtext</title>\n    <link rel=\"stylesheet\" href=\"../../styles.css\">\n</head>\n<body>\n    <div class=\"container\">\n        <header>\n            <a href=\"../../index.html\" class=\"back-link\">Back to Episodes</a>\n            <h1>\u05dc\u05de\u05d4 \u05d0\u05e0\u05d7\u05e0\u05d5 \u05dc\u05d0 \u05de\u05e7\u05e9\u05d9\u05d1\u05d9\u05dd \u05dc\u05d0\u05e7\u05d3\u05de\u05d9\u05d4 \u05dc\u05dc\u05e9\u05d5\u05df \u05d4\u05e2\u05d1\u05e8\u05d9\u05ea? [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4]</h1>\n            <p class=\"meta\">Published on Tue, 07 May 2024 06:47:27 +0000</p>\n        </header>\n\n        <div class=\"player-container\">\n            <audio id=\"audio-player\" controls>\n                <source src=\"https://api.spreaker.com/download/episode/59880339/hebrew_mst.mp3\" type=\"audio/mpeg\">\n                Your browser does not support the audio element.\n            </audio>\n        </div>\n\n        <div class=\"transcript-container\" id=\"transcript\">\n            \n            <article class=\"paragraph speaker-\">\n                <div class=\"paragraph-meta\">\n                    <span class=\"speaker-name\"></span>\n                    <span class=\"timestamp\"></span>\n                </div>\n                <div class=\"content\">\n                    <p></p>\n                </div>\n            </article>\n            \n        </div>\n    </div>\n\n    <script>\n        const audio = document.getElementById('audio-player');\n        const words = document.querySelectorAll('.word');\n        let currentWord = null;\n\n        function seekTo(time) {\n            audio.currentTime = time;\n            audio.play();\n        }\n\n        audio.addEventListener('timeupdate', () => {\n            const time = audio.currentTime;\n\n            // Simple optimization: only check around the current word or linear scan if lost\n            // For robustness, we'll just do a linear scan for now. \n            // In a huge transcript, we might want a binary search or index.\n            \n            let found = false;\n            words.forEach(word => {\n                const start = parseFloat(word.dataset.start);\n                const end = parseFloat(word.dataset.end);\n\n                if (time >= start && time < end) {\n                    if (currentWord !== word) {\n                        if (currentWord) currentWord.classList.remove('active');\n                        word.classList.add('active');\n                        currentWord = word;\n                        \n                        // Auto-scroll logic\n                        const container = document.getElementById('transcript');\n                        const wordTop = word.offsetTop - container.offsetTop;\n                        // scroll if word is getting out of view\n                        container.scrollTop = wordTop - 100; \n                    }\n                    found = true;\n                }\n            });\n\n            if (!found && currentWord) {\n                currentWord.classList.remove('active');\n                currentWord = null;\n            }\n        });\n    </script>\n</body>\n</html>"
     },
     {
       "title": "\u05dc\u05de\u05d4 \u05d3\u05d5\u05d5\u05e7\u05d0 60? [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4]",
