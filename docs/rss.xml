@@ -6,8 +6,16 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 22:23:53 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 22:24:49 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>אני יכול להסביר. [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/ny-ykvl-lhsbyr-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/ny-ykvl-lhsbyr-htshvbh.html</guid>
+        <pubDate>Mon, 11 Nov 2024 09:02:58 +0000</pubDate>
+        <description>Transcript for אני יכול להסביר. [התשובה] from The Answer</description>
+    </item>
     
     <item>
         <title>רגליים או עיניים? [התשובה]</title>
@@ -159,14 +167,6 @@
         <guid>https://mat-mo.github.io/podtext/episodes/myph-hgy-v-hkhtvlym-htshvbh.html</guid>
         <pubDate>Mon, 29 Dec 2025 16:35:51 +0000</pubDate>
         <description>Transcript for מאיפה הגיעו החתולים? [התשובה] from The Answer</description>
-    </item>
-    
-    <item>
-        <title>פרק השנה 2025 [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/prq-hshnh-2025-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/prq-hshnh-2025-htshvbh.html</guid>
-        <pubDate>Mon, 12 Jan 2026 15:09:30 +0000</pubDate>
-        <description>Transcript for פרק השנה 2025 [התשובה] from The Answer</description>
     </item>
     
 </channel>
