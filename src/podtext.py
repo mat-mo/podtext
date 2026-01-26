@@ -9,15 +9,13 @@ import subprocess
 import warnings
 from email.utils import formatdate
 from slugify import slugify
-
-# Suppress annoying warnings from audio libraries
-warnings.filterwarnings("ignore", category=UserWarning)
 from jinja2 import Environment, FileSystemLoader
 from faster_whisper import WhisperModel
 from pyannote.audio import Pipeline
 import torch
 from dotenv import load_dotenv
 import ollama
+from tqdm import tqdm
 
 # Load environment variables from .env file
 load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
@@ -50,11 +48,16 @@ def save_db(db):
 
 def download_file(url, filepath):
     print(f"Downloading {url}...")
-    with requests.get(url, stream=True) as r:
-        r.raise_for_status()
-        with open(filepath, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=8192):
-                f.write(chunk)
+    response = requests.get(url, stream=True)
+    total_size = int(response.headers.get('content-length', 0))
+    block_size = 8192
+    
+    with open(filepath, 'wb') as f:
+        with tqdm(total=total_size, unit='iB', unit_scale=True, desc="Downloading") as pbar:
+            for chunk in response.iter_content(chunk_size=block_size):
+                if chunk:
+                    f.write(chunk)
+                    pbar.update(len(chunk))
     return filepath
 
 def format_timestamp(seconds):
@@ -70,13 +73,16 @@ def transcribe_and_diarize(whisper_model, diarization_pipeline, audio_path):
     segments, info = whisper_model.transcribe(audio_path, word_timestamps=True)
     
     whisper_words = []
-    for segment in segments:
-        for word in segment.words:
-            whisper_words.append({
-                "word": word.word,
-                "start": word.start,
-                "end": word.end
-            })
+    # Transcription happens as an iterator; we wrap it to see progress
+    with tqdm(total=round(info.duration, 2), unit='sec', desc="Transcribing") as pbar:
+        for segment in segments:
+            for word in segment.words:
+                whisper_words.append({
+                    "word": word.word,
+                    "start": word.start,
+                    "end": word.end
+                })
+            pbar.update(segment.end - pbar.n)
             
     # 2. Run Diarization
     print("Running diarization (this may take a while)...")
