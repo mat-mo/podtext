@@ -26,9 +26,18 @@
     "https://api.spreaker.com/episode/62157335",
     "https://api.spreaker.com/episode/61230140",
     "https://api.spreaker.com/episode/61078070",
-    "https://api.spreaker.com/episode/60917036"
+    "https://api.spreaker.com/episode/60917036",
+    "https://api.spreaker.com/episode/60688701"
   ],
   "episodes": [
+    {
+      "title": "\u05de\u05d4\u05d9 \u05d4\u05de\u05d3\u05d9\u05e0\u05d4 \u05d4\u05db\u05d9 \u05de\u05e9\u05e2\u05de\u05de\u05ea (\u05d1\u05e7\u05d8\u05e2 \u05d8\u05d5\u05d1) \u05d1\u05e2\u05d5\u05dc\u05dd? [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4]",
+      "published_date": "Mon, 15 Jul 2024 03:00:05 +0000",
+      "slug": "mhy-hmdynh-hky-msh-mmt-bqt-tvb-b-vlm-htshvbh",
+      "feed_name": "The Answer",
+      "feed_slug": "the-answer",
+      "feed_image": "https://d3wo5wojvuv7l.cloudfront.net/t_rss_itunes_square_1400/images.spreaker.com/original/d61f4225e4df332c90b73b9b59a04cbe.jpg"
+    },
     {
       "title": "\u05de\u05d9 \u05d4\u05d9\u05d0 \u05d1\u05d0\u05de\u05ea \u05d4\u05d0\u05d9\u05e9\u05d4 \u05d4\u05d6\u05e7\u05e0\u05d4 \u05d1\u05e2\u05d5\u05dc\u05dd? [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4]",
       "published_date": "Mon, 05 Aug 2024 03:00:12 +0000",
