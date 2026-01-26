@@ -130,7 +130,7 @@ def process_with_gemini(audio_file):
     except Exception as e:
         print(f"Failed to parse JSON response: {e}")
         print("Raw response:", response.text[:500])
-        return []
+        raise Exception(f"Gemini API Error or Parse Failure: {e}")
 
 def render_html(template_name, context, output_path):
     env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
@@ -215,8 +215,7 @@ def main():
                 client.files.delete(name=gemini_file.name)
                 
                 if not segments:
-                    print("Error: No transcript generated.")
-                    continue
+                    raise Exception("Error: No transcript generated (Empty segments).")
 
                 # 5. Build HTML
                 # Determine relative path to CSS (now 2 levels deep: episodes/feed/file.html -> ../../styles.css)
