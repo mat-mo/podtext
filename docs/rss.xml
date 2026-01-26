@@ -6,8 +6,102 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 22:52:14 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 22:54:07 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>למה אנחנו לא מקשיבים לאקדמיה ללשון העברית? [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/the-answer/lmh-nkhnv-l-mqshybym-lqdmyh-llshvn-h-bryt-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/lmh-nkhnv-l-mqshybym-lqdmyh-llshvn-h-bryt-htshvbh.html</guid>
+        <pubDate>Tue, 07 May 2024 06:47:27 +0000</pubDate>
+        <description>Transcript for למה אנחנו לא מקשיבים לאקדמיה ללשון העברית? [התשובה] from The Answer</description>
+        <content:encoded><![CDATA[
+            <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>למה אנחנו לא מקשיבים לאקדמיה ללשון העברית? [התשובה] - Podtext</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-link">Back to Episodes</a>
+            <h1>למה אנחנו לא מקשיבים לאקדמיה ללשון העברית? [התשובה]</h1>
+            <p class="meta">Published on Tue, 07 May 2024 06:47:27 +0000</p>
+        </header>
+
+        <div class="player-container">
+            <audio id="audio-player" controls>
+                <source src="https://api.spreaker.com/download/episode/59880339/hebrew_mst.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="transcript-container" id="transcript">
+            
+            <article class="paragraph speaker-">
+                <div class="paragraph-meta">
+                    <span class="speaker-name"></span>
+                    <span class="timestamp"></span>
+                </div>
+                <div class="content">
+                    <p></p>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const words = document.querySelectorAll('.word');
+        let currentWord = null;
+
+        function seekTo(time) {
+            audio.currentTime = time;
+            audio.play();
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const time = audio.currentTime;
+
+            // Simple optimization: only check around the current word or linear scan if lost
+            // For robustness, we'll just do a linear scan for now. 
+            // In a huge transcript, we might want a binary search or index.
+            
+            let found = false;
+            words.forEach(word => {
+                const start = parseFloat(word.dataset.start);
+                const end = parseFloat(word.dataset.end);
+
+                if (time >= start && time < end) {
+                    if (currentWord !== word) {
+                        if (currentWord) currentWord.classList.remove('active');
+                        word.classList.add('active');
+                        currentWord = word;
+                        
+                        // Auto-scroll logic
+                        const container = document.getElementById('transcript');
+                        const wordTop = word.offsetTop - container.offsetTop;
+                        // scroll if word is getting out of view
+                        container.scrollTop = wordTop - 100; 
+                    }
+                    found = true;
+                }
+            });
+
+            if (!found && currentWord) {
+                currentWord.classList.remove('active');
+                currentWord = null;
+            }
+        });
+    </script>
+</body>
+</html>
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>למה דווקא 60? [התשובה]</title>
@@ -5750,100 +5844,6 @@
                 </div>
                 <div class="content">
                     <p>בכל מקרה, זה לא מה שבאתי להגיד. אז הפרק עסק בקולות ששומעים הרבה פעמים, בשני ילדים קריפיים שמצחקקים ובווילהלם. ואני ביקשתי מאנשים, מהציבור, שיספרו לי על מקרים אחרים ובייחוד מקרים ישראליים שבהם שומעים את הדברים האלה. והם סיפרו לי. אז הם סיפרו לי למשל שהילדים האלה מתברר הופיעו ב'זרעים של מסטיק' של דפנה דקל. נכון, זה באמת לא היה עד כדי כך מצחיק. בטח שלא מצחיק מספיק בשביל לצחוק פעמיים, כי אתם שמעתם את זה כן? שמתם לב שזה אותו הצחוק אותו אפקט שחזר פעמיים ברצף. זה לא אנחנו עשינו את זה, ככה זה היה בסרט המקורי. וזאת לא הפעם היחידה שהצחוק הזה מופיע בקלאסיקלטת, כנראה שלחברת ההפקות הזאת לא היו המון אפקטים קוליים אז הם השתמשו בצחוק הזה. וזה לא כזה מפתיע כי לזה הוא נועד בסופו של דבר. מה שקצת יותר מפתיע זה שאותו הצחוק הופיע בשירים ישראליים. מתברר שהשיר 'אהבה ראשונה' של ארקדי דוכין מתחיל ככה. שלום לשני הילדים ותגידו שלום לארקדי דוכין. בנוגע לווילהלם, מתברר שגם הוא הופיע בשירה עברית, שזה יותר מפתיע. בקשר לווילהלם אני ביקשתי שלא ישלחו לי כל פעם שאתם שמעתם אותו משום שזה הרבה יותר מדי, הוא פשוט מופיע בכל מקום. אבל יש הופעה מפתיעה אחת שלו, זה בשיר, בשיר 'הודי' של אנה זק ומרגי. יש את הקטע הזה. וילהלם! מה קורה? אבל מעבר לכל זה, מה שקרה אחרי שהקלטנו את הפרק, כלומר הקלטנו איזה פעם אחת ופעם שנייה ופעם שלישית, היו שלושה טייקים, ואז בסופו של דבר העסק הזה בושל ונערך ושלי ערכה אותו ואני האזנתי ואישרתי, בקיצור, מה שקרה יום לפני שהפרק היה אמור לעלות, אני הקשבתי לגרסה האחרונה של הפרק, אני אישרתי אותה והלכתי לסרט. 'חטופים' דרך אגב, זה סרט מעולה, ממש לא לילדים. בכל מקרה, לפני הסרט היו פרסומות ובין השאר הייתה שם פרסומת של מותג כלשהו שאני לא אזכיר אותו בשמו, אני רק אגיד שזה היה מותג של חברת תעופה ישראלית, לאומית, כל... זו הייתה פרסומת של אל על, אוקיי? בסדר, זה לא כאילו הם לא משלמים לי, הם לא לקחו חסות לפרק הזה, זה לא שיש לי קרובי משפחה שם או משהו. בכל אופן בפרסומת הזאת יש שם מטוס מלא בישראלים מאושרים שטסים הביתה ובין השאר יש שם שני ילדים שרצים במעבר, בדיוק כמו שהייתם מעדיפים שילדים לא יעשו במטוס דרך אגב, וכמובן מה עושים ילדים שרצים במעבר? הם מצחקקים וזה נשמע ככה. וזה הם! זה אותם ילדים מצחקקים שהופיעו בפרסומת שמול בני באותו יום שגמרתי את הפרק, ראיתי את זה. וזה אחרי שאני העברתי שעות בצפייה בפרסומות ישראליות איזוטריות משנות ה-90 כדי לנסות למצוא שם את הילדים האלה. מתברר שפשוט עורכי הסאונד של הפרסומת הזאת עדיין לא עדכנו את מאגר האפקטים שלהם. בכל אופן לפרסומת עצמה אני לא אגיד שום דבר, לאור בוטבול אבל יש דברים מצוינים להגיד עליה, תקשיבו לו, יש לו באופן כללי יש לו ערוץ יוטיוב מצוין של ביקורות פרסומות ואני אומר את זה למרות שהוא אפילו לא נמצא אצלנו כבר ברשת, אז זה לא קשור, זה פשוט כי הוא עושה דברים מוצלחים. זהו, מתברר שהילדים האלה עדיין בסביבה חזק, ואם תקשיבו טוב, יש מצב שאתם עדיין תשמעו אותם מצחקקים מדי פעם. זהו, זה לא היה פרק, זה היה קטע קטן. יהיה פרק חדש, שלי נוי ערכה גם אותו, ייעוץ ותמיכה מורלית מוץ, אביב שם טוב, אני דורון, ביי.</p>
-                </div>
-            </article>
-            
-        </div>
-    </div>
-
-    <script>
-        const audio = document.getElementById('audio-player');
-        const words = document.querySelectorAll('.word');
-        let currentWord = null;
-
-        function seekTo(time) {
-            audio.currentTime = time;
-            audio.play();
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            const time = audio.currentTime;
-
-            // Simple optimization: only check around the current word or linear scan if lost
-            // For robustness, we'll just do a linear scan for now. 
-            // In a huge transcript, we might want a binary search or index.
-            
-            let found = false;
-            words.forEach(word => {
-                const start = parseFloat(word.dataset.start);
-                const end = parseFloat(word.dataset.end);
-
-                if (time >= start && time < end) {
-                    if (currentWord !== word) {
-                        if (currentWord) currentWord.classList.remove('active');
-                        word.classList.add('active');
-                        currentWord = word;
-                        
-                        // Auto-scroll logic
-                        const container = document.getElementById('transcript');
-                        const wordTop = word.offsetTop - container.offsetTop;
-                        // scroll if word is getting out of view
-                        container.scrollTop = wordTop - 100; 
-                    }
-                    found = true;
-                }
-            });
-
-            if (!found && currentWord) {
-                currentWord.classList.remove('active');
-                currentWord = null;
-            }
-        });
-    </script>
-</body>
-</html>
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>לוצי: מה בעצם הקטע עם אבולוציה? [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/the-answer/lvtsy-mh-b-tsm-hqt-m-bvlvtsyh-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/lvtsy-mh-b-tsm-hqt-m-bvlvtsyh-htshvbh.html</guid>
-        <pubDate>Wed, 21 May 2025 09:04:58 +0000</pubDate>
-        <description>Transcript for לוצי: מה בעצם הקטע עם אבולוציה? [התשובה] from The Answer</description>
-        <content:encoded><![CDATA[
-            <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>לוצי: מה בעצם הקטע עם אבולוציה? [התשובה] - Podtext</title>
-    <link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="../../index.html" class="back-link">Back to Episodes</a>
-            <h1>לוצי: מה בעצם הקטע עם אבולוציה? [התשובה]</h1>
-            <p class="meta">Published on Wed, 21 May 2025 09:04:58 +0000</p>
-        </header>
-
-        <div class="player-container">
-            <audio id="audio-player" controls>
-                <source src="https://api.spreaker.com/download/episode/66181278/1_mst.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <div class="transcript-container" id="transcript">
-            
-            <article class="paragraph speaker-">
-                <div class="paragraph-meta">
-                    <span class="speaker-name"></span>
-                    <span class="timestamp"></span>
-                </div>
-                <div class="content">
-                    <p></p>
                 </div>
             </article>
             
