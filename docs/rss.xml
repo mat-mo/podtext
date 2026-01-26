@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
     <title>My Podcast Transcripts</title>
-    <link>https://yourusername.github.io/podtext</link>
+    <link>https://mat-mo.github.io/podtext</link>
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
-    <atom:link href="https://yourusername.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 25 Jan 2026 22:36:03 -0000</lastBuildDate>
+    <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jan 2026 00:26:39 -0000</lastBuildDate>
     
     
     <item>
         <title>The Sunday Daily: We Underestimated the Neanderthal</title>
-        <link>https://yourusername.github.io/podtext/episodes/the-sunday-daily-we-underestimated-the-neanderthal.html</link>
-        <guid>https://yourusername.github.io/podtext/episodes/the-sunday-daily-we-underestimated-the-neanderthal.html</guid>
+        <link>https://mat-mo.github.io/podtext/episodes/the-sunday-daily-we-underestimated-the-neanderthal.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/the-sunday-daily-we-underestimated-the-neanderthal.html</guid>
         <pubDate>Sun, 25 Jan 2026 11:00:00 +0000</pubDate>
         <description>Transcript for The Sunday Daily: We Underestimated the Neanderthal from The Daily</description>
     </item>

@@ -60,15 +60,26 @@ audio {
 .segment {
     margin-bottom: 1.5em;
     display: flex;
-    gap: 15px;
+    flex-direction: column; /* Changed to column to stack meta on top */
+    gap: 5px;
 }
 
-.timestamp {
-    color: #999;
+.segment-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
     font-size: 0.85em;
     font-family: monospace;
-    flex-shrink: 0;
-    margin-top: 4px;
+    color: #999;
+}
+
+.speaker-label {
+    font-weight: bold;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    background: #f0f4f8;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
 .word {
@@ -93,23 +104,46 @@ audio {
     padding: 0;
 }
 
-.episode-list li {
-    padding: 10px 0;
+.episode-item {
+    padding: 15px 0;
     border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.feed-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.episode-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .episode-list .date {
-    color: #777;
-    margin-right: 10px;
-    font-size: 0.9em;
+    color: #888;
+    font-size: 0.85em;
+    margin-bottom: 4px;
 }
 
-.episode-list a {
+.episode-title {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 2px;
 }
 
-.episode-list a:hover {
+.episode-title:hover {
     color: var(--accent-color);
+}
+
+.feed-name {
+    color: #666;
+    font-size: 0.9em;
 }
