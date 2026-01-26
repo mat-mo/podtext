@@ -1,6 +1,7 @@
 import os
 import json
 import time
+import datetime
 import requests
 import yaml
 import feedparser
@@ -98,16 +99,18 @@ def process_with_gemini(audio_file):
     6. Group consecutive sentences by the same speaker into a single paragraph.
     
     Output Format (JSON):
-    [
-      {
-        "speaker": "Speaker Name",
-        "timestamp": "MM:SS",
-        "text": "The full text of what they said..."
-      },
-      ...
-    ]
+    {
+      "language": "he" or "en",
+      "segments": [
+        {
+          "speaker": "Speaker Name",
+          "timestamp": "MM:SS",
+          "text": "The full text..."
+        }
+      ]
+    }
     
-    IMPORTANT: Return ONLY the JSON. No markdown formatting, no code blocks.
+    IMPORTANT: Return ONLY the JSON object.
     """
     
     response = client.models.generate_content(
@@ -119,7 +122,11 @@ def process_with_gemini(audio_file):
     )
     
     try:
-        return json.loads(response.text)
+        data = json.loads(response.text)
+        # Handle both old (list) and new (dict) formats for robustness
+        if isinstance(data, list):
+            return {"language": "en", "segments": data}
+        return data
     except Exception as e:
         print(f"Failed to parse JSON response: {e}")
         print("Raw response:", response.text[:500])
@@ -190,7 +197,10 @@ def main():
                 gemini_file = upload_to_gemini(temp_mp3)
                 
                 # 3. Transcribe
-                segments = process_with_gemini(gemini_file)
+                result = process_with_gemini(gemini_file)
+                segments = result.get('segments', [])
+                lang_code = result.get('language', 'en')
+                direction = "rtl" if lang_code == 'he' else "ltr"
                 
                 # 4. Cleanup Gemini File
                 client.files.delete(name=gemini_file.name)
@@ -213,7 +223,7 @@ def main():
                     seg['start_fmt'] = seg.get('timestamp', '')
 
                 render_html('episode.html', 
-                           {"episode": episode_data, "segments": segments}, 
+                           {"episode": episode_data, "segments": segments, "direction": direction}, 
                            os.path.join(EPISODES_DIR, f"{slug}.html"))
                 
                 # 6. Update DB
