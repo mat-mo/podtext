@@ -139,7 +139,7 @@ def render_html(template_name, context, output_path):
     with open(output_path, 'w') as f:
         f.write(content)
 
-def git_sync(processed_ids):
+def git_sync(processed_ids, episode_title=None):
     status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True).stdout
     if not status:
         return
@@ -147,8 +147,13 @@ def git_sync(processed_ids):
     print("Syncing with Git...")
     try:
         subprocess.run(["git", "add", "docs/", "db.json"], check=True)
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-        subprocess.run(["git", "commit", "-m", f"Update transcripts: {timestamp}"], check=True)
+        if episode_title:
+            message = f'New transcript for "{episode_title}"'
+        else:
+            timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+            message = f"Update transcripts: {timestamp}"
+            
+        subprocess.run(["git", "commit", "-m", message], check=True)
         subprocess.run(["git", "push"], capture_output=True, check=True)
         print("Successfully pushed to GitHub.")
     except subprocess.CalledProcessError as e:
@@ -259,7 +264,7 @@ def main():
                 import shutil
                 shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'styles.css'), os.path.join(OUTPUT_DIR, 'styles.css'))
                 
-                git_sync(db['processed'])
+                git_sync(db['processed'], episode_title=entry.title)
 
             except Exception as e:
                 print(f"Error processing {entry.title}: {e}")
