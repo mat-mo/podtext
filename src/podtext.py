@@ -12,6 +12,7 @@ from slugify import slugify
 from jinja2 import Environment, FileSystemLoader
 from faster_whisper import WhisperModel
 from pyannote.audio import Pipeline
+from pyannote.audio.pipelines.utils.hook import ProgressHook
 import torch
 from dotenv import load_dotenv
 import ollama
@@ -104,8 +105,10 @@ def transcribe_and_diarize(whisper_model, diarization_pipeline, audio_path):
             pbar.update(segment.end - pbar.n)
             
     # 2. Run Diarization
-    print("Running diarization (this may take a while)...")
-    diarization = diarization_pipeline(audio_path)
+    print("Running diarization...")
+    # ProgressHook provides a tqdm bar for the pipeline
+    with ProgressHook() as hook:
+        diarization = diarization_pipeline(audio_path, hook=hook)
     
     # 3. Align Words to Speakers
     final_segments = []
