@@ -180,14 +180,19 @@ def render_html(template_name, context, output_path):
     with open(output_path, 'w') as f:
         f.write(content)
 
-def git_sync(processed_ids, episode_title=None):
+def git_sync(processed_ids, episode_title=None, file_path=None):
     status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True).stdout
     if not status:
         return
 
     print("Syncing with Git...")
     try:
-        subprocess.run(["git", "add", "docs/", "db.json"], check=True)
+        files_to_add = ["db.json", "docs/index.html", "docs/rss.xml"]
+        if file_path:
+            files_to_add.append(file_path)
+            
+        subprocess.run(["git", "add"] + files_to_add, check=True)
+        
         if episode_title:
             message = f'New transcript for "{episode_title}"'
         else:
@@ -281,9 +286,11 @@ def main():
                            
                 # Validate Output
                 if not os.path.exists(output_html_path) or os.path.getsize(output_html_path) < 500:
+                    if os.path.exists(output_html_path):
+                        os.remove(output_html_path)
                     raise Exception("Generated HTML is missing or too small (transcription likely failed).")
                 
-                # 6. Update DB (Only after success verification)
+                # 6. Update DB
                 db['processed'].append(guid)
                 db['episodes'].insert(0, {
                     "title": entry.title,
@@ -298,26 +305,24 @@ def main():
                 
                 # 7. Sync
                 render_html('index.html', {"site": config['site_settings'], "episodes": db['episodes']}, os.path.join(OUTPUT_DIR, 'index.html'))
-                # Generate RSS Feed
-                # Populate content for the latest 20 episodes
+                
+                # Update RSS
                 rss_episodes = db['episodes'][:20]
                 for ep in rss_episodes:
-                    # Only load if not already present (optimization if running in loop)
                     if 'content' not in ep:
                         ep['content'] = get_episode_content(ep)
 
                 rss_context = {
                     "site": config['site_settings'],
-                    "episodes": rss_episodes, # Include last 20 episodes in feed
+                    "episodes": rss_episodes,
                     "build_date": formatdate()
                 }
                 render_html('rss.xml', rss_context, os.path.join(OUTPUT_DIR, 'rss.xml'))
-
                 
                 import shutil
                 shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'styles.css'), os.path.join(OUTPUT_DIR, 'styles.css'))
                 
-                git_sync(db['processed'], episode_title=entry.title)
+                git_sync(db['processed'], episode_title=entry.title, file_path=output_html_path)
 
             finally:
                 # Cleanup Temp
