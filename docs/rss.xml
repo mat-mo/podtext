@@ -6,8 +6,16 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 21:24:18 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 21:28:50 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>הקבר עם סימן השאלה [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/hqbr-m-symn-hshlh-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/hqbr-m-symn-hshlh-htshvbh.html</guid>
+        <pubDate>Tue, 19 Aug 2025 12:16:06 +0000</pubDate>
+        <description>Transcript for הקבר עם סימן השאלה [התשובה] from The Answer</description>
+    </item>
     
     <item>
         <title>מאיפה הגיעה שירלי? [התשובה]</title>
