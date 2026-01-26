@@ -63,11 +63,24 @@ audio {
     gap: 30px;
 }
 
+[dir="rtl"] .paragraph-meta {
+    text-align: left; /* Flip sidebar text for RTL */
+    border-left: 1px solid #eee;
+    border-right: none;
+    padding-left: 10px;
+    padding-right: 0;
+}
+
+[dir="ltr"] .paragraph-meta {
+    text-align: right;
+    border-right: 1px solid #eee;
+    padding-right: 10px;
+}
+
 .paragraph-meta {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
+    /* align-items is handled by specific direction selectors if needed, or stick to flex-start/end logic */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 0.75em;
     color: #888;
@@ -91,7 +104,7 @@ audio {
 }
 
 .content {
-    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-family: "David", "Frank Ruhl Libre", "Georgia", "Times New Roman", serif;
     font-size: 1.15em;
     line-height: 1.8;
     color: #222;

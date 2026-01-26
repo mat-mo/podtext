@@ -1,16 +1,8 @@
 {
   "processed": [
-    "https://api.spreaker.com/episode/69401998",
-    "https://api.spreaker.com/episode/69241835"
+    "https://api.spreaker.com/episode/69401998"
   ],
   "episodes": [
-    {
-      "title": "\u05de\u05d0\u05d9\u05e4\u05d4 \u05d4\u05d2\u05d9\u05e2\u05d5 \u05d4\u05d7\u05ea\u05d5\u05dc\u05d9\u05dd? [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4]",
-      "published_date": "Mon, 29 Dec 2025 16:35:51 +0000",
-      "slug": "myph-hgy-v-hkhtvlym-htshvbh",
-      "feed_name": "The Answer",
-      "feed_image": "https://d3wo5wojvuv7l.cloudfront.net/t_rss_itunes_square_1400/images.spreaker.com/original/d61f4225e4df332c90b73b9b59a04cbe.jpg"
-    },
     {
       "title": "\u05e4\u05e8\u05e7 \u05d4\u05e9\u05e0\u05d4 2025 [\u05d4\u05ea\u05e9\u05d5\u05d1\u05d4]",
       "published_date": "Mon, 12 Jan 2026 15:09:30 +0000",
