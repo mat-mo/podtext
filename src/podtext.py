@@ -94,6 +94,9 @@ def transcribe_and_diarize(whisper_model, diarization_pipeline, audio_path):
     def run_whisper():
         # 1. Run Whisper
         segments, info = whisper_model.transcribe(audio_path, word_timestamps=True)
+        
+        print(f"Detected language '{info.language}' with probability {info.language_probability:.2f}")
+        
         whisper_words = []
         # Transcription happens as an iterator; we wrap it to see progress
         # Position 0 ensures it stays at the top if running parallel
@@ -106,7 +109,7 @@ def transcribe_and_diarize(whisper_model, diarization_pipeline, audio_path):
                         "end": word.end
                     })
                 pbar.update(segment.end - pbar.n)
-        return whisper_words
+        return whisper_words, info.language, info.language_probability
 
     def run_diarization():
         # 2. Run Diarization
@@ -121,7 +124,7 @@ def transcribe_and_diarize(whisper_model, diarization_pipeline, audio_path):
         future_whisper = executor.submit(run_whisper)
         future_diarization = executor.submit(run_diarization)
         
-        whisper_words = future_whisper.result()
+        whisper_words, detected_lang, lang_prob = future_whisper.result()
         diarization = future_diarization.result()
     
     # 3. Align Words to Speakers
@@ -164,7 +167,7 @@ def transcribe_and_diarize(whisper_model, diarization_pipeline, audio_path):
     if current_segment:
         final_segments.append(current_segment)
         
-    return final_segments
+    return final_segments, detected_lang, lang_prob
 
 def identify_speakers(segments):
     """Uses local LLM to map SPEAKER_XX to real names."""
@@ -232,9 +235,10 @@ def main():
     db = load_db()
     
     # Initialize Whisper Model
-    # Switch to Distil-Whisper for 6x speedup on M-series chips
-    print("Loading Whisper model (Distil-Large-v3)...")
-    model = WhisperModel("distil-large-v3", device="cpu", compute_type="int8")
+    # Use 'large-v3' for best multilingual support (Hebrew, etc.)
+    # 'distil-large-v3' is English-only and causes garbage output for other languages.
+    print("Loading Whisper model (Large-v3)...")
+    model = WhisperModel("large-v3", device="cpu", compute_type="int8")
 
     # Initialize Diarization Pipeline
     print("Loading Diarization pipeline...")
@@ -293,7 +297,7 @@ def main():
                 temp_wav = convert_to_wav(temp_mp3)
                 
                 # 2. Transcribe & Diarize (Use WAV)
-                segments = transcribe_and_diarize(model, pipeline, temp_wav)
+                segments, detected_lang, lang_prob = transcribe_and_diarize(model, pipeline, temp_wav)
                 
                 # 2.5 Identify Speakers (Local LLM)
                 segments = identify_speakers(segments)
@@ -305,7 +309,9 @@ def main():
                     "audio_url": audio_url, # Hotlink original
                     "slug": slug,
                     "feed_name": feed_conf['name'],
-                    "feed_image": feed_image
+                    "feed_image": feed_image,
+                    "language": detected_lang,
+                    "language_prob": f"{lang_prob:.2%}"
                 }
                 
                 # 4. Generate HTML
