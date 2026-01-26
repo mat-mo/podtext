@@ -6,8 +6,12 @@ import requests
 import yaml
 import feedparser
 import subprocess
+import warnings
 from email.utils import formatdate
 from slugify import slugify
+
+# Suppress annoying warnings from audio libraries
+warnings.filterwarnings("ignore", category=UserWarning)
 from jinja2 import Environment, FileSystemLoader
 from faster_whisper import WhisperModel
 from pyannote.audio import Pipeline
