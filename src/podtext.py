@@ -226,53 +226,58 @@ def identify_speakers(segments):
 
 def proofread_transcript(segments, language_code="en"):
     """Uses local LLM to proofread text, considering confidence scores."""
-    print("Running AI Proofreader (Judge)...")
+    if not segments:
+        return []
+        
+    print(f"Running AI Proofreader (Judge) on {len(segments)} segments...")
     
-    # Process in chunks of 15 segments to manage context window and speed
+    # Process in chunks of 15 segments
     CHUNK_SIZE = 15
     
     for i in range(0, len(segments), CHUNK_SIZE):
         chunk = segments[i:i + CHUNK_SIZE]
         
         # 1. Construct Prompt Input
-        # Format: <ID> | <Speaker> | <Text with (conf)>
         input_text = ""
         for idx, seg in enumerate(chunk):
             annotated_text = ""
             for w in seg['words']:
-                # Mark low confidence words (< 0.6)
                 if w.get('prob', 1.0) < 0.6:
                     annotated_text += f"{w['word']}[{w.get('prob',0):.2f}]"
                 else:
                     annotated_text += w['word']
-            
-            # Using a simple index to map back later
             input_text += f"ID_{idx}: {annotated_text}\n"
 
         # 2. Build Prompt
         lang_instruction = "Hebrew" if language_code == 'he' else "the original language"
         prompt = f"""
         Act as a professional transcript editor. 
-        I will provide a list of transcript lines where low-confidence words are marked like 'word[0.45]'.
+        Correct transcription errors and grammar in {lang_instruction}.
+        Fix words marked with confidence scores like 'word[0.45]'.
         
-        Your Task:
-        1. Correct transcription errors, grammar, and spelling in {lang_instruction}.
-        2. Pay special attention to marked low-confidence words—fix them based on context.
-        3. Maintain the original speaker style.
-        4. Return the output in the EXACT format: "ID_X: <Corrected Text>"
+        Rules:
+        - Return ONLY the corrected text.
+        - Format: "ID_X: <Corrected Text>"
+        - Do not add explanations.
         
         Input:
         {input_text}
         """
         
         try:
-            response = ollama.chat(model='llama3.2', messages=[
-                {'role': 'user', 'content': prompt},
-            ])
+            # Added options to prevent the model from getting stuck in long generations
+            response = ollama.chat(
+                model='llama3.2', 
+                messages=[{'role': 'user', 'content': prompt}],
+                options={
+                    "num_predict": 1000, # Limit output length
+                    "temperature": 0.3    # Lower temperature for more stability
+                }
+            )
             
             output = response['message']['content']
             
-            # 3. Parse and Apply Corrections
+            # 3. Parse and Apply
             for line in output.split('\n'):
                 if line.strip().startswith("ID_"):
                     try:
@@ -280,21 +285,14 @@ def proofread_transcript(segments, language_code="en"):
                         if len(parts) == 2:
                             local_idx = int(parts[0].replace("ID_", "").strip())
                             corrected_text = parts[1].strip()
-                            
-                            # Safety check: ensure index is within this chunk
                             if 0 <= local_idx < len(chunk):
-                                # Update the text field
-                                # Note: We don't update the individual 'words' array because realigning exact timestamps 
-                                # to rewritten text is extremely complex. We update the display text.
                                 chunk[local_idx]['text'] = corrected_text
-                    except ValueError:
-                        continue
+                    except: continue
                         
-            # Update the progress (simple visual)
-            print(f"Proofread segments {i} to {min(i+CHUNK_SIZE, len(segments))}")
+            print(f"  [✓] Proofread chunk {i//CHUNK_SIZE + 1} (segments {i}-{min(i+CHUNK_SIZE, len(segments))})")
 
         except Exception as e:
-            print(f"Proofreading chunk failed: {e}")
+            print(f"  [!] Skipping chunk {i//CHUNK_SIZE + 1} due to error/timeout: {e}")
             
     return segments
 
