@@ -6,8 +6,102 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 23:40:22 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 23:41:27 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>השאלה האחרת שאי אפשר לכתוב ועוד השלמות ותיקונים [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/the-answer/hshlh-hkhrt-shy-pshr-lktvb-v-vd-hshlmvt-vtyqvnym-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/hshlh-hkhrt-shy-pshr-lktvb-v-vd-hshlmvt-vtyqvnym-htshvbh.html</guid>
+        <pubDate>Mon, 10 Apr 2023 03:00:02 +0000</pubDate>
+        <description>Transcript for השאלה האחרת שאי אפשר לכתוב ועוד השלמות ותיקונים [התשובה] from The Answer</description>
+        <content:encoded><![CDATA[
+            <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>השאלה האחרת שאי אפשר לכתוב ועוד השלמות ותיקונים [התשובה] - Podtext</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-link">Back to Episodes</a>
+            <h1>השאלה האחרת שאי אפשר לכתוב ועוד השלמות ותיקונים [התשובה]</h1>
+            <p class="meta">Published on Mon, 10 Apr 2023 03:00:02 +0000</p>
+        </header>
+
+        <div class="player-container">
+            <audio id="audio-player" controls>
+                <source src="https://api.spreaker.com/download/episode/53483652/mst.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="transcript-container" id="transcript">
+            
+            <article class="paragraph speaker-">
+                <div class="paragraph-meta">
+                    <span class="speaker-name"></span>
+                    <span class="timestamp"></span>
+                </div>
+                <div class="content">
+                    <p></p>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const words = document.querySelectorAll('.word');
+        let currentWord = null;
+
+        function seekTo(time) {
+            audio.currentTime = time;
+            audio.play();
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const time = audio.currentTime;
+
+            // Simple optimization: only check around the current word or linear scan if lost
+            // For robustness, we'll just do a linear scan for now. 
+            // In a huge transcript, we might want a binary search or index.
+            
+            let found = false;
+            words.forEach(word => {
+                const start = parseFloat(word.dataset.start);
+                const end = parseFloat(word.dataset.end);
+
+                if (time >= start && time < end) {
+                    if (currentWord !== word) {
+                        if (currentWord) currentWord.classList.remove('active');
+                        word.classList.add('active');
+                        currentWord = word;
+                        
+                        // Auto-scroll logic
+                        const container = document.getElementById('transcript');
+                        const wordTop = word.offsetTop - container.offsetTop;
+                        // scroll if word is getting out of view
+                        container.scrollTop = wordTop - 100; 
+                    }
+                    found = true;
+                }
+            });
+
+            if (!found && currentWord) {
+                currentWord.classList.remove('active');
+                currentWord = null;
+            }
+        });
+    </script>
+</body>
+</html>
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>מה אוכלות החיות? [התשובה]</title>
@@ -6749,100 +6843,6 @@
                 </div>
                 <div class="content">
                     <p>לפודקאסטים נוספים של רשת עושים היסטוריה ולהצטרפות לרשימת התפוצה של התוכנית בדואר האלקטרוני בקרו ב-osimhistoria.com או הורידו את אפליקציית עושים היסטוריה מחנות האפליקציות של אנדרואיד.</p>
-                </div>
-            </article>
-            
-        </div>
-    </div>
-
-    <script>
-        const audio = document.getElementById('audio-player');
-        const words = document.querySelectorAll('.word');
-        let currentWord = null;
-
-        function seekTo(time) {
-            audio.currentTime = time;
-            audio.play();
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            const time = audio.currentTime;
-
-            // Simple optimization: only check around the current word or linear scan if lost
-            // For robustness, we'll just do a linear scan for now. 
-            // In a huge transcript, we might want a binary search or index.
-            
-            let found = false;
-            words.forEach(word => {
-                const start = parseFloat(word.dataset.start);
-                const end = parseFloat(word.dataset.end);
-
-                if (time >= start && time < end) {
-                    if (currentWord !== word) {
-                        if (currentWord) currentWord.classList.remove('active');
-                        word.classList.add('active');
-                        currentWord = word;
-                        
-                        // Auto-scroll logic
-                        const container = document.getElementById('transcript');
-                        const wordTop = word.offsetTop - container.offsetTop;
-                        // scroll if word is getting out of view
-                        container.scrollTop = wordTop - 100; 
-                    }
-                    found = true;
-                }
-            });
-
-            if (!found && currentWord) {
-                currentWord.classList.remove('active');
-                currentWord = null;
-            }
-        });
-    </script>
-</body>
-</html>
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>האם אפשר לסמוך על ויקיפדיה? [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/the-answer/hm-pshr-lsmvk-l-vyqypdyh-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/hm-pshr-lsmvk-l-vyqypdyh-htshvbh.html</guid>
-        <pubDate>Mon, 11 Mar 2024 08:47:52 +0000</pubDate>
-        <description>Transcript for האם אפשר לסמוך על ויקיפדיה? [התשובה] from The Answer</description>
-        <content:encoded><![CDATA[
-            <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>האם אפשר לסמוך על ויקיפדיה? [התשובה] - Podtext</title>
-    <link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="../../index.html" class="back-link">Back to Episodes</a>
-            <h1>האם אפשר לסמוך על ויקיפדיה? [התשובה]</h1>
-            <p class="meta">Published on Mon, 11 Mar 2024 08:47:52 +0000</p>
-        </header>
-
-        <div class="player-container">
-            <audio id="audio-player" controls>
-                <source src="https://api.spreaker.com/download/episode/58999960/wikipedia_mst.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <div class="transcript-container" id="transcript">
-            
-            <article class="paragraph speaker-">
-                <div class="paragraph-meta">
-                    <span class="speaker-name"></span>
-                    <span class="timestamp"></span>
-                </div>
-                <div class="content">
-                    <p></p>
                 </div>
             </article>
             
