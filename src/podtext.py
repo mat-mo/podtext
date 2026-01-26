@@ -60,6 +60,25 @@ def download_file(url, filepath):
                     pbar.update(len(chunk))
     return filepath
 
+def convert_to_wav(input_path):
+    """Converts MP3 to 16kHz Mono WAV for stable AI processing."""
+    output_path = input_path.rsplit('.', 1)[0] + ".wav"
+    print(f"Converting to WAV: {output_path}...")
+    
+    # ffmpeg -i input.mp3 -ar 16000 -ac 1 -c:a pcm_s16le -y output.wav
+    subprocess.run([
+        "ffmpeg", 
+        "-i", input_path,
+        "-ar", "16000",       # 16kHz sample rate (standard for Whisper/Pyannote)
+        "-ac", "1",           # Mono
+        "-c:a", "pcm_s16le",  # 16-bit PCM
+        "-y",                 # Overwrite if exists
+        "-loglevel", "error", # Quiet output
+        output_path
+    ], check=True)
+    
+    return output_path
+
 def format_timestamp(seconds):
     """Converts seconds (float) to MM:SS string."""
     seconds = int(seconds)
@@ -232,13 +251,17 @@ def main():
 
             slug = slugify(entry.title)
             temp_mp3 = os.path.join(TEMP_DIR, f"{slug}.mp3")
+            temp_wav = None
             
             try:
                 # 1. Download
                 download_file(audio_url, temp_mp3)
                 
-                # 2. Transcribe & Diarize
-                segments = transcribe_and_diarize(model, pipeline, temp_mp3)
+                # 1.5 Convert to WAV (Fixes decoding errors)
+                temp_wav = convert_to_wav(temp_mp3)
+                
+                # 2. Transcribe & Diarize (Use WAV)
+                segments = transcribe_and_diarize(model, pipeline, temp_wav)
                 
                 # 2.5 Identify Speakers (Local LLM)
                 segments = identify_speakers(segments)
@@ -278,6 +301,8 @@ def main():
                 # Cleanup
                 if os.path.exists(temp_mp3):
                     os.remove(temp_mp3)
+                if temp_wav and os.path.exists(temp_wav):
+                    os.remove(temp_wav)
 
     # Rebuild Index
     print("Rebuilding index...")
