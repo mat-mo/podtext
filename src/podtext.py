@@ -84,7 +84,7 @@ def upload_to_gemini(path):
 
 def process_with_gemini(audio_file):
     """Sends the audio file to Gemini 1.5 Flash for transcription and formatting."""
-    print("Requesting transcription from Gemini 1.5 Flash...")
+    print("Requesting transcription from Gemini 2.0 Flash (Exp)...")
     
     prompt = """
     You are a professional podcast transcriber and editor.
@@ -111,7 +111,7 @@ def process_with_gemini(audio_file):
     """
     
     response = client.models.generate_content(
-        model="gemini-1.5-flash",
+        model="gemini-2.0-flash-exp",
         contents=[audio_file, prompt],
         config=types.GenerateContentConfig(
             response_mime_type="application/json",
