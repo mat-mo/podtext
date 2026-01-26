@@ -218,7 +218,6 @@ def main():
                     raise Exception("Error: No transcript generated (Empty segments).")
 
                 # 5. Build HTML
-                # Determine relative path to CSS (now 2 levels deep: episodes/feed/file.html -> ../../styles.css)
                 episode_data = {
                     "title": entry.title,
                     "published": entry.published,
@@ -245,7 +244,7 @@ def main():
                     "published_date": entry.published,
                     "slug": slug,
                     "feed_name": feed_conf['name'],
-                    "feed_slug": feed_slug, # Save feed slug to link correctly from index
+                    "feed_slug": feed_slug,
                     "feed_image": feed_image
                 })
                 save_db(db)
@@ -265,10 +264,8 @@ def main():
                 
                 git_sync(db['processed'], episode_title=entry.title)
 
-            except Exception as e:
-                print(f"Error processing {entry.title}: {e}")
-            
             finally:
+                # Cleanup Temp
                 if os.path.exists(temp_mp3):
                     os.remove(temp_mp3)
 
