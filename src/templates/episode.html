@@ -23,20 +23,20 @@
 
         <div class="transcript-container" id="transcript">
             {% for segment in segments %}
-            <div class="segment speaker-{{ segment.speaker }}">
-                <div class="segment-meta">
-                    <span class="speaker-label">{{ segment.speaker }}</span>
-                    <span class="timestamp">[{{ segment.start_fmt }}]</span>
+            <article class="paragraph speaker-{{ segment.speaker }}">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">{{ segment.speaker }}</span>
+                    <span class="timestamp">{{ segment.start_fmt }}</span>
                 </div>
-                <p>
+                <div class="content">
                     {% for word in segment.words %}
                     <span class="word" 
                           data-start="{{ word.start }}" 
                           data-end="{{ word.end }}"
                           onclick="seekTo({{ word.start }})">{{ word.word }}</span>
                     {% endfor %}
-                </p>
-            </div>
+                </div>
+            </article>
             {% endfor %}
         </div>
     </div>

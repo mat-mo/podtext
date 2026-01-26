@@ -52,51 +52,85 @@ audio {
 }
 
 .transcript-container {
-    max-height: 70vh;
-    overflow-y: auto;
-    padding-right: 10px;
+    max-height: none; /* Allow full page scroll for better reading */
+    margin-top: 30px;
 }
 
-.segment {
-    margin-bottom: 1.5em;
+.paragraph {
+    margin-bottom: 2.5em;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 30px;
+}
+
+.paragraph-meta {
     display: flex;
-    flex-direction: column; /* Changed to column to stack meta on top */
-    gap: 5px;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.75em;
+    color: #888;
+    padding-top: 5px;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
 }
 
-.segment-meta {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    font-size: 0.85em;
-    font-family: monospace;
-    color: #999;
-}
-
-.speaker-label {
-    font-weight: bold;
-    color: var(--accent-color);
+.speaker-name {
+    font-weight: 700;
+    color: #555;
     text-transform: uppercase;
-    background: #f0f4f8;
-    padding: 2px 6px;
-    border-radius: 4px;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.timestamp {
+    font-family: monospace;
+    opacity: 0.7;
+}
+
+.content {
+    font-family: "Georgia", "Times New Roman", Times, serif;
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #222;
 }
 
 .word {
     cursor: pointer;
-    padding: 0 2px;
-    border-radius: 3px;
-    transition: background-color 0.2s;
+    padding: 2px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
 }
 
 .word:hover {
-    background-color: #eee;
+    background-color: #f0f0f0;
+    border-bottom-color: var(--accent-color);
 }
 
 .word.active {
     background-color: var(--active-word-bg);
     color: var(--active-word-color);
-    font-weight: bold;
+    border-bottom: 2px solid var(--active-word-color);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .paragraph {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .paragraph-meta {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        position: static;
+        border-bottom: 1px solid #f0f0f0;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
 }
 
 .episode-list {

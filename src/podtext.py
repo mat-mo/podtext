@@ -298,6 +298,42 @@ def proofread_transcript(segments, language_code="en"):
             
     return segments
 
+def merge_segments(segments):
+    """Merges consecutive segments by the same speaker for book-like reading."""
+    if not segments:
+        return []
+
+    print("Merging segments into paragraphs...")
+    
+    # 1. Smoothing: Fill single-segment "Unknown" gaps between same speakers
+    # This fixes fragmented sentences caused by short silences/noise
+    for i in range(1, len(segments) - 1):
+        prev_spk = segments[i-1]['speaker']
+        curr_spk = segments[i]['speaker']
+        next_spk = segments[i+1]['speaker']
+        
+        if curr_spk == "Unknown" and prev_spk == next_spk:
+            segments[i]['speaker'] = prev_spk
+
+    # 2. Merging
+    merged = []
+    current = segments[0]
+    
+    for next_seg in segments[1:]:
+        if next_seg['speaker'] == current['speaker']:
+            # Combine into current paragraph
+            current['words'].extend(next_seg['words'])
+            # Ensure clean spacing
+            current['text'] = (current['text'].strip() + " " + next_seg['text'].strip()).strip()
+            current['end'] = next_seg['end']
+        else:
+            merged.append(current)
+            current = next_seg
+    merged.append(current)
+    
+    print(f"Merged {len(segments)} segments into {len(merged)} paragraphs.")
+    return merged
+
 def render_html(template_name, context, output_path):
     env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
     template = env.get_template(template_name)
@@ -379,6 +415,9 @@ def main():
                 
                 # 2.6 Proofread Transcript (AI Judge)
                 segments = proofread_transcript(segments, language_code=detected_lang)
+                
+                # 2.7 Merge Segments (Book-like flow)
+                segments = merge_segments(segments)
                 
                 # 3. Build Context
                 episode_data = {
