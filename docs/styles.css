@@ -47,6 +47,39 @@ html[dir="ltr"] .back-link::before {
 /* Hide the original arrow text if strictly enforcing symbols via CSS, 
    but for now we'll assume the HTML text might be "Back" */
 
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.rss-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #f26522; /* RSS orange */
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #fff5ee;
+    transition: all 0.2s;
+}
+
+.rss-link:hover {
+    background: #f26522;
+    color: white;
+}
+
+.rss-icon {
+    width: 18px;
+    height: 18px;
+}
+
 header {
     border-bottom: 1px solid #eee;
     margin-bottom: 20px;
