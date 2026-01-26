@@ -169,7 +169,7 @@ def main():
         # Default image
         feed_image = d.feed.get('image', {}).get('href') or d.feed.get('itunes_image')
         
-        for entry in d.entries[:3]: # Check latest 3 episodes
+        for entry in d.entries[:200]: # Check latest 200 episodes
             guid = entry.id
             if guid in processed_ids:
                 continue
