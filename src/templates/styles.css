@@ -17,6 +17,17 @@ body {
     padding: 20px;
 }
 
+/* Explicit RTL/LTR defaults */
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -25,6 +36,16 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
+/* Flip Back link arrow for RTL */
+html[dir="rtl"] .back-link::before {
+    content: "→ ";
+}
+html[dir="ltr"] .back-link::before {
+    content: "← ";
+}
+/* Hide the original arrow text if strictly enforcing symbols via CSS, 
+   but for now we'll assume the HTML text might be "Back" */
 
 header {
     border-bottom: 1px solid #eee;
@@ -59,19 +80,22 @@ audio {
 .paragraph {
     margin-bottom: 2.5em;
     display: grid;
-    grid-template-columns: 120px 1fr;
+    /* LTR: [Sidebar 120px] [Content 1fr] */
+    /* RTL: [Sidebar 120px] [Content 1fr] (Starts from Right) */
+    grid-template-columns: 120px 1fr; 
     gap: 30px;
 }
 
-[dir="rtl"] .paragraph-meta {
-    text-align: left; /* Flip sidebar text for RTL */
+/* Fix sidebar alignment based on direction */
+html[dir="rtl"] .paragraph-meta {
+    text-align: left; /* Sidebar text aligns to the inner edge (left side of the right column) */
     border-left: 1px solid #eee;
     border-right: none;
     padding-left: 10px;
     padding-right: 0;
 }
 
-[dir="ltr"] .paragraph-meta {
+html[dir="ltr"] .paragraph-meta {
     text-align: right;
     border-right: 1px solid #eee;
     padding-right: 10px;
