@@ -6,8 +6,16 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 01:15:28 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 06:12:00 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>איך יוצרים יתרון יחסי ומה הנתונים מראים? [עושים חשבון]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/yk-yvtsrym-ytrvn-ykhsy-vmh-hntvnym-mrym-vshym-khshbvn.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/yk-yvtsrym-ytrvn-ykhsy-vmh-hntvnym-mrym-vshym-khshbvn.html</guid>
+        <pubDate>Sun, 18 Jan 2026 04:00:08 +0000</pubDate>
+        <description>Transcript for איך יוצרים יתרון יחסי ומה הנתונים מראים? [עושים חשבון] from Osim Historia</description>
+    </item>
     
     <item>
         <title>זה לא סלע, זה המחשב הראשון בעולם (ש.ח.) [עושים טכנולוגיה]</title>
