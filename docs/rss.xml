@@ -6,8 +6,16 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 22:08:30 -0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 22:09:14 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>הילדים המצחקקים מכים שנית - עדכון [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/hyldym-hmtskhqqym-mkym-shnyt-dkvn-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/hyldym-hmtskhqqym-mkym-shnyt-dkvn-htshvbh.html</guid>
+        <pubDate>Mon, 12 May 2025 15:24:29 +0000</pubDate>
+        <description>Transcript for הילדים המצחקקים מכים שנית - עדכון [התשובה] from The Answer</description>
+    </item>
     
     <item>
         <title>לוצי: מה בעצם הקטע עם אבולוציה? [התשובה]</title>
