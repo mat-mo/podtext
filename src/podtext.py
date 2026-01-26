@@ -10,8 +10,8 @@ from slugify import slugify
 from jinja2 import Environment, FileSystemLoader
 from dotenv import load_dotenv
 from tqdm import tqdm
-import google.generativeai as genai
-from google.generativeai.types import HarmCategory, HarmBlockThreshold
+from google import genai
+from google.genai import types
 
 # Load environment variables
 load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
@@ -32,8 +32,9 @@ for d in [OUTPUT_DIR, EPISODES_DIR, TEMP_DIR]:
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
     print("WARNING: GEMINI_API_KEY not found in .env file. Please add it.")
+    client = None
 else:
-    genai.configure(api_key=api_key)
+    client = genai.Client(api_key=api_key)
 
 def load_config():
     with open(CONFIG_PATH, 'r') as f:
@@ -63,20 +64,20 @@ def download_file(url, filepath):
                     pbar.update(len(chunk))
     return filepath
 
-def upload_to_gemini(path, mime_type="audio/mp3"):
+def upload_to_gemini(path):
     """Uploads file to Gemini File API and waits for processing."""
     print(f"Uploading {path} to Gemini...")
-    file = genai.upload_file(path, mime_type=mime_type)
+    file = client.files.upload(file=path)
     print(f"Uploaded file '{file.display_name}' as: {file.uri}")
     
     # Wait for processing
     print("Waiting for file processing...")
-    while file.state.name == "PROCESSING":
+    while file.state == "PROCESSING":
         time.sleep(2)
-        file = genai.get_file(file.name)
+        file = client.files.get(name=file.name)
         
-    if file.state.name != "ACTIVE":
-        raise Exception(f"File upload failed with state: {file.state.name}")
+    if file.state != "ACTIVE":
+        raise Exception(f"File upload failed with state: {file.state}")
         
     print("File is ready.")
     return file
@@ -85,8 +86,6 @@ def process_with_gemini(audio_file):
     """Sends the audio file to Gemini 1.5 Flash for transcription and formatting."""
     print("Requesting transcription from Gemini 1.5 Flash...")
     
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    
     prompt = """
     You are a professional podcast transcriber and editor.
     
@@ -94,7 +93,7 @@ def process_with_gemini(audio_file):
     1. Listen to this audio file (it may be in Hebrew or English).
     2. Transcribe the conversation accurately.
     3. Identify the speakers by name (e.g., "Ran", "Shani") based on context.
-    4. Translate any non-English parts if they are mixed, or keep the primary language (Hebrew) as is. (PREFER: Keep original language of the podcast).
+    4. Keep primary language (Hebrew) as is.
     5. Format the output as a JSON list of segments.
     6. Group consecutive sentences by the same speaker into a single paragraph.
     
@@ -111,9 +110,12 @@ def process_with_gemini(audio_file):
     IMPORTANT: Return ONLY the JSON. No markdown formatting, no code blocks.
     """
     
-    response = model.generate_content(
-        [audio_file, prompt],
-        generation_config={"response_mime_type": "application/json"}
+    response = client.models.generate_content(
+        model="gemini-1.5-flash",
+        contents=[audio_file, prompt],
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+        )
     )
     
     try:
@@ -146,6 +148,9 @@ def git_sync(processed_ids):
         print(f"Git Error: {e}")
 
 def main():
+    if not client:
+        return
+        
     config = load_config()
     db = load_db()
     processed_ids = set(db['processed'])
@@ -187,8 +192,8 @@ def main():
                 # 3. Transcribe
                 segments = process_with_gemini(gemini_file)
                 
-                # 4. Cleanup Gemini File (to save storage quota)
-                genai.delete_file(gemini_file.name)
+                # 4. Cleanup Gemini File
+                client.files.delete(name=gemini_file.name)
                 
                 if not segments:
                     print("Error: No transcript generated.")
@@ -204,15 +209,8 @@ def main():
                     "feed_image": feed_image
                 }
                 
-                # Format timestamps in segments (Gemini might give strings or seconds)
-                # We assume Gemini gives "MM:SS" as requested, but we map it to 'start_fmt' for template compatibility
                 for seg in segments:
                     seg['start_fmt'] = seg.get('timestamp', '')
-                    # Create dummy word list for template compatibility if needed, 
-                    # but we updated the template to use 'content' div mostly.
-                    # Actually, the template uses 'words' loop. We need to adapt the template or the data.
-                    # Let's adapt the data to match the template expectations roughly.
-                    seg['words'] = [{"word": w, "start": 0, "end": 0} for w in seg['text'].split()]
 
                 render_html('episode.html', 
                            {"episode": episode_data, "segments": segments}, 
@@ -238,7 +236,7 @@ def main():
                     "build_date": formatdate()
                 }
                 render_html('rss.xml', rss_context, os.path.join(OUTPUT_DIR, 'rss.xml'))
-                # Copy CSS
+                
                 import shutil
                 shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'styles.css'), os.path.join(OUTPUT_DIR, 'styles.css'))
                 
