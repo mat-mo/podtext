@@ -11,6 +11,13 @@
         </div>
     </div>
 
+    <div class="player-container">
+        <audio id="audio-player" controls>
+            <source src="{{ episode.audio_url }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
     <div class="transcript-container" id="transcript">
         {% if transcript_html %}
             {{ transcript_html|safe }}
