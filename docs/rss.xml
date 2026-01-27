@@ -6,8 +6,222 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 00:15:44 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 00:16:43 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>איך לא להיות אפיפיור [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/the-answer/yk-l-lhyvt-pypyvr-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/yk-l-lhyvt-pypyvr-htshvbh.html</guid>
+        <pubDate>Mon, 08 Aug 2022 14:42:23 +0000</pubDate>
+        <description>Transcript for איך לא להיות אפיפיור [התשובה] from The Answer</description>
+        <content:encoded><![CDATA[
+            <!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>איך לא להיות אפיפיור [התשובה] - Podtext</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-link">Back to Episodes</a>
+            <h1>איך לא להיות אפיפיור [התשובה]</h1>
+            <p class="meta">Published on Mon, 08 Aug 2022 14:42:23 +0000</p>
+        </header>
+
+        <div class="player-container">
+            <audio id="audio-player" controls>
+                <source src="https://api.spreaker.com/download/episode/50852112/episode_50852112.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="transcript-container" id="transcript">
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">00:00</span>
+                </div>
+                <div class="content">
+                    <p>אתם אוהבים חידות? לא כאלה של 'מה ההבדל בין חלב', אלא חידות שגורמות לכם לבהות בתקרה ולמלמל 'מין רגע, אבל אם הוא עשה ככה...'? תקשיבו לזה. יש עשרה חדרים, בכל אחד מהם ישן שובב. באמצע הלילה, כל אחד מהשובבים בתורו מתעורר ובודק את הדלת של החדר שלו. אם הדלת שלו בסדר, היא שם, היא דלת, אז הוא הולך לדלת של אחד החדרים האחרים - לא החדר שלו - מפרק אותה וסוחב אותה למחסן. ואז חוזר לישון. אם הוא מתעורר ומגלה שאין לו דלת בחדר כי מישהו לקח אותה, אז הוא הולך למחסן, לוקח דלת, מתקין אותה בחדר שלו וחוזר לישון. ככה זה נמשך עד שכל אחד מהשובבים התעורר ועשה את מה שהוא עשה. אנחנו לא יודעים באיזה סדר הם התעוררו, אנחנו לא יודעים איזו דלת כל אחד מהם פירק. השאלה היא: בסוף הלילה הזה, מה המספר המקסימלי של דלתות שיכולות להיות במחסן?</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">02:30</span>
+                </div>
+                <div class="content">
+                    <p>היי, אני דורון וזאת התשובה. קיבלתי שאלה מאלכסנדר השישי, והוא שאל: מי היה האפיפיור הכי גרוע בהיסטוריה ולמה? ונדמה לי שאלכסנדר השישי רומז למישהו. הוא יודע על איזה אפיפיור הוא רוצה שאני אדבר, אבל אני לא רוצה לדבר על אלכסנדר השישי. זה לא אומר שאני לא רוצה לדבר על אפיפיורים. אם שאלת מי היה האפיפיור הכי גרוע, אז קודם כל - מה זה גרוע? היו הרבה אפיפיורים שנחשבים לרעים, היו אפיפיורים אכזריים, היו אפיפיורים מושחתים, היו כאלה שהיו פשוט גרועים במובן של לא טובים בעבודה שלהם. אבל אני רוצה לדבר על אחד מהם באופן ספציפי, אחד שהוא באופן מאוד מפתיע אקטואלי.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">07:33</span>
+                </div>
+                <div class="content">
+                    <p>מי הוא הבנאדם הכי חשוב בעולם? חלק מהאנשים יגידו נשיא ארצות הברית, חלק יגידו אילון מאסק, חלק יגידו מסי, חלק יגידו אמא. לכולם יש טיעונים טובים. אבל סביר להניח שאם תעשו משאל כלל עולמי בנושא הזה, מי שיקבל הכי הרבה קולות הוא האפיפיור. כי מבחינת נוצרים קתולים, אין שאלה כאן. זה האיש. כמובן, לא כל האנשים בעולם נוצרים, ולא כל הנוצרים הם קתולים. יש כל מיני ענפים בנצרות, אבל הנצרות הקתולית היא הענף הכי גדול בנצרות, יש יותר ממיליארד קתולים בעולם. ולפי האמונה של האנשים האלה, האיש הכי חשוב בעולם הוא כמובן ישו, אבל כל עוד הוא לא בסביבה, ממלא המקום שלו הוא הבישוף של רומא, המכונה גם פונטיפקס מקסימוס, או בקיצור - האפיפיור.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">09:51</span>
+                </div>
+                <div class="content">
+                    <p>אז נגיד שאתם אומרים עכשיו 'וואלה, להיות אפיפיור נשמע כמו ג'וב טוב, איך מקבלים את התפקיד הזה?'. אז התשובה היא שאתם פשוט צריכים להיבחר. זה הולך ככה: אחרי שהאפיפיור מת, עושים את טקסי הקבורה והפרידה והאבל, זה לוקח כמה ימים טובים, ואז ניגשים לבחירות. כל הקרדינלים מתכנסים במקום אחד כדי לבחור אפיפיור חדש. מי זה הקרדינלים? הם גם האנשים שמצביעים בבחירות האלה וגם המועמדים. קרדינלים הם בישופים, כלומר דרגה גבוהה של כומר, שיש להם גלימות אדומות וזכות מיוחדת להשתתף בבחירה. התהליך הזה יכול לקחת קצת זמן כי האמת שזה כמעט אף פעם לא קורה שמגיעים לרוב כבר בהצבעה הראשונה.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">13:00</span>
+                </div>
+                <div class="content">
+                    <p>העניין הוא שהתפקיד הזה של האפיפיור הוא גם מנהיג רוחני, אבל הוא גם מאוד מאוד פוליטי. לאפיפיור יש הרבה כוח. באותו זמן האפיפיור היה גם מלך של מדינה ולא מיני-פיצקי מדינונת כמו היום. אז ארצות האפיפיור היו מדינה די גדולה שמכסה חלק גדול ממה שהיום איטליה. אז הבחירות האלה הן בחירות שבהן בוחרים ראש מדינה. ומטבע הדברים, כל אחד רוצה שראש הממשלה יהיה מהצד שלו ולא מהצד של היריב כדי לקדם את האינטרסים שלו. אז התפקיד הזה, שאמור להיות ממלא מקום אלוהים עלי אדמות וטהור ואלוהי וצדיק וחופשי מהבלי העולם הזה וכל זה - בתכלס, כל המנגנון הזה שבוחר אותו הוא מאוד מושחת. מאוד. ועובד לפי אינטרסים ופוליטיקה וזה מאוד ברור שזה המצב.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">19:01</span>
+                </div>
+                <div class="content">
+                    <p>בשנת 1292, האפיפיור ניקולס הרביעי מת והקרדינלים, בשלב הזה היו רק 12 קרדינלים, התכנסו ולא הצליחו להחליט. באותה תקופה האפיפיורים הגיעו מאחת משתי משפחות אצולה רומאיות יריבות. איך שהוא יצא שרצף ארוך של אפיפיורים היו או ממשפחה אחת או מהשנייה. והקרדינלים היו מחולקים חצי-חצי בין המקורבים לשתי המשפחות האלה. שנתיים הם היו תקועים בלי רוב ובלי אפיפיור. ובמדינה בינתיים כאוס, מהומות ברחובות, פעולות טרור, בלאגן. אנשים התחילו לכעוס. אחד האנשים שכעסו היה הנזיר פייטרו דה מורונה.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">20:18</span>
+                </div>
+                <div class="content">
+                    <p>פייטרו היה נזיר כמו שאתם מדמיינים נזיר. הוא נולד למשפחת איכרים ובמקום להיות חקלאי הוא הרגיש קרוב לדת והחליט להיות נזיר. הוא לא התעסק בפוליטיקה בכלל, הוא חי לבד במערה אי שם בהרים. הוא לא היה אלמוני, הוא היה נזיר ידוע כי הייתה קהילה של נזירים שהלכה בעקבותיו. הוא היה בן 80 או 84, הוא לא היה צעיר בכל מקרה. פייטרו החליט לכתוב מכתב לראש הקרדינלים. הוא נזף בהם באופן חמור מאוד על זה שהם לא בוחרים אפיפיור ושהשיקולים הפוליטיים הצרים שלהם לא מאפשרים לכל העולם לקבל את המנהיג הרוחני שלו, ואיים עליהם שאם הם לא יבחרו הם ישרפו באש הגיהנום. המכתב היה מאוד משכנע. ראש הקרדינלים הקריא אותו לאחרים ואז הכריז בקול רם: 'אני בוחר בפייטרו דה מורונה לתפקיד האפיפיור!'</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">23:16</span>
+                </div>
+                <div class="content">
+                    <p>פייטרו דה מורונה לא היה שם, הוא אפילו לא היה קרדינל. אבל מסתבר שאין שום חוק שאומר שהאפיפיור החדש צריך להיות אחד מהקרדינלים. באופן עקרוני זה יכול להיות כל גבר קתולי. היתרון של פייטרו דה מורונה היה שהוא לא היה צד בוויכוח הפוליטי. הוא היה נייטרלי לגמרי. הקרדינלים הצביעו ופייטרו דה מורונה נבחר ברוב קולות להיות האפיפיור החדש, למרות שהוא מעולם לא ביקש להיות אחד כזה. לקח שבועיים עד שהוא קיבל את ההודעה. כשהוא קיבל את ההודעה הוא ברח. אבל תפסו אותו והסבירו לו שאין לו ברירה. אז הוא אמר כן.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">28:51</span>
+                </div>
+                <div class="content">
+                    <p>פייטרו בחר לעצמו את השם סלסטינוס החמישי. טקס ההכתרה נערך בלקווילה, עיר קטנה בהרים שהייתה הכי קרובה למערה שלו. הגיעו לטקס 200,000 איש. הוא הגיע רכוב על חמור, וזה נראה טוב, זה נראה כאילו הוא מביא רוח חדשה למוסד המיושן הזה. אבל מהר מאוד התברר שזה היה רעיון ממש ממש גרוע. פייטרו היה אולי בנאדם טוב ונוצרי טוב, אבל הוא לא היה פוליטיקאי בכלל. הוא נחת ישר לתוך כוורת רוחשת ביועצים ששמחו לספר לו מה הוא צריך לעשות. ומכיוון שלא ממש הייתה לו דעה ברוב העניינים, הוא פשוט נטה לעשות מה שאמרו לו.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">31:33</span>
+                </div>
+                <div class="content">
+                    <p>הוא היה בקיצור מאוד גרוע בעבודה שלו והוא ידע את זה. הדרך המקובלת היחידה להפסיק להיות אפיפיור הייתה למות, אבל הוא העדיף לא לעשות את זה. אז מה עוד אפשר לעשות? להתפטר? אפיפיורים לא מתפטרים. סלסטינוס התייעץ עם יועצים ואחד מהם היה הקרדינל בנדטו קאיטני, שאמר לו ככה: 'זה נכון שלפי החוקים אפיפיור לא יכול לפרוש, אבל לפי החוקים לאפיפיור מותר לשנות את החוקים'. פחות מחמישה חודשים מהרגע שבו מונה, סלסטינוס החמישי הוציא צו אפיפיורי שאומר שלאפיפיור שרוצה בכך ויש לו סיבות טובות - מותר לפרוש. ואז פרש.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">40:39</span>
+                </div>
+                <div class="content">
+                    <p>פעם שעברה לקח לקרדינלים שנתיים להחליט. הפעם זה לקח להם יום אחד. האפיפיור הנבחר החדש היה בנדטו קאיטני. הוא הפך לאפיפיור בוניפיקיוס השמיני ושלט במשך 9 שנים. קאיטני, מחשש שסלסטינוס יחזור בו או שקבוצות מתנגדות ישתמשו בו כמנהיג חלופי, רדף אחריו. פייטרו ניסה לברוח חזרה למערה שלו, אבל השליחים של האפיפיור החדש תפסו אותו. האפיפיור החדש כלא את האפיפיור לשעבר בטירה - בבית כלא. פחות משנה מאוחר יותר פייטרו דה מורונה מת בכלא. הוא היה בתפקיד 106 ימים ולא עשה בו שום דבר חשוב. הוא אחד האפיפיורים הכי זניחים שהיו אי פעם. אז למה הוא משנה?</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">46:52</span>
+                </div>
+                <div class="content">
+                    <p>714 שנים מאוחר יותר הייתה רעידת אדמה בלקווילה. האפיפיור דאז, בנדיקטוס ה-16, ביקור בעיר בעקבות האסון וביקר גם את הקבר של סלסטינוס החמישי. הוא הסיר את הפאליום שלו - הצעיף הלבן שהוא חלק מהלבוש המיוחד של האפיפיור - והניח אותו על הקבר. זה היה יוצא דופן. את התשובה למה הוא עשה את זה קיבלנו 4 שנים מאוחר יותר ב-2013, כשבנדיקטוס ה-16 הכריז שהוא פורש. הוא היה האפיפיור הראשון מזה 700 שנה שהתפטר. הוא השתמש בתקדים של סלסטינוס. אחרי שהוא פרש, נבחר האפיפיור הנוכחי - פרנציסקוס.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-דורון פישלר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">דורון פישלר</span>
+                    <span class="timestamp">52:37</span>
+                </div>
+                <div class="content">
+                    <p>פרנציסקוס הוא אפיפיור מאוד פופולרי, וגם הוא היום בן 85. ובסוף אוגוסט הנוכחי הוא מתכוון לבקר בלקווילה בקבר של סלסטינוס החמישי. מיד כשפורסמו התוכניות האלה עלתה ההשערה שגם הוא עומד לפרוש. אם זה נכון, זה יהפוך את זה פחות או יותר לסטנדרט - שכבר לא חייבים למות כדי לפרוש מהתפקיד. וזה רעיון חיובי. מי שהתחיל את זה היה פייטרו דה מורונה, סלסטינוס החמישי. הוא עשה רק דבר חשוב אחד בתור האפיפיור וזה להפסיק להיות האפיפיור. וזאת התשובה.</p>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const words = document.querySelectorAll('.word');
+        let currentWord = null;
+
+        function seekTo(time) {
+            audio.currentTime = time;
+            audio.play();
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const time = audio.currentTime;
+
+            // Simple optimization: only check around the current word or linear scan if lost
+            // For robustness, we'll just do a linear scan for now. 
+            // In a huge transcript, we might want a binary search or index.
+            
+            let found = false;
+            words.forEach(word => {
+                const start = parseFloat(word.dataset.start);
+                const end = parseFloat(word.dataset.end);
+
+                if (time >= start && time < end) {
+                    if (currentWord !== word) {
+                        if (currentWord) currentWord.classList.remove('active');
+                        word.classList.add('active');
+                        currentWord = word;
+                        
+                        // Auto-scroll logic
+                        const container = document.getElementById('transcript');
+                        const wordTop = word.offsetTop - container.offsetTop;
+                        // scroll if word is getting out of view
+                        container.scrollTop = wordTop - 100; 
+                    }
+                    found = true;
+                }
+            });
+
+            if (!found && currentWord) {
+                currentWord.classList.remove('active');
+                currentWord = null;
+            }
+        });
+    </script>
+</body>
+</html>
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>למה נוסעים בצד ימין? (שידור מעודכן) [התשובה]</title>
@@ -7880,610 +8094,6 @@
                 </div>
                 <div class="content">
                     <p>מנהלת דיגיטל שרית לזני קורצמן, יובל דרור העורך הראשי, רן לוי המציא את המלפפון, דני טימור המנהל העסקי. בצוות הרשת גם אילה שמש, שלי גואטה וזלטה צ'באן. אני דורון, ביי. ועכשיו אני הולך לאכול גזר כדי שיהיה את האפקט של אכילת גזר שאפשר יהיה להכניס אותו בכל מיני מקומות בפרק. הבעיה עם לאכול גזר שזה פשוט נתקע בפה במשך שעות ואני לא יכול פשוט לדבר עכשיו, כי עכשיו זה עניין של איזה שתי דקות עד שאני פשוט אסיים.</p>
-                </div>
-            </article>
-            
-        </div>
-    </div>
-
-    <script>
-        const audio = document.getElementById('audio-player');
-        const words = document.querySelectorAll('.word');
-        let currentWord = null;
-
-        function seekTo(time) {
-            audio.currentTime = time;
-            audio.play();
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            const time = audio.currentTime;
-
-            // Simple optimization: only check around the current word or linear scan if lost
-            // For robustness, we'll just do a linear scan for now. 
-            // In a huge transcript, we might want a binary search or index.
-            
-            let found = false;
-            words.forEach(word => {
-                const start = parseFloat(word.dataset.start);
-                const end = parseFloat(word.dataset.end);
-
-                if (time >= start && time < end) {
-                    if (currentWord !== word) {
-                        if (currentWord) currentWord.classList.remove('active');
-                        word.classList.add('active');
-                        currentWord = word;
-                        
-                        // Auto-scroll logic
-                        const container = document.getElementById('transcript');
-                        const wordTop = word.offsetTop - container.offsetTop;
-                        // scroll if word is getting out of view
-                        container.scrollTop = wordTop - 100; 
-                    }
-                    found = true;
-                }
-            });
-
-            if (!found && currentWord) {
-                currentWord.classList.remove('active');
-                currentWord = null;
-            }
-        });
-    </script>
-</body>
-</html>
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>למה פוליטיקאים גבוהים? [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/the-answer/lmh-pvlytyqym-gbvhym-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/lmh-pvlytyqym-gbvhym-htshvbh.html</guid>
-        <pubDate>Mon, 08 May 2023 03:00:02 +0000</pubDate>
-        <description>Transcript for למה פוליטיקאים גבוהים? [התשובה] from The Answer</description>
-        <content:encoded><![CDATA[
-            <!DOCTYPE html>
-<html lang="en" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>למה פוליטיקאים גבוהים? [התשובה] - Podtext</title>
-    <link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="../../index.html" class="back-link">Back to Episodes</a>
-            <h1>למה פוליטיקאים גבוהים? [התשובה]</h1>
-            <p class="meta">Published on Mon, 08 May 2023 03:00:02 +0000</p>
-        </header>
-
-        <div class="player-container">
-            <audio id="audio-player" controls>
-                <source src="https://api.spreaker.com/download/episode/53739988/height_mst.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <div class="transcript-container" id="transcript">
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">00:00</span>
-                </div>
-                <div class="content">
-                    <p>בכיתה א', יעל גילתה כוכב לכת חדש. אמיתי, כוכב לכת שלא היה מוכר עד אז, מסתובב סביב שמש אחרת. נמרוד בנה מכשיר שמתרגם את שפת העגבניות. ברצינות, הוא הקליט את הקולות שעגבניות עושות, הן עושות קולות, כדי לדעת את כמות המים המדויקת שהן צריכות. שניהם למדו במרכז מדעני העתיד. אבל לא עליהם אני רוצה לדבר עכשיו, אלא עליכם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">00:27</span>
-                </div>
-                <div class="content">
-                    <p>אתם ספציפית, אתם שמאזינים עכשיו ולומדים בכיתה ז' או ח' או ט'. איזה מין אנשים אתם? איזה מין בני ובנות נוער מאזינים לפודקאסטים על מדע והיסטוריה וטכנולוגיה וכאלה דברים? אני מוכן לנחש, בני נוער סקרנים, כאלה שמתעניינים בדברים, כאלה שרוצים ללמוד דברים, לא רק את מה שלומדים בבית הספר, ואולי מסתכלים על העולם קצת אחרת ואולי מחפשים אתגרים קצת יותר מעניינים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">00:54</span>
-                </div>
-                <div class="content">
-                    <p>אז אם אי פעם הרגשתם שאתם קצת מחוץ למסגרת, זה הזמן להיכנס למסגרת שכן מתאימה לכם. קוראים לזה מרכז מדעני העתיד. שם יומרני, אני יודע, אבל צריך למכור את זה גם להורים שלכם. מה שזה אומר, זה שאתם מגיעים למוסדות אקדמיים בארץ כדי ללמוד ברמה אקדמית כבר בזמן התיכון, לבצע מחקרים פורצי דרך, להשתלב במעבדות עם החוקרים הכי טובים בישראל ולהיות עם אנשים סקרנים כמוכם. כי לשנות את העולם זה כיף, אבל זה הרבה יותר כיף כשעושים את זה ביחד.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">01:25</span>
-                </div>
-                <div class="content">
-                    <p>ההרשמה היא לתלמידות ותלמידים בכיתות ז' עד ט' והיא פתוחה עכשיו. אז אם זה אתם, אם הפרסומת הזאת דיברה עליכם, תחפשו ברשת מרכז מדעני העתיד. ואם זה לא אתם, אז סליחה שהפרעתי. התוכניות הן מיזם משותף של מרכז מדעני העתיד ומשרד החינוך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">01:57</span>
-                </div>
-                <div class="content">
-                    <p>היי, אני דורון, זאת התשובה. 178 שאל אותי: שמתי לב שפוליטיקאים רבים הם יחסית גבוהים. נתניהו, גנץ, טראמפ, אובמה, ביל קלינטון ועוד ועוד. ותהיתי אם זה באמת נכון שפוליטיקאים הם גבוהים יותר בממוצע ואם כן אז למה? אה... מה? מה הקשר?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">02:27</span>
-                </div>
-                <div class="content">
-                    <p>טוב, אני מניח שהתחמקנו מזה מספיק ועכשיו הגיע הזמן לעסוק בפוליטיקה. ובחלק הכי חשוב והכי רלוונטי של הפוליטיקה בלי ספק: הגובה של הפוליטיקאים. בואו נראה מה הקשר. ביבי נתניהו הוא לפי מה שכתוב במקומות מסוימים באינטרנט בגובה של מטר 84, ובמקומות אחרים מטר 82. ובני גנץ הוא מטר 91, אוקיי, איש גבוה. יאיר לפיד מטר 74. לגבי כולם, לא התגנבתי לבית שלהם בלילה ומדדתי אותם כשהם ישנו.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">03:19</span>
-                </div>
-                <div class="content">
-                    <p>וזה גם לא בדיוק נתון שחובה על ראש מפלגה לספק למישהו. כל הדברים האלה זה פשוט מה שאנשים באינטרנט אומרים, אני מניח שזה פשוט לפי מסתכלים עליהם בטלוויזיה וכל זה, ואני הולך להניח שזה פחות או יותר נכון למרות שאין לי שום מושג עד כמה זה מדויק, מן הסתם זה לא באמת מדויק. נפתלי בנט, אין לי מושג, לא מצאתי שום הערכה לגבי הגובה שלו. אבל אם חוזרים יותר אחורה ברשימת ראשי הממשלה של ישראל, אז ככה: רבין, ככה אומרים, היה מטר 74. שרון מטר 70. אהוד אולמרט די גבוה, מטר 87.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">03:47</span>
-                </div>
-                <div class="content">
-                    <p>לעומת זאת ידוע שיצחק שמיר למשל היה איש ממש נמוך. וכמוהו בן גוריון, שאין ויכוח על זה שהוא אחת הדמויות הציבוריות הכי חשובות בתולדות המדינה, ראש הממשלה הראשון, האבא של המדינה, והוא היה מטר חמישים וקצת. הוא היה איש גדול, אבל אדם נמוך. ועל האחרים פשוט לא מצאתי. גולדה מאיר למשל, אני גיגלתי גולדה מאיר גובה והגעתי לעמוד על גולדה שבו כתוב חד משמעית: גובה 29 סנטימטר. מה? לא יכול להיות, אני בטוח שהיא הייתה קצת יותר גבוהה מזה. אה, אוקיי, זה פשוט היה עמוד של ספר עליה, זה הגובה של הספר. גולדה מאיר לא הייתה גמדת גינה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">04:35</span>
-                </div>
-                <div class="content">
-                    <p>מה כל זה אומר? שראשי ממשלה בישראל בהווה ובעבר ובפוטנציה הם בחלקם גבוהים ובחלקם נמוכים ובחלקם בינוניים ואין פה שום מגמה ושום קשר. ולמה שיהיה קשר? איך זה קשור למשהו? אני מתחיל לחשוב שהשאלה הזאת הייתה קצת טיפשית. אבל כשעושים את אותה בדיקה בארצות הברית, אז קורה משהו מעניין.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">05:03</span>
-                </div>
-                <div class="content">
-                    <p>ג'ו ביידן הוא לפי מקורות זרים מטר 83. דונלד טראמפ הוא מטר 91. שניהם אנשים גבוהים. ולפניהם היו אובמה, מטר 87, בוש מטר 82, ביל קלינטון מטר 89, בוש השני מטר 88 ורייגן מטר 85. כל האנשים האלה הם אנשים גבוהים. צריך לחזור יותר מ-40 שנה אחורה לג'ימי קרטר כדי למצוא נשיא אמריקאי שהגובה שלו הוא פחות ממטר 80. וגם הוא לא היה נמוך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">05:46</span>
-                </div>
-                <div class="content">
-                    <p>ואם ממשיכים אחריו עוד ארבעה נשיאים אחורה, גם הם כולם מעל מטר 82, שזה הרבה מעל האמריקאי הממוצע. עכשיו, לכל הנשיאים האלה אין המון במשותף, חוץ מזה שכולם גברים, כן, כי זה הדבר שבארצות הברית איכשהו עדיין לא התגברו עליו. אבל חלקם מהמפלגה הדמוקרטית וחלקם רפובליקנים, חלקם נחשבים לנשיאים מוצלחים וחלקם לא, אבל מה שכן משותף לכולם זה שכולם גבוהים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">06:14</span>
-                </div>
-                <div class="content">
-                    <p>אז המסקנה הברורה שאפשר להסיק מזה היא שכדי להיות נשיא ארצות הברית, להיות כשיר או להיות חכם או להיות בעל עמדות מסוימות זה אולי חשוב, אבל יותר חשוב זה להיות גבוה. זה התנאי הבסיסי מסתבר. אנשים אפילו טרחו וביררו את הסטטיסטיקה של המועמדים שלא נבחרו לנשיאות, כי האופן שבו זה עובד באמריקה זה שתמיד יש שני מועמדים משתי המפלגות הגדולות, זה תמיד אחד נגד השני. ובבחירות האלה, בדרך כלל המועמד היותר גבוה מנצח. לא תמיד, אבל ברוב המקרים כן. יש נתונים, יש סטטיסטיקות, זה מאוד ברור.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">06:59</span>
-                </div>
-                <div class="content">
-                    <p>אבל אתם לא תמצאו בן אדם אחד כששואלים אותו מה השיקול העיקרי שלך כשאתה בוחר למי להצביע בבחירות, זה לפי ההשקפה הכלכלית, לפי מדיניות הפנים, למדיניות החוץ, אז הוא יגיד לא, אני פשוט מצביע למי שגבוה יותר. אף אחד לא יגיד את זה. אז איך זה קורה בכל זאת? מה הקשר? והאם כדאי לקחת הורמוני גדילה או משהו אם אתם רוצים להיכנס לפוליטיקה? זאת השאלה, שמובילה כמובן להרבה שאלות אחרות בנוגע לקשר בין גובה לבין כל מיני דברים, ועוד מעט תבוא התשובה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">07:46</span>
-                </div>
-                <div class="content">
-                    <p>גובה זה הדבר הכי שטחי בעולם. אם תשאלו אותי מה הגובה של מישהו, ברוב גדול של המקרים התשובה שלי תהיה למי אכפת. מכל הפרטים שאפשר לדעת על בן אדם זה אחד הכי פחות מעניינים. כלומר אוקיי, אם מישהי אומרת לי אה דרך אגב הגובה שלי הוא 5 קילומטר וחצי, אז אוקיי זה מעניין, אני מודה זה פרט חשוב. אבל כל עוד הגובה שלך הוא גובה של בן אדם, למי אכפת?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">08:32</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו, אני לא כזה תמים, אני לא אומר שזה לא משפיע בכלל על החיים שלכם. אם אתם גבוהים, אז מצד אחד אף אחד לא מסתיר לכם אף פעם בהופעות, ומצד שני בטיסות מאוד צפוף ולא ממש נוח. אם אתם נמוכים, אז מצד אחד קשה לכם למשוך תשומת לב, שזה חבל, ומצד שני אתם מושכים פחות תשומת לב, שזה לפעמים אחלה. ושוב, אני יודע שזה משפיע, אני לא רוצה לזלזל בזה, אני יודע את זה בעצמי בתור בן אדם לא גבוה שלפעמים קשה להיות נמוך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">09:01</span>
-                </div>
-                <div class="content">
-                    <p>המצב באפליקציות הכרויות לא משהו לגברים שהם לא גבוהים, וגם אם קצת צוחקים עליכם בבית ספר או משהו כי אתם נמוכים, כן זה מפריע. ומצד שני לאנשים גבוהים מאוד נמאס לספר לכולם שלא הם לא משחקים כדורסל ומזג האוויר אצלם בדיוק אותו הדבר כמו אצלכם. אבל חוץ מזה, מבחינת קריירה, אם אתם רוצים להיות רופאים או לעבוד בהייטק או לעסוק במדע או לסחור בבורסה או להיות דייגים או כמעט כל דבר אחר, או להיות פוליטיקאים, הגובה שלכם לא נשמע כמו משהו שאמור להיות רלוונטי באיזושהי צורה. אבל זהו שכשמסתכלים על נתונים, על סטטיסטיקות, מגלים שכן, יש קשר, יש משום מה הרבה קשר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">09:59</span>
-                </div>
-                <div class="content">
-                    <p>אבל רגע, לפני שמגיעים לזה בכלל. אנשים הם לא כולם באותו גובה, שמתם לב לזה נכון? מה גורם לאנשים להיות יותר גבוהים או פחות גבוהים? זה מורכב. קודם כל שוב כמו שאתם יודעים יש קבוצות שהן גבוהות יותר ופחות. בטח שמתם לב שאם הייתם נגיד בטיול בנפאל, אז פתאום הרגשתם גבוהים. וזה משתי סיבות: קודם כל כי אתם בנפאל, זה כן גבוה שם. אבל חוץ מזה, כל הנפאלים הם פתאום נמוכים מכם בראש או משהו כזה. ולעומת זאת אם נסעתם לשוודיה, אז אולי פתאום כולם יסתכלו עליכם מלמעלה בגלל שכולם שם מטר 80.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">10:51</span>
-                </div>
-                <div class="content">
-                    <p>יש מקומות שבהם אנשים גבוהים יותר ויש מקומות שבהם נמוכים יותר וזה משתנה לא רק לפי המקום אלא גם לפי זמן. הגובה של הגבר הממוצע שנולד בעולם בשנת 1896, זה לפי Our World in Data, הוא מטר 71 וטיפה. זה הממוצע. לעומת זאת, הגובה של הגבר הממוצע שנולד בדיוק 100 שנה לפני כן הוא מטר 62 וחצי. כלומר, הגובה של הגבר הממוצע גדל במשך 100 השנים האלה ב-8.5 סנטימטר. זה לא מעט.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">11:29</span>
-                </div>
-                <div class="content">
-                    <p>אותו הדבר אצל נשים. אישה ממוצעת ב-1896 הייתה בגובה מטר 51 ו-100 שנה אחר כך 159 וקצת, 8 ורבע סנטימטרים יותר. אז קודם כל אם אתם רוצים להרגיש גבוהים כל מה שאתם צריכים לעשות זה להמציא מכונת זמן ולחזור 100 שנה אחורה וכבר אתם תוכלו להתנשא על כל החבר'ה. אבל זה לא אומר שאותו דבר הולך להמשיך, זאת אומרת זה לא שהילדים שלנו יהיו בהכרח גבוהים יותר ובעוד 100 שנה כולם יהיו 2 מטר וחצי. לא.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">12:01</span>
-                </div>
-                <div class="content">
-                    <p>כשמסתכלים על הנתונים, אז בני אדם הלכו ונהיו גבוהים יותר ויותר מתחילת המאה ה-20 עד שנות השמונים בערך ואז די הפסיקו, נשארו באותו גודל. במקומות מסוימים אפילו התכווצו קצת. מה הולך? ההסבר המקובל לזה הולך ככה: מה שקובע את הגובה של בן אדם זה בעיקר הגנים. כלומר אם נולדתם לזוג שחקני כדורסל, אתם כנראה תהיו גבוהים. לעומת זאת אם ההורים שלכם נמוכים גם אתם כנראה תהיו נמוכים. יש מקרים יוצאים מהכלל, אבל בדרך כלל זה ככה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">12:45</span>
-                </div>
-                <div class="content">
-                    <p>אבל זה לא הגורם היחיד. יש מצב שה-DNA שלכם קובע את פוטנציאל הגובה שלכם, אבל עוד דבר שמשפיע הוא מה אתם אוכלים. כלומר ספציפית מה אכלתם כשהייתם ילדים ובגיל ההתבגרות. אנשים שאוכלים טוב, עם הרבה חלבונים בעיקר, יכולים להגשים את פוטנציאל הצמיחה שלהם. אלה שלא, פחות. דרך אגב מה שאתם אוכלים אחרי שגמרתם לגדול אחרי גיל ההתבגרות זה לא משנה בכלל, זה לא יעזור לכם, אתם לא תגדלו יותר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">13:25</span>
-                </div>
-                <div class="content">
-                    <p>אז מכיוון שתנאי התזונה באופן כללי בעולם מאוד מאוד השתפרו במאה ומשהו השנים האחרונות, בני אדם יותר ויותר מגשימים את פוטנציאל הגובה שלהם. אז זה לא שה-DNA השתנה המון במשך הזמן הזה, זה פשוט שאנשים מצליחים להגיע למלוא הגובה שהם יכולים להגיע אליו. וחוץ מזה לא בכל מקום המצב הוא זהה ולכן במדינות המפותחות אנשים גדלו יותר ובמדינות עניות שבהן לאנשים יותר קשה להשיג אוכל הם גדלו פחות. זאת התיאוריה לפחות. אבל איך אפשר לבדוק תיאוריה כזאת? איך אפשר להוכיח את זה?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">14:04</span>
-                </div>
-                <div class="content">
-                    <p>כי בשביל זה היה צריך לעשות מין ניסוי מטורף של לקחת מדינה שלמה ולפצל אותה לשניים ולחצי לתת אוכל ולחצי לא ולראות אם משתנה הגובה שלהם. אבל אף אחד לא יעשה דבר כזה מטורף, נכון? כן, זה קרה. זה חד משמעית קרה. קוריאה. קוריאנים מבחינה גנטית, מבחינת קבוצה אתנית הם אותה קבוצה. כלומר צפון קוריאנים ודרום קוריאנים הם אותו דבר. והם היו אותה מדינה, מדינה די עניה שהאנשים בה די נמוכים עד 1945 כשהמדינה התפצלה. עכשיו יש צפון קוריאה ודרום קוריאה והן לא דומות בכלל.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">14:53</span>
-                </div>
-                <div class="content">
-                    <p>דרום קוריאה במשך השנים גדלה והתפתחה והיא עכשיו מדינה דמוקרטית עשירה ומפותחת עם תעשיית פופ וקולנוע אדירות. צפון קוריאה לעומת זאת היא צפון קוריאה. היא מדינה טוטליטרית מבודדת מהעולם וגם אומללה בתכלס ואנשים שם רעבים. כלומר היו תקופות של רעב במדינה הזאת, שזה מטורף שבמדינה שכנה אוכלים כמה שרוצים ובמדינה אחרת יש רעב. זה לא בגלל שאין להם אוכל, זה בגלל שיש להם שלטון מושחת, כי דיקטטורה זה לא טוב לבריאות מסתבר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">15:35</span>
-                </div>
-                <div class="content">
-                    <p>את זה אפשר לראות בין השאר בגובה של הקוריאנים. משום שהיום דרום קוריאנים הם משמעותית יותר גבוהים מצפון קוריאנים. אבל מה שכל זה אומר זה שהגובה שלכם הוא לא דבר שיש לכם הרבה מה לעשות בקשר אליו. כלומר זה תלוי בעיקר בהורים שלכם ובאם אכלתם טוב בתור ילדים. לא אכלתם - אכלתם אותה. אז מה זה אומר עליכם? אחד הדברים הכי בסיסיים במחקר זה לקחת נתונים מסוג אחד על משהו ונתונים מסוג אחר על משהו ולראות אם נראה כאילו יש קשר ביניהם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">16:21</span>
-                </div>
-                <div class="content">
-                    <p>כלומר שימו משתנה אחד על ציר ה-X ומשתנה אחר על ציר ה-Y ואת כל הנתונים באמצע ותראו אם הגרף הזה יוצר צורה מעניינת. אז לבדוק את הקשר בין הגובה של האנשים שזה נתון די חד משמעי וקל למדידה לבין משהו אחר בקשר אליהם, זה די פשוט. ופורסמו הרבה מחקרים כאלה בכל מיני מקומות בעולם. הנה אחד כזה למשל: מחקר שפורסם ב-2004 על ידי טימותי ג'אדג' ודניאל קייבל, מחקר סטטיסטי עם הרבה מאוד נדגמים שבו בדקו את הגובה שלהם ואת גובה המשכורת שלהם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">16:57</span>
-                </div>
-                <div class="content">
-                    <p>ומצאו שיש קשר בין שני הדברים האלה. יש מתאם סטטיסטי בין הגובה לבין גובה המשכורת. וזה מנוסח כמובן אחרת, זה מנוסח עם הרבה מאוד נוסחאות ומספרים וזה, אבל בשורה התחתונה ומתורגם מאינצ'ים לסנטימטרים: על כל סנטימטר נוסף של גובה המשכורת השנתית הממוצעת של הבן אדם עולה ב-300 דולר. ברצינות. אתם סנטימטר אחד גבוה יותר, אתם בממוצע מרוויחים 300 דולר יותר לשנה. אז בשורה התחתונה של השורה התחתונה אנשים גבוהים בדרך כלל מרוויחים יותר כסף מנמוכים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">17:44</span>
-                </div>
-                <div class="content">
-                    <p>הנה עוד מחקר כזה. מחקר של אריק לינדקוויסט מ-2012 משוודיה, שהוא מראה שהבדל של 10 סנטימטר בגובה מתואם עם עלייה של 2.2% בסיכוי שלבן אדם תהיה משרה ניהולית. ויש נתון שאומר שמבין המנהלים של חברות פורצ'ן 500, כלומר רשימת 500 החברות הכי גדולות בארצות הברית, 58% מהם הם אנשים שהם מטר 82 ומעלה. וזה בהחלט ייצוג יתר מהיחס שלהם באוכלוסייה. בקיצור, זה בדוק, זה נבדק, קשה להתווכח עם זה. אנשים גבוהים מצליחים יותר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">18:28</span>
-                </div>
-                <div class="content">
-                    <p>לאנשים גבוהים יותר יש סיכוי טוב להיות בכירים יותר, להרוויח יותר כסף, למצוא בן או בת זוג וגם להיבחר לנשיאות. אנשים גבוהים מצליחים יותר. אבל למה? כי עם כל הכבוד ליכולת להגיע למדף הגבוה, זה עוזר בחיים אבל לא עד כדי כך. התשובה לזה גם היא ידועה היטב ונחקרה היטב: זה לא קשור לעמוד השדרה. זה לא קשור בכלל לגוף של הבן אדם הגבוה. זה בגלל בעיה במוח. ולא במוח של האנשים הגבוהים, במוח של כולם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">19:07</span>
-                </div>
-                <div class="content">
-                    <p>יש גם כאן הרבה מחקרים שונים בפסיכולוגיה שנעשו בכל מיני צורות, אבל הרבה מהם נעשו בסגנון של לתת לנבדקים שתי תמונות של אנשים שהם לא מכירים או אנשים שאין להם פרצוף בכלל ולשאול מי משני האנשים האלה נראה לכם יותר אמין? מי משניהם נראה יותר כמו מנהיג? מי משניהם נראה כמו בן אדם שהייתם סומכים עליו? והתוצאות מראות שוב ושוב שאנשים מייחסים תכונות טובות יותר לאנשים שהם יותר גבוהים. יש יותר סיכוי שהם יגידו שהאיש היותר גבוה הוא נראה כמו מנהיג טוב יותר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">19:51</span>
-                </div>
-                <div class="content">
-                    <p>למה? אני לא יודע לשים את האצבע על זה. יש משהו בו שפשוט נראה... המשהו הזה זה שהוא גבוה יותר. עכשיו קודם כל זה מה שאנשים נוטים לעשות, לא אמרתי שזה מה שאנשים חושבים. כי אותם אנשים אם ישאלו אותם אני בטוח שהם לא יגידו שהם חושבים שאנשים גבוהים הם מוכשרים יותר או טובים יותר. לא, ברור שלא, כי מה הקשר? אין קשר. אבל באופן תת הכרתי כן אנשים נוטים לטובת אנשים גבוהים יותר. דבר שחשוב להבהיר כאן זה שההעדפה הזאת היא לא גדולה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">20:24</span>
-                </div>
-                <div class="content">
-                    <p>זה לא שאם באים שני מועמדים לחברה אז בכל מקרה יבחרו את הגבוה יותר אפילו אם הנמוך הוא הרבה הרבה יותר מוכשר והרבה יותר כשיר והרבה יותר יפה והרבה פשוט הרבה יותר טוב, אבל הוא נמוך יותר. לא. הסטטיסטיקה הזאת פשוט מראה שבצומת כזאת שבה בן אדם תלוי באנשים אחרים שיצביעו בשבילו או שלא, שיתמכו בו או שלא, שיקבלו אותו לעבודה או שלא, בכל צומת כזאת לאיש גבוה יש יתרון קטן, קטן מאוד, אבל יש. אולי הסיכוי שלו גדול באחוז אחד מזה של הבן אדם הנמוך יותר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">21:05</span>
-                </div>
-                <div class="content">
-                    <p>אבל להגיע להיות נשיא ארצות הברית נגיד, זה אומר לחצות המון צמתים כאלה. כי אף אחד לא נבחר לנשיא מיד, זה מסלול מאוד מאוד ארוך של התקדמות במפלגה שלך ובחברה ובזה. זה הרבה מאוד צמתים כאלה שבכל אחד מהם יש לו יתרון של אחוז אחד, בסופו של דבר זה מצטבר. זה אומר שלאדם גבוה פשוט יש יותר סיכוי להיות אחד מהקומץ הקטנטן של אנשים שמגיעים למשרה הכי בכירה שיש. זה לא אומר שנמוך לא יכול לקבל את העבודה הזאת, זה אומר שהסיכוי שלו נמוך יותר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">21:48</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו הסטטיסטיקה יודעת להגיד שזה המצב, היא לא יודעת להגיד למה זה המצב. למה אנשים פשוט מעדיפים גבוהים? מה הקטע? למה אנשים דפוקים בראש? זה הרי לא הגיוני וכולם מסכימים שזה לא הגיוני, גם אנשים שעושים את הבחירה הזאת באופן לא מודע מסכימים שזה לא הגיוני. אז להגיד בוודאות למה זה קשה, אבל מאוד קל להעלות פה אפשרויות שנשמעות הגיוניות. וההסבר שמוצע הכי הרבה זה כרגיל הבעיה היא שאנחנו חיות. אנחנו חיים בעולם מתקדם אבל אנחנו קצת חושבים כמו קופים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">22:31</span>
-                </div>
-                <div class="content">
-                    <p>או כמו אדם קדמון מהסוואנה מלפני 100 אלף שנה. והאנשים שהיו אז לא מאוד העריכו תכונות כמו ידע במתמטיקה או יכולת לצטט מערכונים של מונטי פייתון בעל פה, הם כן העריכו גודל. כלהיות גדול וחזק גופנית היה תכונה מאוד חשובה. אצל גורילות הכי גדולים הם בדרך כלל המנהיגים, החזקים בשבט. ובני אדם הם לא גורילות. את רוב הבעיות שלנו היום אי אפשר לפתור באמצעות מכות ובחברה שלנו כוח פיזי הוא לא הדבר הכי חשוב בתכלס.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">23:02</span>
-                </div>
-                <div class="content">
-                    <p>אבל עדיין זה כנראה תקוע לנו באיזשהו מקום במוח שמי שגדול הוא גם חשוב או חזק או באופן כללי טוב יותר. זה לא הגיוני, אבל עדיין יש לנו נטייה לחשוב ככה. זה הסבר מקובל אחד. לי יש רעיון אחר שגם אותו אי אפשר להוכיח אבל זה דבר שלא קשור לקופים אלא לבני אדם. פשוט אצל כולנו במשך כל השנים הראשונות לחיים שלנו הדמויות הכי סמכותיות בחיים, אלה שיודעים יותר טוב, אלה שדואגים לנו ומגינים לנו ושצריך להקשיב להם ולעשות כל מה שהם אומרים כי אם לא תעשו את זה אז אוי ואבוי, בקיצור המנהיגים הם אמא ואבא.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">23:42</span>
-                </div>
-                <div class="content">
-                    <p>והם גבוהים יותר מאיתנו. כלומר נכון יש את המקרים השערורייתיים האלה של ילדים שברוב חוצפתם הם גבוהים יותר מההורים, אבל זה לוקח זמן. כלומר אפשר לבנות על זה שבמשך השנים הראשונות ההוראות יגיעו מלמעלה וזה בדיוק הזמן שבו אנחנו לומדים איך העולם עובד. אז אנחנו לומדים שאנשים גדולים הם הסמכות ומתרגלים לזה. מה שלא תהיה הסיבה זה המצב. זה לא תמיד כל כך מובהק כמו במקרה של נשיאים אמריקאים אבל זאת עובדה מאוד ידועה ואנשים מאוד מודעים לזה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">24:23</span>
-                </div>
-                <div class="content">
-                    <p>במיוחד בפוליטיקה. לפני כל עימות טלוויזיוני בין מועמדים למשהו אז אנשים יוודאו שהפודיומים מסודרים ככה ששני המועמדים יהיו בדיוק באותו גובה. ואנשים פוליטיקאים מסתובבים עם נעלי פלטפורמה כדי להיראות גבוהים קצת יותר. זה דבר שמקפידים עליו כי זה חשוב, מה לעשות, זה הוכח שזה חשוב. עכשיו יש מצב שכל המאזינים הנמוכים הממוצע מרגישים מאוד מקופחים וממורמרים ובצדק, כי כל מה שאמרתי עד עכשיו היה מאוד מעצבן והחיים לא הוגנים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">25:01</span>
-                </div>
-                <div class="content">
-                    <p>אבל רגע, לכם יש לי שני דברים להגיד. דבר ראשון ממוצע זה רק ממוצע. כלומר זה שקיים טרנד כזה זה לא אומר שום דבר עליכם. זה שאנשים גבוהים מרוויחים בממוצע יותר לא אומר שאין אנשים נמוכים שמרוויחים הרבה. ובכלל חצי מהאנשים מרוויחים יותר מהממוצע בערך. כן אני יודע זה חציון, אוקיי שקט נודניקים. לא משנה. כן קיימת הטיה כזאת אבל זה בהחלט לא אומר שום דבר לגבי מה שאתם תגיעו אליו.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">25:40</span>
-                </div>
-                <div class="content">
-                    <p>ודבר שני כשמקשרים את הגובה לנתונים אחרים יש עוד דבר עם קשר סטטיסטי מובהק לגובה ושבו לנמוכים יש יתרון. וזה: אורך חיים. הנה העניין. נכון אמרנו שעל כל סנטימטר יותר אנשים מרוויחים 300 דולר לשנה בממוצע? על אותו סנטימטר אנשים חיים בממוצע משהו כמו חצי שנה פחות. כן. כלומר לאנשים נמוכים יש פחות סיכוי להגיע לגיל 95 עם ראש הממשלה כתוב ברזומה, אבל יותר סיכוי להגיע לגיל 95 בכלל.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">26:27</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו גם כאן צריך לשאול למה? איך זה קרה? למה אנשים נמוכים חיים יותר זמן? והתשובה כאן היא שזה מאוד מסובך. אף אחד לא ממש יודע. גובה אמרנו זה עניין גנטי, ה-DNA שלכם הוא הדבר העיקרי שאחראי לכמה גבוהים תהיו, אבל זה לא שיש נקודה אחת ב-DNA שבה כתוב מטר 76, לא. כי גובה זה לא באמת תוצאה של דבר אחד. יש הרבה תכונות שונות בגוף שהאוסף של כולן ביחד קובע בסופו של דבר את הגובה שלכם. יש הרבה מאוד נקודות שונות ב-DNA שמקושרות עם גובה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">27:04</span>
-                </div>
-                <div class="content">
-                    <p>והרבה מהן מקושרות גם עם דברים אחרים. כי אנשים נהיים גבוהים מהרבה סיבות ואנשים נהיים חולים מהרבה סיבות. כלומר הסטטיסטיקה מראה שלאנשים גבוהים יש פחות סיכוי לחלות במחלות לב משום מה ויותר סיכוי לחלות בסרטן משום מה ובשלב זה אף אחד לא יודע להגיד בדיוק למה. אבל בכל מקרה זו חתיכת עסקה עם השטן כי זה ליטרלי הכסף או החיים. כלומר אם מישהו פתאום מופיע בעננת עשן ומציע לכם: אתם תוכלו לקבל יותר כסף כל שנה וגם להיבחר לנשיאות. כל מה שאני רוצה זה שנה מהחיים שלכם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">27:54</span>
-                </div>
-                <div class="content">
-                    <p>מה לבחור? זאת שאלה, זאת באמת שאלה. אבל למזלכם זה לא משנה כי זאת לא בחירה שלכם. כן אתם לא באמת בוחרים באיזה גובה אתם. אבל לו הייתם בוחרים אז הייתם צריכים לבחור מצד אחד יותר כסף כל שנה, סיכוי טוב יותר להיות בכירים ו/או מיליארדרים ו/או נשיא ארצות הברית, ומצד שני סיכוי מוגבר לחיים קצרים יותר. ובצד השני צ'אנס טוב לחיים ארוכים עם פחות כסף. מה הייתם בוחרים? אולי עדיף שאתם לא באמת יכולים לבחור.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">28:30</span>
-                </div>
-                <div class="content">
-                    <p>דרך אגב עוד דבר שצריך לשאול כאן זה הקטע הזה עם רגע שנייה אז אנשים שאוכלים טוב בילדות נהיים יותר גבוהים ואז הם חיים פחות זמן? אז לא כדאי לאכול אוכל טוב? אז גם כאן התשובה היא שזה מורכב בגלל שכמו שאמרתי יש הרבה גורמים וזה בעיקר בעניין ה-DNA ויכול להיות שאורך החיים יותר מקושר לגובה שנקבע על ידי ה-DNA ולא לגובה שנקבע על ידי המזון. אבל לכו תדעו גם כאן אני לא יודע לתת תשובה חד משמעית על עסק כזה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">28:59</span>
-                </div>
-                <div class="content">
-                    <p>בשלב הזה אבל צריך להגיד לאנשים הגבוהים שעכשיו הם מרגישים מאוד מאוד מקופחים ולהגיד להם שזה בסדר, זה רק ממוצע זה לא אומר כלום. מי שאתם זה נקבע מהמון דברים ואולי אתם תחיו יותר, זה לא... חוץ מזה מי אתם? אתם לא רק הגובה. מה הייתה השאלה? האם יש קשר בין גובה לבין הצלחה בפוליטיקה או בכלל? התשובה היא כן. יש קשר, יש מתאם סטטיסטי. זה אולי לא צריך להיות ככה, אבל זה ככה. אבל זה לא הדבר היחיד שמנבא הצלחה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">29:38</span>
-                </div>
-                <div class="content">
-                    <p>יש המון המון דברים אחרים ועל הרבה מהם כן יש לכם שליטה. אז להתמקד דווקא בדבר האחד שאין לכם שום דבר לעשות בקשר אליו, זה פשוט לא עוזר בשום צורה. כן זאת הסטטיסטיקה וזה לא משנה. ולמי ממילא לא הייתה שום כוונה להיכנס לפוליטיקה? אחרי הפסקה קטנה תכף נספר לכם על הבן אדם הנמוך הכי גבוה בעולם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">30:09</span>
-                </div>
-                <div class="content">
-                    <p>פעם היה איש, קראו לו אדם ריינר. ואני לא יודע עליו המון, משום שהמידע עליו לא מספר אתם יודעים מה הוא אהב, איך הוא חי, מה הוא עשה, יש רק מידע רפואי עליו. אבל המידע הרפואי עליו הוא חתיכת דבר מדהים. זה הולך ככה: האיש הזה נולד ב-1899 באוסטרו-הונגריה, מה שאחר כך התפצל לאוסטריה והונגריה, זה לפני שכל המדינות התפרקו לחתיכות. והוא היה איש קטן. הוא היה איש ממש קטן עד כדי כך שזה כבר לא סתם להיות בן אדם נמוך אלא איזשהו מצב רפואי עם שם. בגיל 18 הגובה שלו היה מטר 22 וחצי. זה איש קטן.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">31:07</span>
-                </div>
-                <div class="content">
-                    <p>אבל אז קרה משהו. ההסבר המקובל זה שהיה לו גידול בבלוטת יותרת המוח, אבל לדעתי הסבר אחר סביר הרבה יותר זה שפשוט הוא מצא ג'יני והביע משאלה. כי מה שקרה זה שהוא התחיל לגדול. עכשיו קודם כל אנשים נורמליים אחרי גיל 18, 19 בדרך כלל לא גדלים בכלל. כלומר בגיל הזה אתם מגיעים לשיא הגובה שלכם, אתם לא הולכים להיות יותר גבוהים מזה אי פעם. אבל האיש הזה כשהיה בן 20 הוא התחיל לגבוה ולגבוה בקצב מטורף.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">31:49</span>
-                </div>
-                <div class="content">
-                    <p>תוך פחות מחמש שנים הוא היה בגובה של אדם ממוצע. הוא פשוט הפסיק להיות גמד. שזה דבר שלא קורה. אבל אז התברר שהג'יני ההוא שהוא פגש היה כנראה מהסוג המרושע, מהסוג של כף הקוף, אלה שמגשימים לך את המשאלה אבל באופן הכי גרוע אפשר. כי הוא לא הפסיק לגדול. הוא המשיך לגבוה בקצב של יותר מ-9 סנטימטר לשנה. בגיל 33 הוא היה בגובה של 2 מטר ו-18 סנטימטר. וזאת נהייתה בעיה. כי הגוף שלו לא עמד בזה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">32:30</span>
-                </div>
-                <div class="content">
-                    <p>אני חושב שזה גדילה בקצב שהוא היה יכול פשוט לראות את הרצפה מתרחקת ממנו. הוא התעוור בעין אחת והוא בקושי היה מסוגל ללכת בכוחות עצמו והוא לא הפסיק לגדול. ההסבר לזה הרשמי אמרנו זה שהיה לו גידול שבפני עצמו לא היה מסוכן, זאת אומרת זה לא היה סוג שהיה הורג אותו, אבל פשוט היה בדיוק על הנקודה במוח שמפרישה את הורמוני הגדילה וזה פשוט לא הפסיק. הוא עבר ניתוח כדי להוציא את הגידול הזה וכנגד כל הסיכויים הוא שרד את הניתוח הזה וזה באמת גרם לו להפסיק לגדול או לפחות להאט.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">33:17</span>
-                </div>
-                <div class="content">
-                    <p>אבל בשלב הזה הוא כבר לא היה מסוגל ללכת בכוחות עצמו. הוא נכנס לבית זקנים בגיל 30 ומשהו. בסופו של דבר הוא הגיע לגיל 51, שזה צריך להגיד הרבה יותר ממה שהרבה ענקים מגיעים אליו. הגובה שלו כשהוא מת היה 2 מטר ו-34 סנטימטר. והוא היה האדם היחיד שידוע עליו בהיסטוריה שהיה גם גמד וגם ענק. זאת הייתה התשובה, עורכת ומפיקה שני נוי. הכתובת להגיש שאלות היא Doronfishler.com/questions. נורא קשה להגיד את המילה הזאת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון</span>
-                    <span class="timestamp">34:09</span>
-                </div>
-                <div class="content">
-                    <p>עדכונים על הרצאות שאני עורך אתם יכולים למצוא בעמוד הפייסבוק 'דורון פישלר נגד העולם'. אביב שם טוב ייעוץ ותמיכה מוראלית וסמנכ"ל תפעול. מנהלת דיגיטל שרית סלזני קורצמן, יובל דרור העורך הראשי, רן לוי מטר 70 כזה? לא יודע. דני טימור המנהל העסקי. בצוות הרשת גם הילה שמש, שלי גואטה וזלאטה צ'אבן. אני דורון פישלר.</p>
                 </div>
             </article>
             
