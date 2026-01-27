@@ -83,7 +83,7 @@ def get_episode_content(episode_data):
         if match:
             # Strip tags for search index text
             text = re.sub('<[^<]+?>', ' ', match.group(1))
-            return re.sub('\s+', ' ', text).strip()
+            return re.sub(r'\s+', ' ', text).strip()
         return ""
     except: return ""
 

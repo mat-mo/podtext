@@ -38,7 +38,7 @@ def get_episode_content(episode_data):
         match = re.search(r'<div class="transcript-container" id="transcript">(.*?)</div>\s*<script>', html, re.DOTALL)
         if match:
             text = re.sub('<[^<]+?>', ' ', match.group(1))
-            return re.sub('\s+', ' ', text).strip()
+            return re.sub(r'\s+', ' ', text).strip()
         return ""
     except: return ""
 
