@@ -111,11 +111,25 @@ def main():
         def parse_hebrew_date(date_str):
             try:
                 # Format: "12 בינואר 2025"
-                day, month_he, year = date_str.split(' ')[0], date_str.split(' ')[1].replace('ב', ''), date_str.split(' ')[2]
+                parts = date_str.split(' ')
+                if len(parts) < 3: return datetime.min
+                
+                day = int(parts[0])
+                year = int(parts[2])
+                month_he = parts[1]
+                
+                # Remove leading 'ב' if present
+                if month_he.startswith('ב'):
+                    month_he = month_he[1:]
+                    
+                if month_he not in HEBREW_MONTHS:
+                    # Fallback or debug print could go here
+                    return datetime.min
+                    
                 month = HEBREW_MONTHS.index(month_he) + 1
-                return datetime(int(year), month, int(day))
+                return datetime(year, month, day)
             except:
-                return datetime.min # Put failures at the end (or top if reverse=True? No, min is old)
+                return datetime.min
 
         data['episodes'].sort(key=lambda x: parse_hebrew_date(x['published_date']), reverse=True)
 
