@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 20:41:29 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 20:42:47 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>[התשובה] נאורו: סיפורו של אי, חלק ראשון</title>
+        <link>https://mat-mo.github.io/podtext/episodes/htshvbh/htshvbh-nvrv-sypvrv-shl-y-khlq-rshvn.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/htshvbh/htshvbh-nvrv-sypvrv-shl-y-khlq-rshvn.html</guid>
+        <pubDate>27 באפריל 2020</pubDate>
+        <description>Transcript for [התשובה] נאורו: סיפורו של אי, חלק ראשון from התשובה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>[התשובה] נאורו: ...ונפילתו, חלק שני</title>
