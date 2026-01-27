@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 23:56:00 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 23:58:20 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>401: שוד השעונים, חלק א' - הפריצה [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/401-shvd-hsh-vnym-khlq-hprytsh-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/401-shvd-hsh-vnym-khlq-hprytsh-vshym-hystvryh.html</guid>
+        <pubDate>24 ביולי 2023</pubDate>
+        <description>Transcript for 401: שוד השעונים, חלק א' - הפריצה [עושים היסטוריה] from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>402: שוד השעונים, חלק ב' - השען [עושים היסטוריה]</title>
