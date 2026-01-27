@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 20:14:05 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 20:15:24 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>[התשובה] מה זה חומר אפל?</title>
+        <link>https://mat-mo.github.io/podtext/episodes/htshvbh/htshvbh-mh-zh-khvmr-pl.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/htshvbh/htshvbh-mh-zh-khvmr-pl.html</guid>
+        <pubDate>16 בנובמבר 2020</pubDate>
+        <description>Transcript for [התשובה] מה זה חומר אפל? from התשובה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>[התשובה] מיליארד מזגנים</title>
