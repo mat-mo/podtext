@@ -1,4 +1,6 @@
 feeds:
+  - url: "https://anchor.fm/s/f116bc18/podcast/rss"
+    name: "אופטיקאסט"
   - url: "https://www.spreaker.com/show/4228834/episodes/feed"
     name: "התשובה"
   - url: "https://www.spreaker.com/show/4227531/episodes/feed"
