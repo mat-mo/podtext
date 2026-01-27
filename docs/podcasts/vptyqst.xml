@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 15:33:37 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 15:37:20 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>פרק 26: מהפיכות טכנולוגיות ובועות פיננסיות</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vptyqst/prq-26-mhpykvt-tknvlvgyvt-vbv-vt-pynnsyvt.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vptyqst/prq-26-mhpykvt-tknvlvgyvt-vbv-vt-pynnsyvt.html</guid>
+        <pubDate>20 באוגוסט 2024</pubDate>
+        <description>Transcript for פרק 26: מהפיכות טכנולוגיות ובועות פיננסיות from אופטיקאסט</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>פרק 27: האם יש בועה בבינה מלאכותית</title>
