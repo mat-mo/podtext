@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 20:17:53 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 20:20:53 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>[התשובה] צפוף פה</title>
+        <link>https://mat-mo.github.io/podtext/episodes/htshvbh/htshvbh-tspvp-ph.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/htshvbh/htshvbh-tspvp-ph.html</guid>
+        <pubDate>13 באוקטובר 2020</pubDate>
+        <description>Transcript for [התשובה] צפוף פה from התשובה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>[התשובה] המטמון של קפטן דרייק, חלק א'</title>
