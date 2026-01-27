@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 20:56:57 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 20:58:26 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>[התשובה] נחש, ברק או אסטרואיד</title>
+        <link>https://mat-mo.github.io/podtext/episodes/htshvbh/htshvbh-nkhsh-brq-v-strvyd.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/htshvbh/htshvbh-nkhsh-brq-v-strvyd.html</guid>
+        <pubDate>30 בדצמבר 2019</pubDate>
+        <description>Transcript for [התשובה] נחש, ברק או אסטרואיד from התשובה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>[התשובה] למה הבניין הגבוה בעולם?</title>
