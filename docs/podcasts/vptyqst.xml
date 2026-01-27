@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 15:42:14 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 15:44:29 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>פרק 23: הסיפור של וויקס</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vptyqst/prq-23-hsypvr-shl-vvyqs.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vptyqst/prq-23-hsypvr-shl-vvyqs.html</guid>
+        <pubDate>16 ביולי 2024</pubDate>
+        <description>Transcript for פרק 23: הסיפור של וויקס from אופטיקאסט</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>פרק 24: פרדוקס ההצלחה של בלקברי</title>
