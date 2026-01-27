@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 21:51:41 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 21:58:23 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>446: ארכימדס (ש.ח.) [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/446-rkymds-sh-kh-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/446-rkymds-sh-kh-vshym-hystvryh.html</guid>
+        <pubDate>2 ביוני 2025</pubDate>
+        <description>Transcript for 446: ארכימדס (ש.ח.) [עושים היסטוריה] from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>448: ההיסטוריה של מחשוב הענן (ש.ח.) [עושים היסטוריה]</title>
