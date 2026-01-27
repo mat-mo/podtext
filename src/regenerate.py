@@ -106,6 +106,19 @@ def main():
 
     # 3. Individual Podcast Pages
     for feed_slug, data in podcasts_data.items():
+        # Sort episodes by date descending
+        # We need to parse the Hebrew date string back to a comparable value
+        def parse_hebrew_date(date_str):
+            try:
+                # Format: "12 בינואר 2025"
+                day, month_he, year = date_str.split(' ')[0], date_str.split(' ')[1].replace('ב', ''), date_str.split(' ')[2]
+                month = HEBREW_MONTHS.index(month_he) + 1
+                return datetime(int(year), month, int(day))
+            except:
+                return datetime.min # Put failures at the end (or top if reverse=True? No, min is old)
+
+        data['episodes'].sort(key=lambda x: parse_hebrew_date(x['published_date']), reverse=True)
+
         render_html('podcast.html', 
                    {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
                    os.path.join(PODCASTS_DIR, f"{feed_slug}.html"))
