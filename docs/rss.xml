@@ -6,8 +6,462 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 08:52:31 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 08:53:37 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>442: מלחמת העצמאות, חלק א' [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/osim-historia/442-mlkhmt-h-tsmvt-khlq-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/osim-historia/442-mlkhmt-h-tsmvt-khlq-vshym-hystvryh.html</guid>
+        <pubDate>Mon, 24 Mar 2025 10:43:09 +0000</pubDate>
+        <description>Transcript for 442: מלחמת העצמאות, חלק א' [עושים היסטוריה] from Osim Historia</description>
+        <content:encoded><![CDATA[
+            <!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>442: מלחמת העצמאות, חלק א' [עושים היסטוריה] - Podtext</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-link">Back to Episodes</a>
+            <h1>442: מלחמת העצמאות, חלק א' [עושים היסטוריה]</h1>
+            <p class="meta">Published on Mon, 24 Mar 2025 10:43:09 +0000</p>
+        </header>
+
+        <div class="player-container">
+            <audio id="audio-player" controls>
+                <source src="https://api.spreaker.com/download/episode/65077777/ep442_war_of_independence_part_1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="transcript-container" id="transcript">
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">00:00</span>
+                </div>
+                <div class="content">
+                    <p>שלום וברוכים הבאים לעושים היסטוריה. פרק 442, מלחמת העצמאות חלק א'.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">00:44</span>
+                </div>
+                <div class="content">
+                    <p>ממשלת הוד מלכותו רואה בעין יפה את הקמת בית לאומי לעם היהודי בארץ ישראל. המשפט הקצר הזה, שהופיע במכתב ששלח שר החוץ הבריטי הלורד ארתור ג'יימס בלפור ב-1917 לחבר פרלמנט בריטי ממוצא יהודי, נחשב לאחד ההישגים המזהירים של התנועה הציונית שייסד בנימין זאב הרצל.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">01:21</span>
+                </div>
+                <div class="content">
+                    <p>הצהרת בלפור הייתה תוצאה של פעילות דיפלומטית אינטנסיבית מצדם של חיים ויצמן ונחום סוקולוב. ויצמן, ביוכימאי בהכשרתו, פיתח שיטה חדשנית לייצור אצטון שהיה מרכיב חיוני בייצור חומרי נפץ במלחמת העולם הראשונה. כפי שמסביר לנו ההיסטוריון יואב גלבר, פרופסור אמריטוס באוניברסיטת חיפה, היו גם לא מעט שיקולים אסטרטגיים ופרקטיים שהיו מעורבים בהצהרה הזו.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-פרופ' יואב גלבר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">פרופ' יואב גלבר</span>
+                    <span class="timestamp">02:12</span>
+                </div>
+                <div class="content">
+                    <p>את הצהרת בלפור נתנה הממשלה. השיקולים שלה היו אסטרטגיים גלובליים, באפר לתעלת סואץ אחרי שהטורקים תקפו פעמיים את התעלה במלחמת העולם הראשונה. היה שיקול מדיני - ויצמן הצליח לשכנע הרבה אנגלים שהיהודים חזקים, בעיקר באמריקה וברוסיה, והוא יוכל דרך היהודים למשוך את אמריקה למלחמה ולמנוע מרוסיה לפרוש.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">03:15</span>
+                </div>
+                <div class="content">
+                    <p>התגובות בעולם היהודי להצהרה היו אקסטטיות. חגיגות פרצו בתפוצות השונות והיו מי שהשוו את ההצהרה הזו להכרזת כורש. מי שהיו הרבה פחות מרוצים מההצהרה היו כמובן ערביי ארץ ישראל.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">04:02</span>
+                </div>
+                <div class="content">
+                    <p>באותו שלב האוכלוסייה הערבית בארץ ישראל הייתה גדולה בהרבה מהיישוב היהודי, כ-600 אלף ערבים לעומת כ-60 אלף יהודים בלבד. החשש של הערבים גבר עוד יותר בעקבות החלת המנדט הבריטי, והעובדה שהנציב העליון הראשון, סר הרברט סמואל, היה בעצמו יהודי ותומך ברעיון הציוני.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-פרופ' יואב גלבר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">פרופ' יואב גלבר</span>
+                    <span class="timestamp">04:46</span>
+                </div>
+                <div class="content">
+                    <p>כשהוא מגיע, זה כאילו הנה הבריטים הולכים לשים נציב יהודי על ארץ ישראל. זה עוד מגביר את התסיסה.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">05:07</span>
+                </div>
+                <div class="content">
+                    <p>בתחילה התגובה הערבית הייתה מתונה יחסית, הפגנות ושביתות. הבריטים ניסו לפתור זאת והזמינו את ויצמן ואנשיו למפגש עם האמיר פייסל, בנו של השריף ששומר על המקומות הקדושים במכה ומדינה. ויצמן ופייסל אכן הגיעו להסכם, אבל מסיבות מדיניות שונות הוא לא יצא אל הפועל.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">05:59</span>
+                </div>
+                <div class="content">
+                    <p>חוסר השקט ברחוב הערבי הלך וגבר עד שהגיע לשיאו ב-1921 במה שמכונה מאורעות תרפ"א. בשלב הזה הבריטים התחילו להבין לאיזו צרה הם הכניסו את עצמם.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-פרופ' יואב גלבר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">פרופ' יואב גלבר</span>
+                    <span class="timestamp">06:31</span>
+                </div>
+                <div class="content">
+                    <p>נתקלתי באיזה דוח שכותב קצין מודיעין במפקדת הממשל הצבאי של ארץ ישראל בירושלים למשרד המלחמה בלונדון. הוא מתאר את המצב ובסוף המשפט המסכם כותב להם: 'Gentlemen, we've got ourselves mixed up in another Ireland'. הם מבינים לאן זה הולך.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">07:05</span>
+                </div>
+                <div class="content">
+                    <p>התוצאה הייתה מסמך שהגיש ב-1922 וינסטון צ'רצ'יל, שהיה שר המושבות דאז, ובו החלטה להגביל את היקף העלייה היהודית לארץ ישראל. מסמך זה מוכר כספר הלבן של צ'רצ'יל.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">08:15</span>
+                </div>
+                <div class="content">
+                    <p>באופן מפתיע, עיקר ההתנגדות לעלייה לארץ ישראל הייתה דווקא מצד ההנהגה הציונית עצמה באותה תקופה.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-פרופ' יואב גלבר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">פרופ' יואב גלבר</span>
+                    <span class="timestamp">08:32</span>
+                </div>
+                <div class="content">
+                    <p>זה תהליך שהתחיל בעיקר ב-1918 ונמשך ב-1919 ועורר בהנהגה הציונית חרדה עצומה. למה? כי זאת ארץ שעכשיו נגמרה בה המלחמה, שהיא הרוסה ומדולדלת. היא לא הייתה ארץ שעל פי נתוני הטבע קולטת הגירה. הפחד היה שאנשים יבואו, יישברו, יתאכזבו ויחזרו לארצות המוצא, ויוציאו את דיבת הארץ רעה.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">10:05</span>
+                </div>
+                <div class="content">
+                    <p>באמצע שנות ה-20 פקד את ארץ ישראל משבר כלכלי חריף. בשלב זה היקף העלייה לארץ היה בלאו הכי נמוך, אך למרות הנכונות הבריטית להגביל את העלייה, ההתנגדות הערבית רק הלכה וגברה.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">10:55</span>
+                </div>
+                <div class="content">
+                    <p>כפי שמסביר פרופסור יואב גלבר, למרחב הזה מעולם לא היו מדינות לאום או עמים במקור. תמיד היו אימפריות - העות'מאנית, הממלוכית, הביזנטית. שאיפות לאומיות ראשוניות החלו להופיע בחברה הערבית בעקבות מלחמת העולם הראשונה, במה שקרוי התנועה הפאן-ערבית.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">12:34</span>
+                </div>
+                <div class="content">
+                    <p>כישלונה של תנועת הפאן-ערביות פינתה את מקומה ללאומיות אזורית ומצומצמת יותר. ב-1920 הוקם בחיפה הוועד הפועל הערבי שייצג את ערביי ארץ ישראל. אבל לא כולם האמינו במאבק אזרחי שליו.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">13:31</span>
+                </div>
+                <div class="content">
+                    <p>אמין אל חוסייני היה פעיל בולט במאבק נגד הציונות. למרות שנדון למאסר בעקבות הפגנה אלימה, הבריטים תמכו במינויו לתפקיד המופתי של ירושלים בתקווה שימתן את דעותיו, אך בפועל חוסייני ניצל את השפעתו כדי לשפוך עוד שמן למדורה.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">14:27</span>
+                </div>
+                <div class="content">
+                    <p>ההסתה מצד המופתי תדלקה את הפחדים הערביים עד להתפרצות מאורעות תרפ"ט ב-1929, בהם נרצחו 133 יהודים. אירועים אלו היוו נקודת מפנה. ועדת פיל שהוקמה הגיעה למסקנה שהגורם המרכזי לפרעות היה החשש הערבי מהשתלטות יהודית, מה שהוביל לספר הלבן של פאספילד ב-1930.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">16:05</span>
+                </div>
+                <div class="content">
+                    <p>המאורעות הובילו לשינוי תפיסתי עמוק אצל מי שעתיד להיות האדם המשפיע ביותר בתולדות המאבק להקמת מדינת ישראל - דוד בן גוריון.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">16:36</span>
+                </div>
+                <div class="content">
+                    <p>דוד יוסף גרין נולד ב-1886 בפולין. ב-1906 עלה לארץ ישראל ובין עבודה בפרדסים לשמירה בשדות, שימש כאחד מראשי מפלגת פועלי ציון תחת השם בן גוריון. בתחילה בן גוריון החזיק בתפיסה פרגמטית וסוציאליסטית, והאמין שפועלים יהודים וערבים יוכלו לשתף פעולה.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">19:24</span>
+                </div>
+                <div class="content">
+                    <p>בן גוריון אמר בנאום ב-1924: 'אנו רוצים בברית של פועלים ערבים בני עם ערבי חופשי. הפועלים היהודים מושיטים את ידיהם לפועלים הערבים נכונים להתקשר בברית של אחווה, אמת ושוויון'.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">20:09</span>
+                </div>
+                <div class="content">
+                    <p>אך מאורעות תרפ"ט והשנאה שהופגנה בהם הביאו את בן גוריון לזנוח את התפיסות הנאיביות הללו. הוא קיבל את קיומה של תנועה לאומית ערבית והחל לחשוב על חלוקת הארץ לקנטונים יהודים וערבים.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-פרופ' יואב גלבר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">פרופ' יואב גלבר</span>
+                    <span class="timestamp">21:10</span>
+                </div>
+                <div class="content">
+                    <p>הוא מנסה להיפגש עם מנהיגים ערבים. מהשיחות איתם בן גוריון מבין שעם הפלסטינים אי אפשר להגיע להסכמה. אולי עם העולם שמסביב, אבל לא עם הפלסטינים. אז המדיניות הציונית מחפשת אלטרנטיבות, 'ברית מיעוטים' - אנחנו, הדרוזים, המרונים, הכורדים, העלאווים - כולנו נגד הרוב הסוני.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">22:50</span>
+                </div>
+                <div class="content">
+                    <p>בבחירות בגרמניה ב-1931 זכתה המפלגה הנאצית, ועלייתו של היטלר דחפה יהודים רבים לעזוב את אירופה ולעלות לארץ במה שנקרא העלייה החמישית. בעוד היישוב היהודי שגשג, ערביי הארץ צפו בהתפתחויות בעיניים כלות.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-פרופ' יואב גלבר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">פרופ' יואב גלבר</span>
+                    <span class="timestamp">24:01</span>
+                </div>
+                <div class="content">
+                    <p>הערבים הפלסטינים רואים שכל המדינות מסביב מקבלות עצמאות - עיראק ב-1932, מצרים ב-1936, סוריה. ורק הם תקועים לא רק עם האנגלים אלא גם עם היהודים.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">26:20</span>
+                </div>
+                <div class="content">
+                    <p>עז א-דין אל-קסאם, איש דת קיצוני מסוריה, הקים בחיפה תשתית טרור מאורגנת בשנות ה-30. חברי הכנופיה שלו ביצעו תקיפות רבות נגד יהודים. ב-1935 קסאם נהרג בקרב עם הבריטים, ומותו הפך אותו לסמל של המאבק המזוין נגד הציונות והמנדט.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">31:40</span>
+                </div>
+                <div class="content">
+                    <p>מותו של קסאם והחשיפה של משלוח נשק יהודי בנמל יפו הובילו לפריצת המרד הערבי הגדול ב-1936. המרד כוון בראש ובראשונה נגד שלטונות המנדט בדרישה להפסיק את העלייה ואת מכירת הקרקעות ליהודים.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-פרופ' יואב גלבר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">פרופ' יואב גלבר</span>
+                    <span class="timestamp">34:02</span>
+                </div>
+                <div class="content">
+                    <p>דרישות הערבים הופנו לבריטים. הם רצו שהבריטים יפסיקו את העלייה ויאסרו רכישת קרקעות על ידי יהודים.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">34:36</span>
+                </div>
+                <div class="content">
+                    <p>בתגובה למרד, הקימו הבריטים את ועדת פיל ב-1936. הוועדה הגיעה למסקנה שאין בסיס משותף בין שתי העדות הלאומיות והמליצה על הפתרון המעשי היחיד - חלוקה.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">38:30</span>
+                </div>
+                <div class="content">
+                    <p>הצעת ועדת פיל הציתה את 'פולמוס החלוקה' בתנועה הציונית. בן גוריון תמך בחלוקה, במיוחד בשל המלצת הוועדה על חילופי אוכלוסין - טרנספור של ערבים מהשטח היהודי.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-פרופ' יואב גלבר">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">פרופ' יואב גלבר</span>
+                    <span class="timestamp">41:12</span>
+                </div>
+                <div class="content">
+                    <p>ההישג הגדול של ועדת פיל היה העובדה שהאנגלים מוכנים לדאוג להעברת הערבים מהמדינה היהודית, מה שאנחנו לא היינו מסוגלים לעשות.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">42:30</span>
+                </div>
+                <div class="content">
+                    <p>בסופו של דבר, בעקבות התנגדות ערבית עזה וכשלון ועדת וודהד, נטשו הבריטים את רעיון החלוקה ופרסמו ב-1939 את הספר הלבן השלישי (ספר מקדונלד), שהגביל את העלייה ל-15 אלף איש בשנה בלבד. אך אז פרצה מלחמת העולם השנייה.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">47:16</span>
+                </div>
+                <div class="content">
+                    <p>בן גוריון הכריז: 'עלינו לעזור לאנגלים במלחמתם כאילו לא היה ספר לבן, ועלינו לעמוד נגד הספר הלבן כאילו לא הייתה מלחמה'.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">48:44</span>
+                </div>
+                <div class="content">
+                    <p>כשנסתיימה המלחמה, הבריטים המותשים מהחובות ומחוסר השקט העבירו את שאלת ארץ ישראל לאו"ם. ועדת אונסקו"פ המליצה שוב על חלוקה, וב-29 בנובמבר 1947 התקיימה ההצבעה הגורלית בעצרת הכללית של האו"ם.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-קטע ארכיון">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">קטע ארכיון</span>
+                    <span class="timestamp">53:15</span>
+                </div>
+                <div class="content">
+                    <p>The resolution of the Ad Hoc Committee for Palestine was adopted by 33 votes against 13, with 10 abstentions.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">53:30</span>
+                </div>
+                <div class="content">
+                    <p>בארץ ישראל יצאו המוני יהודים אל הרחובות. תל אביב רקדה. הלילה נשפך אור יקרות על ההמונים החוגגים. אך התגובה הערבית הייתה הפוכה לחלוטין. בבוקר שאחרי ההכרזה באו"ם, הותקף אוטובוס יהודי ליד פתח תקווה, וסימן את יריית הפתיחה של מלחמת העצמאות.</p>
+                </div>
+            </article>
+            
+            <article class="paragraph speaker-רן לוי">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">רן לוי</span>
+                    <span class="timestamp">58:32</span>
+                </div>
+                <div class="content">
+                    <p>זהו, עד כאן. תודה רבה לפרופסור יואב גלבר שהתארח בפרק. בפרק הבא נתמקד בשלב הראשון של המלחמה. עושים היסטוריה היא של רן לוי, ואני רן לוי, כותב ומגיש. אנחנו נשתמע בפרק הבא. להתראות.</p>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const words = document.querySelectorAll('.word');
+        let currentWord = null;
+
+        function seekTo(time) {
+            audio.currentTime = time;
+            audio.play();
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const time = audio.currentTime;
+
+            // Simple optimization: only check around the current word or linear scan if lost
+            // For robustness, we'll just do a linear scan for now. 
+            // In a huge transcript, we might want a binary search or index.
+            
+            let found = false;
+            words.forEach(word => {
+                const start = parseFloat(word.dataset.start);
+                const end = parseFloat(word.dataset.end);
+
+                if (time >= start && time < end) {
+                    if (currentWord !== word) {
+                        if (currentWord) currentWord.classList.remove('active');
+                        word.classList.add('active');
+                        currentWord = word;
+                        
+                        // Auto-scroll logic
+                        const container = document.getElementById('transcript');
+                        const wordTop = word.offsetTop - container.offsetTop;
+                        // scroll if word is getting out of view
+                        container.scrollTop = wordTop - 100; 
+                    }
+                    found = true;
+                }
+            });
+
+            if (!found && currentWord) {
+                currentWord.classList.remove('active');
+                currentWord = null;
+            }
+        });
+    </script>
+</body>
+</html>
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>443: מלחמת העצמאות, חלק ב' [עושים היסטוריה]</title>
@@ -10240,250 +10694,6 @@
                 </div>
                 <div class="content">
                     <p>היי, חזרתי. דיברתי קודם על מי הפליל את רוג'ר ראביט ועל הקטע שבו דונלד דאק ודאפי דאק מנגנים ביחד בפסנתר. היצירה שהם מנגנים היא רפסודיה הונגרית מספר 2 של פרנץ ליסט. וזה לא מקרה שבחרו דווקא ביצירה הזאת בסרט, כי יש לה קשר לפרשה מאוד מוזרה בתולדות הסרטים המצוירים. בשנת 1947 התכנסה ועדה של האקדמיה האמריקאית לקולנוע, אלה שמצביעים על האוסקר, להקרנה מיוחדת של הסרטים המצוירים הקצרים המועמדים לאוסקר באותה שנה. ראשון הוקרן סרט של טום וג'רי. הסרט מתחיל בבמה באולם קונצרטים שעליה יש פסנתר כנף גדול. החתול טום נכנס מצד שמאל לבוש חליפה, הוא משתחווה לקהל לקול מחיאות כפיים, הוא מתיישב לפסנתר ומתחיל לנגן את הרפסודיה ההונגרית מספר 2 של ליסט. בזמן שהוא מנגן, אז מתברר שג'רי העכבר ישן בתוך הפסנתר והוא מתעורר והוא מתחיל להפריע ולהציק לטום תוך כדי נגינה וטום מנסה להחזיר לו והם רודפים אחד אחרי השני ועניינים והכל תוך כדי נגינה של הקטע הזה. זה סרט מאוד משעשע. אחרי שהסרט הזה נגמר התחילו להקרין את הסרט הבא המתחרה על האוסקר - זה היה סרט של באגס באני. וזה הולך ככה: בתחילת הסרט רואים במה באולם קונצרטים עם פסנתר כנף גדול, ואז באגס באני לבוש בחליפה נכנס מצד שמאל משתחווה לקהל מתיישב לפסנתר ומתחיל לנגן את אותה מנגינה! ואז מגיע עכבר שמתחיל להציק לו והם רודפים אחד אחרי השני תוך כדי נגינה וכל זה. ובשלב הזה הקהל חטף דז'ה-וו עצבני. שני הסרטים האלה נעשו במקביל עם חברות שונות, אבל הם מאוד מאוד דומים. מילא שהעלילה שלהם היא אותו דבר, שניהם משתמשים באותה יצירה. אין מצב שזה מקרה, ברור שמישהו פה העתיק ממישהו, אבל פחות ברור מי. MGM שהפיקו את טום וג'רי טענו שוורנר שעשו את באגס באני גנבו להם את הרעיון. בוורנר טענו ש-MGM גנבו להם את הרעיון, ומה באמת קרה ומי באמת אשם זה לא ברור עד היום. מה שכן ברור זה שהסרט של טום וג'רי זכה באוסקר באותה שנה, למרות שאם אתם שואלים אותי הסרט של באגס באני דווקא הרבה יותר מצחיק. בכל אופן היצירה הזאת של פרנץ ליסט הפכה לקלאסיקה של סרטים מצוירים והיא הופיעה שוב בכמה סרטים וגם ברוג'ר ראביט. זאת הייתה התשובה. היו שלום.</p>
-                </div>
-            </article>
-            
-        </div>
-    </div>
-
-    <script>
-        const audio = document.getElementById('audio-player');
-        const words = document.querySelectorAll('.word');
-        let currentWord = null;
-
-        function seekTo(time) {
-            audio.currentTime = time;
-            audio.play();
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            const time = audio.currentTime;
-
-            // Simple optimization: only check around the current word or linear scan if lost
-            // For robustness, we'll just do a linear scan for now. 
-            // In a huge transcript, we might want a binary search or index.
-            
-            let found = false;
-            words.forEach(word => {
-                const start = parseFloat(word.dataset.start);
-                const end = parseFloat(word.dataset.end);
-
-                if (time >= start && time < end) {
-                    if (currentWord !== word) {
-                        if (currentWord) currentWord.classList.remove('active');
-                        word.classList.add('active');
-                        currentWord = word;
-                        
-                        // Auto-scroll logic
-                        const container = document.getElementById('transcript');
-                        const wordTop = word.offsetTop - container.offsetTop;
-                        // scroll if word is getting out of view
-                        container.scrollTop = wordTop - 100; 
-                    }
-                    found = true;
-                }
-            });
-
-            if (!found && currentWord) {
-                currentWord.classList.remove('active');
-                currentWord = null;
-            }
-        });
-    </script>
-</body>
-</html>
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>מה השעה (ואיפה?) [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/the-answer/mh-hsh-h-vyph-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/mh-hsh-h-vyph-htshvbh.html</guid>
-        <pubDate>Mon, 27 Feb 2023 04:00:02 +0000</pubDate>
-        <description>Transcript for מה השעה (ואיפה?) [התשובה] from The Answer</description>
-        <content:encoded><![CDATA[
-            <!DOCTYPE html>
-<html lang="en" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מה השעה (ואיפה?) [התשובה] - Podtext</title>
-    <link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="../../index.html" class="back-link">Back to Episodes</a>
-            <h1>מה השעה (ואיפה?) [התשובה]</h1>
-            <p class="meta">Published on Mon, 27 Feb 2023 04:00:02 +0000</p>
-        </header>
-
-        <div class="player-container">
-            <audio id="audio-player" controls>
-                <source src="https://api.spreaker.com/download/episode/52854985/timezone_mst.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <div class="transcript-container" id="transcript">
-            
-            <article class="paragraph speaker-Narrator">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Narrator</span>
-                    <span class="timestamp">00:00</span>
-                </div>
-                <div class="content">
-                    <p>בכיתה א', יעל גילתה כוכב לכת חדש. אמיתי, כוכב לכת שלא היה מוכר עד אז מסביב לשמש אחרת. נמרוד בנה מכשיר שמתרגם את שפת העגבניות. ברצינות, הוא הקליט את הקולות שהעגבניות עושות, הן עושות קולות, כדי לדעת את כמות המים המדויקת שהן צריכות. שניהם למדו במרכז מדעני העתיד. אבל לא עליהם אני רוצה לדבר עכשיו, אלא עליכם. אתם ספציפית, אתם שמאזינים עכשיו ולומדים בכיתה ז' או ח' או ט'. איזה מין אנשים אתם? איזה מין בני ובנות נוער מאזינים לפודקאסטים על מדע והיסטוריה וטכנולוגיה וכאלה דברים? אני מוכן לנחש - בני נוער סקרנים, כאלה שמתעניינים בדברים, כאלה שרוצים ללמוד דברים, לא רק את מה שלומדים בבית הספר. ואולי מסתכלים על העולם קצת אחרת ואולי מחפשים אתגרים קצת יותר מעניינים. אז אם אי פעם הרגשתם שאתם קצת מחוץ למסגרת, זה הזמן להיכנס למסגרת שכן מתאימה לכם. קוראים לזה מרכז מדעני העתיד. שם יומרני, אני יודע, אבל צריך למכור את זה גם להורים שלכם. מה שזה אומר זה שאתם מגיעים למוסדות אקדמיים בארץ כדי ללמוד ברמה אקדמית כבר בזמן התיכון, לבצע מחקרים פורצי דרך, להשתלב במעבדות עם החוקרים הכי טובים בישראל ולהיות עם אנשים סקרנים כמוכם, כי לשנות את העולם זה כיף. אבל זה הרבה יותר כיף כשעושים את זה ביחד. ההרשמה היא לתלמידות ותלמידים בכיתות ז' עד ט' והיא פתוחה עכשיו. אז אם זה אתם, אם הפרסומת הזאת דיברה עליכם, תחפשו ברשת מרכז מדעני העתיד, ואם זה לא אתם, אז סליחה שהפרעתי. התוכניות הן מיזם משותף של מרכז מדעני העתיד ומשרד החינוך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">01:55</span>
-                </div>
-                <div class="content">
-                    <p>שלום, זאת התשובה, אני דורון פישלר. הנה שאלה: שרה שאלה אותי ככה - מה היא המדינה הכי גדולה בעולם שיש בה רק אזור זמן אחד? ומה היא המדינה הכי קטנה בעולם שיש בה אזורי זמן שונים? אז קודם כל שרה, אלה שתי שאלות. שלא תחשבי שלא שמתי לב. חוץ מזה, אלה בעיקרון שאלות פשוטות, כי חיפוש די קל ייתן לך את התשובות ואפשר לענות עליהן בשתי מילים, שתי שמות של מדינות. והרבה פעמים אם התשובה לשאלה היא פשוטה מדי, זה לא כל כך מעניין אותי לענות עליה כי מה יש לדבר פה כל כך הרבה. אבל כאן זה בסדר. התשובה הולכת להיות באורך של יותר משתי מילים, כי התשובות אולי פשוטות, אבל הסיבות לתשובות האלה והתוצאות שלהן הן א' מאוד מעניינות וב' מאוד מוזרות. שזה מה שאני אוהב.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">04:42</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו קודם כל, אנחנו מדברים פה על זמן ואנחנו מדברים פה על שעות. ואני עסקתי בנושא הזה כבר פעם, לפני הרבה זמן עשיתי פרק של התשובה שענה על השאלה החשובה 'מה השעה?'. שם אני דיברתי הרבה בעיקר על הקטע של שעון קיץ, שזה אומר שבני אדם פשוט קמו והחליטו פעם אחת שהשעה עכשיו לא מתאימה להם ולכן בעצם השעה עכשיו היא לא השעה עכשיו, אלא שעה קודם או שעה אחר כך, כי זה דבר שקורה מתברר. ודיברתי גם על מה זה בדיוק שעה. וזה נושא גדול אז לא על הכל הרחבתי. בפרק ההוא דיברתי קצת על הנושא של אזורי זמן, שזה מה שגורם לזה שהשעה במקומות שונים בעולם היא שונה, אבל לא הרבה. אז הפעם אני אדבר על זה יותר. אם לא שמעתם את הפרק ההוא אז מומלץ לשמוע אותו, זה לא חובה, זה לא תלוי אחד בשני. לפרק הזה אני אקרא 'מה השעה 2'. עוד דבר אחד, אם יש לכם מפה של העולם, אז לפתוח אותה לפני שאתם שומעים את הפרק הזה יכול לעזור. בכל אופן, אז אני אדבר על המדינה הכי גדולה עם אזור זמן אחד, המדינה הכי קטנה עם כמה אזורי זמן, ומה הקטע עם אזורי זמן בכלל, ולמה האוקיינוס השקט הוא גם מכונת זמן, ואיך שומרים שבת ביפן. יאללה, תכף התשובה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">07:29</span>
-                </div>
-                <div class="content">
-                    <p>אנחנו חיים על כדור. אנחנו רגילים לזה. אבל זה בכל זאת קצת מוזר לחיות על כדור. יש לזה תופעות לוואי מעניינות ואחת מהן זה העניין הזה של אזורי הזמן. עכשיו, אם טסתם לחו"ל אי פעם אתם מכירים את הנושא הזה, אתם יודעים שאזורי זמן קיימים, אני לא ממש הולך לחדש לכם בזה שיש דבר כזה, כן? אבל בואו נתחיל מלהסביר את הדברים שאתם בטח כבר יודעים כדי לעשות סדר ולהגיע לדברים היותר מסובכים אחר כך. כשהשמש עולה מעל האופק בירושלים, בלונדון עדיין חשוך. זה פשוט משום שירושלים נמצאת מזרחית ללונדון. חצי מכדור הארץ פונה אל השמש והוא מואר, והחצי השני פונה לכיוון השני ולכן הוא חשוך. עכשיו כדור הארץ מסתובב בכיוון ממערב למזרח, ככה שירושלים הייתה בחושך אבל היא מסתובבת ככה שהיא נכנסת ממש לקצה של האזור המואר, זה הזמן שבו אנחנו רואים זריחה. לונדון עדיין נמצאת מאחורה באזור החשוך. בערך שעתיים מאוחר יותר, כדור הארץ ימשיך להסתובב, לונדון מגיעה לקצה של האזור המואר, אבל באותו זמן ירושלים כבר נמצאת עמוק בפנים, מה שאומר שהשמש גבוהה בשמיים. ובאותו זמן ממש בלוס אנג'לס אמצע הלילה ובהודו צהריים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">09:34</span>
-                </div>
-                <div class="content">
-                    <p>אז כדי לארגן את זה ככה שבכל מקום בעולם השמש תזרח בבוקר ותשקע בערב, ישנם אזורי הזמן. פרסו את העולם כמו תפוז גדול ל-24 פלחים, שבכל אחד מהם השעה היא שעה אחרת ביום. הגבול בין שעה אחת לשעה אחרת הוא קו האורך. כשאתם חוצים קו כזה, אתם צריכים לכוון את השעון שעה אחת קדימה או אחורה. רק שזה ממש לא ככה. הקווים האלה ממש לא ישרים. הסיבה לזה היא שכל מדינה קובעת בעצמה מה השעה אצלה. מדינות מעדיפות שלא יהיו שני אזורי זמן בתוך אותה מדינה, אז הגבולות מתעקמים לפי גבולות המדינות. לאזורי הזמן נותנים שמות לפי נקודת האמצע בגריניץ', לונדון. בישראל אנחנו באזור UTC+2, כלומר השעה בארץ מאוחרת יותר מהשעה בלונדון בשעתיים. יש גם מדינות שאזורי הזמן שלהן הם קצת שונים, כמו הודו שהיא פלוס 5 וחצי. נפאל אפילו יותר מיוחדת, והיא המדינה היחידה בעולם שאזור הזמן שלה הוא פלוס 5 ושלושה רבעים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">15:21</span>
-                </div>
-                <div class="content">
-                    <p>בכל מקרה, כמעט כל המדינות בעולם נמצאות בתוך אותו אזור זמן, אבל יש מדינות שהן פשוט נורא נורא גדולות. בארצות הברית יש ארבעה אזורי זמן (שישה עם אלסקה והוואי), וברוסיה הענקית יש 11 אזורי זמן. ככה שכשבמוסקבה השעה היא 3 בצהריים, בקצה המזרחי של רוסיה חצות. אוקיי, עד כאן הכל מורכב אבל הגיוני. עכשיו השאלות. שאלה ראשונה - מה היא המדינה הכי קטנה בעולם שיש בה יותר מאזור זמן אחד? התשובה הפשוטה היא מיקרונזיה. למרות השם, זאת מדינה של אנשים בגודל נורמלי. זאת מדינת איים באוקיינוס השקט. מיקרונזיה קטנה מבחינת אוכלוסייה ושטח קרקע, אבל היא משתרעת על מרחק של כמעט 3,000 קילומטרים ולכן מחולקת לשני אזורי זמן.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">19:07</span>
-                </div>
-                <div class="content">
-                    <p>אבל יש תחרות, כי יש מדינה אחרת שבה המצב הוא דומה אבל עוד יותר מוזר - קיריבטי (או קיריבס). המרחק בין האיים בקיריבס הוא כל כך גדול שהיא נמתחת על פני שלושה אזורי זמן שונים. והיא גם נמצאת משני הצדדים של קו התאריך. קו התאריך גורם לזה שאם אתם עוברים מאי אחד לאחר, אתם קופצים יום שלם קדימה או אחורה למרות שהשעה נשארת דומה. יש טיסות מסידני ללוס אנג'לס שלוקחות 14 שעות ונוחתות לפני שהן המריאו. קו התאריך הוא לא ישר, הוא מתעקל כדי לא להפריע למדינות כמו רוסיה, אלסקה או סמואה. בקיריבס קו התאריך עבר פעם בתוך המדינה, מה שהיה יוצר בלאגן של תאריכים שונים בתוך אותה מדינה, אז ב-1995 הם שינו את זה ככה שכל המדינה תהיה מאותו צד. זה יצר בליטה מאוד מוזרה במפות העולם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">25:48</span>
-                </div>
-                <div class="content">
-                    <p>קיריבס המציאו שני אזורי זמן חדשים: פלוס 13 ופלוס 14. מה שזה אומר זה שיש יותר אזורי זמן בעולם משיש שעות ביום. יש אנשים ברגע זה בעולם שחיים במרווח של 26 שעות. כשיש שעה מסוימת בלונדון, יש מקומות בעולם שבהם התאריך הוא אתמול, היום או מחר בו זמנית. הטיסה מסידני ללוס אנג'לס עוברת בדיוק דרך מרכז כל הבלאגן הזה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Captain Fishland">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Captain Fishland</span>
-                    <span class="timestamp">27:54</span>
-                </div>
-                <div class="content">
-                    <p>גבירותיי ורבותיי, מדבר הקברניט. אני רוצה לברך אתכם שוב שבחרתם לטוס איתנו בטיסה FIS 155 של נתיבי אוויר פישלנד מסידני ללוס אנג'לס. אנחנו המראנו בשעה 2 בצהריים ביום ראשון מנמל התעופה בסידני, חצי הדרך כבר מאחורינו ואנחנו צפויים לנחות בלוס אנג'לס בעוד כשש שעות, כארבע שעות לפני שהמראנו. אנחנו נמצאים כעת מעל קיריבס, כאן השעה המקומית היא חצות ורבע ביום שני. היושבים מצד שמאל של המטוס אם תביטו החוצה אולי תצליחו להבחין באי בייקר, שם השעה כרגע היא 11 בלילה שלשום. בעוד מספר רגעים נחצה את קו התאריך... הנה חצינו אותו עכשיו. אנחנו כרגע מעל השטח של האי בייקר וכעת הנוסעים בצד ימין של המטוס יכולים להבחין באיי קיריבס, שם השעה כרגע היא מחרתיים. כמו כן מכיוון שעם מעבר קו התאריך נכנסנו ליום שבת אני רוצה לאחל לציבור הנוסעים שבת שלום. שנה טובה, ט"ו בשבט שמח ובהצלחה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">29:34</span>
-                </div>
-                <div class="content">
-                    <p>אז זאת הייתה תשובה מספר אחת. עכשיו השאלה השנייה שהיא יותר פשוטה - מה היא המדינה הכי גדולה בעולם שנמצאת כולה רק באזור זמן אחד? סין. סין משתרעת על שטח שהיה אמור להיות מחולק לחמישה אזורי זמן שונים, פעם זה באמת היה המצב, אבל ב-1949 המפלגה הקומוניסטית ביטלה את אזורי הזמן כדי לאחד את המדינה תחת 'זמן בייג'ינג'. זה אמור להיות פשוט, אבל זה יוצר מצבים אבסורדיים בקצה המערבי של סין. שם השמש יכולה לזרוח ב-10 בבוקר ולשקוע ב-11 בלילה. בני אדם לא בנויים לזה, וזה מבלבל וקשה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">32:39</span>
-                </div>
-                <div class="content">
-                    <p>האזור הזה נקרא שינג'יאנג, וחיים בו האויגורים. סין לא אוהבת אותם והם מופלים לרעה. האויגורים הקימו אזור זמן משל עצמם - שעון שינג'יאנג, שהוא שעתיים אחרי בייג'ינג ומתואם עם השמש. ממשלת סין לא מכירה בו. זה הופך את שינג'יאנג למקום עם הזמן הכי מוזר בעולם כי התשובה לשאלה 'מה השעה?' תלויה במי אתם. אם אתם רוצים להספיק לרכבת ממשלתית, תסתכלו על שעון בייג'ינג, אבל במסעדה אויגורית שעות הפתיחה יהיו לפי שעון שינג'יאנג. זה נורא מבלבל ותמיד צריך לוודא באיזה שעון מדובר כדי לא לאחר או להקדים בשעתיים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Google Translate">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Google Translate</span>
-                    <span class="timestamp">37:15</span>
-                </div>
-                <div class="content">
-                    <p>Běijīng shí huò xīnjiāng shí</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">37:18</span>
-                </div>
-                <div class="content">
-                    <p>זה אומר שעון בייג'ינג או שעון שינג'יאנג. אז זאת הייתה התשובה, זמן זה מסובך. עכשיו עוד עניין קטן - קו התאריך היהודי. אם אתם ביפן, מתי נכנסת השבת? זו שאלה הלכתית מפורסמת. קו התאריך הבינלאומי לא מעניין את ההלכה. הוויכוח על איפה עובר קו התאריך היהודי קיים עוד מהמאה ה-12. רבי יהודה הלוי כבר אז ידע שכדור הארץ עגול ושחייב להיות קו שמפריד בין יום ליום.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">39:53</span>
-                </div>
-                <div class="content">
-                    <p>כולם מסכימים שמרכז העולם הוא ירושלים, אז הקו צריך להיות ביחס אליה. היו דעות שונות איפה בדיוק לשים אותו. ככל שיהודים הגיעו לקצוות העולם, זו הפכה לבעיה ממשית. לפי חלק מהרבנים השבת ביפן היא ביום שבת הרגיל, ולפי אחרים היא בכלל ביום ראשון. לכן הרבה יהודים שם שומרים שבת יומיים ליתר ביטחון. אבל מה עושים ביום כיפור? הרי לצום יומיים זה לא בריא. השאלה הזו מעולם לא נפתרה לגמרי. וזה עוד לפני ששאלנו מתי נכנסת שבת בתוך מטוס שעובר את קו התאריך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">42:51</span>
-                </div>
-                <div class="content">
-                    <p>זאת הייתה התשובה. תודה לרפאל מיוחס על הייעוץ בפרק. אתם יכולים לשלוח לי שאלות באתר שלי או להתעדכן בדף הפייסבוק 'דורון פישלר נגד העולם'. אני דורון פישלר, ביי.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Captain Fishland">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Captain Fishland</span>
-                    <span class="timestamp">43:18</span>
-                </div>
-                <div class="content">
-                    <p>גבירותיי ורבותיי, מדבר הקברניט. אני רוצה להתנצל על אי ההבנה הקלה שהייתה לנו קודם, מתברר שב-11 בלילה ביום שבת השבת כבר יצאה. כמו כן מדיניות החברה היא לא להרוג את הנוסעים. ברגעים אלה אנחנו טסים במעגלים מעל האוקיינוס השקט בלי שום סיבה מיוחדת... שימו לב: יום שני, יום שבת, יום שני, יום שבת... גבירותיי ורבותיי, אני רוצה לעדכן שכרגע פיטרו אותי, ובצדק. אבל ההגה עדיין בידיים שלי, ולכן מה אכפת לי - אני טס לסמואה! ווהו!</p>
                 </div>
             </article>
             
