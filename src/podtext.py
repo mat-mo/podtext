@@ -45,8 +45,11 @@ def load_config():
 def load_db():
     if os.path.exists(DB_PATH):
         with open(DB_PATH, 'r') as f:
-            return json.load(f)
-    return {"processed": [], "episodes": []}
+            data = json.load(f)
+            if "failed" not in data:
+                data["failed"] = []
+            return data
+    return {"processed": [], "episodes": [], "failed": []}
 
 def save_db(db):
     with open(DB_PATH, 'w') as f:
@@ -114,7 +117,7 @@ def process_with_gemini(audio_file):
     IMPORTANT: Return ONLY the valid JSON object. Ensure all strings are properly escaped.
     """
     
-    max_retries = 3
+    max_retries = 5
     last_error = None
     last_invalid_json = None
 
@@ -148,25 +151,36 @@ def process_with_gemini(audio_file):
             data = json.loads(raw_text)
             
             # Handle both old (list) and new (dict) formats for robustness
+            segments = []
             if isinstance(data, list):
-                return {"language": "en", "segments": data}
+                segments = data
+                data = {"language": "en", "segments": data}
+            else:
+                segments = data.get('segments', [])
+                
+            # Content Length Validation
+            # A valid transcript should have substantial text. Let's say at least 500 chars total.
+            total_text_len = sum(len(s.get('text', '')) for s in segments)
+            if total_text_len < 1000:
+                raise ValueError(f"Generated transcript is suspiciously short ({total_text_len} chars). Likely a refusal or hallucination.")
+                
             return data
             
-        except json.JSONDecodeError as e:
-            print(f"JSON Parse Error (Attempt {attempt+1}/{max_retries}): {e}")
+        except (json.JSONDecodeError, ValueError) as e:
+            print(f"Validation/Parse Error (Attempt {attempt+1}/{max_retries}): {e}")
             last_error = str(e)
-            last_invalid_json = response.text
+            last_invalid_json = response.text if 'response' in locals() else ""
             
             if attempt == max_retries - 1:
-                print("Raw response:", response.text[:500])
-                raise Exception(f"Gemini API Error or Parse Failure: {e}")
-            time.sleep(2) 
+                print("Raw response (truncated):", last_invalid_json[:500])
+                raise Exception(f"Gemini Processing Failed after {max_retries} attempts: {e}")
+            time.sleep(5) 
             
         except Exception as e:
             print(f"API Error (Attempt {attempt+1}/{max_retries}): {e}")
             if attempt == max_retries - 1:
                 raise e
-            time.sleep(5)
+            time.sleep(10)
 
 def get_episode_content(episode_data):
     """Reads the generated HTML file and extracts the transcript part for RSS."""
@@ -236,6 +250,7 @@ def main():
     config = load_config()
     db = load_db()
     processed_ids = set(db['processed'])
+    failed_ids = set(db.get('failed', []))
     
     for feed_conf in config['feeds']:
         print(f"Checking feed: {feed_conf['name']}")
@@ -246,10 +261,19 @@ def main():
         
         for entry in d.entries[:200]: # Check latest 200 episodes
             guid = entry.id
-            if guid in processed_ids:
+            slug = slugify(entry.title)
+            feed_slug = slugify(feed_conf['name'])
+            feed_dir = os.path.join(EPISODES_DIR, feed_slug)
+            html_path = os.path.join(feed_dir, f"{slug}.html")
+
+            # Skip if processed OR failed
+            if guid in processed_ids and os.path.exists(html_path):
+                continue
+            if guid in failed_ids:
+                print(f"Skipping previously failed episode: {entry.title}")
                 continue
                 
-            print(f"Found new episode: {entry.title}")
+            print(f"Found new or missing episode: {entry.title}")
             
             # Find audio URL
             audio_url = None
@@ -261,9 +285,7 @@ def main():
             if not audio_url:
                 continue
 
-            slug = slugify(entry.title)
-            feed_slug = slugify(feed_conf['name'])
-            feed_dir = os.path.join(EPISODES_DIR, feed_slug)
+            # (Slug and paths calculated above)
             os.makedirs(feed_dir, exist_ok=True)
             
             temp_mp3 = os.path.join(TEMP_DIR, f"{slug}.mp3")
@@ -347,6 +369,16 @@ def main():
                 shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'styles.css'), os.path.join(OUTPUT_DIR, 'styles.css'))
                 
                 git_sync(db['processed'], episode_title=entry.title, file_path=output_html_path)
+
+            except Exception as e:
+                print(f"FAILED processing {entry.title}: {e}")
+                # Mark as failed permanently so we don't loop forever
+                db['failed'].append(guid)
+                save_db(db)
+                
+                # Log to file
+                with open("failures.log", "a") as f:
+                    f.write(f"{datetime.datetime.now()} - {entry.title} - {e}\n")
 
             finally:
                 # Cleanup Temp
