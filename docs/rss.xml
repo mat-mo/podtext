@@ -6,8 +6,102 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 07:39:11 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 07:41:18 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>457: U-2, מטוס הריגול של המלחמה הקרה (ש.ח.) [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/osim-historia/457-u-2-mtvs-hrygvl-shl-hmlkhmh-hqrh-sh-kh-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/osim-historia/457-u-2-mtvs-hrygvl-shl-hmlkhmh-hqrh-sh-kh-vshym-hystvryh.html</guid>
+        <pubDate>Tue, 16 Dec 2025 08:39:41 +0000</pubDate>
+        <description>Transcript for 457: U-2, מטוס הריגול של המלחמה הקרה (ש.ח.) [עושים היסטוריה] from Osim Historia</description>
+        <content:encoded><![CDATA[
+            <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>457: U-2, מטוס הריגול של המלחמה הקרה (ש.ח.) [עושים היסטוריה] - Podtext</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-link">Back to Episodes</a>
+            <h1>457: U-2, מטוס הריגול של המלחמה הקרה (ש.ח.) [עושים היסטוריה]</h1>
+            <p class="meta">Published on Tue, 16 Dec 2025 08:39:41 +0000</p>
+        </header>
+
+        <div class="player-container">
+            <audio id="audio-player" controls>
+                <source src="https://api.spreaker.com/download/episode/69071766/ep457_u2_rerun.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="transcript-container" id="transcript">
+            
+            <article class="paragraph speaker-">
+                <div class="paragraph-meta">
+                    <span class="speaker-name"></span>
+                    <span class="timestamp"></span>
+                </div>
+                <div class="content">
+                    <p></p>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const words = document.querySelectorAll('.word');
+        let currentWord = null;
+
+        function seekTo(time) {
+            audio.currentTime = time;
+            audio.play();
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const time = audio.currentTime;
+
+            // Simple optimization: only check around the current word or linear scan if lost
+            // For robustness, we'll just do a linear scan for now. 
+            // In a huge transcript, we might want a binary search or index.
+            
+            let found = false;
+            words.forEach(word => {
+                const start = parseFloat(word.dataset.start);
+                const end = parseFloat(word.dataset.end);
+
+                if (time >= start && time < end) {
+                    if (currentWord !== word) {
+                        if (currentWord) currentWord.classList.remove('active');
+                        word.classList.add('active');
+                        currentWord = word;
+                        
+                        // Auto-scroll logic
+                        const container = document.getElementById('transcript');
+                        const wordTop = word.offsetTop - container.offsetTop;
+                        // scroll if word is getting out of view
+                        container.scrollTop = wordTop - 100; 
+                    }
+                    found = true;
+                }
+            });
+
+            if (!found && currentWord) {
+                currentWord.classList.remove('active');
+                currentWord = null;
+            }
+        });
+    </script>
+</body>
+</html>
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>458: טלסקופ החלל ג'יימס ווב, חלק א' [עושים היסטוריה]</title>
@@ -5624,620 +5718,6 @@
                 </div>
                 <div class="content">
                     <p></p>
-                </div>
-            </article>
-            
-        </div>
-    </div>
-
-    <script>
-        const audio = document.getElementById('audio-player');
-        const words = document.querySelectorAll('.word');
-        let currentWord = null;
-
-        function seekTo(time) {
-            audio.currentTime = time;
-            audio.play();
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            const time = audio.currentTime;
-
-            // Simple optimization: only check around the current word or linear scan if lost
-            // For robustness, we'll just do a linear scan for now. 
-            // In a huge transcript, we might want a binary search or index.
-            
-            let found = false;
-            words.forEach(word => {
-                const start = parseFloat(word.dataset.start);
-                const end = parseFloat(word.dataset.end);
-
-                if (time >= start && time < end) {
-                    if (currentWord !== word) {
-                        if (currentWord) currentWord.classList.remove('active');
-                        word.classList.add('active');
-                        currentWord = word;
-                        
-                        // Auto-scroll logic
-                        const container = document.getElementById('transcript');
-                        const wordTop = word.offsetTop - container.offsetTop;
-                        // scroll if word is getting out of view
-                        container.scrollTop = wordTop - 100; 
-                    }
-                    found = true;
-                }
-            });
-
-            if (!found && currentWord) {
-                currentWord.classList.remove('active');
-                currentWord = null;
-            }
-        });
-    </script>
-</body>
-</html>
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>מי באמת היה הראשון שהקיף את העולם? חלק א' [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/the-answer/my-bmt-hyh-hrshvn-shhqyp-t-h-vlm-khlq-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/my-bmt-hyh-hrshvn-shhqyp-t-h-vlm-khlq-htshvbh.html</guid>
-        <pubDate>Mon, 14 Feb 2022 11:11:41 +0000</pubDate>
-        <description>Transcript for מי באמת היה הראשון שהקיף את העולם? חלק א' [התשובה] from The Answer</description>
-        <content:encoded><![CDATA[
-            <!DOCTYPE html>
-<html lang="en" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מי באמת היה הראשון שהקיף את העולם? חלק א' [התשובה] - Podtext</title>
-    <link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="../../index.html" class="back-link">Back to Episodes</a>
-            <h1>מי באמת היה הראשון שהקיף את העולם? חלק א' [התשובה]</h1>
-            <p class="meta">Published on Mon, 14 Feb 2022 11:11:41 +0000</p>
-        </header>
-
-        <div class="player-container">
-            <audio id="audio-player" controls>
-                <source src="https://api.spreaker.com/download/episode/48723240/episode_48723240.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <div class="transcript-container" id="transcript">
-            
-            <article class="paragraph speaker-Ran Levi">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Ran Levi</span>
-                    <span class="timestamp">00:00</span>
-                </div>
-                <div class="content">
-                    <p>אתם אוהבים חידות? לא כאלה של מה ההבדל בין חלב, אלא חידות שגורמות לכם לבהות בתקרה ולמלמל מין רגע אבל אם הוא עשה ככה... תקשיבו לזה. יש עשרה חדרים. בכל אחד מהם ישן שובב. באמצע הלילה כל אחד מהשובבים בתורו מתעורר ובודק את הדלת של החדר שלו. אם הדלת שלו בסדר, היא שם, היא דלת, אז הוא הולך לדלת של אחד החדרים האחרים, לא החדר שלו, מפרק אותה וסוחב אותה למחסן. ואז חוזר לישון.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Ran Levi">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Ran Levi</span>
-                    <span class="timestamp">00:44</span>
-                </div>
-                <div class="content">
-                    <p>אם הוא מתעורר ומגלה שאין לו דלת בחדר כי מישהו לקח אותה, אז הוא הולך למחסן, לוקח דלת, מתקין אותה בחדר שלו וחוזר לישון. ככה זה נמשך עד שכל אחד מהשובבים התעורר ועשה את מה שהוא עשה. אנחנו לא יודעים באיזה סדר הם התעוררו, אנחנו לא יודעים איזה דלת כל אחד מהם פירק. השאלה היא: בסוף הלילה הזה, מה המספר המקסימלי של דלתות שיכולות להיות במחסן?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Ran Levi">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Ran Levi</span>
-                    <span class="timestamp">01:12</span>
-                </div>
-                <div class="content">
-                    <p>אם בשלב הזה אתם עצרתם רגע, או עשיתם פאוזה, או העברתם אחורה כדי לשמוע את זה שוב, או התחלתם לספור על האצבעות או לצייר משהו על נייר או לעצום עיניים ולהתרכז ממש, יופי, כי הפרסומת הזאת נועדה לכם. כי חידות כאלה שהן חצי משחק וחצי כאב ראש, זה בדיוק סוג החשיבה של אנשים שנהנים לאתגר את המוח שלהם עם שאלות קשות. ואם זה אתם, אז כדאי שתדעו את הדבר הבא. במהלך חודש פברואר מתקיים השלב הראשון של המיונים לנבחרות ישראל במדעים. יש דבר כזה. למדינת ישראל יש נבחרות בוגרות שהן מתחרות באולימפיאדות הבינלאומיות בכימיה, בפיזיקה, במתמטיקה, בביולוגיה, במדעי המחשב, בסייבר ובבינה מלאכותית. אליהן יכולות להתמיין תלמידות ותלמידים מכיתה ט' עד יא'. וישנה גם הנבחרת הצעירה שהיא עתודה לנבחרות הבוגרות, אליה מצטרפים כבר בכיתה ז'. אז מה עושים כשפרסומת כזאת נגמרת? פשוט נכנסים לרשת, מחפשים נבחרות ישראל במדעים, בודקים מתי זה קורה, ואולי מייצגים את ישראל באולימפיאדות הבינלאומיות במדעים. ואפילו לא צריך לדעת לעשות סקי בשביל זה. נבחרות ישראל במדעים הן מיזם משותף של משרד החינוך ומרכז מדעני העתיד של קרן מיימונידיס.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">03:00</span>
-                </div>
-                <div class="content">
-                    <p>היי, אני דורון פישלר וזו התשובה. מי היה האדם הראשון שהקיף את העולם? היא שאלה מאוד קלה. זה פרט טריוויה מאוד מאוד ידוע. אני חושב שזה בערך הדבר השני הכי ידוע בעולם על מסעות וגילויי ארצות וכאלה. הדבר הראשון שכולם יודעים זה מי גילה את אמריקה, קולומבוס. זה לא ממש נכון, אבל דיברתי על זה כבר בפרק אחר. הדבר השני הוא מי היה האדם הראשון שהקיף את העולם? מגלן. פרדיננד מגלן. כולם יודעים. אם תכתבו בגוגל 'האדם הראשון שהקיף את העולם', התוצאה הראשונה שתקבלו תהיה הערך על פרדיננד מגלן. כי זה ידוע שהוא היה הראשון שהקיף את העולם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">03:51</span>
-                </div>
-                <div class="content">
-                    <p>הסיפור על מגלן הוא טיפה פחות ידוע מזה של קולומבוס, אבל בדרך כלל אם אתם שומעים עליו זה משהו כזה. רב החובל הספרדי האמיץ פרדיננד מגלן היה חוקר ארצות נועז שהשאיפה לתגליות בערה בעצמותיו. ויותר מכל הוא רצה להוכיח לכולם אחת ולתמיד את מה שקולומבוס לא הצליח - שהעולם עגול. וב-1519 הוא יצא למסע נועז במיוחד. הוא יצא מספרד עם חמש ספינות והפליג מערבה. ואחרי שלוש שנים של מסעות נועזים, קשיים מרובים והרפתקאות רבות, סערות עזות בלב ים והיתקלויות מסמרות שיער עם שבטים פרימיטיביים, בסופו של דבר ספינה אחת בלבד מבין החמש הגיעה חזרה לספרד מהעבר השני. וכך מגלן הפך לאדם הראשון אי פעם שביצע הקפה מלאה מסביב לעולם והוכיח אחת ולתמיד שהעולם הוא אכן עולם עגול.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">04:48</span>
-                </div>
-                <div class="content">
-                    <p>חשוב לומר שכל זה לא נכון. לא נכון לחלוטין. יש פה כמה עובדות בסיסיות שהן נכונות, אבל אין כמעט משפט אחד בסיפור הזה שהוא באמת מדויק. כולל הטענה שמגלן היה האדם הראשון שהקיף את העולם. הוא לא היה. וזאת לא איזה תגלית חדשה ומרעישה שאני מביא פה שזה לא נכון, זה לא שגיליתי איזה ממצא ארכאולוגי חדש שמנפץ את המיתוס. האמת שאם אתם נכנסים לתוצאה הזאת בגוגל שהכותרת שלה היא 'פרדיננד מגלן' ואתם אשכרה קוראים את הטקסט, אז אתם מגלים שרגע, אבל לפי מה שכתוב פה זה לא היה הוא. המשלחת של מגלן כן הייתה הראשונה שהקיפה את העולם, דבר שדרך אגב לקח הרבה יותר מ-80 יום.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">05:41</span>
-                </div>
-                <div class="content">
-                    <p>הסיפור שלו הוא באמת הסיפור של המסע הראשון מסביב לעולם וגם, כפי שמתברר אם קוראים קצת יותר לעומק, סיפור מדהים. זה סיפור לא רק על גילויים ומסעות אלא על תככים וכלכלה ורצח ודת ועקשנות והשאלה שתמיד חוזרת - מי כותב את ההיסטוריה בסופו של דבר? וכמובן השאלה, אם לא מגלן, מי באמת היה הראשון שהקיף את העולם? זאת השאלה. תכף תבוא התשובה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">06:30</span>
-                </div>
-                <div class="content">
-                    <p>בדיוק לפני 500 שנה וקצת, בשנת 1519, חמש ספינות יצאו מנמל סביליה בספרד. לכל אחת מהספינות היה קפטן משלה, אבל הקפטן של הספינה הכי גדולה והמנהיג של כל הצי, הקפיטן חנרל, היה פרדיננד מגלן. למשלחת הזאת הייתה משימה סודית, חסרת תקדים ומסוכנת. אף אחד בהיסטוריה לא עשה את זה לפניו. להקיף את העולם לא הייתה המשימה הזאת. להקיף את העולם לא היה בתכנון בכלל. אז מה כן הייתה המשימה? אוקיי, בשלב הזה עברו כמעט 30 שנה מאז שקולומבוס מצא את אמריקה בטעות. קולומבוס, כפי שאתם בטח זוכרים, לא חיפש את אמריקה, הוא חיפש דרך להגיע למזרח אסיה. הוא רצה להקיף את העולם ולהגיע למזרח מהמערב.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">07:31</span>
-                </div>
-                <div class="content">
-                    <p>למה הוא רצה להגיע למזרח אסיה? בשביל התבלינים. תבלינים היו הדבר הכי יקר באותו זמן. תבלינים כמו פלפל, קינמון, אגוז מוסקט, ג'ינג'ר, ציפורן. ציפורן התבלין, כן, לא ציפורניים ש... זה אחרת היה מאוד מאוד קל להתעשר כאילו הייתי מחרסן ציפורניים ומוכר את זה, ציפורניים משובחות במיליון דולר... לא, אה... ציפורן. הדברים האלה לא גדלים באירופה והם לא גדלים כמעט בשום מקום אחר. הייתה קבוצת איים די קטנה באינדונזיה, איי מאלוקו, או כפי שקראו להם אז, איי התבלינים, שהרבה מהתבלינים האלה גדלו רק שם. ציפורן זה דבר שגדל רק באיים המסוימים האלה באינדונזיה. משם סוחרים לקחו את התבלינים האלה בדרך כלל להודו ומשם סוחרים אחרים לקחו אותם לאירופה. זה היה תהליך מאוד ארוך שבו הם החליפו הרבה ידיים והרבה מתווכים וכל אחד מהמתווכים בדרך הקפיץ את המחיר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">08:31</span>
-                </div>
-                <div class="content">
-                    <p>ככה שכשהתבלינים האלה הגיעו לאירופה הם היו יקרים בטירוף. מבחינת ערך יחסי למשקל, ציפורן היה יותר יקר מזהב. אז כשאירופאים באותה תקופה יצאו למסאות ארוכים בספינות, בדרך כלל זה היה כדי להביא תבלינים. להפליג מאירופה מסביב לאפריקה ועד להודו, זה מסע ארוך, זה לוקח שנה או יותר והוא מסוכן. יש סערות בים, יש רעב, יש צפדינה, אנחנו עוד נגיע לזה. כשמישהו נכנס לספינה במטרה להגיע למזרח הרחוק, הוא יודע שלא בטוח שהוא יחזור משם. זה היה האמת נדיר שספינה הייתה יוצאת למסע כזה וחוזרת כשכל אנשי הצוות עדיין בחיים. היה מובן מאליו שחלק ימותו בדרך. ובכל זאת נשלחו ספינות למסאות האלה כי מי שכן הצליח לחזור נהיה מאוד עשיר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">09:31</span>
-                </div>
-                <div class="content">
-                    <p>אם הייתם שולחים ארבע ספינות ושלוש טבעו בדרך ורק אחת מהן חוזרת, אבל חוזרת עמוסה בתבלינים, עשיתם עסק טוב מבחינתכם. החזרתם את ההשקעה ויצאתם ברווח. פחות טוב בשביל המלחים שמתו בדרך, אבל מלח שהיה יוצא להפלגה כזאת וחוזר עם שק אחד של ציפורן, זה היה מסדר אותו לכל החיים. הוא היה יכול לצאת לפנסיה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">10:02</span>
-                </div>
-                <div class="content">
-                    <p>דרך אגב, גם היום רוב גדול של הציפורן בעולם גדל באותו מקום באינדונזיה. ההבדל הוא שהיום המחיר של ציפורן, אני בדקתי קודם באתר של הסופר, זה 15 שקל ל-100 גרם. אז אם יש לכם מכונת זמן, אז אחד הדברים הכי טובים שאתם יכולים לעשות זה לקנות שקית של ציפורן ולעבור 500 שנה אחורה ואז למכור אותה במיליון דולר או מה שזה לא יהיה בזהב. מה שקולומבוס בזמנו ניסה לעשות זה לקצר את המרחק הזה. כלומר, למצוא דרך אחרת קלה יותר לאיי התבלינים. הוא חשב שיהיה יותר קל להגיע לאיים האלה מהמערב. במקום לשוט מזרחה ולעקוף את אפריקה וכל זה, יהיה יותר קל לשוט מערבה ולהגיע לשם מהצד השני של העולם. הוא טעה, כידוע, הוא מצא באמצע את אמריקה. בשנים שעברו מאז קולומבוס ספרד ופורטוגל כבר הכירו את אמריקה, חלקית. במפות שלהם הופיע חלק מהחוף של אמריקה, הם לא ידעו בדיוק איפה אמריקה מתחילה ואיפה היא נגמרת, אבל הם כבר התחילו לבזוז אותה ולהתיישב בה. והם מצאו שם דברים מעניינים, זהב וכאלה, אבל הם לא מצאו שם תבלינים. אז עם כל הכבוד לאמריקה, היא עדיין הייתה בעיקר מטרד. דבר שחוסם את הדרך לתבלינים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">11:21</span>
-                </div>
-                <div class="content">
-                    <p>ואז הגיע פרדיננד מגלן. כלומר, טכנית לא קראו לו אפילו מגלן, זה לא השם שלו. השם הפורטוגזי שלו או הכי טוב שאני יכול לבטא אותו זה פרנאו דה מגאליש. בספרד קראו לו פרננדו מגיאנס. יש הרבה גרסאות שונות לשם שלו, אני אמשיך לקרוא לו מגלן כי זה מה שאני רגיל, אבל סביר שזה לא איך שהוא קרא לעצמו. מה שמגלן רצה לעשות זה את אותו הדבר שקולומבוס ניסה לעשות ונכשל. לשוט מערבה ולהגיע לאיי התבלין מהצד השני של העולם. כמובן הוא ידע שאמריקה נמצאת באמצע, אבל הוא היה בטוח שאם הוא יחפש מספיק הוא ימצא דרך לחצות את אמריקה בסירה. כלומר, ההיגיון שלו אמר לא יכול להיות שהיבשת הזאת חוסמת את כל העולם מצפון לדרום.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">12:15</span>
-                </div>
-                <div class="content">
-                    <p>אם מפליגים מספיק לאורך החוף של אמריקה, אפשר יהיה למצוא מעבר ימי, מיצר, שדרכו יהיה אפשר להגיע לצד השני של אמריקה ואז זה רק עניין קטן של עוד טיפה שיט כדי להגיע לאיי התבלין. וככה נמצא מסלול יותר קצר ויותר קל לאיי התבלין, נביא משם תבלינים, נרוויח המון כסף ויותר מזה, המסלול החדש הזה, הידע של המסלול החדש שרק אנחנו מכירים, זה יהיה שווה מיליונים. המטרה של מגלן בהחלט לא הייתה להקיף את העולם כי אחרי שאתה מוצא דרך קצרה יותר וקלה יותר להגיע לאיי התבלין, אתה לא חוזר דרך הדרך היותר ארוכה ויותר קשה רק בשביל הקטע. הוא רצה למצוא דרך לשם ואז להסתובב ולחזור באותה דרך שבה הוא הגיע. ואת זה הוא רצה לעשות לא כדי להוכיח שהעולם עגול ולא בשביל חדוות הגילוי, אלא יותר בשביל חדוות להרוויח ממש הרבה כסף.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">13:12</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו כל זה לא בא לזלזל בקושי של המסע הזה או באומץ של מגלן כי כן, הבן אדם היה אמיץ. מה שלא תהיה הסיבה שלך לשוט לתוך חלקים בעולם שהם פשוט כתם ריק במפה, שאף אחד לא יודע מה יש שם או איך חוזרים משם, זה מצריך הרבה אומץ. אבל את זה היה לו, והוא היה עקשן יותר מחמור ג'ינג'י. הוא החליט שהמעבר הימי הזה דרך אמריקה קיים ולכן הוא חייב להיות קיים והוא ימצא אותו, גם אם הוא יצטרך לחפור אותו בעצמו. אז הוא יוצא למשימה, היא מסוכנת, היא ארוכה, יש בה בדרך סופות וארצות לא נודעות, אבל הסכנה הכי גדולה שארבה למגלן מתברר לא הייתה כל הסופות באוקיינוס אלא האנשים האחרים על הספינות שלו.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">14:06</span>
-                </div>
-                <div class="content">
-                    <p>כי יש עוד פרט חשוב בקשר למגלה הארצות הספרדי הנודע מגלן שצריך לדעת - שהוא לא היה ספרדי. הוא היה מפורטוגל. אני יודע שזה נשמע די אותו דבר, ספרד, פורטוגל, די כאילו איזה לא, זה לא אותו דבר, זה משנה, זה משנה הרבה. כי ספרד ופורטוגל היו יריבות. כלומר, חברות-יריבות, פרנמיז. לא הייתה מלחמה ביניהן באופן רשמי, אבל כן הייתה מלחמה כלכלית. הן נאבקו אחת בשנייה בשליטה בסחר התבלינים ובהקמת קולוניות בכל שאר העולם. מגלן היה פורטוגזי. הוא נלחם בשביל פורטוגל במלחמות והפליג כבר בתור סוחר פורטוגזי. אז כשהיה לו הרעיון להקים משלחת שתחפש דרך הקיצור לאיי התבלין, הוא הציע את הרעיון הזה למלך פורטוגל.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">15:03</span>
-                </div>
-                <div class="content">
-                    <p>ומלך פורטוגל אמר לא, אנחנו לא צריכים את זה. יש לנו דרך כבר לא רעה להגיע למזרח הרחוק, ואסקו דה גאמה דאג לזה. לא שמעת את הפרק על תרנגולי הודו, בקיצור לא צריך. מגלן אמר לו אולי בכל זאת? והמלך אמר לא. מגלן אמר כן, אבל אולי בכל זאת? והמלך אמר לך מפה נודניק. המלך של פורטוגל לא אהב את מגלן. הם היו מסוכסכים עוד מקודם בגלל כל מיני עניינים משפחתיים ופוליטיים שלא קשורים לעניין. אחרי הפעם החמישית שמגלן בא אליו והציע את אותה הצעה, המלך אמר לא, אז מגלן אמר טוב אוקיי, אז זה בסדר מצדך שאני אפנה למישהו אחר עם ההצעה הזאת? והמלך אמר תעשה מה שאתה רוצה מצדי לך מפה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">15:53</span>
-                </div>
-                <div class="content">
-                    <p>אז מגלן הלך משם. הוא הלך לספרד והציע למלך ספרד את אותה הצעה. ומלך ספרד השתכנע והסכים לעזור לו במימון של המשלחת הזאת שתפליג תחת דגל ספרד ולמען ספרד. אז מלך פורטוגל חטף חרופה. כשאמרתי שאתה יכול להציע את זה לאחרים, לא התכוונתי שתציע את זה לאחרים. בטח שלא תלך ליריבים שלנו ותיתן להם את הרעיון הזה. מה יקרה אם חס וחלילה תצליח? הם יגנבו לנו את כל סחר התבלינים, אתה מבין מה אתה עושה? אז מרגע זה מגלן נחשב בעיני הפורטוגזים לבוגד ואין דבר יותר גרוע מבוגד. אז הם ממש שנאו אותו, יותר משם שנאו את הספרדים. מצד שני, בעיני הספרדים מגלן נחשב לפורטוגזי.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">16:51</span>
-                </div>
-                <div class="content">
-                    <p>הרבה מהם לא ממש בטחו בו. איזה מין דבר זה שיהיה צי ספרדי עם קפטן פורטוגזי? חלקם חשדו שברגע שהוא יהיה בים הוא יוריד את המסכה ויקח את כל הצי לפורטוגל. כדי לוודא שזה לא יקרה, מלך ספרד אומנם נתן למגלן להיות המנהיג של המשלחת, הקפיטן חנרל, אבל הוא הקיף אותו בספרדים נאמנים שלא יתנו לו להשתולל יותר מדי. הקפטנים של כל הספינות האחרות היו ספרדים ורוב נושאי התפקידים הבכירים היו ספרדים. ובנוסף הוא הוסיף למשלחת עוד בן אדם, חואן דה קרטחנה קראו לו. קרטחנה לא היה רב חובל, לא היה לו שום ניסיון בתור מלח או בשיט בכלל, אבל הוא היה מאוד מקורב לאצולה הספרדית, למלך, והוא צורף למשלחת בתפקיד מפקח ספינה כללי לענייני כולם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">17:45</span>
-                </div>
-                <div class="content">
-                    <p>זה היה תפקיד שנתפר בשבילו ומה זה בדיוק אומר התפקיד הזה, זה היה קצת פתוח לפרשנות. כי קרטחנה הבין מזה שמגלן הוא אומנם הקפטן, אבל הוא המפקח על הקפטן ולמגלן אסור לעשות שום דבר בלי אישור שלו. מגלן חשב שקרטחנה שם על תקן יועץ לכל היותר, הוא יכול לסייע, לתת עצות וטיפים ומגלן יכול להתעלם מהטיפים שלו. מגלן לא סבל את קרטחנה וקרטחנה מצדו תיעב את מגלן. כבר התחלה טובה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">18:22</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו אם אתם יוצאים למסע ארוך ומסוכן, אתם צריכים להיות מוכנים. צריך להכיר היטב את הדרך, צריך צידה מראש שתספיק לכל המסע עם עודפים, ויותר מהכל צריך צוות מגובש וחדור אמונה שבו כל אחד סומך על השני בעיניים עצומות וכולם מאמינים במפקד, ילכו אחריו באש ובמים, בעיקר במים במקרה הזה. את כל זה לא היה למשלחת הזאת. היה לה קפיטן חנרל פורטוגזי, הרבה קפטנים ספרדים שלא בוטחים בו באופן מיוחד, ועוד אוסף אקלקטי של בערך 270 ספנים על פני כל חמש הספינות. ספנים שהגיעו מכל מיני מקומות, חלקם ספרדים, חלקם פורטוגזים, חלקם בכלל בריטים או איטלקיים או מאפריקה. לא כולם אפילו דיברו את השפה אחד של השני. ככה שהתקשורת על הספינות האלה הייתה בעייתית.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">19:25</span>
-                </div>
-                <div class="content">
-                    <p>אחד מהאנשים שהייתה לו בעיה של שפה היה הקפטן מגלן כי הוא לא דיבר ספרדית כל כך טוב. הוא דיבר פורטוגזית שזה די דומה והוא ידע ספרדית אבל לא מושלם, לפעמים הוא היה צריך מתורגמן כדי שיעזור לאנשים להבין מה בעצם הוא אומר, וזאת בעיה בים. כשאתה אומר 'כל הארמדה פני ימינה 30 מעלות', אתה רוצה שאנשים יבינו מזה 'כל הארמדה פני ימינה 30 מעלות' ולא 'נא לסובב נכון את הארמדיל שלי 30 פעם'. ולמרות כל זאת המשימה יצאה לדרך. חמש ספינות, 270 איש, בדרך אל הלא נודע. ומיד נתקלו בבעיות. השלב הראשון בדרך למצוא מיצר שחוצה את אמריקה הוא להגיע לאמריקה. לחצות את האוקיינוס האטלנטי כבר זאת משימה לא פשוטה, למרות שבשלב הזה זה כבר לא היה חסר תקדים. הייתה תנועה קבועה של ספינות בין ספרד ופורטוגל ואמריקה והיה מסלול מוכר ובטוח יחסית לשוט בו.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">20:42</span>
-                </div>
-                <div class="content">
-                    <p>אלא מה, לפני שהם יצאו הגיעו למגלן שמועות מדאיגות ונכונות לגמרי שמלך פורטוגל מאוד עצבני עליו והוא הוציא משלחות חיפוש נגדו. כמה ספינות שמחפשות אותו, את מגלן, כדי לתפוס אותו ולהחזיר אותו לפורטוגל ואז לתלות אותו במקרה הטוב. מגלן בהחלט העדיף להימנע מזה ולכן הוא החליט שהוא מעדיף לא לפגוש שום ספינות פורטוגזיות בדרך. הספינות הפורטוגזיות האלה מן הסתם ארבו לאורך המסלול המוכר לאמריקה ולכן מגלן בחר לא לשוט במסלול המוכר הזה. במקום זה הוא בחר מסלול אחר. הוא הפליג קודם דרומה לאורך החופים של אפריקה ורק אז פנה מערבה. זה היה מסלול פחות מוכר, פחות מקובל ומתברר שגם הייתה סיבה טובה, כי הוא היה גם מאוד מסוכן.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">21:32</span>
-                </div>
-                <div class="content">
-                    <p>המשלחת נתקלה כמעט מיד במזג אוויר עצבני. היא חצתה את האוקיינוס האטלנטי כשהם כל הזמן בגשם ובסערות נוראיות, והם אומנם הגיעו לצד השני של האוקיינוס כשכל חמש הספינות עדיין שלמות, אבל זה לא היה בטוח שזה יקרה וזה לא היה כיף. בנוסף, הוא גילה בשלב הזה שהצידה שהייתה להם בספינות לא הייתה מספיקה, בטח שלא למסע ארוך שהיה עוד לפניהם ולכן הוא הורה לקצץ את מנות האוכל שכל הספנים קיבלו וגם זה באופן מפתיע לא הפך אותו לפופולרי במיוחד.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">22:12</span>
-                </div>
-                <div class="content">
-                    <p>גם בסופות לא כולם סבלו על הספינה באותה מידה כי גם על הספינה היו מעמדות. היו הקפטנים והקצינים שלהם היו המגורים שלהם שגם הם היו רחוקים מלהיות מאוד מפוארים או מרווחים, כן, אני לא הייתי מתחלף איתם, אבל לפחות היה להם איזה שהוא חדר. המלחים הפשוטים יותר הצטופפו כולם בבטן הספינה וניסו נואשות לישון באיזו שהיא צורה כי לישון היה מותרות שהיה מאוד קשה להשיג בספינה הזאת. בזמן ספינה שנמצאת בסערה ומיטלטלת מצד לצד ומשום מה לא היו להם ערסלים, לא ממש ברור לי למה, זה לא טכנולוגיה שלא המציאו עד אז, אבל איכשהו עד אז לא חשבו על הרעיון לשים ערסלים בספינה, זה נשמע מאוד הגיוני.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">23:02</span>
-                </div>
-                <div class="content">
-                    <p>מי שהיה במצב עוד יותר גרוע היו המשרתים, המעמד הכי נמוך, שחלקם היו ילדים שפשוט לקחו אותם מהרחוב לספינה וחלקם פשוט עבדים. היו שם כאלה שהיו פשוט עבדים כמו העבד האישי של מגלן, אנריקה. אנריקה היה ממלאזיה באחד המסאות המוקדמים יותר של מגלן לאיי התבלינים, הוא קנה שם נער בתור עבד והוא נתן לו את השם אנריקה, ברור שזה לא היה השם המקורי שלו. ומאז אנריקה ליווה את מגלן. הוא בא איתו מפורטוגל לספרד ואז מגלן לקח אותו למסע כי הוא לא שאל אותו אם בא לו לבוא איתו למסע ארוך ומסוכן שבו יש לו סיכוי מצוין למות. אנריקה היה כמו מתמחה, זאת אומרת מישהו שאפשר להטיל עליו עבודות שחורות ולא לשלם לו. אתם רוצים קפה? אנריקה, תביא קפה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">23:56</span>
-                </div>
-                <div class="content">
-                    <p>יכול להיות שהבעיה העיקרית של מגלן הייתה תקשורת כי מהרבה בחינות הוא היה רב חובל מעולה. הוא היה נט גאון, אבל הוא לא היה כל כך טוב בלתקשר עם הצוות שלו. יכול להיות שבעיית השפה הייתה חלק מהעניין. וכן, אני יודע שקפטן לא אמור לדון עם המלחים הפשוטים שלו, מפקד לא מתייעץ עם חפ"שים. הוא מפקד והם עושים. אבל עדיין, העובדה שמגלן קיבל החלטות בלי להסביר אותן לאף אחד עוררה בעיות כי אף אחד לא הבין למה בעצם הוא עושה את מה שהוא עושה. למה אנחנו שטים במסלול המסוכן יותר שעלול להרוג אותנו? למה אנחנו מקצצים את מנות האוכל שלנו?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">24:42</span>
-                </div>
-                <div class="content">
-                    <p>לרוב אנשי הצוות בספינות האלה הוא אפילו לא סיפר מה המטרה של ההפלגה הזאת. כלומר זה לא שהוא מכר להם שיט תענוגות של יומיים ופתאום הם נתקעו בהפלגה של חודשים, הם ידעו שהם שטים לאיי התבלין והם ידעו שזה יהיה מסע ארוך ומסוכן. אבל הם לא ידעו שהם הולכים לנסות לעשות את זה בדרך שאף אחד לא ניסה עד עכשיו ושמגיעה לאזורים של העולם שאף אחד לא היה בהם עד עכשיו. ומילא המלחים הפשוטים, אפילו את הקפטנים האחרים מגלן לא שיתף בהחלטות שלו.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">25:16</span>
-                </div>
-                <div class="content">
-                    <p>לקראת סיום חציית האוקיינוס האטלנטי, במזג אוויר טוב באופן חריג, מגלן הזמין אליו לספינה לפגישה את הקפטנים של כל הספינות האחרות ואת קרטחנה. הספרדים כבר החליטו ביניהם שנמאס להם ממגלן והם הלכו במהלך הפגישה הזאת לשלוף את הפגיונות שלהם ולשחרר אותו מתפקיד הקפיטן חנרל בין אם הוא ירצה לפרוש או שלא. מגלן קיבל את פני הקפטנים האחרים יפה, מה שלומכם? איך הספינה? אתם רוצים יין? אנריקה, יין. אבל הם לא היו במצב רוח למסיבות, בעיקר קרטחנה. הוא דרש ממגלן לדעת למה בשם כל הקדושים לקחת אותנו במסלול המשונה הזה שכמעט הרג אותנו עכשיו.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">26:10</span>
-                </div>
-                <div class="content">
-                    <p>מגלן ענה שזה לא עסקך לדעת למה אני עושה את מה שאני עושה כי אם לא שמת לב אנחנו נמצאים בספינה ואני הקפיטן חנרל, אני נותן פקודות ואתה ממלא אותן. אז קרטחנה אמר כן, ואני חושב שאתה מחבל בכוונה במשלחת הספרדית הזאת ואני לא מקבל ממך פקודות יותר. באותו רגע מגלן התנפל על קרטחנה, הצמיד אותו לקיר וצעק 'מרד! בגידה!' ומהדלתות התפרצו לתוך החדר שלושה אנשים חמושים, נאמנים של מגלן, כי מגלן מתברר הכין אותם שם מראש משום שהוא ניחש מה הספרדים מתכננים בשבילו והתכונן בדיוק לרגע הזה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">26:50</span>
-                </div>
-                <div class="content">
-                    <p>אז קרטחנה, שמצא את עצמו עם כמה חרבות מכוונות לגרון שלו, הוא ניסה לרמוז לקפטנים האחרים 'עכשיו, עכשיו, תדקרו אותו, תדקרו אותו', אבל כל הקפטנים האחרים פתאום נתקפו בהרהורי חרטה והחליטו שהם לא רוצים למרוד במגלן בדיוק ברגע הזה. אז קרטחנה גילה שהוא מרד של איש אחד. העונש על מרד בלב ים הוא מוות. מגלן בהחלט היה יכול להרוג את קרטחנה ולא הייתה לו שום בעיה להרוג מורדים ופושעים שהוא מצא על הספינות שלו. הבעיה הייתה שקרטחנה היה שם על תקן הנציג של המלך והוא היה הבן אדם הכי מקורב והכי מיוחס מבין כל הספרדים האלה, ומגלן שיער שזה לא יראה טוב כשהוא יחזור לספרד כולם יספרו איך הוא הרג את נציג המלך לפני שהם הגיעו אפילו לחצי הדרך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">27:51</span>
-                </div>
-                <div class="content">
-                    <p>אז הוא החליט לא להרוג את קרטחנה אלא רק שלח אותו לתא כלא בתחתית הספינה למשך יתר המסע. והמסע נמשך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">28:11</span>
-                </div>
-                <div class="content">
-                    <p>כדי להבין את המסע של מגלן, אתם צריכים לעשות כזה דבר. קחו מפה של העולם ותזרקו אותה הצידה, אל תסתכלו עליה אף פעם, כי כל הקטע הוא שמגלן לא הכיר את המפה הזאת. אם יש לכם מפה של העולם, לשרטט עליה מסלול שמקיף את העולם זה נורא קל, אתם פשוט צריכים ככה מלמטה מתחת לאמריקה וזהו זה הכל. אבל למגלן לא הייתה מפה. הוא לא ידע לאן הוא שט וכשאין לכם מפה למצוא את הדרך זה הרבה יותר קשה. חמש ספינות הגיעו למה שהיום הוא ברזיל. הם חנו במקום שהיום הוא ריו דה ז'ניירו ומשם התחילו לגשש את הדרך דרומה. עכשיו אתם יודעים איך דרום אמריקה נראית פחות או יותר, מין פסיק גדול כזה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">29:08</span>
-                </div>
-                <div class="content">
-                    <p>מגלן והצוות שלו לא ידעו. החוף שהם שטו לאורכו עכשיו היה לגמרי לא מוכר. עכשיו בואו נעשה משחק. תפתחו את גוגל מפות. תחפשו את ריו דה ז'ניירו ותעשו זום עד שקנה המידה יהיה קילומטר שניים. עכשיו תתחילו להתקדם לאורך החוף, תגררו את המפה קצת, תגררו אותה שוב, אל תעשו זום אאוט, לא. זה רמאות. אל תעשו זום אאוט תישארו באותו קנה מידה ורק תגררו את המפה שוב ושוב ושוב ושוב לאורך החוף עד שאתם מגיעים לקצה של דרום אמריקה. לגרור לגרור לגרור. כי זה קצת יותר דומה לחוויה של לחפש את המעבר לצד השני של אמריקה כשאין לכם שום מושג איפה הוא. ואתם לא נמצאים על ספינה, לכם יש אוכל ואיך לישון ומזגן, אתם בסך הכל גוללים עם עכבר, ועדיין יש סיכוי טוב שאתם תתייאשו בדרך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">30:02</span>
-                </div>
-                <div class="content">
-                    <p>כי נדמה לכם שאתם יודעים איך דרום אמריקה נראית, אבל מקרוב - לא, אתם לא. החוף לא הולך בקו ישר. החוף פונה לפעמים דרום מערבה ולפעמים מערבה ולפעמים דרומה ולפעמים הוא פונה מזרחה ואז הוא חוזר. זה הרבה יותר ארוך ואז אתם, כמו מגלן והצוות שלו, מגלים פתח, מעבר. נהדר, זה בדיוק מה שחיפשנו, עוד מעט אנחנו חוצים את אמריקה, אתם נכנסים לתוכו, מפליגים פנימה ואז מגלים שבעצם זה היה רק שפך של נהר גדול ואתם לא יכולים לחצות את אמריקה, זה מבוי סתום. אז אתם חוזרים אחורה וממשיכים עוד דרומה ומגלים עוד מעבר ואז שוב מגלים שזה בסך הכל מפרץ שלא מוביל לשום מקום ואז שוב... זה ארוך, זה מייאש. אני לא יודע כמה אתם תספיקו לעשות לפני שתתייאשו. זה כמו לגשש לאורך קיר בחושך. אתם משערים שהקיר לא יימשך לנצח, תהיה דלת מתישהו, כנראה. אבל אתם לא יודעים מתי.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">31:07</span>
-                </div>
-                <div class="content">
-                    <p>הם המשיכו עוד ועוד לאורך קו החוף הזה ודרום אמריקה סירבה להסתיים ושום מיצר לא נמצא. וזה לקח חודשים. בנוסף, ככל שהם המשיכו דרומה יותר נהיה יותר קר. מתברר שכמתרחקים מקו המשווה דרומה מגיעים למזג אוויר קר וסוער. המסע נהיה מסוכן יותר ויותר. היו סערות שהם לא הכירו קודם. בשלב כלשהו הם מצאו מפרץ, מפרץ סן חוליאן קוראים לו היום, שגם הוא באופן מעצבן מאוד לא הוביל למיצר שהוביל לצד השני של אמריקה, אבל לפחות הוא היה מוגן יחסית מהרוחות. מגלן החליט שרוב הצי יישאר שם ושלח ספינה אחת להמשיך לגשש עוד קצת דרומה ולדווח. הספינה הזאת נקלעה לסערה קשה במיוחד וטבעה. אנשי הצוות שלה ששרדו נתקעו על החוף בארץ זרה שוממה וקפואה במרחק 100 קילומטר מכל יתר החברים שלהם, והם היו צריכים לעשות את המרחק הזה ברגל.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">32:20</span>
-                </div>
-                <div class="content">
-                    <p>אחרי האירוע הזה מגלן החליט שבתנאים האלה להמשיך לשוט דרומה זה פשוט לא הגיוני, והכריז שהם הולכים להישאר במפרץ הזה את כל החורף ובאביב להמשיך במסלול. צריך לציין שאנחנו נמצאים בחצי הכדור הדרומי ולכן חורף זה דבר שמתחיל באפריל ונגמר באוקטובר בערך. והם היו כל כך רחוק בדרום בשלב הזה שבשיא החורף ביולי היו שלוש שעות אור ביום. זה כאילו השמש יוצאת לרגע, עושה 'נוופ' וחוזרת לישון.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">32:55</span>
-                </div>
-                <div class="content">
-                    <p>גם ההחלטה הזאת להישאר שם לא ממש התקבלה באהדה. אנשים באו להפלגה, לא לקמפינג של חצי שנה במקום קפוא ומדכא. הרבה מהקפטנים היו בדעה שעשינו את מה שיכולנו, התקדמנו רחוק מאוד דרומה, מיפינו חלק עצום מאמריקה, איבדנו ספינה. זה זמן טוב להסתובב ולחזור הביתה לספרד. מגלן כמובן לא היה מוכן לשמוע על זה. אנחנו פה כדי למצוא את המיצר והארמדה הזאת לא תסתובב אחורה. אז הם אמרו מה יש לבן אדם הזה מהארמדילים. הקפטנים הספרדים שלא אהבו יותר את מגלן אחרי הקטע עם קרטחנה החליטו שזה יהיה זמן טוב למרד נוסף.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">33:39</span>
-                </div>
-                <div class="content">
-                    <p>הפעם התארגנו יותר טוב. הם שיחררו בסודיות את קרטחנה מהכלא, הבריחו אותו לספינה אחרת ואז הרגו כמה מהנאמנים של מגלן שהיו על הספינות, ככה ששלוש מהספינות היו בשליטתן. אבל גם הפעם מגלן הגיע מוכן. הוא העמיד את ספינת הדגל בכניסה למפרץ ככה שהוא לא איפשר לספינות האחרות לברוח, ופתח עליהן אש מתותחים. היה קרב ימי בקצה העולם. ובסופו של דבר מגלן והנאמנים לו הצליחו איכשהו להשתלט על הספינות ולתפוס את הספרדים המורדים. הקפטנים, הקצינים ובערך 40 מלחים נכלאו ונשפטו. את חלקם הוא גם עינה בשיטות שהוא למד מהאינקוויזיציה הספרדית, בטח לא הייתם מצפים לאינקוויזיציה הספרדית בדרום אמריקה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">34:36</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו קרה משהו שלא היה נהוג ברחמים. מגלן דן את כל המשתתפים במרד למוות. אבל מכיוון שבכל זאת הוא היה צריך אנשים וזה לא הגיוני להרוג אחוז נכבד מהצוות שלך, הוא גם נתן מיד לכולם חנינה. כמעט לכולם. את המנהיגים היה צריך להרוג כדי שהצוות ילמד. אז את הקפטנים הוא הוציא להורג. מה שהשאיר שוב את קרטחנה. מגלן עדיין לא רצה להרוג אותו ומצד שני ממש לא רצה אותו לספינות שלו אחרי שהוא מרד נגדו פעמיים. היה גם עוד אדם אחד שהוא לא רצה להרוג, כומר, שהשתתף במרד ולשפוך את הדם של כומר נחשב ללא טוב לנשמה של נוצרי. אז מגלן מצא פתרון אחר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">35:28</span>
-                </div>
-                <div class="content">
-                    <p>החורף היה ארוך אבל הוא הסתיים. כשהימים התארכו ומזג האוויר התבהר ארבע הספינות התארגנו מחדש, ארזו, פרסו מפרשים ויצאו שוב למסע. כולם חוץ מקרטחנה והכומר שאותם מגלן השאיר מאחור לבד על החוף במפרץ קפוא בקצה העולם. הגישוש לאורך קו החוף דרומה ודרומה ודרומה נמשך. היה אומנם קיץ ועדיין היה קר מאוד.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">36:12</span>
-                </div>
-                <div class="content">
-                    <p>אחד הדברים המוזרים שהם ראו בדרך היה חוף מלא בסוג של ציפורים מוזרות ומגוחכות שהם לא ראו אף פעם לפני זה, הם לא עפו בכלל אבל הם ידעו לשחות לא רע. פינגווינים. זאת הפעם הראשונה שהם ראו פינגווינים. הם הגיעו לעוד מפרץ גדול, כמו שקרה כבר כמה פעמים. הם שוטטו לתוכו ומצאו מעבר בקצה של המפרץ. משהו שנראה כמו מיצר והמשיך להיראות כמו מיצר גם כשהתקרבו אליו, מין ערוץ רחב עם זרימה חזקה של מים מלוחים. זה נראה כמו הדבר שהם חיפשו. המיצר שיוביל לצד השני של אמריקה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">37:22</span>
-                </div>
-                <div class="content">
-                    <p>אז הם נכנסו לחקור את המיצר הזה וגילו שהוא התפצל לשניים. הייתה אדמה באמצע, הם לא ידעו אם זה אי או איזשהו חצי אי, המסלול התפצל לימין ולשמאל. אז מגלן שקל את העניין והחליט לפנות שמאלה וגילה שם מבוי סתום. אז הוא חזר והמשיך ופנה ימינה והמעבר נמשך. ואז התפצל שוב. לעזאזל זה מבוך. כדי לחסוך זמן מגלן החליט להישאר במקום ולשלוח שתי ספינות למשימות גישוש. אחת פנתה ימינה, השנייה פנתה שמאלה עם פקודות לשוט במשך ארבעה ימים ואז לחזור ולדווח אם הם מצאו סוף, אם הם מצאו מבוי סתום ובכלל מה המצב.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">38:21</span>
-                </div>
-                <div class="content">
-                    <p>אחת מהספינות הפליגה בחיפוש אחר ההמשך והספינה השנייה ברגע שיצאה מטווח העין של מגלן אמרה 'אוקיי לעזאזל עם זה', סובבו את המפרשים וחזרו לספרד. מגלן חיכה שהספינה תחזור, התברר לו באיזשהו שלב שהיא לא עומדת לחזור. אז עם שלוש ספינות הוא המשיך לחקור את המבוך הזה שהוא מצא. זה באמת היה המיצר שמוביל לצד השני של אמריקה, כן? למיצר הזה קוראים היום מיצר מגלן.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">38:54</span>
-                </div>
-                <div class="content">
-                    <p>זה לא מקום מאוד ידידותי. המקום הזה הוא כמו פיורדים. זה מבוך של ערוצי ים בין הרים. אין שם חופים, ההרים פשוט צומחים ישר מתוך הים והם מכוסים בשלג. בנוסף, משום שהמזדרונות הימיים האלה כל כך צרים, אז נוצרות שם לפעמים סוג של ארוחות פרצים, דבר שהוביל לסופות שהאנשים האלה לא ראו כמותן לפני זה, והם ראו הרבה. הם מאוד חששו לחייהם בשלב הזה ומצד שני לעשות משהו נגד מה שמגלן אומר נשמע עוד יותר מסוכן.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">39:45</span>
-                </div>
-                <div class="content">
-                    <p>ואחרי הרבה ניווטים מסביב ופניות וצמתים המיצר נגמר. הוא נפתח. הם הגיעו אל הצד השני של אמריקה. היו להם שלוש ספינות במקום חמש אבל הם הגיעו לצד השני של אמריקה. ועכשיו הם ידעו החלק הקשה מאחורינו. הם טעו. הם מאוד טעו. הם כל כך טעו שאין לי אפילו זמן לספר על זה. אני צריך להמשיך לספר על זה בפרק הבא, בחלק השני של מי באמת היה האדם הראשון שהקיף את העולם. אבל עוד לפני זה עוד משהו קטן על המסע הזה ואיך בעצם אנחנו יודעים שקרה מה שקרה. תכף אחרי זה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">41:05</span>
-                </div>
-                <div class="content">
-                    <p>איך בעצם אנחנו יודעים שמה שקרה במסע של מגלן באמת קרה? אין תיעודים... אין מצלמות, כן? אין צוות תיעוד שתיעד את המסע של מגלן וחבל, כי זה היה יכול להיות סרט מאוד מעניין, אני הייתי רואה את זה. מה שכן יש עדויות, עדויות בכתב. כמובן מדובר פה על אנשים שהיו במסע וסיפרו על מה שקרה ככה שאי אפשר ממש תמיד לסמוך על הזיכרון שלהם. הבן אדם העיקרי שעליו אנחנו מסתמכים זה איטלקי שקוראים לו פיגאפטה, שהצטרף למסע של מגלן בתפקיד סופר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">41:53</span>
-                </div>
-                <div class="content">
-                    <p>אחד התפקידים העיקריים שלו היה להיות זה שיכתוב את המסע כי מגלן ידע שחשוב לתעד. והוא כתב לא רק את מה שבדרך כלל כותבים ביומן הקפטן, זאת אומרת אוקיי אנחנו נמצאים בקו אורך זה בזה ואנחנו פונים לזה וזה, הוא בכוונה הוא כתב גם דברים צבעוניים יותר על דברים שראו. הוא למשל כתב המון על חיות מעניינות שהם ראו בדרך וציפורים מעניינות ועוד דברים מעניינים שהם פגשו בדרך. והוא בן אדם די אמין, זאת אומרת אפשר באמת להאמין למה שהוא כותב. בדרך כלל. כלומר, אני מאמין שפיגאפטה לא שיקר, הוא לא המציא דברים, אבל הוא כתב את מה שהוא ראה והוא לא תמיד הבין את מה שהוא ראה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">42:32</span>
-                </div>
-                <div class="content">
-                    <p>למשל, אחד מהדברים שהוא מתאר בדרך היה שהם פגשו סוג של ציפור שאין לה רגליים ושכשהן רוצות להטיל ביצים אז הנקבה מטילה את הביצים על הגב של הזכר וככה הם עפים. אין ציפור כזאת. יכול להיות שהוא ראה משהו דומה או ציפור עם רגליים קצרות מאוד וזה וחשב שאין להם רגליים בכלל ושוב, זה לא שפינגווינים זה דבר אמין יותר, הרבה מהדברים שהם ראו שם נראו מטורפים לגמרי. סיפור אחר שפיגאפטה כתב הוא על משהו שקרה בזמן שהם עצרו במפרץ. יום אחד המלחים של הספינות ראו ענק שעומד על החוף ורוקד. ענק ערום שעושה תנועות מוזרות וקולות מוזרים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">43:37</span>
-                </div>
-                <div class="content">
-                    <p>כדי לנסות להתיידד עם הענק הם ירדו לחוף ועשו את אותן תנועות, רקדו ביחד איתו. מתברר שהענק היה די ידידותי והוא אפילו הציג להם את כמה מהמשפחה שלו, את אשתו וכמה מהשבט האחר כי מתברר שיש שבט של ענקים במקום הזה בדרום אמריקה. ענקים ענקים. פיגאפטה אומר שהגבוהים ביותר מבין אנשי הצוות הגיעו לענק רק עד המותניים, מה שאומר שהוא היה בגובה של שלושה מטר לפחות. במשך כמה זמן הם היו ידידותיים למדי עם הענקים האלה, הם החליפו איתם אוכל ונתנו להם כל מיני תכשיטים קטנים וכאלה דברים ואז החליטו לקחת כמה מהם בשבי ולקחת אותם איתם בספינה משום שזה מה שהם עשו, כאילו הם פשוט היו לוקחים אנשים ממקומות.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">44:35</span>
-                </div>
-                <div class="content">
-                    <p>הם שבו שניים מהענקים האלה על הספינות כדי לקחת אותם ולהראות אותם למלך ספרד 'תראה מה מצאנו בדרך'. אחד מהענקים היה על הספינה שברחה ופנתה לספרד. אחד אחר היה על הספינה של פיגאפטה ומגלן. ופיגאפטה טרח לנסות לדבר איתו, הוא למד את השפה שלו ומכיוון שהוא היה בן אדם מאוד מאוד נוצרי הוא גם ניסה ללמד אותו את עיקרי הנצרות וטען שהענק הזה שלוקרא פאולו עד שהוא מת בסופו של דבר כמובן, הוא מאוד מאוד אהב את הנצרות וביקש להתנצר ובסופו של דבר נישק את הצלב לפני שהוא מת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">45:22</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו, זה לא קרה. אין שום מצב שזה קרה פשוט משום שאין ענקים בדרום אמריקה, גם לא היו ענקים בדרום אמריקה, היו מוצאים את העצמות שלהם אם היו ענקים שם פעם. מה שכן יש בדרום אמריקה זה שבט של מקומיים שהם מאוד גבוהים. הם אנשים גבוהים, הם לא ענקים. הם בגובה של מטר שמונים, שתיים, משהו כזה. אז מאוד יכול להיות שמה שהם באמת פגשו זה כמה מהאנשים האלה ובזיכרון של פיגאפטה הם נהיו אנשים בגובה שלושה מטר שמאוד אוהבים את ישו ברגע שמספרים להם עליו. אז הרבה מאוד מהסיפורים שאני מספר כאן הגיעו ממנו. ואני מאמין שכולם מבוססים על המציאות, אבל צריך לזכור גם שאנחנו לא יכולים באמת להאמין ב-100% שכל מה שהוא מספר באמת קרה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-Doron Fishler">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">Doron Fishler</span>
-                    <span class="timestamp">46:21</span>
-                </div>
-                <div class="content">
-                    <p>זו הייתה התשובה. זה היה החלק הראשון של הפרק הזה של התשובה. החלק השני יגיע בפעם הבאה. קצת סבלנות. דרך אגב אני יודע שאתם יכולים פשוט להיכנס לוויקיפדיה ולקרוא את סוף הסיפור, אל תעשו את זה, אוקיי? בואו תחכו כי אני רוצה לספר לכם את זה. כי זה כיף לספר את הסיפור הזה. עורכת הסאונד ומפיקה - יותם אלמך מיעוץ ותמיכה מוראלית, אביב שם טוב, בן אורברי והדס דרוקר. עורך כללי של דברים - רן לוי, קפיטן חנרל - דני תימור. אני דורון פישלר. ביי. יש לנו אפילו פינגווינים בפרק הזה אבל אין לנו מאלפת פינגווינים, מה נעשה? צריך לקרוא לג'יין פרוסט.</p>
                 </div>
             </article>
             
