@@ -136,6 +136,28 @@ def main():
     shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'styles.css'), os.path.join(OUTPUT_DIR, 'styles.css'))
     shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'search.js'), os.path.join(OUTPUT_DIR, 'search.js'))
     
+    # 7. Regenerate Episode Pages (to update header/footer/date format)
+    print("Regenerating episode pages...")
+    for ep in db['episodes']:
+        feed_slug = ep.get('feed_slug', slugify(ep['feed_name']))
+        path = os.path.join(EPISODES_DIR, feed_slug, f"{ep['slug']}.html")
+        
+        if os.path.exists(path):
+            with open(path, 'r') as f: html = f.read()
+            # Extract inner HTML of transcript container to preserve paragraphs
+            match = re.search(r'<div class="transcript-container" id="transcript">\s*(.*?)\s*</div>\s*<script>', html, re.DOTALL)
+            if match:
+                transcript_html = match.group(1)
+                
+                # Update context
+                ep_context = ep.copy()
+                # Ensure published_date is Hebrew (it was updated in the loop above)
+                ep_context['published_date'] = ep['published_date']
+                
+                render_html('episode.html', 
+                           {"episode": ep_context, "transcript_html": transcript_html, "direction": "rtl", "relative_path": "../../"}, 
+                           path)
+
     print("Done!")
 
 if __name__ == "__main__":

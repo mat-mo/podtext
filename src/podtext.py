@@ -276,7 +276,7 @@ def main():
                 
                 episode_data = {
                     "title": entry.title,
-                    "published": hebrew_date,
+                    "published_date": hebrew_date,
                     "audio_url": audio_url,
                     "slug": slug,
                     "feed_name": feed_conf['name'],

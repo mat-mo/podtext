@@ -6,7 +6,7 @@
     <div class="episode-header">
         <h1>{{ episode.title }}</h1>
         <div class="meta-row">
-            <span class="meta-date">Published on {{ episode.published }}</span>
+            <span class="meta-date">פורסם ב: {{ episode.published_date }}</span>
             <a href="../../podcasts/{{ episode.feed_slug }}.html" class="meta-feed">{{ episode.feed_name }}</a>
         </div>
     </div>
@@ -19,17 +19,21 @@
     </div>
 
     <div class="transcript-container" id="transcript">
-        {% for segment in segments %}
-        <article class="paragraph speaker-{{ segment.speaker }}">
-            <div class="paragraph-meta">
-                <span class="speaker-name">{{ segment.speaker }}</span>
-                <span class="timestamp">{{ segment.start_fmt }}</span>
-            </div>
-            <div class="content">
-                <p>{{ segment.text }}</p>
-            </div>
-        </article>
-        {% endfor %}
+        {% if transcript_html %}
+            {{ transcript_html|safe }}
+        {% else %}
+            {% for segment in segments %}
+            <article class="paragraph speaker-{{ segment.speaker }}">
+                <div class="paragraph-meta">
+                    <span class="speaker-name">{{ segment.speaker }}</span>
+                    <span class="timestamp">{{ segment.start_fmt }}</span>
+                </div>
+                <div class="content">
+                    <p>{{ segment.text }}</p>
+                </div>
+            </article>
+            {% endfor %}
+        {% endif %}
     </div>
 
     <script>
