@@ -133,7 +133,8 @@ def main():
 
     # 3. Individual Podcast Pages & RSS
     for feed_slug, data in podcasts_data.items():
-        # Trust DB order (Newest First) instead of fragile Hebrew date parsing
+        # Sort episodes by date descending (Newest First)
+        data['episodes'].sort(key=lambda x: parse_hebrew_date(x.get('published_date', '')), reverse=True)
         
         render_html('podcast.html', 
                    {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
