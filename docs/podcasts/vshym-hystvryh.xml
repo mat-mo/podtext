@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 23:22:12 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 23:24:25 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>416: השתלות כליה, חלק א' [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/416-hshtlvt-klyh-khlq-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/416-hshtlvt-klyh-khlq-vshym-hystvryh.html</guid>
+        <pubDate>16 בינואר 2024</pubDate>
+        <description>Transcript for 416: השתלות כליה, חלק א' [עושים היסטוריה] from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>417: השתלת כליה, חלק ב' [עושים היסטוריה]</title>
