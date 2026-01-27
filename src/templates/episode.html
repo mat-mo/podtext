@@ -23,7 +23,7 @@
             {{ transcript_html|safe }}
         {% else %}
             {% for segment in segments %}
-            <article class="paragraph speaker-{{ segment.speaker }}">
+            <article class="paragraph speaker-{{ segment.speaker }} type-{{ segment.type|default('content') }}">
                 <div class="paragraph-meta">
                     <span class="speaker-name">{{ segment.speaker }}</span>
                     <span class="timestamp">{{ segment.start_fmt }}</span>

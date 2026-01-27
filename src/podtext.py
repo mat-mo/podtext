@@ -249,10 +249,31 @@ def upload_to_gemini(path):
 
 def process_with_gemini(audio_file):
     prompt = """
-    You are a professional podcast transcriber.
-    Task: Transcribe accurately. Identify speakers. Keep original language (Hebrew).
-    Format: JSON.
-    Output Format: {"language": "he", "segments": [{"speaker": "Name", "timestamp": "MM:SS", "text": "..."}]}
+    You are a professional podcast transcriber and editor.
+    
+    Task:
+    1. Listen to this audio file (it may be in Hebrew or English).
+    2. Transcribe the conversation accurately.
+    3. Identify the speakers by name (e.g., "Ran", "Shani") based on context.
+    4. Keep primary language (Hebrew) as is.
+    5. Detect Advertisements: Identify segments that are commercials, sponsor messages, or network promotions. 
+    6. Format the output as a JSON list of segments.
+    7. Group consecutive sentences by the same speaker AND same type (content/ad) into a single paragraph.
+    
+    Output Format (JSON):
+    {
+      "language": "he" or "en",
+      "segments": [
+        {
+          "speaker": "Speaker Name",
+          "timestamp": "MM:SS",
+          "text": "The full text...",
+          "type": "content" or "advertisement"
+        }
+      ]
+    }
+    
+    IMPORTANT: Return ONLY the valid JSON object. Ensure all strings are properly escaped.
     """
     max_retries = 3
     for attempt in range(max_retries):
