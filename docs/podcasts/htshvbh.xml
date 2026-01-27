@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 18:00:21 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 18:01:48 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>הפתקים: סיפור אימה [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/htshvbh/hptqym-sypvr-ymh-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/htshvbh/hptqym-sypvr-ymh-htshvbh.html</guid>
+        <pubDate>11 בספטמבר 2023</pubDate>
+        <description>Transcript for הפתקים: סיפור אימה [התשובה] from התשובה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>החנוכיה של גרגמל ועוד השלמות ותיקונים [התשובה]</title>
