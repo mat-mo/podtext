@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 15:17:51 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 15:19:17 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>פרק 32: כמה סיפורים קצרים</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vptyqst/prq-32-kmh-sypvrym-qtsrym.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vptyqst/prq-32-kmh-sypvrym-qtsrym.html</guid>
+        <pubDate>6 באוקטובר 2024</pubDate>
+        <description>Transcript for פרק 32: כמה סיפורים קצרים from אופטיקאסט</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>פרק 33: המעברים של מטא, מהניוז פיד ועד בינה מלאכותית והמטאוורס</title>
@@ -213,17 +224,6 @@
         <guid>https://mat-mo.github.io/podtext/episodes/vptyqst/prq-51-lhpvk-t-hmshlym-lqvmvdyty.html</guid>
         <pubDate>7 במאי 2025</pubDate>
         <description>Transcript for פרק 51: להפוך את המשלים לקומודיטי from אופטיקאסט</description>
-        <content:encoded><![CDATA[
-            
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>פרק 52: אנדי גרוב, רק הפרנואיד שורד</title>
-        <link>https://mat-mo.github.io/podtext/episodes/vptyqst/prq-52-ndy-grvb-rq-hprnvyd-shvrd.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/vptyqst/prq-52-ndy-grvb-rq-hprnvyd-shvrd.html</guid>
-        <pubDate>26 במאי 2025</pubDate>
-        <description>Transcript for פרק 52: אנדי גרוב, רק הפרנואיד שורד from אופטיקאסט</description>
         <content:encoded><![CDATA[
             
         ]]></content:encoded>
