@@ -83,6 +83,10 @@ def main():
     config = load_config()
     db = load_db()
     
+    # Ensure all dates in DB are localized to Hebrew for this run
+    for ep in db['episodes']:
+        ep['published_date'] = format_hebrew_date(ep.get('published_date', ''))
+    
     # Ensure dirs
     os.makedirs(PODCASTS_DIR, exist_ok=True)
 
