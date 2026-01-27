@@ -6,26 +6,6 @@ from jinja2 import Environment, FileSystemLoader
 from email.utils import formatdate
 from slugify import slugify
 from datetime import datetime
-import time
-
-HEBREW_MONTHS = [
-    "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני",
-    "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"
-]
-
-def format_hebrew_date(date_str):
-    """Converts a date string (English) to Hebrew format."""
-    if not date_str: return ""
-    # If already Hebrew (contains Hebrew chars), return as is
-    if any("\u0590" <= c <= "\u05EA" for c in date_str):
-        return date_str
-        
-    try:
-        # Try parsing standard RSS format "Mon, 12 Jan 2026 15:09:30 +0000"
-        dt = datetime.strptime(date_str, "%a, %d %b %Y %H:%M:%S %z")
-        return f"{dt.day} ב{HEBREW_MONTHS[dt.month-1]} {dt.year}"
-    except:
-        return date_str
 
 # Configuration
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -34,6 +14,11 @@ DB_PATH = os.path.join(BASE_DIR, 'db.json')
 OUTPUT_DIR = os.path.join(BASE_DIR, 'docs')
 EPISODES_DIR = os.path.join(OUTPUT_DIR, 'episodes')
 PODCASTS_DIR = os.path.join(OUTPUT_DIR, 'podcasts')
+
+HEBREW_MONTHS = [
+    "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני",
+    "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"
+]
 
 def load_config():
     with open(CONFIG_PATH, 'r') as f:
@@ -57,6 +42,35 @@ def get_episode_content(episode_data):
         return ""
     except: return ""
 
+def parse_hebrew_date(date_str):
+    """Parses '12 בינואר 2025' back to datetime object for sorting."""
+    try:
+        if not date_str: return datetime.min
+        parts = date_str.split(' ')
+        if len(parts) < 3: return datetime.min
+        
+        day = int(parts[0])
+        year = int(parts[2])
+        month_he = parts[1]
+        
+        # Remove leading 'ב' prefix if present (common in date strings like "במאי")
+        if month_he.startswith('ב') and len(month_he) > 1 and month_he[1:] in HEBREW_MONTHS:
+             month_he = month_he[1:]
+        elif month_he.startswith('ב') and len(month_he) > 1 and month_he not in HEBREW_MONTHS:
+             # Handle edge cases or just strip it if it matches nothing else?
+             # Let's keep it simple: try stripping 'ב' first.
+             stripped = month_he[1:]
+             if stripped in HEBREW_MONTHS:
+                 month_he = stripped
+
+        if month_he not in HEBREW_MONTHS:
+            return datetime.min
+            
+        month = HEBREW_MONTHS.index(month_he) + 1
+        return datetime(year, month, day)
+    except:
+        return datetime.min
+
 def render_html(template_name, context, output_path):
     env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
     template = env.get_template(template_name)
@@ -72,11 +86,11 @@ def main():
     # Ensure dirs
     os.makedirs(PODCASTS_DIR, exist_ok=True)
 
+    # Global Sort: Sort ALL episodes by date descending
+    db['episodes'].sort(key=lambda x: parse_hebrew_date(x.get('published_date', '')), reverse=True)
+
     # 1. Recent Episodes (Index)
     recent = db['episodes'][:20]
-    for ep in recent:
-        ep['published_date'] = format_hebrew_date(ep.get('published_date', ''))
-        
     render_html('index.html', 
                {"site": config['site_settings'], "episodes": recent, "relative_path": ""}, 
                os.path.join(OUTPUT_DIR, 'index.html'))
@@ -84,8 +98,6 @@ def main():
     # 2. Podcasts Page
     podcasts_data = {}
     for ep in db['episodes']:
-        ep['published_date'] = format_hebrew_date(ep.get('published_date', ''))
-        
         feed_slug = ep.get('feed_slug', slugify(ep['feed_name']))
         if feed_slug not in podcasts_data:
             podcasts_data[feed_slug] = {
@@ -104,15 +116,15 @@ def main():
                {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
                os.path.join(OUTPUT_DIR, 'podcasts.html'))
 
-    # 3. Individual Podcast Pages & RSS Feeds
+    # 3. Individual Podcast Pages & RSS
     for feed_slug, data in podcasts_data.items():
-        # Podcast HTML
+        # Episodes are already sorted because db['episodes'] was sorted before grouping
+        
         render_html('podcast.html', 
                    {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
                    os.path.join(PODCASTS_DIR, f"{feed_slug}.html"))
         
         # Podcast RSS
-        # Ensure content is loaded
         for ep in data['episodes']:
             if 'content' not in ep: ep['content'] = get_episode_content(ep)
             
@@ -126,7 +138,6 @@ def main():
         }
         render_html('rss.xml', rss_context, os.path.join(PODCASTS_DIR, f"{feed_slug}.xml"))
         
-        # Add generated RSS link to data for use in podcasts.html
         data['generated_rss'] = f"podcasts/{feed_slug}.xml"
 
     # Re-render podcasts.html with the new RSS links
@@ -135,10 +146,9 @@ def main():
                os.path.join(OUTPUT_DIR, 'podcasts.html'))
 
     # 4. Search Index
-
     print("Building search index...")
     search_index = []
-    for ep in db['episodes'][:50]: # Limit to recent 50 for performance
+    for ep in db['episodes'][:50]: 
         text = get_episode_content(ep)
         search_index.append({
             "title": ep['title'],
@@ -149,10 +159,7 @@ def main():
     with open(os.path.join(OUTPUT_DIR, 'search.json'), 'w') as f:
         json.dump(search_index, f)
 
-    # 5. RSS
-    for ep in recent:
-        if 'content' not in ep: ep['content'] = get_episode_content(ep)
-    
+    # 5. RSS (Global)
     rss_context = {"site": config['site_settings'], "episodes": recent, "build_date": formatdate()}
     render_html('rss.xml', rss_context, os.path.join(OUTPUT_DIR, 'rss.xml'))
 
@@ -169,18 +176,11 @@ def main():
         
         if os.path.exists(path):
             with open(path, 'r') as f: html = f.read()
-            # Extract inner HTML of transcript container to preserve paragraphs
-            match = re.search(r'<div class="transcript-container" id="transcript">\s*(.*?)\s*</div>\s*<script>', html, re.DOTALL)
+            match = re.search(r'<div class="transcript-container" id="transcript">(.*?)</div>\s*<script>', html, re.DOTALL)
             if match:
                 transcript_html = match.group(1)
-                
-                # Update context
-                ep_context = ep.copy()
-                # Ensure published_date is Hebrew (it was updated in the loop above)
-                ep_context['published_date'] = ep['published_date']
-                
                 render_html('episode.html', 
-                           {"site": config['site_settings'], "episode": ep_context, "transcript_html": transcript_html, "direction": "rtl", "relative_path": "../../"}, 
+                           {"site": config['site_settings'], "episode": ep, "transcript_html": transcript_html, "direction": "rtl", "relative_path": "../../"}, 
                            path)
 
     print("Done!")
