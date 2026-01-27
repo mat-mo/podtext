@@ -148,6 +148,7 @@ html {
 }
 
 .podcast-card {
+    position: relative; /* Context for stretched link */
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 15px;
@@ -173,12 +174,41 @@ html {
     color: var(--text-color);
 }
 
+/* Stretched Link to make whole card clickable */
+.podcast-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
 .podcast-meta {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 0.85em;
     color: var(--meta-color);
+}
+
+.mini-rss {
+    position: relative; /* Lift above stretched link */
+    z-index: 2;
+    color: #f26522;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px 6px;
+    border: 1px solid #f26522;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.mini-rss:hover {
+    background: #f26522;
+    color: white;
 }
 
 /* Episodes List */
