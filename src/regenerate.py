@@ -71,6 +71,20 @@ def parse_hebrew_date(date_str):
     except:
         return datetime.min
 
+def format_hebrew_date(date_str):
+    """Converts a date string (English) to Hebrew format."""
+    if not date_str: return ""
+    # If already Hebrew (contains Hebrew chars), return as is
+    if any("\u0590" <= c <= "\u05EA" for c in date_str):
+        return date_str
+        
+    try:
+        # Try parsing standard RSS format "Mon, 12 Jan 2026 15:09:30 +0000"
+        dt = datetime.strptime(date_str, "%a, %d %b %Y %H:%M:%S %z")
+        return f"{dt.day} ב{HEBREW_MONTHS[dt.month-1]} {dt.year}"
+    except:
+        return date_str
+
 def render_html(template_name, context, output_path):
     env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
     template = env.get_template(template_name)
