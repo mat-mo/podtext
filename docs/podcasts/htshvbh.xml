@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 19:41:39 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 19:42:54 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>[התשובה] איפה המח של איינשטיין?</title>
+        <link>https://mat-mo.github.io/podtext/episodes/htshvbh/htshvbh-yph-hmkh-shl-yynshtyyn.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/htshvbh/htshvbh-yph-hmkh-shl-yynshtyyn.html</guid>
+        <pubDate>19 ביולי 2021</pubDate>
+        <description>Transcript for [התשובה] איפה המח של איינשטיין? from התשובה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>למה דווקא האירופאים כבשו את העולם?[התשובה]</title>
