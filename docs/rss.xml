@@ -6,8 +6,102 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 07:14:35 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 07:15:48 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>[התשובה] למה קוראים לזה סודה לשתיה?</title>
+        <link>https://mat-mo.github.io/podtext/episodes/the-answer/htshvbh-lmh-qvrym-lzh-svdh-lshtyh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/htshvbh-lmh-qvrym-lzh-svdh-lshtyh.html</guid>
+        <pubDate>Mon, 12 Apr 2021 09:11:57 +0000</pubDate>
+        <description>Transcript for [התשובה] למה קוראים לזה סודה לשתיה? from The Answer</description>
+        <content:encoded><![CDATA[
+            <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[התשובה] למה קוראים לזה סודה לשתיה? - Podtext</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-link">Back to Episodes</a>
+            <h1>[התשובה] למה קוראים לזה סודה לשתיה?</h1>
+            <p class="meta">Published on Mon, 12 Apr 2021 09:11:57 +0000</p>
+        </header>
+
+        <div class="player-container">
+            <audio id="audio-player" controls>
+                <source src="https://api.spreaker.com/download/episode/44300293/soda_mst.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="transcript-container" id="transcript">
+            
+            <article class="paragraph speaker-">
+                <div class="paragraph-meta">
+                    <span class="speaker-name"></span>
+                    <span class="timestamp"></span>
+                </div>
+                <div class="content">
+                    <p></p>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const words = document.querySelectorAll('.word');
+        let currentWord = null;
+
+        function seekTo(time) {
+            audio.currentTime = time;
+            audio.play();
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const time = audio.currentTime;
+
+            // Simple optimization: only check around the current word or linear scan if lost
+            // For robustness, we'll just do a linear scan for now. 
+            // In a huge transcript, we might want a binary search or index.
+            
+            let found = false;
+            words.forEach(word => {
+                const start = parseFloat(word.dataset.start);
+                const end = parseFloat(word.dataset.end);
+
+                if (time >= start && time < end) {
+                    if (currentWord !== word) {
+                        if (currentWord) currentWord.classList.remove('active');
+                        word.classList.add('active');
+                        currentWord = word;
+                        
+                        // Auto-scroll logic
+                        const container = document.getElementById('transcript');
+                        const wordTop = word.offsetTop - container.offsetTop;
+                        // scroll if word is getting out of view
+                        container.scrollTop = wordTop - 100; 
+                    }
+                    found = true;
+                }
+            });
+
+            if (!found && currentWord) {
+                currentWord.classList.remove('active');
+                currentWord = null;
+            }
+        });
+    </script>
+</body>
+</html>
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>[התשובה] אירופה היא יבשת?</title>
@@ -4806,880 +4900,6 @@
                 </div>
                 <div class="content">
                     <p>לפודקאסטים נוספים של רשת עושים היסטוריה ולהצטרפות לרשימת התפוצה של התוכנית בדואר האלקטרוני בקרו ב-osimhistoria.com או הורידו את אפליקציית עושים היסטוריה מחנות האפליקציות של אנדרואיד.</p>
-                </div>
-            </article>
-            
-        </div>
-    </div>
-
-    <script>
-        const audio = document.getElementById('audio-player');
-        const words = document.querySelectorAll('.word');
-        let currentWord = null;
-
-        function seekTo(time) {
-            audio.currentTime = time;
-            audio.play();
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            const time = audio.currentTime;
-
-            // Simple optimization: only check around the current word or linear scan if lost
-            // For robustness, we'll just do a linear scan for now. 
-            // In a huge transcript, we might want a binary search or index.
-            
-            let found = false;
-            words.forEach(word => {
-                const start = parseFloat(word.dataset.start);
-                const end = parseFloat(word.dataset.end);
-
-                if (time >= start && time < end) {
-                    if (currentWord !== word) {
-                        if (currentWord) currentWord.classList.remove('active');
-                        word.classList.add('active');
-                        currentWord = word;
-                        
-                        // Auto-scroll logic
-                        const container = document.getElementById('transcript');
-                        const wordTop = word.offsetTop - container.offsetTop;
-                        // scroll if word is getting out of view
-                        container.scrollTop = wordTop - 100; 
-                    }
-                    found = true;
-                }
-            });
-
-            if (!found && currentWord) {
-                currentWord.classList.remove('active');
-                currentWord = null;
-            }
-        });
-    </script>
-</body>
-</html>
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>למה אנחנו לא מקשיבים לאקדמיה ללשון העברית? [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/the-answer/lmh-nkhnv-l-mqshybym-lqdmyh-llshvn-h-bryt-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/lmh-nkhnv-l-mqshybym-lqdmyh-llshvn-h-bryt-htshvbh.html</guid>
-        <pubDate>Tue, 07 May 2024 06:47:27 +0000</pubDate>
-        <description>Transcript for למה אנחנו לא מקשיבים לאקדמיה ללשון העברית? [התשובה] from The Answer</description>
-        <content:encoded><![CDATA[
-            <!DOCTYPE html>
-<html lang="en" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>למה אנחנו לא מקשיבים לאקדמיה ללשון העברית? [התשובה] - Podtext</title>
-    <link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="../../index.html" class="back-link">Back to Episodes</a>
-            <h1>למה אנחנו לא מקשיבים לאקדמיה ללשון העברית? [התשובה]</h1>
-            <p class="meta">Published on Tue, 07 May 2024 06:47:27 +0000</p>
-        </header>
-
-        <div class="player-container">
-            <audio id="audio-player" controls>
-                <source src="https://api.spreaker.com/download/episode/59880339/hebrew_mst.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <div class="transcript-container" id="transcript">
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">00:00</span>
-                </div>
-                <div class="content">
-                    <p>בכיתה א', יעל גילתה כוכב לכת חדש. אמיתי, כוכב לכת שלא היה מוכר עד אז סביב שמש אחרת. נמרוד בנה מכשיר שמתרגם את שפת העגבניות. ברצינות, הוא הקליט את הקולות שעגבניות עושות כדי לדעת את כמות המים המדויקת שהן צריכות. שניהם למדו במרכז מדעני העתיד, אבל לא עליהם אני רוצה לדבר עכשיו אלא עליכם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">00:25</span>
-                </div>
-                <div class="content">
-                    <p>אתם ספציפית, אתם שמאזינים עכשיו ולומדים בכיתה ז' או ח' או ט'. איזה מין אנשים אתם? איזה מין בני ובנות נוער מאזינים לפודקאסטים על מדע והיסטוריה וטכנולוגיה וכאלה דברים? אני מוכן לנחש - בני נוער סקרנים, כאלה שמתעניינים בדברים, כאלה שרוצים ללמוד דברים, לא רק מה שלומדים בבית ספר. ואולי מסתכלים על העולם קצת אחרת, ואולי מחפשים אתגרים קצת יותר מעניינים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">00:55</span>
-                </div>
-                <div class="content">
-                    <p>אז אם אי פעם הרגשתם שאתם קצת מחוץ למסגרת, זה הזמן להיכנס למסגרת שכן מתאימה לכם. קוראים לזה מרכז מדעני העתיד. שם יומרני, אני יודע, אבל צריך למכור את זה גם להורים שלכם. מה שזה אומר זה שאתם מגיעים למוסדות אקדמיים בארץ כדי ללמוד ברמה אקדמית כבר בזמן התיכון, לבצע מחקרים פורצי דרך, להשתלב במעבדות עם החוקרים הכי טובים בישראל ולהיות עם אנשים סקרנים כמוכם. כי לשנות את העולם זה כיף, אבל זה הרבה יותר כיף כשעושים את זה ביחד.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-קריין">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">קריין</span>
-                    <span class="timestamp">01:25</span>
-                </div>
-                <div class="content">
-                    <p>ההרשמה היא לתלמידות ותלמידים בכיתות ז' עד ט' והיא פתוחה עכשיו. אז אם זה אתם, אם הפרסומת הזאת דיברה עליכם, תחפשו ברשת מרכז מדעני העתיד. ואם זה לא אתם, אז סליחה שהפרעתי. התוכניות הן מיזם משותף של מרכז מדעני העתיד ומשרד החינוך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">01:56</span>
-                </div>
-                <div class="content">
-                    <p>היי, אני דורון, זאת התשובה. בכמה מהפרקים הקודמים בטח אתם זוכרים דיברתי על חדי קרן, וקיבלתי כמה תגובות מאנשים שתיקנו אותי שלא אומרים חדי קרן, אומרים חד-קרנים. כי חדי קרן זה יצורים שיש להם קרן חדה. וכמו שרבים של חד-פעמי זה לא חדי פעם, הרבים של חד-קרן זה לא חדי קרן. אוקיי, קודם כל אני לא מדבר נכון. אני יודע שאני לא מדבר נכון, אני לא מדבר תקנית, אני מודע לזה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">02:44</span>
-                </div>
-                <div class="content">
-                    <p>יש לי המון טעויות, המון. אם אבשלום קור היה שומע את הפודקאסט הזה הוא היה מתנקש בחיי, אני חושד. אני משתמש במספרים לא נכון, כלומר תמיד אני אומר 12 במקום 12 וכאלה דברים ואני מבטא מילים... יש הרבה טעויות. היו גם כאלה ששאלו אותי למה אני לא פשוט לוקח עורכת לשונית שתעבור על הפודקאסט. אז קודם כל זאת שאלה חשובה בפני עצמה, אז רגע של מאחורי הקלעים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">03:19</span>
-                </div>
-                <div class="content">
-                    <p>קודם כל לפודקאסט יש עורכת, כן? זאת אומרת יש את שלי נוי, העורכת של הפודקאסט, ולפניה היו עורכים אחרים ולפעמים הם האירו לי על טעויות שעשיתי בעברית, ואז הם פשוט הפסיקו כי הם הבינו שאני מתעלם מזה. זאת אשמתי, לא אשמתם. אבל למה אני לא לוקח לפודקאסט עורכת לשונית? יש שתי סיבות.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">03:44</span>
-                </div>
-                <div class="content">
-                    <p>הסיבה הראשונה זה שזה היה הורס את הפודקאסט. כי כדי להעביר את הפודקאסט עריכה לשונית צריך לעבור על הטקסט, וזה אומר שצריך שיהיה טקסט, שיהיה טקסט כתוב שהיא תעבור עליו ותתקן אותו, ואז אני אצטרך להקריא את הטקסט שהיא כתבה. ואני לא אוהב להקריא. אני גם לא אוהב שמקריאים לי. כשאני שומע טקסט ששומעים עליו שהוא מוקרא מהנייר, האינסטינקט שלי זה להגיד למה אתם מבזבזים לי את הזמן? תשלחו לי את זה במייל. עם הקראה אין ספונטניות, אני לא יכול לשנות אף פעם את מה שאני אומר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">04:19</span>
-                </div>
-                <div class="content">
-                    <p>הסיבה השנייה זה שלא שהנכונות, שהתקינות של העברית שלי לא חשובה, היא פשוט לא מאוד חשובה לי. יש דברים שחשובים לי יותר. כשאני כותב פרק של התשובה זאת הרבה מאוד עבודה בתור התחלה, ומאוד חשוב לי שמה שאני אגיד יהיה נכון ומדויק ולכן אני משקיע הרבה בלעבור על זה ולבדוק את זה ולמצוא מקורות לזה ולפעמים בכל זאת אני מפקשש בזה. חשוב לי גם שיהיה מעניין, שיהיה מעניין לשמוע את זה, חשוב שהסיפור יהיה טוב, חשוב לי שיהיה מצחיק אם אפשר. אלה הדברים שחשובים לי. איפשהו נמוך יותר בסולם העדיפויות, במקום ה-17 בערך, אפשר למצוא גם את חשוב לי שהשפה בפרק תהיה נכונה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">05:01</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו, מספר שעות שקיימות שאותן אפשר להוציא על הפקה של פרק הוא מוגבל, הוא לא אינסופי. ואני משקיע הרבה מאוד בכל פרק וכל זמן שאני משקיע בנושא אחד הוא זמן שלא השקעתי בנושא אחר. זה אומר שאם אני אשקיע מספר כלשהו של שעות בזה שהעברית בפרק תהיה נכונה, זה אותו מספר של שעות שלא השקעתי בזה שהעובדות בו יהיו נכונות. עכשיו אם לדעתכם זה סדר עדיפויות נכון, כלומר אתם מעדיפים לשמוע דברים לא נכונים או פחות מעניינים כל עוד הם נאמרים בעברית תקנית, אז סבבה, זה סדר העדיפויות שלכם. סדר העדיפויות שלי הוא אחר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">05:41</span>
-                </div>
-                <div class="content">
-                    <p>אבל כן, אני מודה בזה שלפעמים לעיתים קרובות אני מדבר לא נכון. רק שבעניין חדי הקרן אני לא מסכים. כי הטענה הייתה שלא אומרים בעברית חדי קרן, אומרים חד-קרנים. ואני אומר על זה - לא נכון. זה לא נכון שאומרים חד-קרנים ואני יכול להוכיח את זה מספרית. מכיוון שכשמחפשים בגוגל "חד-קרנים" מקבלים 367 תוצאות, ול"חדי קרן" מקבלים 142,000 תוצאות. כלומר אומרים חדי קרן, זאת עובדה. זה מה שאנשים אומרים וזה מה שהם כותבים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">06:23</span>
-                </div>
-                <div class="content">
-                    <p>אם זה האופן התקני שבו לפי כללי השפה צריך לכתוב, את זה אני לא יודע אבל גם לא מאוד אכפת לי. אני מדבר כדי שיבינו אותי ואנשים שמדברים על חד קרן אחד ועוד חד קרן אחד הם אומרים חדי קרן. ואז אמרו לי - תשמע, אבל האקדמיה ללשון העברית אמרה שצריך להגיד חד-קרנים. ועל זה אני אומר - אהה, האקדמיה אמרה? אני שמח לשמוע. לזה, כמו שאתם אולי יודעים, יש לי תשובה קבועה. לא אכפת לי מה האקדמיה ללשון העברית אומרת. אני לא מקשיב למה שהאקדמיה אומרת כי הם נודניקים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">06:56</span>
-                </div>
-                <div class="content">
-                    <p>ואם שמעתם פרקים קודמים של התשובה שמעתם אותי אומר את זה כמה פעמים. אבל למה? אולי באמת כדאי לפתוח את זה, כי גם את זה אנשים כבר שאלו אותי. מה יש לך נגד האקדמיה ללשון העברית? למה אנחנו לא מקשיבים לאקדמיה ללשון העברית? זאת שאלה, תכף תבוא תשובה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">07:18</span>
-                </div>
-                <div class="content">
-                    <p>איך התחלתי לא לסבול את האקדמיה, או יותר נכון צריך להגיד האקדמיה ללשון העברית. כלומר אני תמיד ידעתי שהם מפרסמים כל מיני דברים על איך נכון לדבר, אבל לי לא היה מאוד אכפת כי אני לא מתיימר לדבר נכון, אז לא מאוד הטריד אותי. אבל מתישהו לפני כמה שנים אני נתקלתי בפוסט של האקדמיה שטוען בתוקף שאת המילה "צהריים" כותבים עם ו'. ואני שמתי לב לזה משום שזה לא סתם דבר של כאילו "כן, הם כותבים שהם מתקנים אותי, אני דיברתי לא נכון, ככה מדברים נכון, לא אכפת לי".</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">08:06</span>
-                </div>
-                <div class="content">
-                    <p>זה פשוט הטענה הזאת שצהריים כותבים עם ו', זה לא נכון. כלומר אני יודע, אני לא מומחה ללשון, הם כן, אבל אני קראתי עברית כל החיים שלי, אני מדבר עברית, קראתי הרבה דברים בעברית ומעולם, אף פעם לא ראיתי שכותבים צהריים עם ו'. זה פשוט לא נכון. אף אחד לא כותב את זה עם ו', אבל זה מה שהיא טוענת. זה מה שהאקדמיה טוענת ולא רק צהריים. יש פוסט שלהם בפייסבוק ובכל היתר שאומר: רבים נוהגים לקרוא ליום שאחרי מחר "מחרתיים" או "מחרותיים", אך צורות אלה שגויות והצורה הנכונה היא "מוחרתיים", שזה כתוב עם ו' (מ-ו-ח-ר-תיים). הידעת? המילה מוחרתיים היא צורת זוגי של מוחרת המקראית וכזאת היא מציינת מחר שני.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">09:07</span>
-                </div>
-                <div class="content">
-                    <p>את זה אני לא ידעתי וגם לא אכפת לי. כלומר אני מאמין לכם שככה דיברו לפני 2,000 שנה, אני מאמין לכם שבדקתם את זה, אבל אני יודע איך אנשים כותבים היום והם לא כותבים מוחרתיים עם ו'. ושוב, ספרתי: למילה "מוחרתיים" שכתובה עם ו' יש 1,870 תוצאות בגוגל. ל"מחרתיים" בלי ו' יש 190,000. אז על מה אתם מדברים? וכשהתחלתי להסתכל בעוד פוסטים של האקדמיה הזאת ראיתי עוד דברים כאלה, טענות מאוד מוזרות. למשל יש להם פוסט שאומר: למה כותבים אנגליה ואנרגיה בשתי יו"דים? יש לי שאלה אחרת - אז למה? מי כותב אנרגיה עם שני יו"דים? מי כותב אנגליה עם שני יו"דים? ומתברר שזה אמור להיות גם גיאומטרייה ובלגייה וטורקייה. אני יכול להראות לכם באטלס, באנציקלופדיה, בוויקיפדיה, במה שתרצו - לא כותבים בלגיה עם שני יו"דים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">10:15</span>
-                </div>
-                <div class="content">
-                    <p>לעומת זאת קוריאה, כמו קוריאה הדרומית, הם טוענים שכותבים בלי יו"ד בכלל. מה עובר על האנשים האלה? כלומר זה דבר אחד לתקן אנשים שידברו עברית נכונה, גם אם להרבה אנשים לא מאוד אכפת אם הם מדברים נכון או לא, אבל זה דבר אחר פשוט להמציא כללים חדשים שפשוט אף אחד לא משתמש בהם. אבל זה עוד כלום. כי מכיוון שקראתי עוד פוסטים של האקדמיה אז גיליתי עוד דברים. בתשעה באוגוסט 2022 האקדמיה ללשון העברית פרסמה פוסט בזו הלשון: סומסום בשי"ן או סומסום בסמ"ך? מה אם היינו אומרים לכם שהצורה הנכונה היא בכלל שומשום? טוב לדעת, שמו של הצמח הוא שומשום, במלעיל ובשי"ן ימנית. ההגייה סומסום במלעל רווחת בלשון הדיבור ומקורה בערבית. תייגו את כל אוהבי הטחינה שתרצו להפתיע אותם הערב.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">11:22</span>
-                </div>
-                <div class="content">
-                    <p>אז מה אם הייתם אומרים לי שהצורה הנכונה היא בכלל שומשום? אם הייתם אומרים לי דבר כזה הייתי אומר שאתם לא מבינים עברית כי בעברית אומרים סומסום. זה לא שיש ספק פה. זה לא שיש כאלה שאומרים ככה ויש כאלה שאומרים ככה ואולי שניהם צודקים. לא, אומרים סומסום, כולם אומרים סומסום. 100% מהגברים, הנשים וקיפודי הענק עם נעלי הבית אומרים סומסום ולא שומשום ולכן הטענה ששומשום זו הצורה הנכונה להגיד היא לא נכונה. כי בשפה, מה שכולם אומרים זה מה שנכון.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">11:58</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו, את אותו הפוסט אפשר היה להציג באופן אחר. אפשר היה להגיד: הידעתם? בעברית המקראית שמו של הצמח הוא בכלל שומשום ומערבית נכנסה והתקבלה לשפה המילה סומסום. אוקיי, סבבה, זה מעניין. המקורות של מילים, איך מילה התגלגלה להיות מה שהיא. זה מאוד מעניין אבל להציג את זה בתור "אתם מדברים לא נכון כולכם, כל העולם מדבר לא נכון, בעצם הצורה שהייתה מקובלת לפני 1,000 שנה זאת הצורה הנכונה ואתם כולכם טועים". מי שאומר דבר כזה פשוט לא מבין איך שפה עובדת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">12:28</span>
-                </div>
-                <div class="content">
-                    <p>ויש עוד. ביוני 2022 שוב האקדמיה פרסמה בכל הרשתות החברתיות שלה: הידעתם? אין דבר כזה כידון באופניים. טוב לדעת שהמילה כידון לציון מוט הנהיגה באופניים נוצרה משיבוש של המילה הצרפתית גידון (Guidon), בהשפעת השם המוכר של כלי הנשק המקראי ובגלל דמיון הצליל המקרי בין המילים האלו. אם תרצו לקרוא לחלק הזה של האופניים בשם עברי תקני תוכלו להשתמש במילה "הגה", או בצירופים "הגה האופניים" ו"מוט ההגה". הדהדו לרוכבי אופניים ולחברים שתרצו להדהים אותם היום.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">13:10</span>
-                </div>
-                <div class="content">
-                    <p>אתם ממש רוצים שאני אדהים, אתם רוצים להפתיע, כן? זה לא מדהים אותי שאתם פוצים, אני יודע את זה כבר. אוקיי, וואו. וואו וואו וואו הפוסט הזה. אוקיי, פרה פרה. קודם כל - אין דבר כזה כידון באופניים. כן, יש דבר כזה כידון באופניים. להגה של אופניים קוראים בעברית כידון. למה? כי 100% מנוסעי האופניים קוראים לו כידון. זאת מילה שקיימת בעברית ואם זה מוצא חן בעיניכם או לא, יש מילה כזאת. זאת עובדה. הטענה "אין דבר כזה כידון באופניים" היא חד משמעית, אובייקטיבית לא נכונה. אתם יכולים לא לאהוב את המילה הזאת, אל תשתמשו בה מצידי, אבל יש מילה כזאת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">13:53</span>
-                </div>
-                <div class="content">
-                    <p>אבל מעבר לזה, מה שהרבה יותר גרוע, הטענה שהם אומרים פה זה "כידון מגיע משיבוש של מילה בצרפתית ולכן המילה הזאת לא נכונה". רגע, מה? כלומר אתם הרגע אמרתם שמשום שהמקור של המילה הוא בשפה אחרת אז אסור להשתמש בה? כלומר למילה הזאת יש היסטוריה ולכן היא לא קיימת? אתם יודעים שלכל מילה יש היסטוריה, נכון? זאת אומרת אם היא לא מגיעה מצרפתית היא מגיעה מלטינית או מארמית או מערבית או משפה אחרת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">14:28</span>
-                </div>
-                <div class="content">
-                    <p>להגיד שאסור להשתמש במילה משום שהיא במקור בשפה אחרת זה מעבר לסתם להגיד משהו לא נכון, זה לא להבין את העיקרון הכי בסיסי שלפיו לשון עובדת - שמילים משתנות, הן נודדות, הן עוברות משפה לשפה. זה כאילו שתשאלו מישהו שאלה במתמטיקה והוא יגיד "לא ש-2+2 זה 5, שזה פשוט לא נכון, אלא שאין דבר כזה 2+2 כי עצם המנהג של חיבור מספרים הוא פסול כי הפרסים המציאו אותו משהו ולכן אין דבר כזה ועוד".</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">15:06</span>
-                </div>
-                <div class="content">
-                    <p>בן אדם שאומר כזה דבר הוא בן אדם שלא סתם לא יודע מתמטיקה אלא הוא לא מבין את העקרונות הכי בסיסיים שקיימים של מה זה מתמטיקה בכלל. ובן אדם שמפגין כזאת רמה של חוסר הבנה בלשון, שהוא טוען שאין מילה כזאת כי היא מגיעה משפה אחרת, זה בן אדם שאני לעולם לא אקשיב לשום דבר שהוא יגיד על לשון כי הוא פשוט לא מבין כלום. ומכיוון שהשטות הזאת הופיעה תחת הלוגו של האקדמיה ללשון העברית, אני לא אקשיב לשום דבר שהאקדמיה ללשון העברית תגיד לעולם, כי האקדמיה ללשון העברית לא מבינה עברית ולא מבינה לשון. עובדה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">15:43</span>
-                </div>
-                <div class="content">
-                    <p>אז אתם מספרים לי מה האקדמיה אומרת? לא אכפת לי מה האקדמיה אומרת כי הם נודניקים. אז אני רציתי לעצור כאן, רציתי פשוט להגיד לעצור ב"כן, האקדמיה יכולה לקפוץ לי", אבל בכל זאת רציתי לפני שאני עושה את זה לבדוק קצת יותר. אז האקדמיה הזאת, מה זה בכלל?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">16:05</span>
-                </div>
-                <div class="content">
-                    <p>ככה, בעברית אין מספיק מילים. יש המון מילים שחסרות שפשוט אין להן מילים בעברית, וגם הכללים בעברית לא מספיק ברורים. לפחות זה בהחלט היה המצב בתחילת המאה ה-20 כשהעברית המודרנית נבנתה. כי עברית, העברית החדשה היא שפה מתוכננת. היא מבוססת על העברית המקראית אבל היא לא אותו הדבר ויש בה המון מילים שלא הוזכרו בכתובים. ולכן מישהו היה צריך להחליט על הכללים והמילים החדשות לשפה החדשה הזאת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">16:41</span>
-                </div>
-                <div class="content">
-                    <p>אליעזר בן-יהודה, אולי שמעתם עליו, הוא היה אחד היזמים של גוף שנקרא "ועד הלשון העברית". הם המציאו מילים חדשות, הם החליטו על כללים, הם רבו אחד עם השני הרבה. אבל בגדול, השפה שאנחנו מדברים היום הרבה ממנה מבוסס על החלטות שוועד הלשון העברית קיבל. אחר כך קמה המדינה וועד שהיה גוף מטעם עצמו בעיקר הוחלף בדבר חדש שכל פעם קוראים לו האקדמיה ללשון העברית.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">17:12</span>
-                </div>
-                <div class="content">
-                    <p>זה לא בדיוק אותו הדבר. אחד ההבדלים העיקריים ביניהם זה שוועד, אמרנו, היה מטעם ועד, האקדמיה ללשון העברית היא מוסד לאומי, כלומר היא מוסד של המדינה. וכן, אני יודע קוראים למוסד הזה האקדמיה. היה להם גוף עם השם העברי ועד והוא הוחלף בדבר שעד היום קוראים לו אקדמיה, שזה לא מילה עברית. והנקודה הזאת היא הדבר הכי נדוש שקיים להצביע עליו בקשר לאקדמיה. זה נכון, זה מגוחך, אבל כבר ירדו עליהם מספיק בשביל זה אז נעבור הלאה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">17:43</span>
-                </div>
-                <div class="content">
-                    <p>מה עושה האקדמיה? היא כבר לא צריכה להמציא את העברית כי כבר יש. אז מה בעצם התפקיד שלה? אני בדקתי בתקנון האקדמיה תחת מה בעצם אנחנו עושים פה. אז ככה: מטרותיה של האקדמיה הן: א. לעשות לכינוסו ולחקירתו של אוצר הלשון העברית לכל תקופותיה ושכבותיה. באיזו שפה זה? מה היה כתוב פה עכשיו? "לעשות לכינוסו ולחקירתו של אוצר הלשון" - לא הבנתי את זה. טוב, ברור שזה נשמע ארכאי היום, פשוט ככה דיברו בזמן שפרסמו את התקנון הזה, שזה היה מזמן, בשנת... שנייה אני אבדוק... 2017.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">18:32</span>
-                </div>
-                <div class="content">
-                    <p>מי אמר "לעשות לכינוסו ולחקירתו" בשנת 2017? למה אתם לא מדברים באופן שאפשר להבין אתכם? אוקיי, סבבה. אז מה שברור לי מסעיף א' של מטרות האקדמיה זה שליצור תקשורת עם הציבור באופן כזה שאפשר יהיה להבין אותנו זה בהחלט לא אחת המטרות שלהם. אוקיי, סבבה. אבל אם מתרגמים את זה לעברית אז - לחקור. זה מה שהיא אומרת, היא עוסקת בחקר הלשון העברית. סבבה. זה היה א'.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">18:59</span>
-                </div>
-                <div class="content">
-                    <p>ב. לעשות לחקירת מבנה הלשון העברית תולדותיה וגלגוליה. שזה די אותו דבר. ג. לכוון את דרכי התפתחותה של הלשון העברית לפי טבעה, לפי צרכיה ואפשרויותיה בכל תחומי העיון והמעשה, באוצר המילים, בדקדוק, בכתב, בכתיב ובתיעתוק. אוקיי, זה הקטע שבו עדיין ממציאים מילים חדשות וחוקים חדשים וכאלה דברים. אבל זה רק סעיף ג'. ד. לפעול לשמירת מעמדה של העברית להעלאת קרנה ולידיעת תולדותיה בקרב הציבור.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">19:40</span>
-                </div>
-                <div class="content">
-                    <p>אז בקיצור, בעברית של היום המטרות של האקדמיה הן: א. לחקור את השפה, ב. לחקור את השפה, ג. לכוון את השפה וד. יחסי ציבור. אז החוק הראשון והשני של האקדמיה זה לעסוק במחקר בכלל. כלומר זה לא עניין של לקבוע חוקים ולעשות משהו שהציבור הרחב אמור לדעת עליו בכלל. אבל סעיף ג', לכוון את דרכי התפתחותה של השפה, זה המקום שבו יכולה להיות לה השפעה, כי זה המקום של לקבוע כללים חדשים ולהמציא מילים חדשות והיא עדיין עושה את זה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">20:18</span>
-                </div>
-                <div class="content">
-                    <p>וטוב שהיא עושה את זה. כדאי וצריך שיהיה מוסד כזה כי לשפה יש כללים ולפעמים הכללים האלה לא לגמרי ברורים או לא לגמרי אחידים ויש סוגיות שבהן אנשים מדברים בשתי דרכים שונות. אז מי יחליט מה הגרסה הנכונה? האקדמיה תחליט כי זה התפקיד שלה, להיות הסמכות בענייני שפה. האם נכון להגיד התחלנו או התחלנו? התחלנו. אז אוקיי, בסדר, זה יש תשובות לשאלות סבבה. האקדמיה יודעת מה שהיא אומרת זה רשמי.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">20:51</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו זה נכון שאין ממש מי שיאכוף את הכללים האלה. כאילו לאקדמיה אין כוח משטרתי שיעצור את מי שמדבר או מי שכותב לא נכון, וטוב שכך, כי אחרת אני הייתי עכשיו בכלא מרצה 15... לא עולם... סליחה, חמישה עשר... טוב שישה עשר בשלב הזה. כך שבפועל אנשים מדברים כמו שבא להם. אבל אם אני כותב ספר ואני מעוניין לכתוב נכון, אז צריך שיהיה מי שיקבע מה נכון וזה הגוף הרשמי שקובע את זה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">21:26</span>
-                </div>
-                <div class="content">
-                    <p>חוץ מזה, עוד חלק מהתפקיד של האקדמיה הוא עדיין להמציא מילים חדשות בעברית לדברים שאין להם מילים עדיין כי עדיין יש מילים בעברית שחסרות. אני נתקלתי באחת כזאת ממש לא מזמן. באחד הפרקים האחרונים אני דיברתי על המנטיס שרימפ, חיה שאין לה שם בעברית ולכן אנשים כל הזמן ממציאים לה שמות שונים, חלקם מאוד מטופשים. אבל עדיין אין לה שם בעברית כי האקדמיה לא התפנתה עדיין לתת לה שם. הם יגיעו לזה בסופו של דבר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">21:53</span>
-                </div>
-                <div class="content">
-                    <p>לאקדמיה יש ועדות מינוח. כל אחת מהן עוסקת בתחום אחר והן כוללות מומחים מהתחום הזה, והתפקיד שלהם הוא להמציא מילים למונחים בתחום הזה שעדיין אין להם מילים. היו להם ועדות למונחי שיווק ופרסום, הוועדה למונחי אופנה, רפואה, ביולוגיה, זואולוגיה - אלה שנותנים שמות לחיות ויגיעו למנטיס שרימפ בסופו של דבר. והיו עוד הרבה כאלה. הייתה למשל הוועדה לשמות פטריות הבר בישראל. חברים שם כמה מומחים למדעי הטבע מטעם המחלקה לביולוגיה באוניברסיטת חיפה ונציגים מהעמותה לפטריות בר בישראל וגם בלשנים מטעם האקדמיה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">22:33</span>
-                </div>
-                <div class="content">
-                    <p>וב-2023 הם פרסמו רשימה של 250 שמות חדשים של פטריות ושל משפחות של פטריות. והם לא עשו את זה בקלות. הם עבדו על זה הרבה. ארבע שנים הוועדה הזאת עבדה ודנה כדי להגיע לרשימה הזאת. יש פה אחריות כבדה כי זה בכל זאת לקבוע מילים חדשות בשפה שיהיו עכשיו מילים רשמיות בשפה. ועדיין גם אחרי שהם עבדו על זה כל כך הרבה זמן עדיין יש מחלוקות.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">23:11</span>
-                </div>
-                <div class="content">
-                    <p>יש פטרייה שהשם המדעי שלה הוא ציקלוציבי סילנדרקיאה (Cyclocybe cylindracea), בערך משהו כזה. זאת פטרייה יחסית מוכרת בקרב חובבי פטריות. היא חמודה, היא גדלה על התחתית של גזעים של עצים, והיא טעימה. ראיתי מתכון לשווארמה פטריות שאמורה להיות מצוינת שאפשר לעשות ממנה. ועדת המינוח קבעה שהשם העברי של הפטרייה הזאת הוא כיפתית גדות.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">23:48</span>
-                </div>
-                <div class="content">
-                    <p>הבעיה היא שלפטרייה הזאת כבר היה שם בעברית. היא כבר הופיעה במדריכי פטריות ובאתרים על פטריות וחובבי פטריות הכירו אותה בשם נירנית הצפצפה. אז אם תחפשו עכשיו יש הרבה מאמרים ומתכונים ודברים שמזכירים את נירנית הצפצפה ועכשיו כולם בדיעבד הפכו ללא נכונים כי לא קוראים לה יותר נירנית הצפצפה, יש לה שם אחר. אז אנשים כעסו ואני מבין את זה. כאילו מה זה החוצפה הזאת? מי אתם שפתאום תגידו לנו ששם שכבר קיים הוא עכשיו לא נכון?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">24:23</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו אני לא יודע להגיד אם השינוי הזה היה נכון או לא, אני לא יודע אם אולי היה צריך להשאיר את זה כמו שזה היה. אני גם לא יודע בדיוק מה היו הנימוקים לשינוי. אני יודע שהשינוי הזה לא בא סתם, כי אמרנו הייתה ועדה של מומחים כולל נציגי איגוד הפטריות בישראל - זה לא פטריות שהיו חברים, זה היה אנשים, אבל לא משנה. בקיצור זה אנשים שמבינים בזה שדנו וקיבלו את ההחלטה הזאת. האם ההחלטה הזאת נכונה או לא אני לא יודע, אבל היה דיון בנושא וזה מה שנקבע.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">24:55</span>
-                </div>
-                <div class="content">
-                    <p>ואני מניח שבמדריכי פטריות שיפורסמו בעתיד מה שיפורסם יהיה השם החדש והרשמי של הפטרייה ולכן זה יהפוך בסופו של דבר לשם המקובל והנכון שלה. לרוב הציבור לא אכפת כי רוב האנשים לא יודעים לזהות את נירנית הצפצפה או את כיפתית הגדות, גם אם היא תגדל להם על האף. יש גם מילים אחרות פחות נישתיות.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">25:17</span>
-                </div>
-                <div class="content">
-                    <p>פעם בשנה בערך האקדמיה מפרסמת קובץ של מילים חדשות, תחדישים שהם החליטו עליהם בשנה האחרונה. למשל ב-2022 פרסמו אוסף של מילים שקשורות למדעי המדינה, לפוליטיקה. אז למשל המילה העברית שהוכרזה למילה קואליציה היא יוחדה. והמילה לאופוזיציה היא נגדה. קפיטליזם זה הונתנות וצנזורה זה גנזרות.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">25:49</span>
-                </div>
-                <div class="content">
-                    <p>שנה אחר כך הם פרסמו עוד מילים חדשות למילים אופנתיות לעזיות כמו גזלייטינג, שזה בעברית מתברר גזלות דעת. ובאז זה רחשת, ופיד זה שטף עם ט'. המילים האלה הן לא מילים רעות. האמת שגזלות דעת בתור תרגום לגזלייטינג זה די מבריק. זה שומר גם על המשמעות של המילה וגם על הצליל שלה. אז יפה, הן לא מילים רעות הן פשוט לא מילים בעברית כי אף אחד לא ישתמש בהן לעולם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">26:26</span>
-                </div>
-                <div class="content">
-                    <p>מה שקורה כשמתפרסמת רשימה כזה זה שאנשים מסתכלים על זה וקצת מפיצים על זה וקצת צוחקים על המילים האלה וכמה מגוחך הן נשמעות וזהו. תוך יום הם שוכחים מזה. המילים האלה לא נקלטות בשפה כמעט אף פעם. עובדה: מאז 2022 פרסמו בערך מיליון סקרי בחירות. אתם שמעתם פעם על סקר שמדבר על מספר המנדטים של הנגדה? לא. ואתם גם לא תשמעו כי כבר יש מילה בעברית לאופוזיציה. המילה היא אופוזיציה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">27:04</span>
-                </div>
-                <div class="content">
-                    <p>יש גם מילה בעברית לקפיטליזם, המילה היא קפיטליזם. יש מילה בעברית לאינטרנט, המילה היא אינטרנט. היא לא מרשתת. לא משנה כמה תנסו זה לא אומרים מרשתת, זה לא קיים. ההבדל בין זה לבין השם החדש של נירנית הצפצפה הוא שרוב האנשים לא הכירו את נירנית הצפצפה, אבל כל בן אדם מבוגר יודע מה זה קפיטליזם והוא יודע מה זה אופוזיציה ומה זה קואליציה והרעיון שאפשר למחוק מילה מאוד נפוצה מהשפה ובמקומה להכניס מילה חדשה הוא פשוט לא יקרה. זה פשוט לא דבר שהולך לקרות.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">27:44</span>
-                </div>
-                <div class="content">
-                    <p>אז תמיד יהיו כאלה שיגידו קואליציה זה לא בעברית. אבל זה כן בעברית. עובדה, יש המון אתרים וטקסטים וספרים בעברית שבהם מופיעה המילה הזאת. זאת מילה בעברית. עכשיו אין לי שום בעיה עם להמציא מילים חדשות, ואם זאת מילה טובה ואם תצליחו לשכנע אנשים להשתמש בה - יופי, אז יש לנו מילה חדשה בשפה. הבעיה שלי היא עם הגישה של "אנחנו קבענו שעכשיו אלה המילים הנכונות בעברית ואתם מדברים לא נכון".</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">28:15</span>
-                </div>
-                <div class="content">
-                    <p>לא. הם יכולים להגיד "חשבנו על מילים חדשות בעברית למה שלא תגידו יוחדה במקום קואליציה". אוקיי, אבל להגיד "אנחנו קבענו עכשיו זה נכון אתם אומרים לא נכון", מממ... זה לא עובד ככה. היה פעם אתר, עדיין יש אתר הוא פשוט הוא לא פעיל עכשיו שקוראים לו "דורבנות". והרעיון בו היה שאנשים מציעים מילים חדשות ומגניבות בעברית והיו שם יופי של הצעות.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">28:44</span>
-                </div>
-                <div class="content">
-                    <p>למשל לסמארטפון קוראים בעברית טלפון חכם. איך קוראים לטלפון טיפש? כלומר לטלפון שהוא לא סמארטפון? קסילופון. זה נהדר. זאת מילה כל כך מעולה. ואיך קוראים בעברית לבודק QA? שלבאג. זה גאוני. איך קוראים להפרדת סוגי פסולת לפחי מחזור שונים? אשפרטהייד. ואני בעצמי תרמתי את ההצעה של ספר אודיו - למה שלא יקראו בעברית "קריאת שמע"? אותי זה הצחיק קצת מה אתם רוצים. בכל אופן דורבנות פשוט אף פעם לא אמר "עכשיו כשהצענו את המילה הזאת זאת המילה הנכונה בעברית".</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">29:38</span>
-                </div>
-                <div class="content">
-                    <p>לא. אלה הצעות של מילים הן משעשעות אולי הן ייקלטו כנראה שלא. עכשיו אותו הדבר בדיוק נכון גם לגבי המילים שהאקדמיה מציעה. להציע זה סבבה, אבל לטעון שאלה מילים חדשות בעברית שזה בדיוק מה שהם אומרים. הם אומרים "אלה מילים חדשות בעברית". לא. זה פשוט לא נכון. אלה לא מילים בעברית. עדיין. אפילו אם יש לכם את הסמכות לקבוע מה המילים הנכונות באופן רשמי זה לא משנה את העובדה בשטח שאם אנשים לא משתמשים במילים האלה, והם לא, אז הם לא מילים בעברית.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">30:04</span>
-                </div>
-                <div class="content">
-                    <p>אני יודע איך מדברים עברית. אני עושה טעויות אבל אני יודע איך לדבר עברית. איך אני יודע שאני יודע? כי כשאני מדבר אנשים שמדברים עברית מבינים מה אני אומר. לעומת זאת אם הייתי מדבר על יוחדה, רחשת והונתנות בבלגייה, אנשים לא היו מבינים אותי כי זה לא בעברית. אם יש לכם שפה שרק חמישה אנשים בעולם מבינים אתם יכולים לקרוא לשפה הזאת איך שאתם רוצים אבל היא לא עברית.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">30:31</span>
-                </div>
-                <div class="content">
-                    <p>אתם יכולים אם אתם רוצים להיסגר בחדר המרופד שלכם ולצעוק כל היום "כולם מדברים לא נכון חוץ ממני! רק אני יודע איך מדברים נכון, כולם טועים! גנזר! רחשת! קשרור!". והנה העניין, אני לא חושב שזה באמת מה שהאקדמיה עושה. אני כן חושב שזה הרושם שמתקבל מהאופן שבו אתם רואים את האקדמיה משום שהרוב המוחלט של האנשים האופן שבו הם שומעים על החלטות של האקדמיה זה מהפוסטים שלה בפייסבוק, בטוויטר, מהסושיאל שלה ככה אומרים נכון? איך אומרים את זה בעברית? סושיאל... חברותי או משהו... וואטאבר.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">31:21</span>
-                </div>
-                <div class="content">
-                    <p>בכל אופן אז יש להם חשבונות די פופולריים בטוויטר ובאינסטגרם ובפייסבוק ובטיקטוק והם מאוד פעילים שם בלפרסם פוסטים שעוסקים בעברית. רק שהם עוסקים כמעט תמיד רק בדבר אחד - במשטור של העברית. בלהגיד "אתם מדברים לא נכון הנה ככה כן צריך להגיד". ושוב, לגבי רוב האנשים זה האופן היחיד שבו הם באים במגע עם האקדמיה. אני אפילו לא ידעתי שהאקדמיה זה גוף מחקרי שעוסק במחקר, חשבתי שזה גוף מנותק שהתפקיד שלו זה להצביע עליי ולצעוק עליי שאני מדבר לא נכון ואז אני אתעלם ממנו.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">31:54</span>
-                </div>
-                <div class="content">
-                    <p>זה לא המצב. מתברר שיש הבדל גדול בין מה שהאקדמיה עושה לבין מה שהיא מראה שהיא עושה. אני משער שבאקדמיה עצמה לא היה אף אחד שיטען שכידון היא לא מילה אמיתית כי היא מגיעה מצרפתית כי זאת טענה מטומטמת. זה מישהו בצוות הסושיאל של האקדמיה שאחראי לפיגוע יחסי הציבור הזה. וגם הקטע הזה אבל עם הו"ו במוחרתיים וצהריים ובלגייה וכל זה, אני ראיתי את הפוסטים על זה ברשתות החברתיות ולכן התגובה שלי הייתה "פחחח תסתמו אתם לא תגידו לי איך לדבר".</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">32:38</span>
-                </div>
-                <div class="content">
-                    <p>מה שלא ראיתי זה את הסיבה לזה. כי מתברר שהייתה לזה סיבה. בשנת 2017 האקדמיה הכריזה על שינויים בכללי הכתיב המלא. כלומר איך צריך לכתוב מילים בלי ניקוד. וזה צריך להגיד דבר מאוד נדיר כי זה ממש לא משהו שהאקדמיה עושה הרבה, להכריז על שינוי בחוקים קיימים אבל זה היה אחד המקרים המאוד נדירים שכן. רוב השינויים האלה היו שינויים שאף אחד לא שם לב אליהם כי פשוט הם הכניסו לחוק את איך שאנשים כתבו ממילא.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">33:14</span>
-                </div>
-                <div class="content">
-                    <p>אחד השינויים העיקריים למשל היה שמהיום מילים שיש בהן את הצליל O ייכתבו עם האות ו'. שזה בכל מקרה בדרך כלל המצב אבל לא תמיד כי יש מילים שנכתבו עם קמץ קטן שבאופן רשמי צריך לכתוב בלי ו'. למשל יוזמה. הדרך הרשמית הנכונה לכתוב את המילה "יוזמה" הייתה בלי ו', כלומר זה נראה כמו "יזמה". עכשיו רוב האנשים ממילא כותבים יוזמה עם ו', אז עכשיו פשוט האקדמיה נתנה לזה אישור רשמי. היא אמרה זה נכון ככה צריך לכתוב. אם יש שם O תכתבו ו'. אותו הדבר לגבי אונייה ולא אנייה, ותוכנית ולא תכנית.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">34:02</span>
-                </div>
-                <div class="content">
-                    <p>מהאקדמיה נמסר כי: הכללים החדשים הם תוצאה של תהליך ממושך ויסודי שבו נבחנו מנהגי הכתיב הרווחים בהוצאות הספרים, בעיתונות ובמרשתת. קודם כל, Stop trying to make מרשתת happen, it's not gonna happen. אבל חוץ מזה אני חייב להגיד הרעיון פה הוא מאוד נכון. אני מאוד מסכים עם זה. זה להסתכל על איך שאנשים באמת כותבים ולהגיד "אוקיי, כולם כותבים ככה, אז במקום לריב נגד כל העולם פשוט נהפוך את זה לדרך הנכונה לכתוב". יופי, ככה צריך.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">34:41</span>
-                </div>
-                <div class="content">
-                    <p>רק מה? הכללים צריכים להיות עקביים. אז אם קבענו שכל פעם שיש את הצליל O כותבים אותו עם ו', אז גם בצהריים וגם במוחרתיים יש ו'. ההבדל הוא שאלה מילים שעד עכשיו לא היה נהוג לכתוב עם ו' אבל מה לעשות, זה קורבן, קורבן עם ו' דרך אגב, קטן למען העקביות למען האישור של יוזמה ואמנם ואומן וכל זה. אז זה הגיוני. למה זה הגיוני? למה אני מסכים? איך קרה שאני מסכים עם האקדמיה פתאום?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">35:23</span>
-                </div>
-                <div class="content">
-                    <p>ולמה אני צריך לעשות את העבודה שלהם בלהסביר למה הכללים השתנו? כי אם אתם קוראים רק את מה שמתפרסם ברשתות החברתיות אתם לא קיבלתם את הנימוק, אתם רק קיבלתם את ההנחתה הזאת שמהיום בצהריים יש ו'. הרושם שלי היה שהם באופן שרירותי לגמרי פשוט החליטו שהחוקים השתנו ולי אין שום כוונה לציית לחוקים האלה, כי הם מגיעים מאותם אנשים שחושבים שכידון זה לא בעברית. למה קיבלתי רושם כזה לא נכון? הסיבה לדעתי היא שזה רושם שהם יצרו בכוונה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">35:56</span>
-                </div>
-                <div class="content">
-                    <p>כלומר הם עשו דבר נכון ותקשרו אותו בפוציות המקסימלית האפשרית. זה שהתעצבנתי, זה שאני כל הזמן מתעצבן מפוסטים של האקדמיה בטוויטר ובפייסבוק וכאלה, זה משום שהם מנסים לעצבן אותי. הם מפרסמים בכוונה פוסטים שיעצבנו אנשים משום שזה מושך הרבה קהל. כי ככה זה ברשתות חברתיות - כשאתם מעצבנים אנשים אז אתם משיגים הרבה אינגייג'מנט, שזה בטח בעברית שיתופנות או משהו. זאת אומרת אנשים מגיבים לדברים שגורמים להם להרגיש משהו כולל עצבנות. אז לא מקרי שהפוסטים האלה הם מעצבנים, הם מעצבנים בכוונה. הם מעצבנים כדי שתתעצבנו.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">36:41</span>
-                </div>
-                <div class="content">
-                    <p>ולזה יש מילה בעברית. כלומר זה לא בעברית, זה באנגלית טכנית, אבל תכלס זה בעברית. מילה שמתארת מישהו שמפרסם ברשתות חברתיות דברים כדי לעצבן כי הוא מחפש את תשומת הלב גם אם תשומת הלב הזאת היא שלילית, אז הוא כותב דברים שהוא יודע שיכעיסו אנשים כדי שיגיבו לו. המילה היא טרול. והאקדמיה ללשון העברית כיום היא טרול. זה לא הדבר היחיד שהיא עושה, כן? יש לה תפקידים אחרים ומתברר שהיא אשכרה ממלאת אותם, אבל מבחינת הציבור הרחב החשיפה העיקרית שלה היא בתור טרול.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">37:26</span>
-                </div>
-                <div class="content">
-                    <p>ואני לא חושב שהמדינה צריכה לממן טרולים, יש לנו מספיק כאלה בחינם. אז אם אמרנו התפקידים של האקדמיה הם א. לחקור את השפה, ב. לחקור את השפה, ג. לכוון את השפה וד. יחסי ציבור. ד' זה המקום שבו הם מקבלים ציון נכשל, כלומר לא נכשל אלא שלילי. כי מה שהאקדמיה עושה בפועל זה להשניא את עצמה. היא גרמה לי לתעב אותה ולתעב מתקני עברית באופן כללי. היא גרמה לי שלא יהיה אכפת לי מהעברית הנכונה. אני אדבר כמו שבא לי. אז אני יודע שזה רק הסעיף האחרון, כן? אבל אילו אני הייתי באקדמיה הייתי שם יותר דגש בד'.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">38:11</span>
-                </div>
-                <div class="content">
-                    <p>אבל לפני שאני משחרר את האקדמיה מכל אשמה ואומר "אה זה לא היא זה הסושיאל", יש לי בכל זאת כמה דברים להגיד. יש נושאים בעברית שהם חשובים יותר מאשר האם יש או אין ו' בצהריים. בעברית יש בעיות. אחת הבעיות הקשות בעברית היא העניין המגדרי. העובדה שהשפה הזאת פשוט נוטה להתעלם מקיומן של נשים. אם אני רוצה לדבר על קבוצה של נשים וגברים או על קבוצה של גם נשים וגם גברים, רשמית מה שאני צריך להגיד זה "אתם הולכים, באים, חושבים", שזה כמובן פתרון מאוד גרוע כי זה מתעלם מחצי מהקהל. אני פשוט לא מתייחס לנשים בכלל.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">39:06</span>
-                </div>
-                <div class="content">
-                    <p>אם אני רוצה להכליל גם את הנשים בדברים, אז אני צריך להגיד דברים כמו "אנחנו חושבות וחושבים", כלומר כל פעם להגיד כל דבר פעמיים. או להגיד "ברוכים/ות הבאים/ות" עם נקודות באמצע המילה. או להגיד "דרוש/ה נהג/ת". או להגיד "ילדותים חמודים". יש כל מיני שיטות שאנשים מנסים כדי לנסות לדבר לכל המגדרים בו זמנית ככה שההרגשה לא תהיה שרק בנים קיימים בעולם. אף אחת מהשיטות האלה לא רשמית וכולן די מגושמות. כולן מפריעות לקריאה או מפריעות להגייה באיזשהי צורה. ויש הרבה מאוד מריבות על איך צריך לעשות את זה נכון. האם צריך לכתוב "אתםן צודקיםות" עם נקודה או עם לוכסן או עם גרש או בכלל לא. יש דרך אחרת לעשות את זה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">40:02</span>
-                </div>
-                <div class="content">
-                    <p>איך גורמים לשפה לדבר לכולם ולכולן? ואני לא מדבר אפילו על הא-בינאריים שבשבילם כל העברית היא בלתי אפשרית, כי אי אפשר לדבר באופן לא ממוגדר בעברית. אנשים שבאנגלית משתמשים ב-They, איך הם יגידו זה בעברית? הם? הן? זה אפילו לא פתרון, זה לא פותר את הבעיה. בקיצור, יש בעיות מגדר בעברית וזה נושא חשוב יותר משנת הצהריים כי אלה בעיות שבאמת משפיעות על אנשים ונשים. אה, נשים... אתם רואים את הבעיה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">40:39</span>
-                </div>
-                <div class="content">
-                    <p>אני לא יודע מה הפתרונות לבעיות האלה. אני לא יודע מה התשובה הנכונה, אני לא יודע מה צריך לעשות. וזאת גם לא העבודה שלי למצוא פתרון לבעיות האלה כי אני לא מנהל את העברית. אבל אילו היה גוף בארץ שממונה על הלשון... רגע! אז הרבה מאוד אנשים פנו לאקדמיה בבקשה לתשובה לשאלה הזאת. איך צריך לעשות את זה נכון? איך אפשר להפוך את העברית לכזאת שתדבר גם לגברים וגם לנשים באופן שווה?</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">41:22</span>
-                </div>
-                <div class="content">
-                    <p>ובתגובה האקדמיה פרסמה כמה דפי מידע ונייר עמדה אחד שבו הם מכירים בכך שזו בעיה. וזה יפה. ואז לא עושים כלום. כלומר הם בהחלט כן אומרים מה אסור לעשות. הם מצהירים שלכתוב נקודות באמצע מילים כמו "חושב.ת" זה לא נכון, זה לא תקני. ויותר מזה, גם לשים לוכסנים באמצע המילה זה לא נכון, אז אסור לעשות את זה. אוקיי, מה כן צריך לעשות? נדמה לי שהתשובה הרשמית של האקדמיה היא המממ...</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">42:02</span>
-                </div>
-                <div class="content">
-                    <p>ההצהרה שלהם מסתיימת במילים: לסיכום אנו ממליצים למצוא את הדרכים להבעת שוויון מגדרי ולביטוי נוכחות הנשים במסגרת התקן המקובל של השפה העברית וכלליה. כן, הם ממליצים למצוא את הדרכים. שזה כאילו שאני אזמין מכבי אש כי יש לי שריפה בבית ומכבי אש יגידו לי "אנו ממליצים למצוא דרך לכבות את השריפה". זאת העבודה שלכם, לא שלי! מה אתם ממליצים למצוא? תמצאו אתם! אתם לא יכולים לא יודע להכשיר איזה חוק, לא יודע איזה. אני לא יודע אם ממש נכון לעשות את הנקודה או הלוכסן או מה שזה לא יהיה אבל התפקיד להחליט הוא שלכם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">42:43</span>
-                </div>
-                <div class="content">
-                    <p>אבל על זה, על לשנות את החוקים ככה שהם יהיו מכלילים יותר, לא לא לא, על זה האקדמיה אומרת ובנייר העמדה זה כתוב במודגש כדי שלא נטעה: הלשון העברית כשאר הלשונות הטבעיות התפתחה והתגבשה בפיהם של הדוברים בתהליכים טבעיים ולאורך זמן. האקדמיה ללשון קובעת את התקן של השפה על בסיס המאפיינים העולים מן העברית שירשנו ואין זה תפקידה להכשיר צורות המנוגדות למבנה הלשון או משנות את דקדוקה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">43:16</span>
-                </div>
-                <div class="content">
-                    <p>כלומר שוב בעברית מה שהם אומרים זה "מה אתם רוצים מאיתנו? אנחנו לא יכולים לשנות את החוקים". אבל אתם כן! אתם כן יכולים, אתם עושים את זה כל הזמן! אתם אומרים שהשפה התפתחה והתגבשה בתהליכים טבעיים כשאתם כל הזמן קובעים מילים חדשות בתהליך לא טבעי בכלל ומכריזים שמילים אחרות הן לא נכונות שהתפתחו באופן טבעי. אם אתם יכולים לקבוע שמהיום צהריים כותבים עם ו', אתם יכולים גם להחליט על צורת כתיבה שתפנה גם לגברים וגם לנשים, שזה קצת יותר חשוב. אתם יכולים לעשות את זה, אתם פשוט לא רוצים.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">43:52</span>
-                </div>
-                <div class="content">
-                    <p>וזאת לא בעיה של יחסי ציבור, זאת בעיה שלכם, אקדמיה. אז מה הייתה השאלה? למה אני לא סובל את האקדמיה ללשון העברית? אני חשבתי שאני לא אוהב את האקדמיה משום שמחליטים באופן שרירותי לחלוטין על איזה מילים הן נכונות ואיזה לא נכונות, אבל זה מתברר לא נכון. זה לא שרירותי ויש להם החלטות נכונות. הם פשוט ממש ממש גרועים בלתקשר את זה לציבור ותקשורת זה אולי דבר קצת חשוב לאנשים שמתעסקים בשפה. אבל יש גם סיבות אחרות שאני לא מחבב אותם במיוחד.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">44:40</span>
-                </div>
-                <div class="content">
-                    <p>זאת התשובה. יש עוד מילה אחת שאני רוצה לדבר עליה, מילה מאוד חשובה לי אישית. תכף. הדבר הזה שאתם מאזינים לו עכשיו, איך קוראים לו? רובכם מאזינים עכשיו לפודקאסט. אבל יש כמה מכם כרגע שמאזינים להסכת. ואני רוצה לדבר על זה רגע. המילה הסכת בתור המילה העברית לפודקאסט הומצאה ב-2017 והיא לא הופיעה סתם באחד מהאוספי מילים האלה שהאקדמיה מפרסמת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">45:32</span>
-                </div>
-                <div class="content">
-                    <p>תאגיד השידור פרסם פנייה לציבור בבקשה למצוא חלופה עברית למילה פודקאסט, ומספרים שיותר מ-1,200 אנשים נענו לפנייה ושלחו את הצעותיהם לחלופה עברית והיו כמה מילים שהגיעו לגמר, כולל כמה מהמילים האלה הן שמעון - לא; תשמע - למה ת'? מה הקטע? תסקית - יש מילה כזאת כבר, תסקית זה מחזה באודיו; ותסכיס - שיותר מדי סמ"כים, מצטער לא. אז מתוך כל זה ניצחה המילה הסכת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">46:16</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו ההבדל בין המילה הסכת לרוב התחדישים האלה זה שאשכרה יש אנשים שמשתמשים בו. זאת אומרת כן, הוא נכנס לשימוש חלקי, לא ממש גדול כי רוב האנשים עדיין אומרים פודקאסט ולא הסכת, אבל אני לא יכול להגיד שאף אחד לא משתמש בזה. עדיין, המילה פודקאסט היא המילה היותר נפוצה אז ברוב המקרים אני הייתי אומר למה צריך מילה חדשה. כלומר יש כבר מילה פודקאסט, זה מה לעשות מילה בעברית, המקור שלה הוא לא בעברית אבל עכשיו היא מילה בעברית.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">46:53</span>
-                </div>
-                <div class="content">
-                    <p>במקרה הזה אבל אני לא יודע אולי בכל זאת יש קצת טיעונים נגד. קודם כל המילה פודקאסט המקור שלה הוא לא באיזושהי שפה איזוטרית, המקור שלה הוא מוצרים של חברת אפל. כי אפל אפל, כי אפל ייצרה במשך הרבה זמן אייפודים. אייפוד זה נגן מוזיקה, נגן MP3 קראו לזה אז. היו הרבה גרסאות של אייפוד עד שהפסיקו לייצר אותם, פשוט משום שלא ממש צריך אותם משום שבימינו רוב האנשים לא צריכים נגן מוזיקה כשיש להם אייפון או טלפון חכם אחר שכולל גם נגן מוזיקה וגם מחשבון וגם מצלמה וגם משחקים וגם הרבה מאוד דברים אחרים. אין ממש צורך במכשיר שהוא רק נגן מוזיקה, אז אין יותר אייפוד.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">47:52</span>
-                </div>
-                <div class="content">
-                    <p>אבל כשהיה אייפוד המציאו את המילה פודקאסט כמו ברודקאסט (Broadcast), כלומר שידור כביכול שהוא לאייפוד. וזאת המילה שהשתלטה על השפה באנגלית ובהרבה שפות אחרות בתור שם לדבר הזה. עכשיו זה שהמקור של המילה הוא משמעות שלא באמת קיימת היום כי כבר אין אייפודים, זה לא משנה כי תמיד יש המון מילים כאלה שהמשמעות המקורית שלהן כבר לא תקפה. העניין הוא שפודקאסט היא פשוט מילה לא מאוד יפה, אני לא מאוד אוהב אותה. יש לה חמישה עיצורים על פני שתי הברות, זה נורא דחוס, יש לה את ה-דק' הזה באמצע המילה שכאילו שלא מאפשר להריץ אותה מאוד מאוד מהר. אבל זאת המילה.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">48:42</span>
-                </div>
-                <div class="content">
-                    <p>עכשיו הסכת אני חייב להגיד זאת לא מילה רעה. כלומר אני בסדר עם הסכת, זאת לא מילה שכואבת לי באוזן. יש לה חסרונות - אחד המרכזיים זה שהיא מתחילה בה' ולכן כשכותבים אותה בדפוס אז האינסטינקט הוא לקרוא את זה הַסְכֵּת במקום הֶסְכֵּת. אז אוקיי, לא מושלם אבל עדיין היא בסדר. וחוץ מזה העניין הוא שפודקאסטים עם כל הכבוד הם לא דבר שכל בן אדם בעולם שמע עליו. זאת אומרת עדיין יש אני בטוח הרבה אנשים שלא יודעים מה זה פודקאסטים. אז קודם כל אם אתם פוגשים אחד כזה תספרו לו ותמליצו לו על הפודקאסט הזה, אבל אולי לא מאוחר מדי לתת לזה שם שייקלט שתהיה לזה מילה אחרת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">49:33</span>
-                </div>
-                <div class="content">
-                    <p>אז אני משתמש במילה פודקאסט כי זאת המילה המקובלת יותר ולא השתכנעתי אחרת. אבל אמרתי אני לא פוסל הסכת אז תגידו אתם. תכתבו בספוטיפיי, בפייסבוק, במה שאתם רוצים, תפנו אליי תגידו אתם - מה אתם מעדיפים: הסכת או פודקאסט? אתם מעדיפים להמשיך לשמוע את הפודקאסט התשובה או שאתם מעדיפים לשמוע הסכת מהעכשיו? אם רוב האנשים יגידו שהם רוצים הסכת אני אעשה הסכתים, לי לא אכפת.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">50:08</span>
-                </div>
-                <div class="content">
-                    <p>זאת הייתה התשובה. צריך להגיד הרבה מאוד סיוע בפרק הזה סיפק פרופסור אורי מור מאוניברסיטת בן-גוריון בנגב, וכשאני אומר שהוא סיפק הרבה זה אומר שבלעדיו הפרק הזה פשוט לא היה הפרק הזה, הוא היה דבר שונה לגמרי והוא היה מאוד מביך. עורכת כמובן שלי נוי, ייעוץ ותמיכה מורלית מוץ. אני עושה הרצאות בהרבה נושאים, גם שם אני לא מדבר נכון, אתם יכולים לראות איפה אני מדבר ועל מה בדורון פישלר נגד העולם.</p>
-                </div>
-            </article>
-            
-            <article class="paragraph speaker-דורון פישלר">
-                <div class="paragraph-meta">
-                    <span class="speaker-name">דורון פישלר</span>
-                    <span class="timestamp">50:41</span>
-                </div>
-                <div class="content">
-                    <p>בצוות רשת עושים היסטוריה גם דני תימור המנהל העסקי, אביב שם טוב סמנכ"ל התפעול, עמית חזזי מכירות והילה שמש ושלי גואטה. אני דורון פישלר. אם יש לכם הערות על העברית שלי או הגייה כלשהי של מילה במהלך הפרק הזה, אתם מוזמנים לשלוח אותן לאן שבא לכם. אני לא אקרא את זה. ביי! קשרור! יצא לי קצת תוכי.</p>
                 </div>
             </article>
             
