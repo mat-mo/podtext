@@ -104,40 +104,38 @@ def main():
                {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
                os.path.join(OUTPUT_DIR, 'podcasts.html'))
 
-    # 3. Individual Podcast Pages
+    # 3. Individual Podcast Pages & RSS Feeds
     for feed_slug, data in podcasts_data.items():
-        # Sort episodes by date descending
-        # We need to parse the Hebrew date string back to a comparable value
-        def parse_hebrew_date(date_str):
-            try:
-                # Format: "12 בינואר 2025"
-                parts = date_str.split(' ')
-                if len(parts) < 3: return datetime.min
-                
-                day = int(parts[0])
-                year = int(parts[2])
-                month_he = parts[1]
-                
-                # Remove leading 'ב' if present
-                if month_he.startswith('ב'):
-                    month_he = month_he[1:]
-                    
-                if month_he not in HEBREW_MONTHS:
-                    # Fallback or debug print could go here
-                    return datetime.min
-                    
-                month = HEBREW_MONTHS.index(month_he) + 1
-                return datetime(year, month, day)
-            except:
-                return datetime.min
-
-        data['episodes'].sort(key=lambda x: parse_hebrew_date(x['published_date']), reverse=True)
-
+        # Podcast HTML
         render_html('podcast.html', 
                    {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
                    os.path.join(PODCASTS_DIR, f"{feed_slug}.html"))
+        
+        # Podcast RSS
+        # Ensure content is loaded
+        for ep in data['episodes']:
+            if 'content' not in ep: ep['content'] = get_episode_content(ep)
+            
+        rss_context = {
+            "site": {
+                "title": f"{data['name']} - Podtext",
+                "base_url": config['site_settings']['base_url']
+            },
+            "episodes": data['episodes'],
+            "build_date": formatdate()
+        }
+        render_html('rss.xml', rss_context, os.path.join(PODCASTS_DIR, f"{feed_slug}.xml"))
+        
+        # Add generated RSS link to data for use in podcasts.html
+        data['generated_rss'] = f"podcasts/{feed_slug}.xml"
+
+    # Re-render podcasts.html with the new RSS links
+    render_html('podcasts.html', 
+               {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
+               os.path.join(OUTPUT_DIR, 'podcasts.html'))
 
     # 4. Search Index
+
     print("Building search index...")
     search_index = []
     for ep in db['episodes'][:50]: # Limit to recent 50 for performance

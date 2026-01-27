@@ -15,7 +15,7 @@
             </a>
             <div class="podcast-meta">
                 <span>{{ feed_data.count }} Episodes</span>
-                <a href="{{ feed_data.rss_url|default('#') }}" class="mini-rss" title="RSS Feed">RSS</a>
+                <a href="{{ feed_data.generated_rss|default('#') }}" class="mini-rss" title="RSS Feed">RSS</a>
             </div>
         </div>
         {% endfor %}

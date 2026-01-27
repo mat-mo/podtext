@@ -131,13 +131,67 @@ def generate_site(db, config):
                {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
                os.path.join(OUTPUT_DIR, 'podcasts.html'))
 
-    # Render Individual Podcast Pages
-    for feed_slug, data in podcasts_data.items():
-        render_html('podcast.html', 
-                   {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
-                   os.path.join(PODCASTS_DIR, f"{feed_slug}.html"))
+        # 3. Individual Podcast Pages & RSS Feeds
 
-    # 3. Search Index (JSON)
+        for feed_slug, data in podcasts_data.items():
+
+            # Podcast HTML
+
+            render_html('podcast.html', 
+
+                       {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
+
+                       os.path.join(PODCASTS_DIR, f"{feed_slug}.html"))
+
+            
+
+            # Podcast RSS
+
+            # Ensure content is loaded
+
+            for ep in data['episodes']:
+
+                if 'content' not in ep: ep['content'] = get_episode_content(ep)
+
+                
+
+            rss_context = {
+
+                "site": {
+
+                    "title": f"{data['name']} - Podtext",
+
+                    "base_url": config['site_settings']['base_url']
+
+                },
+
+                "episodes": data['episodes'],
+
+                "build_date": formatdate()
+
+            }
+
+            render_html('rss.xml', rss_context, os.path.join(PODCASTS_DIR, f"{feed_slug}.xml"))
+
+            
+
+            data['generated_rss'] = f"podcasts/{feed_slug}.xml"
+
+    
+
+        # Re-render podcasts.html with the new RSS links
+
+        render_html('podcasts.html', 
+
+                   {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
+
+                   os.path.join(OUTPUT_DIR, 'podcasts.html'))
+
+    
+
+        # 4. Search Index
+
+     (JSON)
     print("Building search index...")
     search_index = []
     # Index recent 50 episodes to keep size manageable, or all if small
