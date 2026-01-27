@@ -341,7 +341,10 @@ def main():
                     "title": entry.title,
                     "published_date": hebrew_date,
                     "slug": slug,
-
+                    "feed_name": feed_conf['name'],
+                    "feed_slug": feed_slug,
+                    "feed_image": feed_image
+                })
                 save_db(db)
                 
                 # Regenerate entire site structure
