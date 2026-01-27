@@ -330,7 +330,7 @@ def main():
                 for s in segments: s['start_fmt'] = s.get('timestamp', '')
                 
                 render_html('episode.html', 
-                           {"episode": episode_data, "segments": segments, "direction": direction, "relative_path": "../../"}, 
+                           {"site": config['site_settings'], "episode": episode_data, "segments": segments, "direction": direction, "relative_path": "../../"}, 
                            html_path)
                 
                 if os.path.getsize(html_path) < 500: raise Exception("File too small")
