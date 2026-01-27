@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 18:37:15 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 18:39:03 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>איזה טעם יש ללמבדה? [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/htshvbh/yzh-t-m-ysh-llmbdh-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/htshvbh/yzh-t-m-ysh-llmbdh-htshvbh.html</guid>
+        <pubDate>19 בדצמבר 2022</pubDate>
+        <description>Transcript for איזה טעם יש ללמבדה? [התשובה] from התשובה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>פרק השנה 2022 [התשובה]</title>
@@ -213,17 +224,6 @@
         <guid>https://mat-mo.github.io/podtext/episodes/htshvbh/hptqym-sypvr-ymh-htshvbh.html</guid>
         <pubDate>11 בספטמבר 2023</pubDate>
         <description>Transcript for הפתקים: סיפור אימה [התשובה] from התשובה</description>
-        <content:encoded><![CDATA[
-            
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>החנוכיה של גרגמל ועוד השלמות ותיקונים [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/htshvbh/hkhnvkyh-shl-grgml-v-vd-hshlmvt-vtyqvnym-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/htshvbh/hkhnvkyh-shl-grgml-v-vd-hshlmvt-vtyqvnym-htshvbh.html</guid>
-        <pubDate>26 בספטמבר 2023</pubDate>
-        <description>Transcript for החנוכיה של גרגמל ועוד השלמות ותיקונים [התשובה] from התשובה</description>
         <content:encoded><![CDATA[
             
         ]]></content:encoded>
