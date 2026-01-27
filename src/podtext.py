@@ -99,8 +99,6 @@ def generate_site(db, config):
     print("Regenerating site structure...")
     
     # 1. Recent Episodes (Index)
-    # Sort by date (assuming published_date is sortable or we trust order)
-    # For simplicity, we trust the DB order (newest first)
     recent_episodes = db['episodes'][:20]
     render_html('index.html', 
                {"site": config['site_settings'], "episodes": recent_episodes, "relative_path": ""}, 
@@ -119,7 +117,6 @@ def generate_site(db, config):
                 "image": ep.get('feed_image'),
                 "episodes": [],
                 "count": 0,
-                # Find RSS url from config
                 "rss_url": next((f['url'] for f in config['feeds'] if slugify(f['name']) == feed_slug), "#"),
                 "source_url": next((f['url'] for f in config['feeds'] if slugify(f['name']) == feed_slug), "#")
             }
@@ -131,39 +128,36 @@ def generate_site(db, config):
                {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
                os.path.join(OUTPUT_DIR, 'podcasts.html'))
 
-            # 3. Individual Podcast Pages & RSS Feeds
-            for feed_slug, data in podcasts_data.items():
-                # Podcast HTML
-                render_html('podcast.html', 
-                           {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
-                           os.path.join(PODCASTS_DIR, f"{feed_slug}.html"))
-                
-                # Podcast RSS
-                # Ensure content is loaded
-                for ep in data['episodes']:
-                    if 'content' not in ep: ep['content'] = get_episode_content(ep)
-                    
-                rss_context = {
-                    "site": {
-                        "title": f"{data['name']} - Podtext",
-                        "base_url": config['site_settings']['base_url']
-                    },
-                    "episodes": data['episodes'],
-                    "build_date": formatdate()
-                }
-                render_html('rss.xml', rss_context, os.path.join(PODCASTS_DIR, f"{feed_slug}.xml"))
-                
-                data['generated_rss'] = f"podcasts/{feed_slug}.xml"
+    # 3. Individual Podcast Pages & RSS Feeds
+    for feed_slug, data in podcasts_data.items():
+        # Podcast HTML
+        render_html('podcast.html', 
+                   {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
+                   os.path.join(PODCASTS_DIR, f"{feed_slug}.html"))
         
-            # Re-render podcasts.html with the new RSS links
-            render_html('podcasts.html', 
-                       {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
-                       os.path.join(OUTPUT_DIR, 'podcasts.html'))
+        # Podcast RSS
+        # Ensure content is loaded
+        for ep in data['episodes']:
+            if 'content' not in ep: ep['content'] = get_episode_content(ep)
             
+        rss_context = {
+            "site": {
+                "title": f"{data['name']} - Podtext",
+                "base_url": config['site_settings']['base_url']
+            },
+            "episodes": data['episodes'],
+            "build_date": formatdate()
+        }
+        render_html('rss.xml', rss_context, os.path.join(PODCASTS_DIR, f"{feed_slug}.xml"))
+        
+        data['generated_rss'] = f"podcasts/{feed_slug}.xml"
 
-        # 4. Search Index
+    # Re-render podcasts.html with the new RSS links
+    render_html('podcasts.html', 
+               {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
+               os.path.join(OUTPUT_DIR, 'podcasts.html'))
 
-     (JSON)
+    # 4. Search Index
     print("Building search index...")
     search_index = []
     # Index recent 50 episodes to keep size manageable, or all if small
@@ -179,7 +173,7 @@ def generate_site(db, config):
     with open(os.path.join(OUTPUT_DIR, 'search.json'), 'w') as f:
         json.dump(search_index, f)
 
-    # 4. RSS Feed
+    # 5. RSS Feed
     rss_context = {
         "site": config['site_settings'],
         "episodes": recent_episodes,
@@ -191,7 +185,7 @@ def generate_site(db, config):
         
     render_html('rss.xml', rss_context, os.path.join(OUTPUT_DIR, 'rss.xml'))
 
-    # 5. Copy Assets
+    # 6. Copy Assets
     import shutil
     shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'styles.css'), os.path.join(OUTPUT_DIR, 'styles.css'))
     shutil.copy(os.path.join(os.path.dirname(__file__), 'templates', 'search.js'), os.path.join(OUTPUT_DIR, 'search.js'))
