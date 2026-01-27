@@ -115,17 +115,38 @@ def process_with_gemini(audio_file):
     """
     
     max_retries = 3
+    last_error = None
+    last_invalid_json = None
+
     for attempt in range(max_retries):
         try:
+            # Dynamic prompt: Add error context if retrying
+            current_prompt = prompt
+            if last_error and last_invalid_json:
+                current_prompt += f"\n\nPREVIOUS ATTEMPT FAILED. \nError: {last_error}\nInvalid JSON Start: {last_invalid_json[:500]}...\n\nTASK: Fix the JSON structure. Ensure it is valid JSON."
+
             response = client.models.generate_content(
                 model="gemini-3-flash-preview",
-                contents=[audio_file, prompt],
+                contents=[audio_file, current_prompt],
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json",
                 )
             )
             
-            data = json.loads(response.text)
+            raw_text = response.text.strip()
+            
+            # Clean Markdown code blocks if present
+            if raw_text.startswith("```json"):
+                raw_text = raw_text[7:]
+            if raw_text.startswith("```"):
+                raw_text = raw_text[3:]
+            if raw_text.endswith("```"):
+                raw_text = raw_text[:-3]
+            
+            raw_text = raw_text.strip()
+
+            data = json.loads(raw_text)
+            
             # Handle both old (list) and new (dict) formats for robustness
             if isinstance(data, list):
                 return {"language": "en", "segments": data}
@@ -133,10 +154,13 @@ def process_with_gemini(audio_file):
             
         except json.JSONDecodeError as e:
             print(f"JSON Parse Error (Attempt {attempt+1}/{max_retries}): {e}")
+            last_error = str(e)
+            last_invalid_json = response.text
+            
             if attempt == max_retries - 1:
                 print("Raw response:", response.text[:500])
                 raise Exception(f"Gemini API Error or Parse Failure: {e}")
-            time.sleep(2) # Wait a bit before retry
+            time.sleep(2) 
             
         except Exception as e:
             print(f"API Error (Attempt {attempt+1}/{max_retries}): {e}")
