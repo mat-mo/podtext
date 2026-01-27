@@ -5,6 +5,27 @@ import re
 from jinja2 import Environment, FileSystemLoader
 from email.utils import formatdate
 from slugify import slugify
+from datetime import datetime
+import time
+
+HEBREW_MONTHS = [
+    "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני",
+    "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"
+]
+
+def format_hebrew_date(date_str):
+    """Converts a date string (English) to Hebrew format."""
+    if not date_str: return ""
+    # If already Hebrew (contains Hebrew chars), return as is
+    if any("\u0590" <= c <= "\u05EA" for c in date_str):
+        return date_str
+        
+    try:
+        # Try parsing standard RSS format "Mon, 12 Jan 2026 15:09:30 +0000"
+        dt = datetime.strptime(date_str, "%a, %d %b %Y %H:%M:%S %z")
+        return f"{dt.day} ב{HEBREW_MONTHS[dt.month-1]} {dt.year}"
+    except:
+        return date_str
 
 # Configuration
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -53,6 +74,9 @@ def main():
 
     # 1. Recent Episodes (Index)
     recent = db['episodes'][:20]
+    for ep in recent:
+        ep['published_date'] = format_hebrew_date(ep.get('published_date', ''))
+        
     render_html('index.html', 
                {"site": config['site_settings'], "episodes": recent, "relative_path": ""}, 
                os.path.join(OUTPUT_DIR, 'index.html'))
@@ -60,6 +84,8 @@ def main():
     # 2. Podcasts Page
     podcasts_data = {}
     for ep in db['episodes']:
+        ep['published_date'] = format_hebrew_date(ep.get('published_date', ''))
+        
         feed_slug = ep.get('feed_slug', slugify(ep['feed_name']))
         if feed_slug not in podcasts_data:
             podcasts_data[feed_slug] = {

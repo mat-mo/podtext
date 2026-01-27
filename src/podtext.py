@@ -31,6 +31,28 @@ TEMP_DIR = os.path.join(BASE_DIR, 'tmp')
 for d in [OUTPUT_DIR, EPISODES_DIR, PODCASTS_DIR, TEMP_DIR]:
     os.makedirs(d, exist_ok=True)
 
+HEBREW_MONTHS = [
+    "ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני",
+    "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"
+]
+
+def format_hebrew_date(date_obj):
+    """Converts a date object/string to Hebrew format (12 בינואר 2025)."""
+    if not date_obj: return ""
+    try:
+        # feedparser returns struct_time
+        if isinstance(date_obj, time.struct_time):
+            dt = datetime.fromtimestamp(time.mktime(date_obj))
+        elif isinstance(date_obj, str):
+            # Try parsing standard RSS format
+            dt = datetime.strptime(date_obj, "%a, %d %b %Y %H:%M:%S %z")
+        else:
+            return str(date_obj)
+            
+        return f"{dt.day} ב{HEBREW_MONTHS[dt.month-1]} {dt.year}"
+    except Exception as e:
+        return str(date_obj)
+
 # Configure Gemini
 api_key = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=api_key) if api_key else None
@@ -249,9 +271,12 @@ def main():
                 lang = result.get('language', 'en')
                 direction = "rtl" if lang == 'he' else "ltr"
                 
+                # 5. Build HTML
+                hebrew_date = format_hebrew_date(entry.published_parsed)
+                
                 episode_data = {
                     "title": entry.title,
-                    "published": entry.published,
+                    "published": hebrew_date,
                     "audio_url": audio_url,
                     "slug": slug,
                     "feed_name": feed_conf['name'],
@@ -269,8 +294,13 @@ def main():
                 
                 if os.path.getsize(html_path) < 500: raise Exception("File too small")
                 
+                # 6. Update DB
                 db['processed'].append(guid)
-                db['episodes'].insert(0, episode_data) # Note: simplified data storage
+                db['episodes'].insert(0, {
+                    "title": entry.title,
+                    "published_date": hebrew_date,
+                    "slug": slug,
+
                 save_db(db)
                 
                 # Regenerate entire site structure
