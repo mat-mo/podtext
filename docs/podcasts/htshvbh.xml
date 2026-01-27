@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 18:39:02 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 18:40:01 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>היה מבול? [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/htshvbh/hyh-mbvl-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/htshvbh/hyh-mbvl-htshvbh.html</guid>
+        <pubDate>5 בדצמבר 2022</pubDate>
+        <description>Transcript for היה מבול? [התשובה] from התשובה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>איזה טעם יש ללמבדה? [התשובה]</title>
