@@ -155,7 +155,7 @@ def main():
                 ep_context['published_date'] = ep['published_date']
                 
                 render_html('episode.html', 
-                           {"episode": ep_context, "transcript_html": transcript_html, "direction": "rtl", "relative_path": "../../"}, 
+                           {"site": config['site_settings'], "episode": ep_context, "transcript_html": transcript_html, "direction": "rtl", "relative_path": "../../"}, 
                            path)
 
     print("Done!")
