@@ -131,63 +131,35 @@ def generate_site(db, config):
                {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
                os.path.join(OUTPUT_DIR, 'podcasts.html'))
 
-        # 3. Individual Podcast Pages & RSS Feeds
-
-        for feed_slug, data in podcasts_data.items():
-
-            # Podcast HTML
-
-            render_html('podcast.html', 
-
-                       {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
-
-                       os.path.join(PODCASTS_DIR, f"{feed_slug}.html"))
-
-            
-
-            # Podcast RSS
-
-            # Ensure content is loaded
-
-            for ep in data['episodes']:
-
-                if 'content' not in ep: ep['content'] = get_episode_content(ep)
-
+            # 3. Individual Podcast Pages & RSS Feeds
+            for feed_slug, data in podcasts_data.items():
+                # Podcast HTML
+                render_html('podcast.html', 
+                           {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
+                           os.path.join(PODCASTS_DIR, f"{feed_slug}.html"))
                 
-
-            rss_context = {
-
-                "site": {
-
-                    "title": f"{data['name']} - Podtext",
-
-                    "base_url": config['site_settings']['base_url']
-
-                },
-
-                "episodes": data['episodes'],
-
-                "build_date": formatdate()
-
-            }
-
-            render_html('rss.xml', rss_context, os.path.join(PODCASTS_DIR, f"{feed_slug}.xml"))
-
+                # Podcast RSS
+                # Ensure content is loaded
+                for ep in data['episodes']:
+                    if 'content' not in ep: ep['content'] = get_episode_content(ep)
+                    
+                rss_context = {
+                    "site": {
+                        "title": f"{data['name']} - Podtext",
+                        "base_url": config['site_settings']['base_url']
+                    },
+                    "episodes": data['episodes'],
+                    "build_date": formatdate()
+                }
+                render_html('rss.xml', rss_context, os.path.join(PODCASTS_DIR, f"{feed_slug}.xml"))
+                
+                data['generated_rss'] = f"podcasts/{feed_slug}.xml"
+        
+            # Re-render podcasts.html with the new RSS links
+            render_html('podcasts.html', 
+                       {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
+                       os.path.join(OUTPUT_DIR, 'podcasts.html'))
             
-
-            data['generated_rss'] = f"podcasts/{feed_slug}.xml"
-
-    
-
-        # Re-render podcasts.html with the new RSS links
-
-        render_html('podcasts.html', 
-
-                   {"site": config['site_settings'], "podcasts": podcasts_data, "relative_path": ""}, 
-
-                   os.path.join(OUTPUT_DIR, 'podcasts.html'))
-
-    
 
         # 4. Search Index
 
