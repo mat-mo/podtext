@@ -301,6 +301,12 @@ footer {
         border: none !important; 
         border-bottom: 1px solid var(--border-color) !important;
         margin-bottom: 10px;
-        padding: 0 0 5px 0 !important;
-    }
-}
+                padding: 0 0 5px 0 !important;
+            }
+        }
+        
+        /* Advertisement Handling */
+        .type-advertisement {
+            display: none;
+        }
+        
