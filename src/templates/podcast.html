@@ -3,6 +3,10 @@
 {% block title %}{{ feed.name }} - {{ site.title }}{% endblock %}
 
 {% block content %}
+    <nav class="breadcrumbs">
+        <a href="../podcasts.html">כל הפודקאסטים</a> &raquo; {{ feed.name }}
+    </nav>
+
     <div class="podcast-header">
         {% if feed.image %}
         <img src="{{ relative_path }}{{ feed.image }}" alt="{{ feed.name }}" class="podcast-header-img">

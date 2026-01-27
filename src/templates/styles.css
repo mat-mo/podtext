@@ -82,6 +82,21 @@ html {
     color: var(--accent-color);
 }
 
+.breadcrumbs {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    color: var(--meta-color);
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
 .rss-link {
     color: #f26522;
 }
