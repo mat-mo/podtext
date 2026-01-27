@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 22:38:52 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 22:40:21 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>425: לייקה, חלוצת החלל (ש.ח) [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/425-lyyqh-khlvtst-hkhll-sh-kh-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/425-lyyqh-khlvtst-hkhll-sh-kh-vshym-hystvryh.html</guid>
+        <pubDate>24 ביוני 2024</pubDate>
+        <description>Transcript for 425: לייקה, חלוצת החלל (ש.ח) [עושים היסטוריה] from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>426: למה כל כך קשה לפתור את בעיית ההתחממות הגלובלית? [עושים היסטוריה]</title>
