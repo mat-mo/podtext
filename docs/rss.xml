@@ -6,8 +6,102 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 00:17:30 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 00:18:31 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>מיכל והגלגוחים ועוד השלמות ותיקונים [התשובה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/the-answer/mykl-vhglgvkhym-v-vd-hshlmvt-vtyqvnym-htshvbh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/mykl-vhglgvkhym-v-vd-hshlmvt-vtyqvnym-htshvbh.html</guid>
+        <pubDate>Mon, 25 Jul 2022 08:52:20 +0000</pubDate>
+        <description>Transcript for מיכל והגלגוחים ועוד השלמות ותיקונים [התשובה] from The Answer</description>
+        <content:encoded><![CDATA[
+            <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מיכל והגלגוחים ועוד השלמות ותיקונים [התשובה] - Podtext</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-link">Back to Episodes</a>
+            <h1>מיכל והגלגוחים ועוד השלמות ותיקונים [התשובה]</h1>
+            <p class="meta">Published on Mon, 25 Jul 2022 08:52:20 +0000</p>
+        </header>
+
+        <div class="player-container">
+            <audio id="audio-player" controls>
+                <source src="https://api.spreaker.com/download/episode/50701527/episode_50701527.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="transcript-container" id="transcript">
+            
+            <article class="paragraph speaker-">
+                <div class="paragraph-meta">
+                    <span class="speaker-name"></span>
+                    <span class="timestamp"></span>
+                </div>
+                <div class="content">
+                    <p></p>
+                </div>
+            </article>
+            
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio-player');
+        const words = document.querySelectorAll('.word');
+        let currentWord = null;
+
+        function seekTo(time) {
+            audio.currentTime = time;
+            audio.play();
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const time = audio.currentTime;
+
+            // Simple optimization: only check around the current word or linear scan if lost
+            // For robustness, we'll just do a linear scan for now. 
+            // In a huge transcript, we might want a binary search or index.
+            
+            let found = false;
+            words.forEach(word => {
+                const start = parseFloat(word.dataset.start);
+                const end = parseFloat(word.dataset.end);
+
+                if (time >= start && time < end) {
+                    if (currentWord !== word) {
+                        if (currentWord) currentWord.classList.remove('active');
+                        word.classList.add('active');
+                        currentWord = word;
+                        
+                        // Auto-scroll logic
+                        const container = document.getElementById('transcript');
+                        const wordTop = word.offsetTop - container.offsetTop;
+                        // scroll if word is getting out of view
+                        container.scrollTop = wordTop - 100; 
+                    }
+                    found = true;
+                }
+            });
+
+            if (!found && currentWord) {
+                currentWord.classList.remove('active');
+                currentWord = null;
+            }
+        });
+    </script>
+</body>
+</html>
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>בונוס: תמאם שוד - התשובה(?) [התשובה]</title>
@@ -7350,100 +7444,6 @@
                 </div>
                 <div class="content">
                     <p>האזנתם ל"מי רצח את אדווין דרוד?". משתתפים: גדעון אורבך בתפקיד ג'ון ג'ספר, ואותו אתם יכולים לשמוע גם בפודקאסט משחקי התפקידים "אחרי ההתנפצות". לי להב בתפקיד רוזה באד, ואתם יכולים למצוא אותה גם בערוץ האנימציה שלה ביוטיוב. יובל בינדר בתפקיד נביל לנדלס וזקנה קריפית ושרלוק הולמס וכל מיני ס... תחפשו אותו בטיקטוק. ועדי דר בתפקיד אדווין דרוד. הלו הלו. ותחפשו אותו גם ביוטיוב ב-Addubs. עורכת ומפיקה: שלי נוי. כרגיל אתם יכולים למצוא עדכונים עליי בעמוד הפייסבוק דורון פישלר נגד העולם. אביב שם טוב ייעוץ ושיחה מורלית, יובל דרור העורך הראשי, רן לוי עורך מיתולוגי, דני תימור המנהל העסקי, שרית לזני-קורצמן מנהלת הדיגיטל, בצוות הרשת גם הילה שמש, שלי גואטה וזלטה צ'אבן. אני דורון פישלר. שירותי כתיבה נוספים - צ'ארלס דיקנס, הוא תרם קצת. וזה הכל. ביי. ביי.</p>
-                </div>
-            </article>
-            
-        </div>
-    </div>
-
-    <script>
-        const audio = document.getElementById('audio-player');
-        const words = document.querySelectorAll('.word');
-        let currentWord = null;
-
-        function seekTo(time) {
-            audio.currentTime = time;
-            audio.play();
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            const time = audio.currentTime;
-
-            // Simple optimization: only check around the current word or linear scan if lost
-            // For robustness, we'll just do a linear scan for now. 
-            // In a huge transcript, we might want a binary search or index.
-            
-            let found = false;
-            words.forEach(word => {
-                const start = parseFloat(word.dataset.start);
-                const end = parseFloat(word.dataset.end);
-
-                if (time >= start && time < end) {
-                    if (currentWord !== word) {
-                        if (currentWord) currentWord.classList.remove('active');
-                        word.classList.add('active');
-                        currentWord = word;
-                        
-                        // Auto-scroll logic
-                        const container = document.getElementById('transcript');
-                        const wordTop = word.offsetTop - container.offsetTop;
-                        // scroll if word is getting out of view
-                        container.scrollTop = wordTop - 100; 
-                    }
-                    found = true;
-                }
-            });
-
-            if (!found && currentWord) {
-                currentWord.classList.remove('active');
-                currentWord = null;
-            }
-        });
-    </script>
-</body>
-</html>
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>השאלה האחרת שאי אפשר לכתוב ועוד השלמות ותיקונים [התשובה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/the-answer/hshlh-hkhrt-shy-pshr-lktvb-v-vd-hshlmvt-vtyqvnym-htshvbh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/the-answer/hshlh-hkhrt-shy-pshr-lktvb-v-vd-hshlmvt-vtyqvnym-htshvbh.html</guid>
-        <pubDate>Mon, 10 Apr 2023 03:00:02 +0000</pubDate>
-        <description>Transcript for השאלה האחרת שאי אפשר לכתוב ועוד השלמות ותיקונים [התשובה] from The Answer</description>
-        <content:encoded><![CDATA[
-            <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>השאלה האחרת שאי אפשר לכתוב ועוד השלמות ותיקונים [התשובה] - Podtext</title>
-    <link rel="stylesheet" href="../../styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="../../index.html" class="back-link">Back to Episodes</a>
-            <h1>השאלה האחרת שאי אפשר לכתוב ועוד השלמות ותיקונים [התשובה]</h1>
-            <p class="meta">Published on Mon, 10 Apr 2023 03:00:02 +0000</p>
-        </header>
-
-        <div class="player-container">
-            <audio id="audio-player" controls>
-                <source src="https://api.spreaker.com/download/episode/53483652/mst.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <div class="transcript-container" id="transcript">
-            
-            <article class="paragraph speaker-">
-                <div class="paragraph-meta">
-                    <span class="speaker-name"></span>
-                    <span class="timestamp"></span>
-                </div>
-                <div class="content">
-                    <p></p>
                 </div>
             </article>
             
