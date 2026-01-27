@@ -1,80 +1,70 @@
 # Podtext
 
-Podtext is an automated podcast-to-text pipeline. It downloads podcast episodes from RSS feeds, transcribes them locally using OpenAI's Whisper (optimized for Apple Silicon), and generates a static website where the transcript is synchronized with the audio.
-
-It is designed to be self-hosted on your local machine, pushing the generated HTML directly to GitHub Pages.
+Podtext is an automated, AI-powered podcast transcription pipeline. It listens to podcast RSS feeds, transcribes episodes using Google Gemini 1.5 Flash (Multimodal), and publishes a static website with the transcripts.
 
 ## Features
 
-*   **Local Transcription:** Uses `faster-whisper` for high-performance offline transcription.
-*   **Apple Silicon Optimized:** Runs efficiently on M1/M2/M3/M4 chips using INT8 quantization on the CPU/Neural Engine.
-*   **Interactive Player:** Click any word in the transcript to jump to that point in the audio; audio playback highlights words in real-time.
-*   **Git Sync:** Automatically commits and pushes new episodes to GitHub.
-*   **RSS Feed:** Generates a custom RSS feed (`rss.xml`) for your transcripts.
-*   **Storage Efficient:** Only stores text and HTML. Audio is hotlinked from the original podcast source.
+*   **AI Transcription:** Uses **Gemini 1.5 Flash** to transcribe, identify speakers, and format text in one pass.
+*   **Multilingual:** Native support for Hebrew and English (auto-detected).
+*   **Book-Style Layout:** Transcripts are formatted as readable paragraphs, not chat logs.
+*   **RTL Support:** Automatic Right-to-Left layout for Hebrew content.
+*   **Search:** Built-in full-text search across all episodes.
+*   **Podcast Library:** Organizes episodes by podcast feed.
+*   **Dark Mode:** Auto-switching based on system preference.
+*   **RSS Feed:** Generates a full-text RSS feed of the transcripts.
+*   **Git Sync:** Automatically pushes updates to GitHub Pages.
 
-## Prerequisites
+## Architecture
 
-*   **Python 3.10 - 3.12** (Python 3.14 is not yet supported by some audio libraries)
-*   **macOS** (Optimized for, but runs on Linux/Windows with adjustments)
-*   **ffmpeg** (Required for audio processing: `brew install ffmpeg`)
+1.  **`podtext.py`**: The main engine.
+    *   Checks RSS feeds for new episodes.
+    *   Downloads MP3s.
+    *   Uploads to Gemini API.
+    *   Generates HTML pages and updates `db.json`.
+    *   Syncs to GitHub.
+2.  **`regenerate.py`**: Rebuilds the static site (`index.html`, `podcasts.html`, RSS, Search Index) from the database without re-processing audio.
+3.  **`docs/`**: The output directory (GitHub Pages root).
+    *   `episodes/<feed_slug>/`: Individual transcript files.
+    *   `podcasts/`: Podcast profile pages.
+    *   `search.json`: Index for the search bar.
 
-## Installation
+## Setup
 
-1.  **Clone the repository:**
-    ```bash
-    git clone git@github.com:mat-mo/podtext.git
-    cd podtext
-    ```
-
-2.  **Set up the Virtual Environment:**
+1.  **Install Dependencies:**
     ```bash
     python3.12 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
     ```
 
-3.  **Configuration:**
-    Edit `config.yaml` to add your podcasts and site settings:
+2.  **Environment:**
+    Create a `.env` file with your Google Gemini API key:
+    ```
+    GEMINI_API_KEY=your_key_here
+    ```
+
+3.  **Config:**
+    Edit `config.yaml` to add podcasts:
     ```yaml
     feeds:
-      - url: "https://feeds.simplecast.com/your-feed"
+      - url: "https://rss.url/..."
         name: "Podcast Name"
-    
     site_settings:
-      title: "My Transcripts"
-      base_url: "https://mat-mo.github.io/podtext"
+      title: "Podtext"
+      base_url: "https://your.site"
     ```
 
 ## Usage
 
-### Manual Run
-Run the script to check for new episodes and process them:
-
+**Process New Episodes:**
 ```bash
-source venv/bin/activate
 python src/podtext.py
 ```
 
-### Automatic Updates (Cron)
-To keep your site up-to-date automatically, add a cron job.
-Run `crontab -e` and add:
-
+**Rebuild Website (Design changes):**
 ```bash
-# Run every hour at minute 0
-0 * * * * cd /Users/matanya/git-repos/podtext && venv/bin/python src/podtext.py >> run.log 2>&1
+python src/regenerate.py
 ```
 
-## Hosting (GitHub Pages)
-
-1.  Push this repo to GitHub.
-2.  Go to **Settings > Pages**.
-3.  Under **Build and deployment**:
-    *   **Source:** Deploy from a branch
-    *   **Branch:** `main`
-    *   **Folder:** `/docs` (IMPORTANT: Do not select /root)
-4.  Your site will be live at `https://mat-mo.github.io/podtext/`.
-
 ## License
-
 MIT

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}All Podcasts - {{ site.title }}{% endblock %}
+
+{% block content %}
+    <h2 class="page-title">All Podcasts</h2>
+    <div class="podcast-grid">
+        {% for feed_slug, feed_data in podcasts.items() %}
+        <div class="podcast-card">
+            <a href="podcasts/{{ feed_slug }}.html" class="podcast-link">
+                {% if feed_data.image %}
+                <img src="{{ feed_data.image }}" alt="{{ feed_data.name }}" class="podcast-cover">
+                {% endif %}
+                <h3>{{ feed_data.name }}</h3>
+            </a>
+            <div class="podcast-meta">
+                <span>{{ feed_data.count }} Episodes</span>
+                <a href="{{ feed_data.rss_url|default('#') }}" class="mini-rss" title="RSS Feed">RSS</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

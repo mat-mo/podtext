@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="{{ direction|default('ltr') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ site.title }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ relative_path|default('') }}styles.css">
+    <script defer src="{{ relative_path|default('') }}search.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">
+                <a href="{{ relative_path|default('') }}index.html">{{ site.title }}</a>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search episodes...">
+                <div id="search-results" class="search-results hidden"></div>
+            </div>
+
+            <nav class="main-nav">
+                <a href="{{ relative_path|default('') }}index.html" class="nav-link">Recent Episodes</a>
+                <a href="{{ relative_path|default('') }}podcasts.html" class="nav-link">All Podcasts</a>
+                <a href="{{ relative_path|default('') }}rss.xml" class="rss-link" title="Global RSS">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+                </a>
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>&copy; {{ build_year }} Podtext. Generated with Gemini 1.5 Flash.</p>
+        </footer>
+    </div>
+</body>
+</html>
