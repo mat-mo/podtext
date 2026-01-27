@@ -24,7 +24,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Rubik", "Assistant", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background: var(--bg-color);
@@ -32,9 +32,11 @@ body {
     padding: 20px;
 }
 
-/* Explicit RTL/LTR defaults */
-html[dir="rtl"] { direction: rtl; text-align: right; }
-html[dir="ltr"] { direction: ltr; text-align: left; }
+/* Force RTL Global */
+html {
+    direction: rtl;
+    text-align: right;
+}
 
 .container {
     max-width: 900px;
@@ -99,13 +101,16 @@ html[dir="ltr"] { direction: ltr; text-align: left; }
     border-radius: 20px;
     background: var(--bg-color);
     color: var(--text-color);
+    text-align: right; /* Explicitly right for Hebrew */
+    direction: rtl;
 }
 
 .search-results {
     position: absolute;
     top: 100%;
+    right: 0; /* Align to right edge */
     left: 0;
-    right: 0;
+    text-align: right;
     background: var(--container-bg);
     border: 1px solid var(--border-color);
     border-radius: 4px;
@@ -202,20 +207,34 @@ html[dir="ltr"] { direction: ltr; text-align: left; }
 .paragraph {
     margin-bottom: 2em;
     display: grid;
-    grid-template-columns: 120px 1fr;
+    /* In RTL: Col 1 is Right, Col 2 is Left */
+    grid-template-columns: 120px 1fr; 
     gap: 20px;
 }
 
-[dir="rtl"] .paragraph-meta { text-align: left; border-left: 1px solid var(--border-color); padding-left: 10px; }
-[dir="ltr"] .paragraph-meta { text-align: right; border-right: 1px solid var(--border-color); padding-right: 10px; }
-
 .paragraph-meta {
+    text-align: left; /* Meta text aligns to the content (left side of the right sidebar) */
+    border-left: 1px solid var(--border-color);
+    padding-left: 10px;
+    
+    display: flex;
+    flex-direction: column;
     font-size: 0.8em;
     color: var(--meta-color);
+    padding-top: 5px;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
 }
 
 .speaker-name { font-weight: bold; display: block; margin-bottom: 2px; }
-.content { font-family: "David", serif; font-size: 1.15em; line-height: 1.8; }
+.content { 
+    font-family: "David", "Frank Ruhl Libre", serif; 
+    font-size: 1.15em; 
+    line-height: 1.8; 
+    color: var(--text-color);
+    text-align: right;
+}
 
 footer {
     margin-top: 40px;

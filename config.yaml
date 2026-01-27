@@ -6,8 +6,10 @@ feeds:
 
 site_settings:
 
-  title: "Podtext"
+  title: "פודטקסט"
 
   base_url: "https://mat-mo.github.io/podtext"
+
+
 
 
