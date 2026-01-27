@@ -86,9 +86,6 @@ def main():
     # Ensure dirs
     os.makedirs(PODCASTS_DIR, exist_ok=True)
 
-    # Global Sort: Sort ALL episodes by date descending
-    db['episodes'].sort(key=lambda x: parse_hebrew_date(x.get('published_date', '')), reverse=True)
-
     # 1. Recent Episodes (Index)
     recent = db['episodes'][:20]
     render_html('index.html', 
@@ -118,7 +115,7 @@ def main():
 
     # 3. Individual Podcast Pages & RSS
     for feed_slug, data in podcasts_data.items():
-        # Episodes are already sorted because db['episodes'] was sorted before grouping
+        # Trust DB order (Newest First) instead of fragile Hebrew date parsing
         
         render_html('podcast.html', 
                    {"site": config['site_settings'], "feed": data, "episodes": data['episodes'], "relative_path": "../"}, 
