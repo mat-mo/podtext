@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 02:00:57 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 02:03:00 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>342: סטקסנט (Stuxnet), וירוס המחשב שפגע בגרעין האיראני, חלק ב' (ש.ח.) [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/342-stqsnt-stuxnet-vyrvs-hmkhshb-shpg-bgr-yn-hyrny-khlq-b-sh-kh-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/342-stqsnt-stuxnet-vyrvs-hmkhshb-shpg-bgr-yn-hyrny-khlq-b-sh-kh-vshym-hystvryh.html</guid>
+        <pubDate>3 בפברואר 2021</pubDate>
+        <description>Transcript for 342: סטקסנט (Stuxnet), וירוס המחשב שפגע בגרעין האיראני, חלק ב' (ש.ח.) [עושים היסטוריה] from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>343: סטקסנט (Stuxnet), וירוס המחשב שפגע בגרעין האיראני, חלק ג' (ש.ח.) [עושים היסטוריה]</title>
