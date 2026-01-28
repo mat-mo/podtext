@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 02:04:51 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 02:07:44 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>[עושים היסטוריה] מארחת: אסתי סגל איבדה רגל, והרוויחה חיים חדשים</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/vshym-hystvryh-mrkht-sty-sgl-ybdh-rgl-vhrvvykhh-khyym-khdshym.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/vshym-hystvryh-mrkht-sty-sgl-ybdh-rgl-vhrvvykhh-khyym-khdshym.html</guid>
+        <pubDate>19 בינואר 2021</pubDate>
+        <description>Transcript for [עושים היסטוריה] מארחת: אסתי סגל איבדה רגל, והרוויחה חיים חדשים from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>341: סטקסנט (Stuxnet), הוירוס שהיכה בגרעין האיראני, חלק א' (ש.ח.) [עושים היסטוריה]</title>
