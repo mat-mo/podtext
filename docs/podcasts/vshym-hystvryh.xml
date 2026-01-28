@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 01:47:38 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 01:49:30 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>[עושים היסטוריה] מארחת: דן קרלין, מגיש הפודקאסט Hardcore History</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/vshym-hystvryh-mrkht-dn-qrlyn-mgysh-hpvdqst-hardcore-history.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/vshym-hystvryh-mrkht-dn-qrlyn-mgysh-hpvdqst-hardcore-history.html</guid>
+        <pubDate>30 במרץ 2021</pubDate>
+        <description>Transcript for [עושים היסטוריה] מארחת: דן קרלין, מגיש הפודקאסט Hardcore History from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>[עושים היסטוריה] 350: נפוליאון במזה"ת, חלק ד' - המצור על עכו</title>
