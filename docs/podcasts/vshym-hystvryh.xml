@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 00:07:53 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 00:10:20 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>396: מה קרה לאח"י דקר? חלק א' [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/396-mh-qrh-lkh-y-dqr-khlq-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/396-mh-qrh-lkh-y-dqr-khlq-vshym-hystvryh.html</guid>
+        <pubDate>2 באפריל 2023</pubDate>
+        <description>Transcript for 396: מה קרה לאח"י דקר? חלק א' [עושים היסטוריה] from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>397: מה קרה לאח"י דקר? חלק ב' ואחרון [עושים היסטוריה]</title>
