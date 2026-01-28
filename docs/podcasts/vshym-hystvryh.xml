@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 00:20:40 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 00:22:44 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>390: אלקטרוניקה בחלל, או - איך להרוג את R2D2 [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/390-lqtrvnyqh-bkhll-v-yk-lhrvg-t-r2d2-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/390-lqtrvnyqh-bkhll-v-yk-lhrvg-t-r2d2-vshym-hystvryh.html</guid>
+        <pubDate>8 בינואר 2023</pubDate>
+        <description>Transcript for 390: אלקטרוניקה בחלל, או - איך להרוג את R2D2 [עושים היסטוריה] from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>391: ארץ ישראל בראי הפרסומת [עושים היסטוריה]</title>
