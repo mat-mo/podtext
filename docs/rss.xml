@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 00:33:07 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 00:35:10 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>382: אלכסנדר הגדול, חלק ב' [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/382-lksndr-hgdvl-khlq-b-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/382-lksndr-hgdvl-khlq-b-vshym-hystvryh.html</guid>
+        <pubDate>21 בספטמבר 2022</pubDate>
+        <description>Transcript for 382: אלכסנדר הגדול, חלק ב' [עושים היסטוריה] from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>383: יום כיפור, הסיפור האמיתי [עושים היסטוריה]</title>
@@ -213,17 +224,6 @@
         <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/403-shvd-hsh-vnym-khlq-g-hmvkh-vshym-hystvryh.html</guid>
         <pubDate>1 באוגוסט 2023</pubDate>
         <description>Transcript for 403: שוד השעונים, חלק ג' - המוח [עושים היסטוריה] from עושים היסטוריה</description>
-        <content:encoded><![CDATA[
-            
-        ]]></content:encoded>
-    </item>
-    
-    <item>
-        <title>404: שוד השעונים, חלק ד' - האליבי המושלם [עושים היסטוריה]</title>
-        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/404-shvd-hsh-vnym-khlq-d-hlyby-hmvshlm-vshym-hystvryh.html</link>
-        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/404-shvd-hsh-vnym-khlq-d-hlyby-hmvshlm-vshym-hystvryh.html</guid>
-        <pubDate>3 באוגוסט 2023</pubDate>
-        <description>Transcript for 404: שוד השעונים, חלק ד' - האליבי המושלם [עושים היסטוריה] from עושים היסטוריה</description>
         <content:encoded><![CDATA[
             
         ]]></content:encoded>
