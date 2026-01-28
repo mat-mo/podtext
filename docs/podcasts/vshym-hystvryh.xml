@@ -6,8 +6,19 @@
     <description>Transcripts for my favorite podcasts</description>
     <language>en-us</language>
     <atom:link href="https://mat-mo.github.io/podtext/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 01:09:04 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 01:11:01 -0000</lastBuildDate>
     
+    
+    <item>
+        <title>365: המפץ הגדול, חלק א'  (ש.ח.) [עושים היסטוריה]</title>
+        <link>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/365-hmpts-hgdvl-khlq-sh-kh-vshym-hystvryh.html</link>
+        <guid>https://mat-mo.github.io/podtext/episodes/vshym-hystvryh/365-hmpts-hgdvl-khlq-sh-kh-vshym-hystvryh.html</guid>
+        <pubDate>8 בדצמבר 2021</pubDate>
+        <description>Transcript for 365: המפץ הגדול, חלק א'  (ש.ח.) [עושים היסטוריה] from עושים היסטוריה</description>
+        <content:encoded><![CDATA[
+            
+        ]]></content:encoded>
+    </item>
     
     <item>
         <title>[עושים היסטוריה] 366: המפץ הגדול, חלק ב' - חייו ומותו של היקום (ש.ח.)</title>
